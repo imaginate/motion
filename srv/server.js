@@ -31,6 +31,10 @@ const API_FILES = get.filepaths(API_DIRPATH, { deep: true });
 /** @const {!Object} */
 const app = express();
 
+app.get('/', (req, res) => {
+    res.redirect('/bikes');
+});
+
 const EXT_PATT = /\.[^.]+$/;
 const INDEX_PATT = /\/?index$/;
 const ID_PATT = /\/<id>$/;
