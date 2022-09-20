@@ -1,0 +1,227 @@
+//////////////////////////////////////////////////////////////////////////////
+/// ANIMATION MIXINS
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+/// ANIMATION
+/// @param {Any...} $animation
+/// @output
+///   ```scss
+///   -webkit-animation: $animation, $animation ...;
+///   -moz-animation: $animation, $animation ...;
+///   -ms-animation: $animation, $animation ...;
+///   -o-animation: $animation, $animation ...;
+///   animation: $animation, $animation ...;
+///   ```
+@mixin animation($animation...) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+/// ANIMATION TIMING
+/// @param {Number} $p1
+/// @param {Number} $p2
+/// @param {Number} $p3
+/// @param {Number} $p4
+/// @output
+///   ```scss
+///   -webkit-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+///   -moz-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+///   -ms-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+///   -o-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+///   animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+///   ```
+@mixin animation-timing($p1, $p2, $p3, $p4) {
+    -webkit-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+    -moz-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+    -ms-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+    -o-animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+    animation-timing-function: cubic-bezier($p1, $p2, $p3, $p4);
+}
+
+/// KEYFRAMES SCALE
+/// @param {String} $id
+/// @param {Number} $from
+/// @param {Number} $to
+/// @output
+///   ```scss
+///   @-webkit-keyframes $id {
+///       0% {
+///           -webkit-transform: scale($from);
+///       }
+///       100% {
+///           -webkit-transform: scale($to);
+///       }
+///   }
+///   @-moz-keyframes $id {
+///       0% {
+///           -moz-transform: scale($from);
+///       }
+///       100% {
+///           -moz-transform: scale($to);
+///       }
+///   }
+///   @-ms-keyframes $id {
+///       0% {
+///           -ms-transform: scale($from);
+///       }
+///       100% {
+///           -ms-transform: scale($to);
+///       }
+///   }
+///   @-o-keyframes $id {
+///       0% {
+///           -o-transform: scale($from);
+///       }
+///       100% {
+///           -o-transform: scale($to);
+///       }
+///   }
+///   @keyframes $id {
+///       0% {
+///           transform: scale($from);
+///       }
+///       100% {
+///           transform: scale($to);
+///       }
+///   }
+///   ```
+@mixin keyframes-scale($id, $from, $to) {
+    @-webkit-keyframes #{$id} {
+        0% {
+            -webkit-transform: scale($from);
+        }
+        100% {
+            -webkit-transform: scale($to);
+        }
+    }
+    @-moz-keyframes #{$id} {
+        0% {
+            -moz-transform: scale($from);
+        }
+        100% {
+            -moz-transform: scale($to);
+        }
+    }
+    @-ms-keyframes #{$id} {
+        0% {
+            -ms-transform: scale($from);
+        }
+        100% {
+            -ms-transform: scale($to);
+        }
+    }
+    @-o-keyframes #{$id} {
+        0% {
+            -o-transform: scale($from);
+        }
+        100% {
+            -o-transform: scale($to);
+        }
+    }
+    @keyframes #{$id} {
+        0% {
+            transform: scale($from);
+        }
+        100% {
+            transform: scale($to);
+        }
+    }
+}
+
+/// KEYFRAMES TRANSLATE
+/// @param {String} $id
+/// @param {Number|Size} $from1
+/// @param {Number|Size} $from2
+/// @param {Number|Size} $to1
+/// @param {Number|Size} $to2
+/// @output
+///   ```scss
+///   @-webkit-keyframes $id {
+///       0% {
+///           -webkit-transform: translate($from1, $from2);
+///       }
+///       100% {
+///           -webkit-transform: translate($to1, $to2);
+///       }
+///   }
+///   @-moz-keyframes $id {
+///       0% {
+///           -moz-transform: translate($from1, $from2);
+///       }
+///       100% {
+///           -moz-transform: translate($to1, $to2);
+///       }
+///   }
+///   @-ms-keyframes $id {
+///       0% {
+///           -ms-transform: translate($from1, $from2);
+///       }
+///       100% {
+///           -ms-transform: translate($to1, $to2);
+///       }
+///   }
+///   @-o-keyframes $id {
+///       0% {
+///           -o-transform: translate($from1, $from2);
+///       }
+///       100% {
+///           -o-transform: translate($to1, $to2);
+///       }
+///   }
+///   @keyframes $id {
+///       0% {
+///           transform: translate($from1, $from2);
+///       }
+///       100% {
+///           transform: translate($to1, $to2);
+///       }
+///   }
+///   ```
+@mixin keyframes-translate($id, $from1, $from2, $to1, $to2) {
+    @-webkit-keyframes #{$id} {
+        0% {
+            -webkit-transform: translate($from1, $from2);
+        }
+        100% {
+            -webkit-transform: translate($to1, $to2);
+        }
+    }
+    @-moz-keyframes #{$id} {
+        0% {
+            -moz-transform: translate($from1, $from2);
+        }
+        100% {
+            -moz-transform: translate($to1, $to2);
+        }
+    }
+    @-ms-keyframes #{$id} {
+        0% {
+            -ms-transform: translate($from1, $from2);
+        }
+        100% {
+            -ms-transform: translate($to1, $to2);
+        }
+    }
+    @-o-keyframes #{$id} {
+        0% {
+            -o-transform: translate($from1, $from2);
+        }
+        100% {
+            -o-transform: translate($to1, $to2);
+        }
+    }
+    @keyframes #{$id} {
+        0% {
+            transform: translate($from1, $from2);
+        }
+        100% {
+            transform: translate($to1, $to2);
+        }
+    }
+}
