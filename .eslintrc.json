@@ -1,0 +1,68 @@
+{
+    "env": {
+        "es6": true,
+        "es2022": true,
+        "browser": true,
+        "cypress/globals": true
+    },
+    "globals": {
+        "React": "readable",
+        "ReactDOM": "readable"
+    },
+    "plugins": [
+        "react",
+        "cypress",
+        "chai-friendly"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+            "version": "18"
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:cypress/recommended",
+        "plugin:chai-friendly/recommended"
+    ],
+    "rules": {
+        "accessor-pairs": [ "error", {
+            "setWithoutGet": true,
+            "getWithoutSet": false,
+            "enforceForClassMembers": true
+        }],
+        "array-callback-return": [ "error", {
+            "allowImplicit": false,
+            "checkForEach": false
+        }],
+        "constructor-super": "error",
+        "for-direction": "warn",
+        "getter-return": [ "error", {
+            "allowImplicit": true
+        }],
+        "no-async-promise-executor": "error",
+        "no-await-in-loop": "warn",
+        "no-class-assign": "error",
+        "no-compare-neg-zero": "error",
+        "no-cond-assign": "error",
+        "no-const-assign": "error",
+        "no-constant-binary-expression": "error",
+        "no-constant-condition": "error",
+        "no-constructor-return": "off",
+        "no-control-regex": "warn",
+        "no-debugger": "warn",
+        "no-inner-declarations": "error",
+        "no-undef": "error",
+        "no-unused-vars": "off",
+        "react/jsx-no-undef": "error",
+        "react/prop-types": "off",
+        "cypress/no-unnecessary-waiting": "off"
+    }
+}
