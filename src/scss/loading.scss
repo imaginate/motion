@@ -1,0 +1,60 @@
+//////////////////////////////////////////////////////////////////////////////
+/// LOADING COMPONENT STYLES
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+@mixin loading() {
+    div.loadingbox {
+        display: block;
+        width: 100%;
+        height: 18px;
+        padding: 50px 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    div.loading {
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        height: 18px;
+        padding: 0;
+        margin: 0;
+
+        div {
+            display: block;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: $green;
+            @include animation-timing(0, 1, 1, 0);
+        }
+
+        div:nth-child(1) {
+            left: 0px;
+            @include animation(loading1 0.6s infinite);
+        }
+
+        div:nth-child(2) {
+            left: 0px;
+            @include animation(loading2 0.6s infinite);
+        }
+
+        div:nth-child(3) {
+            left: 41px;
+            @include animation(loading2 0.6s infinite);
+        }
+
+        div:nth-child(4) {
+            left: 82px;
+            @include animation(loading3 0.6s infinite);
+        }
+    }
+
+    @include keyframes-scale(loading1, 0, 1);
+    @include keyframes-translate(loading2, 0, 0, 41px, 0);
+    @include keyframes-scale(loading3, 1, 0);
+}
