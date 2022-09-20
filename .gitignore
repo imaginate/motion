@@ -49,6 +49,8 @@ test/downloads/
 test/screenshots/
 test/videos/
 tmp/
+.data/
+.tmp/
 
 !src/docs/
 

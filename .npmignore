@@ -15,6 +15,7 @@ $RECYCLE.BIN/
 .AppleDB
 .AppleDesktop
 .AppleDouble
+.data
 .DS_Store
 .env
 .env.php
@@ -25,6 +26,7 @@ $RECYCLE.BIN/
 .LSOverride
 .sass-cache
 .Spotlight-V100
+.tmp
 .Trashes
 .wafpickle-*
 act-tasks/tmp.*
