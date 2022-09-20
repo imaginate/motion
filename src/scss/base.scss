@@ -1,0 +1,36 @@
+//////////////////////////////////////////////////////////////////////////////
+/// BASE STYLES
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+@mixin base() {
+    html {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: $white;
+    }
+
+    body {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: $black;
+        background: $white;
+        font-family: $font-family;
+    }
+
+    main, div.main-wrapper {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
