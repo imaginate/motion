@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////////////////////
+/// MISCELLANEOUS MIXINS
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+/// BORDER RADIUS
+/// @param {Number|Size} $radius
+/// @output
+///   ```scss
+///   -webkit-border-radius: $radius;
+///   -moz-border-radius: $radius;
+///   -ms-border-radius: $radius;
+///   -o-border-radius: $radius;
+///   border-radius: $radius;
+///   ```
+@mixin border-radius($radius...) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
