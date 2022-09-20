@@ -1,0 +1,34 @@
+//////////////////////////////////////////////////////////////////////////////
+/// MEDIA QUERY MIXINS
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+/// MIN SCREEN WIDTH
+/// @param {Size} $width
+/// @output
+///   ```scss
+///   @media only screen and (min-width: $width) {
+///       // content
+///   }
+///   ```
+@mixin min-screen-width($width) {
+    @media only screen and (min-width: $width) {
+        @content
+    }
+}
+
+/// MAX SCREEN WIDTH
+/// @param {Size} $width
+/// @output
+///   ```scss
+///   @media only screen and (max-width: $width) {
+///       // content
+///   }
+///   ```
+@mixin max-screen-width($width) {
+    @media only screen and (max-width: $width) {
+        @content
+    }
+}
