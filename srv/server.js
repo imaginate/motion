@@ -12,10 +12,12 @@
 const process = require('process');
 /** @const {!Function} */
 const express = require('express');
+/** @const {!Function} */
+const cookieParser = require('cookie-parser');
 /** @const {!function(...string): string} */
-const resolve = require('path').resolve;
+const { resolve } = require('path');
 /** @const {!Object} */
-const get = require('node-vitals')('fs').get;
+const { get } = require('node-vitals')('fs');
 
 /** @const {string} */
 const WWW_DIRPATH = resolve('www');
@@ -24,12 +26,14 @@ const HTML_DIRPATH = resolve('srv/html').replace(/\/$/, '');
 /** @const {string} */
 const API_DIRPATH = resolve('srv/api').replace(/\/$/, '');
 /** @const {!Object} */
-const HTML_FILES = get.filepaths(HTML_DIRPATH);
+const HTML_FILES = get.filepaths(HTML_DIRPATH, { deep: true });
 /** @const {!Object} */
 const API_FILES = get.filepaths(API_DIRPATH, { deep: true });
 
 /** @const {!Object} */
 const app = express();
+
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
     res.redirect('/bikes');
@@ -38,8 +42,8 @@ app.get('/', (req, res) => {
 const EXT_PATT = /\.[^.]+$/;
 const INDEX_PATT = /\/?index$/;
 const ID_PATT = /\/<id>$/;
-const METHOD_PATT = /^.*\.(get|post|delete)\.[^.]+$/;
-const METHOD_TRIM_PATT = /\.(?:get|post|delete)$/;
+const METHOD_PATT = /^.*\.(head|get|post|delete)\.[^.]+$/;
+const METHOD_TRIM_PATT = /\.(?:head|get|post|delete)$/;
 
 for (const file of HTML_FILES) {
     const urlpath = '/' + file.replace(EXT_PATT, '').replace(INDEX_PATT, '');
