@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////////////////////////
+/// NAV BAR COMPONENT STYLES
+///
+/// @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+/// @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+//////////////////////////////////////////////////////////////////////////////
+
+@mixin nav-bar() {
+    nav.topnav {
+        display: table;
+        width: 244px;
+        padding: 0 0 10px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    a.topnav {
+        display: table-cell;
+        width: 120px;
+        padding: 5px 0;
+        margin: 0;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        color: $white;
+        background: $dark-green;
+        border: 1px solid $white;
+    }
+
+    @include min-screen-width(1200px) {
+        nav.topnav {
+            width: 304px;
+        }
+
+        a.topnav {
+            width: 150px;
+        }
+
+        a.topnav:hover, a.topnav:focus, a.topnav:active {
+            background: $green;
+        }
+    }
+}
+
+// vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
