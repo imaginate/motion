@@ -54,7 +54,7 @@ function downloadBikes(page, opts, db, done) {
             if (!isLastPage) {
                 downloadBikes(page + 1, opts, db, done);
             }
-            db.adds(bikes);
+            db.adds(bikes, false);
             if (isLastPage) {
                 done();
             }
