@@ -210,9 +210,9 @@ function newReserved(bike) {
     for (const [ fromKey, toKey ] of ranges) {
         const from = new DateOption(fromKey);
         const to = new DateOption(toKey);
-        for (let i = 1, date = from; date.compare(to) < 1; ++i) {
+        for (let date = from; date.compare(to) < 1;) {
             reserved.add(date.key());
-            date = new DateOption(date.year(), date.month(), date.day() + i);
+            date = new DateOption(date.year(), date.month(), date.day() + 1);
         }
     }
     return reserved;
