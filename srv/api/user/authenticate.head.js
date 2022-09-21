@@ -35,7 +35,7 @@ function headAuthenticate(req, res) {
             res.cookie('session', '', {
                 token: 'deleted',
                 path: '/',
-                expires: (new Date()).toUTCString()
+                expires: new Date()
             });
         }
     } else {
