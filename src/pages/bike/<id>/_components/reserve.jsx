@@ -6,6 +6,8 @@
  * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
  */
 
+/** @const {string} */
+import { SITE_URL } from '../../../../env.js';
 /** @const {!React} */
 import React from 'react';
 /** @const {!function} */
@@ -23,7 +25,7 @@ import DateOption from '../../../../helpers/date-option.js';
  * @param {!Object} props
  * @return {!ReactElement}
  */
-function Reserve({ bike, db }) {
+function Reserve({ bike, db, loggedin }) {
 
     /** @const {!Array<string>} */
     const [ dates, setDates ] = React.useState(() => db.dates());
@@ -111,6 +113,10 @@ function Reserve({ bike, db }) {
      * @return {void}
      */
     function handleReserveClick(event) {
+        if (!loggedin) {
+            window.location.href = SITE_URL + '/login';
+            return;
+        }
         if (!from || !to) {
             setSuccess(false);
             setFailure(true);
