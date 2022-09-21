@@ -17,7 +17,7 @@ import authenticateManager from '../../../helpers/authenticate-manager.js';
 /** @const {!function} */
 import makeLoginAttempt from '../_helpers/make-login-attempt.js';
 /** @const {!function} */
-import isValidEmail from '../_helpers/is-valid-email.js';
+import isValidEmail from '../../../helpers/is-valid-email.js';
 /** @const {!function} */
 import UserNavBar from '../../../components/user-nav-bar.jsx';
 /** @const {!function} */
