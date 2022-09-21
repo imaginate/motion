@@ -133,6 +133,8 @@ function Reserve({ bike, db, loggedin }) {
                 const newdates = db.dates();
                 setDates(newdates);
                 setDateset(new Set(newdates));
+                setFrom(null);
+                setTo(null);
                 setSuccess(true);
                 setFailure(false);
             }
