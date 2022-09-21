@@ -1,0 +1,344 @@
+html {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #00030e;
+  background: #ffffff;
+  font-family: Montserrat, Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+main, div.main-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+div.loadingbox {
+  display: block;
+  width: 100%;
+  height: 18px;
+  padding: 50px 0;
+  margin: 0;
+  text-align: center;
+}
+
+div.loading {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+div.loading div {
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #82d318;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  -moz-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  -ms-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  -o-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+div.loading div:nth-child(1) {
+  left: 0px;
+  -webkit-animation: loading1 0.6s infinite;
+  -moz-animation: loading1 0.6s infinite;
+  -ms-animation: loading1 0.6s infinite;
+  -o-animation: loading1 0.6s infinite;
+  animation: loading1 0.6s infinite;
+}
+
+div.loading div:nth-child(2) {
+  left: 0px;
+  -webkit-animation: loading2 0.6s infinite;
+  -moz-animation: loading2 0.6s infinite;
+  -ms-animation: loading2 0.6s infinite;
+  -o-animation: loading2 0.6s infinite;
+  animation: loading2 0.6s infinite;
+}
+
+div.loading div:nth-child(3) {
+  left: 41px;
+  -webkit-animation: loading2 0.6s infinite;
+  -moz-animation: loading2 0.6s infinite;
+  -ms-animation: loading2 0.6s infinite;
+  -o-animation: loading2 0.6s infinite;
+  animation: loading2 0.6s infinite;
+}
+
+div.loading div:nth-child(4) {
+  left: 82px;
+  -webkit-animation: loading3 0.6s infinite;
+  -moz-animation: loading3 0.6s infinite;
+  -ms-animation: loading3 0.6s infinite;
+  -o-animation: loading3 0.6s infinite;
+  animation: loading3 0.6s infinite;
+}
+
+@-webkit-keyframes loading1 {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-moz-keyframes loading1 {
+  0% {
+    -moz-transform: scale(0);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+
+@-ms-keyframes loading1 {
+  0% {
+    -ms-transform: scale(0);
+  }
+  100% {
+    -ms-transform: scale(1);
+  }
+}
+
+@-o-keyframes loading1 {
+  0% {
+    -o-transform: scale(0);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+
+@keyframes loading1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes loading2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(41px, 0);
+  }
+}
+
+@-moz-keyframes loading2 {
+  0% {
+    -moz-transform: translate(0, 0);
+  }
+  100% {
+    -moz-transform: translate(41px, 0);
+  }
+}
+
+@-ms-keyframes loading2 {
+  0% {
+    -ms-transform: translate(0, 0);
+  }
+  100% {
+    -ms-transform: translate(41px, 0);
+  }
+}
+
+@-o-keyframes loading2 {
+  0% {
+    -o-transform: translate(0, 0);
+  }
+  100% {
+    -o-transform: translate(41px, 0);
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(41px, 0);
+  }
+}
+
+@-webkit-keyframes loading3 {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+  }
+}
+
+@-moz-keyframes loading3 {
+  0% {
+    -moz-transform: scale(1);
+  }
+  100% {
+    -moz-transform: scale(0);
+  }
+}
+
+@-ms-keyframes loading3 {
+  0% {
+    -ms-transform: scale(1);
+  }
+  100% {
+    -ms-transform: scale(0);
+  }
+}
+
+@-o-keyframes loading3 {
+  0% {
+    -o-transform: scale(1);
+  }
+  100% {
+    -o-transform: scale(0);
+  }
+}
+
+@keyframes loading3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+nav.topnav {
+  display: table;
+  width: 244px;
+  padding: 0 0 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a.topnav {
+  display: table-cell;
+  width: 120px;
+  padding: 5px 0;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  background: #0ba012;
+  border: 1px solid #ffffff;
+}
+
+@media only screen and (min-width: 1200px) {
+  nav.topnav {
+    width: 304px;
+  }
+  a.topnav {
+    width: 150px;
+  }
+  a.topnav:hover, a.topnav:focus, a.topnav:active {
+    background: #82d318;
+  }
+}
+
+div.logbtns {
+  display: block;
+  padding: 10px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a.logbtn {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0;
+}
+
+button.logbtn {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 0;
+}
+
+h1.intro {
+  display: block;
+  padding: 10px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.login {
+  display: block;
+  width: 96%;
+  padding: 20px 2%;
+  margin: 0;
+}
+
+div.logincell {
+  display: block;
+  width: 280px;
+  padding: 5px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.logincell p {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.logincell p span.label {
+  font-weight: bold;
+}
+
+div.logincell p.success {
+  padding: 10px 0 0;
+  color: #0ba012;
+}
+
+div.logincell p.failure {
+  padding: 10px 0 0;
+  color: #d31882;
+}
+
+div.logincell label {
+  padding: 0 5px;
+}
+
+@media only screen and (min-width: 1200px) {
+  div.login {
+    width: 100%;
+    padding: 0;
+  }
+  div.logincell {
+    display: block;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+  div.logincell p {
+    font-size: 1.12em;
+  }
+}

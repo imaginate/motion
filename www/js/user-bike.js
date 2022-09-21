@@ -833,7 +833,8 @@
 
   function Reserve({
     bike,
-    db
+    db,
+    loggedin
   }) {
     /** @const {!Array<string>} */
     const [dates, setDates] = React__default["default"].useState(() => db.dates());
@@ -931,6 +932,11 @@
 
 
     function handleReserveClick(event) {
+      if (!loggedin) {
+        window.location.href = SITE_URL + '/login';
+        return;
+      }
+
       if (!from || !to) {
         setSuccess(false);
         setFailure(true);
@@ -948,6 +954,8 @@
           const newdates = db.dates();
           setDates(newdates);
           setDateset(new Set(newdates));
+          setFrom(null);
+          setTo(null);
           setSuccess(true);
           setFailure(false);
         }
@@ -1094,7 +1102,8 @@
       className: "bikecell rating"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5 from ", bike.rate_count, " reviews")), /*#__PURE__*/React__default["default"].createElement(Reserve, {
       bike: bike,
-      db: db
+      db: db,
+      loggedin: loggedin
     })));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
