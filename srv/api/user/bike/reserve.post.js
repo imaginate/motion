@@ -11,7 +11,7 @@
 /** @const {!function(...string): string} */
 const { resolve } = require('path');
 /** @const {!Object} */
-const { to } = require('node-vitals')('fs');
+const { to: vto } = require('node-vitals')('fs');
 /** @const {!function} */
 const authenticateUser = require('../../../helpers/authenticate-user.js');
 /** @const {!function} */
@@ -38,7 +38,7 @@ function postReserve(req, res) {
         return;
     }
 
-    const reserveReq = JSON.parse(req.body);
+    const reserveReq = req.body;
     const bikeID = reserveReq.bike_id;
     const bikes = require(BIKES_FILEPATH);
     if (typeof bikeID !== 'number' || bikeID < 1 || bikeID > bikes.length) {
@@ -73,7 +73,7 @@ function postReserve(req, res) {
         return;
     }
     bike.reserved.push([ from, to ]);
-    to.file(JSON.stringify(bikes, null, 4), BIKES_FILEPATH);
+    vto.file(JSON.stringify(bikes, null, 4), BIKES_FILEPATH);
 
     const reservations = require(RESERVATIONS_FILEPATH);
     reservations.push({
@@ -83,7 +83,7 @@ function postReserve(req, res) {
         from,
         to
     });
-    to.file(JSON.stringify(reservations, null, 4), RESERVATIONS_FILEPATH);
+    vto.file(JSON.stringify(reservations, null, 4), RESERVATIONS_FILEPATH);
 
     res.send();
 }
