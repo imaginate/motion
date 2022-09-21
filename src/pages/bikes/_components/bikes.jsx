@@ -159,7 +159,7 @@ function Bikes() {
         return (
             <>
                 <UserNavBar/>
-                <h1>Bike Rental</h1>
+                <h1 className="intro">Bike Rental</h1>
                 <Loading/>
             </>
         );
