@@ -14,7 +14,7 @@ const { resolve } = require('path');
 /** @const {string} */
 const BIKES_FILEPATH = resolve('.data/bikes.json');
 /** @const {!RegExp} */
-const ID_PATT = /^.*\/([0-9]+)\/?$/;
+const ID_PATT = /^.*\/([1-9][0-9]{0,9})\/?$/;
 
 /**
  * @param {!Request} req
