@@ -49,7 +49,7 @@ for (const file of HTML_FILES) {
     const urlpath = '/' + file.replace(EXT_PATT, '').replace(INDEX_PATT, '');
     const urlpatt = ID_PATT.test(urlpath)
         ? new RegExp('^' + urlpath.replace(ID_PATT, '')
-            + '/[0-9]+/?(?:\\?.*)?$')
+            + '/[1-9][0-9]{0,9}/?(?:\\?.*)?$')
         : null;
     const filepath = HTML_DIRPATH + '/' + file;
 
@@ -63,7 +63,7 @@ for (const file of API_FILES) {
         .replace(METHOD_TRIM_PATT, '');
     const urlpatt = ID_PATT.test(urlpath)
         ? new RegExp('^' + urlpath.replace(ID_PATT, '')
-            + '/[0-9]+/?(?:\\?.*)?$')
+            + '/[1-9][0-9]{0,9}/?(?:\\?.*)?$')
         : null;
     const method = file.replace(METHOD_PATT, '$1');
     const filepath = API_DIRPATH + '/' + file;
