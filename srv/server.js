@@ -28,12 +28,16 @@ const API_DIRPATH = resolve('srv/api').replace(/\/$/, '');
 /** @const {!Object} */
 const HTML_FILES = get.filepaths(HTML_DIRPATH, { deep: true });
 /** @const {!Object} */
-const API_FILES = get.filepaths(API_DIRPATH, { deep: true });
+const API_FILES = get.filepaths(API_DIRPATH, {
+    deep: true,
+    invalidNames: /^\./
+});
 
 /** @const {!Object} */
 const app = express();
 
 app.use(cookieParser());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.redirect('/bikes');
