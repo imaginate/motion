@@ -7,7 +7,7 @@
  */
 
 /** @const {!RegExp} */
-const DATE = /^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$/;
+const DATE = /^([2-9][0-9]{3})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$/;
 
 /**
  * A wrapper for the date options like `"to"` and `"from"`.
@@ -142,6 +142,16 @@ class DateOption {
      */
     key() {
         return this.year() + '-' + this.month() + '-' + this.day();
+    }
+
+    /**
+     * Creates a string for the date that requires six to eight digits,
+     * `"MM/DD/YYYY"` or `"M/D/YYYY"`.
+     *
+     * @return {string}
+     */
+    pretty() {
+        return this.month() + '/' + this.day() + '/' + this.year();
     }
 
     /**
