@@ -320,7 +320,7 @@
     const [badEmail, setBadEmail] = React__default["default"].useState(false);
     /** @const {boolean} */
 
-    const [badPwd, setBadPwd] = React__default["default"].useState(false);
+    const [badPassword, setBadPassword] = React__default["default"].useState(false);
     /** @const {string} */
 
     const [email, setEmail] = React__default["default"].useState('');
@@ -350,7 +350,14 @@
 
 
     function handleEmailChange(event) {
-      setEmail(event.target.value);
+      const val = event.target.value;
+      setEmail(val);
+
+      if (isValidEmail(val)) {
+        setBadEmail(false);
+      } else {
+        setBadEmail(true);
+      }
     }
     /**
      * @param {!Event} event
@@ -359,7 +366,14 @@
 
 
     function handlePasswordChange(event) {
-      setPassword(event.target.value);
+      const val = event.target.value;
+      setPassword(val);
+
+      if (val.length < 8) {
+        setBadPassword(true);
+      } else {
+        setBadPassword(false);
+      }
     }
     /**
      * @return {void}
@@ -367,38 +381,18 @@
 
 
     function handleLoginClick() {
-      setLoggingin(true);
-      const _email = email;
-      const _pwd = password;
-
-      if (!isValidEmail(_email)) {
-        setBadEmail(true);
-
-        if (_pwd.length < 8) {
-          setBadPwd(true);
-        }
-
-        setTimeout(() => {
-          setBadEmail(false);
-          setBadPwd(false);
-        }, 5000);
-        setLoggingin(false);
-        return;
-      } else if (_pwd.length < 8) {
-        setBadPwd(true);
-        setTimeout(() => setBadPwd(false), 5000);
-        setLoggingin(false);
+      if (badEmail || badPassword) {
         return;
       }
 
-      makeLoginAttempt(_email, _pwd, success => {
+      setLoggingin(true);
+      makeLoginAttempt(email, password, success => {
         if (success) {
           authenticateManager((_, isManager) => {
             window.location.replace(isManager ? SITE_URL + '/manage/bikes' : SITE_URL + '/bikes');
           });
         } else {
           setBadLogin(true);
-          setTimeout(() => setBadLogin(false), 5000);
           setLoggingin(false);
         }
       });
@@ -433,9 +427,9 @@
       id: "password",
       placeholder: "Password",
       onChange: handlePasswordChange
-    }), badPwd && /*#__PURE__*/React__default["default"].createElement("p", {
+    }), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Must be 8+ characters long")), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Must Be 8+ Characters Long")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "logincell loginbtn"
     }, loggingin ? /*#__PURE__*/React__default["default"].createElement("p", {
       className: "loggingin"
@@ -445,7 +439,7 @@
       onClick: handleLoginClick
     }, "Login"), badLogin && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid email or password"))));
+    }, "Invalid Email Or Password"))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
