@@ -2140,7 +2140,7 @@
       className: "bikecell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.location)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5")))));
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5")))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 

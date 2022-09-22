@@ -1057,7 +1057,7 @@
       className: "failure"
     }, "Invalid Location")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell rating"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5 from ", bike.rate_count, " reviews")));
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5 from ", bike.rate_count, " reviews")));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 

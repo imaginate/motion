@@ -1933,7 +1933,8 @@
       id: "model",
       className: "text",
       list: "modeldatalist",
-      onChange: handleModelChange
+      onChange: handleModelChange,
+      placeholder: "Model"
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "modeldatalist"
     }, models.map((model, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1948,7 +1949,8 @@
       id: "color",
       className: "text",
       list: "colordatalist",
-      onChange: handleColorChange
+      onChange: handleColorChange,
+      placeholder: "Color"
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "colordatalist"
     }, colors.map((color, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1963,7 +1965,8 @@
       id: "location",
       className: "text",
       list: "locationdatalist",
-      onChange: handleLocationChange
+      onChange: handleLocationChange,
+      placeholder: "Location"
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "locationdatalist"
     }, locations.map((location, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1978,7 +1981,8 @@
       id: "rating",
       className: "text",
       list: "ratingdatalist",
-      onChange: handleRatingChange
+      onChange: handleRatingChange,
+      placeholder: "Rating"
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "ratingdatalist"
     }, ratings.map((rating, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -2022,7 +2026,7 @@
       className: "bikecell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.location)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5")))));
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5")))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 

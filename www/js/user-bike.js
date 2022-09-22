@@ -1242,7 +1242,7 @@
       className: "label"
     }, "Location:"), /*#__PURE__*/React__default["default"].createElement("span", null, " ", bike.location))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell rating"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5 from ", bike.rate_count, " reviews")), /*#__PURE__*/React__default["default"].createElement(Reserve, {
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5 from ", bike.rate_count, " reviews")), /*#__PURE__*/React__default["default"].createElement(Reserve, {
       bike: bike,
       db: db,
       loggedin: loggedin
