@@ -169,6 +169,27 @@
 
   /**
    * ---------------------------------------------------------------------------
+   * IS VALID NAME INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const NAME_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidNameInput(val) {
+      return !!val && typeof val === 'string' && NAME_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
    * USER NAV BAR COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
@@ -320,10 +341,19 @@
     const [emptyPassword, setEmptyPassword] = React__default["default"].useState(false);
     /** @const {boolean} */
 
+    const [badFirstName, setBadFirstName] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [badLastName, setBadLastName] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
     const [badEmail, setBadEmail] = React__default["default"].useState(false);
     /** @const {boolean} */
 
     const [badPassword, setBadPassword] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [invalidField, setInvalidField] = React__default["default"].useState(false);
     /** @const {boolean} */
 
     const [failRegistration, setFailRegistration] = React__default["default"].useState(false);
@@ -362,7 +392,16 @@
 
 
     function handleFirstNameChange(event) {
-      setFirstName(event.target.value);
+      const val = event.target.value;
+      setFirstName(val);
+      setEmptyFirstName(false);
+      setBadFirstName(false);
+
+      if (!val) {
+        setEmptyFirstName(true);
+      } else if (!isValidNameInput(val)) {
+        setBadFirstName(true);
+      }
     }
     /**
      * @param {!Event} event
@@ -371,7 +410,16 @@
 
 
     function handleLastNameChange(event) {
-      setLastName(event.target.value);
+      const val = event.target.value;
+      setLastName(val);
+      setEmptyLastName(false);
+      setBadLastName(false);
+
+      if (!val) {
+        setEmptyLastName(true);
+      } else if (!isValidNameInput(val)) {
+        setBadLastName(true);
+      }
     }
     /**
      * @param {!Event} event
@@ -380,7 +428,16 @@
 
 
     function handleEmailChange(event) {
-      setEmail(event.target.value);
+      const val = event.target.value;
+      setEmail(val);
+      setEmptyEmail(false);
+      setBadEmail(false);
+
+      if (!val) {
+        setEmptyEmail(true);
+      } else if (!isValidEmail(val)) {
+        setBadEmail(true);
+      }
     }
     /**
      * @param {!Event} event
@@ -389,7 +446,16 @@
 
 
     function handlePasswordChange(event) {
-      setPassword(event.target.value);
+      const val = event.target.value;
+      setPassword(val);
+      setEmptyPassword(false);
+      setBadPassword(false);
+
+      if (!val) {
+        setEmptyPassword(true);
+      } else if (val.length < 8) {
+        setBadPassword(true);
+      }
     }
     /**
      * @return {void}
@@ -397,52 +463,15 @@
 
 
     function handleRegisterClick() {
-      setRegistering(true);
-      let invalid = false;
+      setInvalidField(false);
+      setFailRegistration(false);
 
-      if (!firstName) {
-        setEmptyFirstName(true);
-        invalid = true;
-      }
-
-      if (!lastName) {
-        setEmptyLastName(true);
-        invalid = true;
-      }
-
-      if (!email) {
-        setEmptyEmail(true);
-        invalid = true;
-      }
-
-      if (!password) {
-        setEmptyPassword(true);
-        invalid = true;
-      }
-
-      if (email && !isValidEmail(email)) {
-        setBadEmail(true);
-        invalid = true;
-      }
-
-      if (password && password.length < 8) {
-        setBadPassword(true);
-        invalid = true;
-      }
-
-      if (invalid) {
-        setTimeout(() => {
-          setEmptyFirstName(false);
-          setEmptyLastName(false);
-          setEmptyEmail(false);
-          setEmptyPassword(false);
-          setBadEmail(false);
-          setBadPassword(false);
-        }, 5000);
-        setRegistering(false);
+      if (emptyFirstName || emptyLastName || emptyEmail || emptyPassword || badFirstName || badLastName || badEmail || badPassword) {
+        setInvalidField(true);
         return;
       }
 
+      setRegistering(true);
       makeRegistration({
         first_name: firstName,
         last_name: lastName,
@@ -453,7 +482,6 @@
           window.location.replace(SITE_URL + '/bikes');
         } else {
           setFailRegistration(true);
-          setTimeout(() => setFailRegistration(false), 5000);
           setRegistering(false);
         }
       });
@@ -479,28 +507,44 @@
       id: "firstname",
       placeholder: "First Name",
       onChange: handleFirstNameChange
-    })), /*#__PURE__*/React__default["default"].createElement("div", {
+    }), emptyFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "First Name Is Required"), badFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid First Name")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell lastname"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "text",
       id: "lastname",
       placeholder: "Last Name",
       onChange: handleLastNameChange
-    })), /*#__PURE__*/React__default["default"].createElement("div", {
+    }), emptyLastName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Last Name Is Required"), badLastName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Last Name")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell email"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "email",
       id: "email",
       placeholder: "Email",
       onChange: handleEmailChange
-    })), /*#__PURE__*/React__default["default"].createElement("div", {
+    }), emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Email Is Required"), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Email")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell password"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "password",
       id: "password",
       placeholder: "Password",
       onChange: handlePasswordChange
-    })), /*#__PURE__*/React__default["default"].createElement("div", {
+    }), emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Password Is Required"), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Password Must Be 8+ Characters Long")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell registerbtn"
     }, registering ? /*#__PURE__*/React__default["default"].createElement("p", {
       className: "registering"
@@ -508,19 +552,9 @@
       id: "register",
       className: "register",
       onClick: handleRegisterClick
-    }, "Register"), emptyFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Register"), invalidField && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "First Name Is Required"), emptyLastName && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "failure"
-    }, "Last Name Is Required"), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "failure"
-    }, "Invalid Email"), emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "failure"
-    }, "Email Is Required"), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "failure"
-    }, "Password Must Be 8+ Characters Long"), emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "failure"
-    }, "Password Is Required"), failRegistration && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Invalid Field"), failRegistration && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Registration Failed"))));
   }

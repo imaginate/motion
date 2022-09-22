@@ -738,7 +738,7 @@
        */
       constructor() {
           this._url = new URL(window.location.href);
-          this._params = new URLSearchParams(this.url.search);
+          this._params = new URLSearchParams(this._url.search);
           this._vals = Object.create(null);
           const tmp = Object.create(null);
           for (const [ key, val ] of this._params) {
@@ -1912,6 +1912,7 @@
       className: "date",
       min: datespan[0].strictkey(),
       max: fromMaxDate,
+      value: opts.has('from') ? opts.from().strictkey() : '',
       onChange: handleFromChange
     })), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
@@ -1923,6 +1924,7 @@
       className: "date",
       min: toMinDate,
       max: datespan[1].strictkey(),
+      value: opts.has('to') ? opts.to().strictkey() : '',
       onChange: handleToChange
     })), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
@@ -1933,8 +1935,9 @@
       id: "model",
       className: "text",
       list: "modeldatalist",
-      onChange: handleModelChange,
-      placeholder: "Model"
+      placeholder: "Model",
+      value: opts.has('model') ? opts.model() : '',
+      onChange: handleModelChange
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "modeldatalist"
     }, models.map((model, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1949,8 +1952,9 @@
       id: "color",
       className: "text",
       list: "colordatalist",
-      onChange: handleColorChange,
-      placeholder: "Color"
+      placeholder: "Color",
+      value: opts.has('color') ? opts.color() : '',
+      onChange: handleColorChange
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "colordatalist"
     }, colors.map((color, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1965,8 +1969,9 @@
       id: "location",
       className: "text",
       list: "locationdatalist",
-      onChange: handleLocationChange,
-      placeholder: "Location"
+      placeholder: "Location",
+      value: opts.has('location') ? opts.location() : '',
+      onChange: handleLocationChange
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "locationdatalist"
     }, locations.map((location, i) => /*#__PURE__*/React__default["default"].createElement("option", {
@@ -1981,8 +1986,9 @@
       id: "rating",
       className: "text",
       list: "ratingdatalist",
-      onChange: handleRatingChange,
-      placeholder: "Rating"
+      placeholder: "Rating",
+      value: opts.has('rating') ? opts.rating() : '',
+      onChange: handleRatingChange
     }), /*#__PURE__*/React__default["default"].createElement("datalist", {
       id: "ratingdatalist"
     }, ratings.map((rating, i) => /*#__PURE__*/React__default["default"].createElement("option", {

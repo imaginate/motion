@@ -231,7 +231,7 @@ div.loading div:nth-child(4) {
 
 nav.topnav {
   display: table;
-  width: 244px;
+  width: 300px;
   padding: 0 0 10px;
   margin: 0 auto;
   text-align: center;
@@ -239,7 +239,7 @@ nav.topnav {
 
 a.topnav {
   display: table-cell;
-  width: 120px;
+  width: 98px;
   padding: 5px 0;
   margin: 0;
   text-decoration: none;
@@ -252,7 +252,7 @@ a.topnav {
 
 @media only screen and (min-width: 1200px) {
   nav.topnav {
-    width: 304px;
+    width: 456px;
   }
   a.topnav {
     width: 150px;
@@ -325,14 +325,14 @@ div.filter label, div.filter input {
   }
 }
 
-div.bikelist {
+div.userlist {
   display: block;
   width: 96%;
   padding: 20px 2%;
   margin: 0;
 }
 
-div.bikelist div.bikerow {
+div.userlist div.userrow {
   display: block;
   width: 100%;
   padding: 0;
@@ -340,7 +340,7 @@ div.bikelist div.bikerow {
   text-align: center;
 }
 
-p.nobikes {
+p.nousers {
   display: block;
   width: 280px;
   padding: 20px 0;
@@ -348,7 +348,7 @@ p.nobikes {
   text-align: center;
 }
 
-div.bike {
+div.user {
   display: block;
   width: 280px;
   padding: 20px 0;
@@ -356,7 +356,7 @@ div.bike {
   text-align: center;
 }
 
-div.bike a.bikelink {
+div.user a.userlink {
   display: block;
   width: 100%;
   padding: 20px 0;
@@ -373,73 +373,77 @@ div.bike a.bikelink {
   border-radius: 5px;
 }
 
-div.bike a.bikelink:hover, div.bike a.bikelink:focus, div.bike a.bikelink:active {
+div.user a.userlink:hover, div.user a.userlink:focus, div.user a.userlink:active {
   text-decoration: none;
   color: #00030e;
 }
 
-div.bike a.bikelink:active {
+div.user a.userlink:active {
   box-shadow: 0 0 5px 1px #82d318;
 }
 
-div.bike div.bikecell {
+div.user div.usercell {
   display: block;
   padding: 5px 0 0 0;
 }
 
-div.bike div.bikecell p {
+div.user div.usercell p {
   display: inline-block;
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
-div.bike div.bikecell:nth-child(1) {
+div.user div.usercell:nth-child(1) {
   padding: 0;
 }
 
 @media only screen and (min-width: 1200px) {
-  div.bikelist {
+  div.userlist {
     width: 100%;
     padding: 30px 0;
     text-align: center;
   }
-  p.nobikes {
+  p.nousers {
     padding: 10px 0;
     font-size: 1.12em;
   }
-  div.bike {
+  div.user {
     display: table;
-    width: 970px;
+    width: 1070px;
     padding: 10px 0;
     margin: 0 auto;
   }
-  div.bike a.bikelink {
-    width: 900px;
+  div.user a.userlink {
+    width: 1000px;
     padding: 25px 35px;
   }
-  div.bike a.bikelink:hover, div.bike a.bikelink:focus, div.bike a.bikelink:active {
+  div.user a.userlink:hover, div.user a.userlink:focus, div.user a.userlink:active {
     box-shadow: 0 0 5px 1px #82d318;
   }
-  div.bike div.bikecell {
+  div.user div.usercell {
     display: table-cell;
     padding: 0;
     text-align: left;
     vertical-align: middle;
   }
-  div.bike div.bikecell p {
+  div.user div.usercell p {
     font-size: 1.12em;
   }
-  div.bike div.bikecell:nth-child(1) {
-    width: 200px;
+  div.user div.usercell:nth-child(1) {
+    width: 100px;
+    text-align: left;
   }
-  div.bike div.bikecell:nth-child(2) {
-    width: 150px;
+  div.user div.usercell:nth-child(2) {
+    width: 230px;
   }
-  div.bike div.bikecell:nth-child(3) {
-    width: 450px;
+  div.user div.usercell:nth-child(3) {
+    width: 230px;
   }
-  div.bike div.bikecell:nth-child(4) {
+  div.user div.usercell:nth-child(4) {
+    width: 340px;
+  }
+  div.user div.usercell:nth-child(5) {
     width: 90px;
     padding-right: 10px;
     text-align: right;
