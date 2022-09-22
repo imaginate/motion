@@ -120,8 +120,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     type="text"
                     id="id"
                     className="text"
-                    onChange={handleIDChange}
                     placeholder="User ID"
+                    value={opts.has('id') ? opts.id() : ''}
+                    onChange={handleIDChange}
                 />
             </div>
             <div className="filter">
@@ -131,6 +132,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="first"
                     className="text"
                     placeholder="First Name"
+                    value={opts.has('first') ? opts.first() : ''}
                     onChange={handleFirstChange}
                 />
             </div>
@@ -141,6 +143,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="last"
                     className="text"
                     placeholder="Last Name"
+                    value={opts.has('last') ? opts.last() : ''}
                     onChange={handleLastChange}
                 />
             </div>
@@ -151,13 +154,18 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="email"
                     className="text"
                     placeholder="Email"
+                    value={opts.has('email') ? opts.email() : ''}
                     onChange={handleEmailChange}
                 />
             </div>
             <div className="filter">
                 <label htmlFor="level">Authority:</label>
-                <select id="level" onChange={handleLevelChange}>
-                    <option value='' selected>Users &#38; Managers</option>
+                <select
+                    id="level"
+                    onChange={handleLevelChange}
+                    value={opts.has('level') ? opts.level() : ''}
+                >
+                    <option value=''>Users &#38; Managers</option>
                     <option value='1'>Users Only</option>
                     <option value='2'>Managers Only</option>
                 </select>

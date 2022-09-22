@@ -185,8 +185,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     type="text"
                     id="id"
                     className="text"
-                    onChange={handleIDChange}
                     placeholder="Bike ID"
+                    value={opts.has('id') ? opts.id() : ''}
+                    onChange={handleIDChange}
                 />
             </div>
             <div className="filter">
@@ -197,6 +198,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="date"
                     min={datespan[0].strictkey()}
                     max={fromMaxDate}
+                    value={opts.has('from') ? opts.from().strictkey() : ''}
                     onChange={handleFromChange}
                 />
             </div>
@@ -208,6 +210,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="date"
                     min={toMinDate}
                     max={datespan[1].strictkey()}
+                    value={opts.has('to') ? opts.to().strictkey() : ''}
                     onChange={handleToChange}
                 />
             </div>
@@ -218,8 +221,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="model"
                     className="text"
                     list="modeldatalist"
-                    onChange={handleModelChange}
                     placeholder="Model"
+                    value={opts.has('model') ? opts.model() : ''}
+                    onChange={handleModelChange}
                 />
                 <datalist id="modeldatalist">
                     {models.map((model, i) => (
@@ -234,8 +238,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="color"
                     className="text"
                     list="colordatalist"
-                    onChange={handleColorChange}
                     placeholder="Color"
+                    value={opts.has('color') ? opts.color() : ''}
+                    onChange={handleColorChange}
                 />
                 <datalist id="colordatalist">
                     {colors.map((color, i) => (
@@ -250,8 +255,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="location"
                     className="text"
                     list="locationdatalist"
-                    onChange={handleLocationChange}
                     placeholder="Location"
+                    value={opts.has('location') ? opts.location() : ''}
+                    onChange={handleLocationChange}
                 />
                 <datalist id="locationdatalist">
                     {locations.map((location, i) => (
@@ -266,8 +272,9 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     id="rating"
                     className="text"
                     list="ratingdatalist"
-                    onChange={handleRatingChange}
                     placeholder="Rating"
+                    value={opts.has('rating') ? opts.rating() : ''}
+                    onChange={handleRatingChange}
                 />
                 <datalist id="ratingdatalist">
                     {ratings.map((rating, i) => (
