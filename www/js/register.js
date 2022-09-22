@@ -350,7 +350,7 @@
 
     function handleAuthenticateComplete(loggedin, isManager) {
       if (loggedin) {
-        window.location.replace(isManager ? SITE_URL + '/manager/bikes' : SITE_URL + '/bikes');
+        window.location.replace(isManager ? SITE_URL + '/manage/bikes' : SITE_URL + '/bikes');
       }
 
       setAuthenticated(true);
