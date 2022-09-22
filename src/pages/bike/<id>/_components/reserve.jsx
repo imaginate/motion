@@ -15,7 +15,7 @@ import makeUniqueID from '../../../../helpers/make-unique-id.js';
 /** @const {!function} */
 import makeReservation from '../_helpers/make-reservation.js';
 /** @const {!function} */
-import isValidDateInput from '../../../../helpers/valid-date-input.js';
+import isValidDateInput from '../../../../helpers/is-valid-date-input.js';
 /** @const {!DateOption} */
 import DateOption from '../../../../helpers/date-option.js';
 
