@@ -3,9 +3,9 @@
         "id": 1,
         "first_name": "Mei",
         "last_name": "Dunkerk",
-        "email": "mdunkerk0@hugedomains.com",
+        "email": "foo@bar.com",
         "manager": true,
-        "password": "KmO2Mnuvn"
+        "password": "00000000"
     },
     {
         "id": 2,
@@ -27,9 +27,9 @@
         "id": 4,
         "first_name": "Barbey",
         "last_name": "Bengoechea",
-        "email": "bbengoechea3@ning.com",
+        "email": "foo2@bar.com",
         "manager": false,
-        "password": "JTINocqYJ"
+        "password": "00000000"
     },
     {
         "id": 5,
