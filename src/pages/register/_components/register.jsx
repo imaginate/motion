@@ -32,8 +32,6 @@ function Register() {
 
     /** @const {boolean} */
     const [ authenticated, setAuthenticated ] = React.useState(false);
-    /** @const {boolean} */
-    const [ loggedin, setLoggedin ] = React.useState(false);
 
     /** @const {boolean} */
     const [ registering, setRegistering ] = React.useState(false);
@@ -77,7 +75,6 @@ function Register() {
                 : SITE_URL + '/bikes'
             );
         }
-        setLoggedin(loggedin);
         setAuthenticated(true);
     }
 
@@ -173,13 +170,6 @@ function Register() {
         });
     }
 
-    /**
-     * @return {void}
-     */
-    function handleLogout() {
-        setLoggedin(false);
-    }
-
     if (!authenticated) {
         return (
             <>
@@ -193,7 +183,7 @@ function Register() {
     return (
         <>
             <UserNavBar/>
-            <LogButtons loggedin={loggedin} handleLogout={handleLogout}/>
+            <LogButtons loggedin={false} handleLogout={null}/>
             <h1 className="intro">Register</h1>
             <div className="register">
                 <div className="registercell firstname">

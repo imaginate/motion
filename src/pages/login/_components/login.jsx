@@ -33,8 +33,6 @@ function Login() {
     /** @const {boolean} */
     const [ authenticated, setAuthenticated ] = React.useState(false);
     /** @const {boolean} */
-    const [ loggedin, setLoggedin ] = React.useState(false);
-    /** @const {boolean} */
     const [ loggingin, setLoggingin ] = React.useState(false);
     /** @const {boolean} */
     const [ badLogin, setBadLogin ] = React.useState(false);
@@ -63,7 +61,6 @@ function Login() {
                 : SITE_URL + '/bikes'
             );
         }
-        setLoggedin(loggedin);
         setAuthenticated(true);
     }
 
@@ -123,13 +120,6 @@ function Login() {
         });
     }
 
-    /**
-     * @return {void}
-     */
-    function handleLogout() {
-        setLoggedin(false);
-    }
-
     if (!authenticated) {
         return (
             <>
@@ -143,7 +133,7 @@ function Login() {
     return (
         <>
             <UserNavBar/>
-            <LogButtons loggedin={loggedin} handleLogout={handleLogout}/>
+            <LogButtons loggedin={false} handleLogout={null}/>
             <h1 className="intro">Login</h1>
             <div className="login">
                 <div className="logincell email">
