@@ -12,7 +12,7 @@
 const { resolve } = require('path');
 /** @const {!Object} */
 const { to } = require('node-vitals')('fs');
-/** @const {!function(...string): string} */
+/** @const {!function} */
 const { randomBytes } = require('crypto');
 /** @const {!function(*): boolean} */
 const isValidEmail = require('../../helpers/is-valid-email.js');
@@ -32,19 +32,17 @@ const SESSIONS_FILEPATH = resolve('.data/sessions.json');
  */
 function postLogin(req, res) {
 
-    const loginReq = req.body;
-    const users = require(USERS_FILEPATH);
-
-    if (!isValidEmail(loginReq.email)) {
+    if (!isValidEmail(req.body.email)) {
         res.status(401);
         res.send();
         return;
     }
 
+    const users = require(USERS_FILEPATH);
     let sessionUser = null;
     for (const user of users) {
-        if (user.email === loginReq.email) {
-            if (user.password === loginReq.password) {
+        if (user.email === req.body.email) {
+            if (user.password === req.body.password) {
                 sessionUser = user;
             }
             break;
