@@ -27,7 +27,7 @@ import isValidEmailInput from '../../../../helpers/is-valid-email.js';
 /** @const {!RegExp} */
 const TAB_PATT = /^[0-9]+$/;
 /** @const {!RegExp} */
-const LEVEL_PATT = /^[012]$/;
+const LEVEL_PATT = /^[12]$/;
 
 /**
  * The valid page option keys and their value validation methods.
