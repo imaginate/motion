@@ -15,7 +15,7 @@ import makeUniqueID from '../../../../helpers/make-unique-id.js';
 /** @const {!function} */
 import makeReservation from '../_helpers/make-reservation.js';
 /** @const {!function} */
-import validDateInput from '../_helpers/valid-date-input.js';
+import isValidDateInput from '../../../../helpers/valid-date-input.js';
 /** @const {!DateOption} */
 import DateOption from '../../../../helpers/date-option.js';
 
@@ -48,7 +48,7 @@ function Reserve({ bike, db, loggedin }) {
      */
     function handleFromChange(event) {
         const input = event.target;
-        const newfrom = input.value && validDateInput(input.value)
+        const newfrom = input.value && isValidDateInput(input.value)
             ? new DateOption(input.value)
             : null;
         if (!newfrom || !dateset.has(newfrom.strictkey()) || (
@@ -81,7 +81,7 @@ function Reserve({ bike, db, loggedin }) {
      */
     function handleToChange(event) {
         const input = event.target;
-        const newto = input.value && validDateInput(input.value)
+        const newto = input.value && isValidDateInput(input.value)
             ? new DateOption(input.value)
             : null;
         if (!newto || !dateset.has(newto.strictkey()) || (
