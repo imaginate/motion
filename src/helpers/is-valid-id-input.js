@@ -14,6 +14,9 @@ const ID_PATT = /^[1-9][0-9]{0,9}$/;
  * @return {boolean}
  */
 function isValidIDInput(input) {
+    if (typeof input === 'number') {
+        input = String(input);
+    }
     return !!input && typeof input === 'string' && ID_PATT.test(input);
 }
 
