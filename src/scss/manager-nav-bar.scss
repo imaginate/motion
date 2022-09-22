@@ -8,7 +8,7 @@
 @mixin manager-nav-bar() {
     nav.topnav {
         display: table;
-        width: 244px;
+        width: 300px;
         padding: 0 0 10px;
         margin: 0 auto;
         text-align: center;
@@ -16,7 +16,7 @@
 
     a.topnav {
         display: table-cell;
-        width: 120px;
+        width: 98px;
         padding: 5px 0;
         margin: 0;
         text-decoration: none;
@@ -29,7 +29,7 @@
 
     @include min-screen-width(1200px) {
         nav.topnav {
-            width: 304px;
+            width: 456px;
         }
 
         a.topnav {
