@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{> meta }}
+        <title>{{ meta.title }}</title>
+        <meta name="description" content="{{ meta.descr }}" />
+        <link href="{{ url }}/css/{{ page }}.css" rel="stylesheet" type="text/css" />
+        {{> react }}
+    </head>
+    <body>
+        <main></main>
+        <script src="{{ url }}/js/{{ page }}.js"></script>
+    </body>
+</html>
