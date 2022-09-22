@@ -19,23 +19,21 @@ import logout from '../helpers/logout.js';
  * @param {!Object} props
  * @return {!ReactElement}
  */
-function LogButtons(props) {
+function LogButtons({ loggedin, handleLogout }) {
 
     /**
      * @return {void}
      */
-    function handleLogout() {
-        logout();
-        props.handleLogout();
+    function handleLogoutClick() {
+        logout(handleLogout);
     }
 
-    if (props.loggedin) {
+    if (loggedin) {
         return (
             <div className="logbtns">
                 <button
-                    id="logout"
                     className="logbtn"
-                    onClick={handleLogout}
+                    onClick={handleLogoutClick}
                 >Logout</button>
             </div>
         );
@@ -44,10 +42,10 @@ function LogButtons(props) {
     return (
         <div className="logbtns">
             <a href={SITE_URL + '/login'} className="logbtn">
-                <button id="login" className="logbtn">Login</button>
+                <button className="logbtn">Login</button>
             </a>
             <a href={SITE_URL + '/register'} className="logbtn">
-                <button id="register" className="logbtn">Register</button>
+                <button className="logbtn">Register</button>
             </a>
         </div>
     );
