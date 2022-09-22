@@ -50,7 +50,7 @@ function downloadUsers(page, opts, db, done) {
             }
             return res.json();
         })
-        .then(bikes => {
+        .then(users => {
             if (!isLastPage) {
                 downloadUsers(page + 1, opts, db, done);
             }
