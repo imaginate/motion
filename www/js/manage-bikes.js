@@ -158,82 +158,148 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * VALID OPTION INPUTS OBJECT
+   * IS VALID ID INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const ID_PATT = /^[1-9][0-9]{0,9}$/;
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidIDInput(input) {
+      if (typeof input === 'number') {
+          input = String(input);
+      }
+      return !!input && typeof input === 'string' && ID_PATT.test(input);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS DATE INSTANCE HELPER
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
 
   /**
-   * @typedef {{
-   *     tab: !function(string): boolean,
-   *     id: !function(string): boolean,
-   *     from: !function(string): boolean,
-   *     to: !function(string): boolean,
-   *     model: !function(string): boolean,
-   *     color: !function(string): boolean,
-   *     location: !function(string): boolean,
-   *     rating: !function(string): boolean
-   * }} ValidOptionInputs
-   */
-
-  /** @const {!RegExp} */
-  const TAB = /^[0-9]+$/;
-  /** @const {!RegExp} */
-  const ID = /^[1-9][0-9]{0,9}$/;
-  /** @const {!RegExp} */
-  const DATE$1 = /^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$/;
-  /** @const {!RegExp} */
-  const MODEL = /^[a-zA-Z0-9](?:[a-zA-Z0-9- ,']{0,30}[a-zA-Z0-9])?$/;
-  /** @const {!RegExp} */
-  const COLOR = /^[a-zA-Z0-9](?:[a-zA-Z0-9- ,']{0,14}[a-zA-Z0-9])?$/;
-  /** @const {!RegExp} */
-  const LOCATION = /^[a-zA-Z0-9](?:[a-zA-Z0-9- ,']{0,62}[a-zA-Z0-9])?$/;
-  /** @const {!RegExp} */
-  const RATING = /^[1-5]$/;
-
-  /**
-   * The valid page option keys and their value validation methods.
-   *
-   * @const {!ValidOptionInputs}
-   */
-  const VALID_OPTION_INPUTS = Object.create(null);
-  VALID_OPTION_INPUTS.tab = validTabInput;
-  VALID_OPTION_INPUTS.id = validIDInput;
-  VALID_OPTION_INPUTS.from = validDateInput;
-  VALID_OPTION_INPUTS.to = validDateInput;
-  VALID_OPTION_INPUTS.model = validModelInput;
-  VALID_OPTION_INPUTS.color = validColorInput;
-  VALID_OPTION_INPUTS.location = validLocationInput;
-  VALID_OPTION_INPUTS.rating = validRatingInput;
-
-  /**
-   * @param {string} input
+   * @param {*} val
    * @return {boolean}
    */
-  function validTabInput(input) {
-      return TAB.test(input);
+  function isDateInstance(val) {
+      return !!val && typeof val === 'object' && val instanceof Date;
   }
 
-  /**
-   * @param {string} input
-   * @return {boolean}
-   */
-  function validIDInput(input) {
-      return ID.test(input);
-  }
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
   /**
-   * @param {string} input
+   * ---------------------------------------------------------------------------
+   * IS VALID DATE STRING HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const DATE_PATT$1 = /^[2-9][0-9]{3}-(?:1[0-2]|0?[1-9])-(?:3[01]|[12][0-9]|0?[1-9])$/;
+  /** @const {!RegExp} */
+  const STRICT_DATE_PATT = /^[2-9][0-9]{3}-(?:1[0-2]|0[1-9])-(?:3[01]|[12][0-9]|0[1-9])$/;
+
+  /**
+   * @param {*} date
+   * @param {boolean=} strict = `false`
    * @return {boolean}
    */
-  function validDateInput(input) {
-      if (!DATE$1.test(input)) {
+  function isValidDateString(date, strict = false) {
+      return !!date && typeof date === 'string' && (strict
+          ? STRICT_DATE_PATT.test(date)
+          : DATE_PATT$1.test(date)
+      );
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * DATE STRING TO NUMBERS HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const DATE_PATT = /^([2-9][0-9]{3})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$/;
+
+  /**
+   * @param {string} date
+   *     Must be a valid date string.
+   * @return {!Array<number>}
+   *     Returns an array with the year, month, and day of the month in order.
+   *     Note that the month and day are one-based, `1` - `12` and `1` - `31`
+   *     respectively.
+   */
+  function dateStringToNumbers(date) {
+      return [
+          +date.replace(DATE_PATT, '$1'),
+          +date.replace(DATE_PATT, '$2'),
+          +date.replace(DATE_PATT, '$3')
+      ];
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * DATE INSTANCE TO NUMBERS HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @param {!Date} date
+   * @return {!Array<number>}
+   *     Returns an array with the year, month, and day of the month in order.
+   *     Note that the month and day are one-based, `1` - `12` and `1` - `31`
+   *     respectively.
+   */
+  function dateInstanceToNumbers(date) {
+      return [
+          date.getFullYear(),
+          date.getMonth() + 1,
+          date.getDate()
+      ];
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID DATE INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidDateInput(input) {
+      if (isValidDateString(input)) {
+          input = dateStringToNumbers(input);
+      } else if (isDateInstance(input)) {
+          input = dateInstanceToNumbers(input);
+      } else {
           return false;
       }
-      const inyear = +input.replace(DATE$1, '$1');
-      const inmonth = +input.replace(DATE$1, '$2');
-      const inday = +input.replace(DATE$1, '$3');
+      const [ inyear, inmonth, inday ] = input;
       if (inyear < 2022
           || inmonth < 1 || inmonth > 12
           || inday < 1 || inday > 31
@@ -257,36 +323,140 @@
       return inday === indate.getDate() && (inmonth !== month || inday > day);
   }
 
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
   /**
-   * @param {string} input
+   * ---------------------------------------------------------------------------
+   * IS VALID MODEL INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const MODEL_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
    * @return {boolean}
    */
-  function validModelInput(input) {
-      return MODEL.test(input);
+  function isValidModelInput(val) {
+      return !!val && typeof val === 'string' && MODEL_PATT.test(val);
   }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID COLOR INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const COLOR_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,14}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidColorInput(val) {
+      return !!val && typeof val === 'string' && COLOR_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID LOCATION INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const LOCATION_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,62}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidLocationInput(val) {
+      return !!val && typeof val === 'string' && LOCATION_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID RATING INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const RATING_PATT = /^[1-5]$/;
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidRatingInput(input) {
+      if (typeof input === 'number' && input >= 1 && input <= 5) {
+          input = String(input);
+      }
+      return !!input && typeof input === 'string' && RATING_PATT.test(input);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * VALID OPTION INPUTS OBJECT
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @typedef {{
+   *     tab: !function(string): boolean,
+   *     id: !function(string): boolean,
+   *     from: !function(string): boolean,
+   *     to: !function(string): boolean,
+   *     model: !function(string): boolean,
+   *     color: !function(string): boolean,
+   *     location: !function(string): boolean,
+   *     rating: !function(string): boolean
+   * }} ValidOptionInputs
+   */
+
+  /** @const {!RegExp} */
+  const TAB = /^[0-9]+$/;
+
+  /**
+   * The valid page option keys and their value validation methods.
+   *
+   * @const {!ValidOptionInputs}
+   */
+  const VALID_OPTION_INPUTS = Object.create(null);
+  VALID_OPTION_INPUTS.tab = validTabInput;
+  VALID_OPTION_INPUTS.id = isValidIDInput;
+  VALID_OPTION_INPUTS.from = isValidDateInput;
+  VALID_OPTION_INPUTS.to = isValidDateInput;
+  VALID_OPTION_INPUTS.model = isValidModelInput;
+  VALID_OPTION_INPUTS.color = isValidColorInput;
+  VALID_OPTION_INPUTS.location = isValidLocationInput;
+  VALID_OPTION_INPUTS.rating = isValidRatingInput;
 
   /**
    * @param {string} input
    * @return {boolean}
    */
-  function validColorInput(input) {
-      return COLOR.test(input);
-  }
-
-  /**
-   * @param {string} input
-   * @return {boolean}
-   */
-  function validLocationInput(input) {
-      return LOCATION.test(input);
-  }
-
-  /**
-   * @param {string} input
-   * @return {boolean}
-   */
-  function validRatingInput(input) {
-      return RATING.test(input);
+  function validTabInput(input) {
+      return TAB.test(input);
   }
 
   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol

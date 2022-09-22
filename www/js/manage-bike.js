@@ -8,6 +8,23 @@
 
   /**
    * ---------------------------------------------------------------------------
+   * ENVIRONMENT SETTINGS
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * The protocol and full domain name for the website.
+   *
+   * @const {string}
+   */
+  const SITE_URL = 'http://localhost:8080';
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
    * LOADING COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
@@ -30,37 +47,20 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * ENVIRONMENT SETTINGS
+   * AUTHENTICATE MANAGER HELPER
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
 
   /**
-   * The protocol and full domain name for the website.
+   * This method makes an AJAX call to the server to authenticate the manager.
    *
-   * @const {string}
-   */
-  const SITE_URL = 'http://localhost:8080';
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * AUTHENTICATE USER HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /**
-   * This method makes an AJAX call to the server to authenticate the user.
-   *
-   * @param {!function(boolean)} done
+   * @param {!function(boolean, boolean)} done
    * @return {void}
    */
-  function authenticateUser(done) {
-      const url = SITE_URL + '/api/user/authenticate';
+  function authenticateManager(done) {
+      const url = SITE_URL + '/api/manager/authenticate';
       fetch(url, { method: 'HEAD' })
           .catch(err => {
               err.message += '\nfetch("' + url + '") failed to connect with the'
@@ -68,20 +68,22 @@
               console.error(err.message);
               console.error(err);
               alert('SERVER ERROR: The attempt to connect with our server to'
-                  + ' authenticate the user failed.');
+                  + ' authenticate the manager failed.');
               setTimeout(() => { throw err }, 0);
           })
           .then(res => {
               if (res.ok) {
-                  done(true);
+                  done(true, true);
               } else if (/401/.test(res.status)) {
-                  done(false);
+                  done(false, false);
+              } else if (/403/.test(res.status)) {
+                  done(true, false);
               } else {
                   const err = new Error('fetch("' + url + '") responded with'
                       + ' status ' + res.status);
                   console.error(err.message);
                   console.error(err);
-                  alert('SERVER ERROR: The attempt to authenticate the user'
+                  alert('SERVER ERROR: The attempt to authenticate the manager'
                       + ' with our server failed.');
                   setTimeout(() => { throw err }, 0);
               }
@@ -125,7 +127,7 @@
                       + ' status ' + res.status);
                   console.error(err.message);
                   console.error(err);
-                  alert('SERVER ERROR: The attempt to download the bike date'
+                  alert('SERVER ERROR: The attempt to download the bike data'
                       + ' from our server failed.');
                   setTimeout(() => { throw err }, 0);
               }
@@ -621,25 +623,28 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * USER NAV BAR COMPONENT
+   * MANAGER NAV BAR COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This is the user navigation component for all user pages.
+   * This is the user navigation component for all management pages.
    *
    * @return {!ReactElement}
    */
 
-  const UserNavBar = React__default["default"].memo(function UserNavBar() {
+  const ManagerNavBar = React__default["default"].memo(function ManagerNavBar() {
     return /*#__PURE__*/React__default["default"].createElement("nav", {
       className: "topnav"
     }, /*#__PURE__*/React__default["default"].createElement("a", {
-      href: SITE_URL + '/bikes',
+      href: SITE_URL + '/manage/bikes',
       className: "topnav"
     }, "Bikes"), /*#__PURE__*/React__default["default"].createElement("a", {
-      href: SITE_URL + '/reservations',
+      href: SITE_URL + '/manage/users',
+      className: "topnav"
+    }, "Users"), /*#__PURE__*/React__default["default"].createElement("a", {
+      href: SITE_URL + '/manage/reservations',
       className: "topnav"
     }, "Reservations"));
   });
@@ -736,6 +741,323 @@
     }, /*#__PURE__*/React__default["default"].createElement("button", {
       className: "logbtn"
     }, "Register")));
+  }
+   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * UPLOAD BIKE DATA HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * This method handles the AJAX POST that updates a bike's information.
+   *
+   * @param {!Object} bike
+   * @param {!Object} data
+   * @return {void}
+   */
+  function uploadBikeData(bike, data) {
+      const url = SITE_URL + '/api/manager/bike/edit';
+      fetch(url, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              bike_id: bike.id,
+              data
+          })
+      })
+          .catch(err => {
+              err.message += '\nfetch("' + url + '") failed to connect with the'
+                  + ' server';
+              console.error(err.message);
+              console.error(err);
+              alert('SERVER ERROR: The attempt to connect with our server to'
+                  + ' update the bike failed.');
+              setTimeout(() => { throw err }, 0);
+          })
+          .then(res => {
+              if (!res.ok) {
+                  const err = new Error('fetch("' + url + '") responded with'
+                      + ' status ' + res.status);
+                  console.error(err.message);
+                  console.error(err);
+                  alert('SERVER ERROR: The attempt to update the bike with our'
+                      + ' server failed.');
+                  setTimeout(() => { throw err }, 0);
+              }
+          })
+          .catch(err => setTimeout(() => { throw err }, 0));
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID MODEL INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const MODEL_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidModelInput(val) {
+      return !!val && typeof val === 'string' && MODEL_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID COLOR INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const COLOR_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,14}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidColorInput(val) {
+      return !!val && typeof val === 'string' && COLOR_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID LOCATION INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const LOCATION_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,62}[a-zA-Z0-9'"])?$/;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidLocationInput(val) {
+      return !!val && typeof val === 'string' && LOCATION_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * BIKE DATA COMPONENT
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+  /**
+   * This component contains the primary bike data.
+   *
+   * @param {!Object} props
+   * @return {!ReactElement}
+   */
+
+  function BikeData({
+    bike,
+    db
+  }) {
+    /** @const {number} */
+    const [modelTimeoutID, setModelTimeoutID] = React__default["default"].useState(0);
+    /** @const {number} */
+
+    const [colorTimeoutID, setColorTimeoutID] = React__default["default"].useState(0);
+    /** @const {number} */
+
+    const [locationTimeoutID, setLocationTimeoutID] = React__default["default"].useState(0);
+    /** @const {boolean} */
+
+    const [emptyModel, setEmptyModel] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [emptyColor, setEmptyColor] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [emptyLocation, setEmptyLocation] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [badModel, setBadModel] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [badColor, setBadColor] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [badLocation, setBadLocation] = React__default["default"].useState(false);
+    /** @const {string} */
+
+    const [model, setModel] = React__default["default"].useState(bike.model);
+    /** @const {string} */
+
+    const [color, setColor] = React__default["default"].useState(bike.color);
+    /** @const {string} */
+
+    const [location, setLocation] = React__default["default"].useState(bike.location);
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+    function handleModelChange(event) {
+      const val = event.target.value;
+      setModel(val);
+      setEmptyModel(false);
+      setBadModel(false);
+
+      if (!val) {
+        setEmptyModel(true);
+        return;
+      }
+
+      if (!isValidModelInput(val)) {
+        setBadModel(true);
+        return;
+      }
+
+      if (modelTimeoutID) {
+        clearTimeout(modelTimeoutID);
+      }
+
+      setModelTimeoutID(setTimeout(() => {
+        bike.model = val;
+        uploadBikeData(bike, {
+          model: val
+        });
+      }, 1000));
+    }
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+
+    function handleColorChange(event) {
+      const val = event.target.value;
+      setColor(val);
+      setEmptyColor(false);
+      setBadColor(false);
+
+      if (!val) {
+        setEmptyColor(true);
+        return;
+      }
+
+      if (!isValidColorInput(val)) {
+        setBadColor(true);
+        return;
+      }
+
+      if (colorTimeoutID) {
+        clearTimeout(colorTimeoutID);
+      }
+
+      setColorTimeoutID(setTimeout(() => {
+        bike.color = val;
+        uploadBikeData(bike, {
+          color: val
+        });
+      }, 1000));
+    }
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+
+    function handleLocationChange(event) {
+      const val = event.target.value;
+      setLocation(val);
+      setEmptyLocation(false);
+      setBadLocation(false);
+
+      if (!val) {
+        setEmptyLocation(true);
+        return;
+      }
+
+      if (!isValidLocationInput(val)) {
+        setBadLocation(true);
+        return;
+      }
+
+      if (locationTimeoutID) {
+        clearTimeout(locationTimeoutID);
+      }
+
+      setLocationTimeoutID(setTimeout(() => {
+        bike.location = val;
+        uploadBikeData(bike, {
+          location: val
+        });
+      }, 750));
+    }
+
+    return /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "bikedata"
+    }, /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "bikecell model"
+    }, /*#__PURE__*/React__default["default"].createElement("label", {
+      htmlFor: "model"
+    }, "Model:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "text",
+      id: "model",
+      value: model,
+      placeholder: "Model",
+      onChange: handleModelChange
+    }), emptyModel && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Model Is Required"), badModel && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Model")), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "bikecell color"
+    }, /*#__PURE__*/React__default["default"].createElement("label", {
+      htmlFor: "color"
+    }, "Color:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "text",
+      id: "color",
+      value: color,
+      placeholder: "Color",
+      onChange: handleColorChange
+    }), emptyColor && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Color Is Required"), badColor && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Color")), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "bikecell location"
+    }, /*#__PURE__*/React__default["default"].createElement("label", {
+      htmlFor: "location"
+    }, "Location:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "text",
+      id: "location",
+      value: location,
+      placeholder: "Location",
+      onChange: handleLocationChange
+    }), emptyLocation && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Location Is Required"), badLocation && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Location")), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "bikecell rating"
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5 from ", bike.rate_count, " reviews")));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
@@ -1074,22 +1396,17 @@
 
 
     function handleReserveClick(event) {
-      if (!loggedin) {
-        window.location.href = SITE_URL + '/login';
-        return;
-      }
+      setSuccess(false);
+      setFailure(false);
 
       if (!from || !to) {
-        setSuccess(false);
         setFailure(true);
-        setTimeout(() => setFailure(false), 5000);
         return;
       }
 
       setReserving(true);
       makeReservation(bike, from, to, err => {
         if (err) {
-          setSuccess(false);
           setFailure(true);
         } else {
           db.reserve(from, to);
@@ -1099,18 +1416,15 @@
           setFrom(null);
           setTo(null);
           setSuccess(true);
-          setFailure(false);
         }
 
         setReserving(false);
-        setTimeout(() => {
-          setSuccess(false);
-          setFailure(false);
-        }, 5000);
       });
     }
 
-    return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("div", {
+    return /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservebox"
+    }, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell reserve"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
       htmlFor: "from"
@@ -1158,42 +1472,47 @@
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This method is the root component for the user bike app. It sets up the
-   * environment, verifies the user, loads the bike, and hands over the
+   * This method is the root component for the manage bike app. It sets up the
+   * environment, verifies the manager, loads the bike, and hands over the
    * rendering to other components.
    *
    * @return {!ReactElement}
    */
 
   function Bike() {
+    /** @const {boolean} */
+    const [authenticated, setAuthenticated] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [loaded, setLoaded] = React__default["default"].useState(false);
     /** @const {number} */
+
     const [bikeID] = React__default["default"].useState(() => getIDFromURL());
     /** @const {!BikesDB} */
 
     const [db] = React__default["default"].useState(() => new BikeDB());
-    /** @const {boolean} */
-
-    const [authenticated, setAuthenticated] = React__default["default"].useState(false);
-    /** @const {boolean} */
-
-    const [loggedin, setLoggedin] = React__default["default"].useState(false);
-    /** @const {boolean} */
-
-    const [loaded, setLoaded] = React__default["default"].useState(false);
     /** @const {?Object} */
 
     const [bike, setBike] = React__default["default"].useState(() => db.bike());
     React__default["default"].useEffect(() => {
-      authenticateUser(handleAuthenticateComplete);
+      authenticateManager(handleAuthenticateComplete);
       downloadBike(bikeID, db, handleDownloadComplete);
     }, []);
     /**
      * @param {boolean} loggedin
+     * @param {boolean} isManager
      * @return {void}
      */
 
-    function handleAuthenticateComplete(loggedin) {
-      setLoggedin(loggedin);
+    function handleAuthenticateComplete(loggedin, isManager) {
+      if (!loggedin) {
+        window.location.replace(SITE_URL + '/login');
+      }
+
+      if (!isManager) {
+        window.location.replace(SITE_URL + '/bikes');
+      }
+
       setAuthenticated(true);
     }
     /**
@@ -1212,47 +1531,35 @@
 
 
     function handleLogout() {
-      setLoggedin(false);
+      window.location.href = SITE_URL + '/bikes';
     }
 
     if (!authenticated || !loaded) {
-      return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(UserNavBar, null), /*#__PURE__*/React__default["default"].createElement("h1", {
+      return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(ManagerNavBar, null), /*#__PURE__*/React__default["default"].createElement("h1", {
         className: "intro"
-      }, "Bike ", bikeID, " Rental"), /*#__PURE__*/React__default["default"].createElement(Loading, null));
+      }, "Manage Bike ", bikeID), /*#__PURE__*/React__default["default"].createElement(Loading, null));
     }
 
-    return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(UserNavBar, null), /*#__PURE__*/React__default["default"].createElement(LogButtons, {
-      loggedin: loggedin,
+    return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(ManagerNavBar, null), /*#__PURE__*/React__default["default"].createElement(LogButtons, {
+      loggedin: true,
       handleLogout: handleLogout
     }), /*#__PURE__*/React__default["default"].createElement("h1", {
       className: "intro"
-    }, "Bike ", bikeID, " Rental"), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Manage Bike ", bikeID), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bike"
-    }, /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell model"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "label"
-    }, "Model:"), /*#__PURE__*/React__default["default"].createElement("span", null, " ", bike.model))), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell color"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "label"
-    }, "Color:"), /*#__PURE__*/React__default["default"].createElement("span", null, " ", bike.color))), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell location"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "label"
-    }, "Location:"), /*#__PURE__*/React__default["default"].createElement("span", null, " ", bike.location))), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell rating"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, "/5 from ", bike.rate_count, " reviews")), /*#__PURE__*/React__default["default"].createElement(Reserve, {
+    }, /*#__PURE__*/React__default["default"].createElement(BikeData, {
       bike: bike,
-      db: db,
-      loggedin: loggedin
+      db: db
+    }), /*#__PURE__*/React__default["default"].createElement(Reserve, {
+      bike: bike,
+      db: db
     })));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
   /**
    * ---------------------------------------------------------------------------
-   * USER BIKE APP
+   * MANAGE BIKE APP
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
