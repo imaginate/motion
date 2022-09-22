@@ -23,7 +23,7 @@ class PageOptions {
      */
     constructor() {
         this._url = new URL(window.location.href);
-        this._params = new URLSearchParams(this.url.search);
+        this._params = new URLSearchParams(this._url.search);
         this._vals = Object.create(null);
         const tmp = Object.create(null);
         for (const [ key, val ] of this._params) {

@@ -23,8 +23,9 @@ class UsersDB {
     constructor(opts, users = null) {
         const db = newObject();
         db.all = [];
-        db.first = new SuffixTree('first');
-        db.last = new SuffixTree('last');
+        db.allset = new Set();
+        db.first = new SuffixTree('first_name');
+        db.last = new SuffixTree('last_name');
         db.email = new SuffixTree('email');
         db.level = newObject();
         db.level[1] = new Set();
@@ -46,6 +47,7 @@ class UsersDB {
     add(user, update = true) {
         const db = this._db;
         db.all.push(user);
+        db.allset.add(user);
         db.first.add(user);
         db.last.add(user);
         db.email.add(user);
@@ -130,7 +132,7 @@ function getUser(id, db) {
 function getMatchingUsers(db, opts) {
     let set = opts.has('first')
         ? db.first.get(opts.first())
-        : null;
+        : db.allset;
     set = mergeSets('last', set, db, opts);
     set = mergeSets('email', set, db, opts);
     set = mergeSets('level', set, db, opts);

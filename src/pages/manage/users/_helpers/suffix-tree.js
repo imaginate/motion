@@ -15,8 +15,8 @@ class SuffixTree {
     /**
      * @param {string} key
      *     Must be one of the following:
-     *     - `"first"`
-     *     - `"last"`
+     *     - `"first_name"`
+     *     - `"last_name"`
      *     - `"email"`
      * @constructor
      */
