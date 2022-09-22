@@ -36,7 +36,7 @@ function Bike({ bike }) {
                         <p>{bike.location}</p>
                     </div>
                     <div className="bikecell">
-                        <p>{bike.rating}/5</p>
+                        <p>{bike.rating} / 5</p>
                     </div>
                 </a>
             </div>

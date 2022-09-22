@@ -193,6 +193,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="text"
                     list="modeldatalist"
                     onChange={handleModelChange}
+                    placeholder="Model"
                 />
                 <datalist id="modeldatalist">
                     {models.map((model, i) => (
@@ -208,6 +209,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="text"
                     list="colordatalist"
                     onChange={handleColorChange}
+                    placeholder="Color"
                 />
                 <datalist id="colordatalist">
                     {colors.map((color, i) => (
@@ -223,6 +225,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="text"
                     list="locationdatalist"
                     onChange={handleLocationChange}
+                    placeholder="Location"
                 />
                 <datalist id="locationdatalist">
                     {locations.map((location, i) => (
@@ -238,6 +241,7 @@ function Filters({ opts, db, bikes, handleOptionsChange }) {
                     className="text"
                     list="ratingdatalist"
                     onChange={handleRatingChange}
+                    placeholder="Rating"
                 />
                 <datalist id="ratingdatalist">
                     {ratings.map((rating, i) => (

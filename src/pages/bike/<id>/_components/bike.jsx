@@ -112,7 +112,7 @@ function Bike() {
                     </p>
                 </div>
                 <div className="bikecell rating">
-                    <p>{bike.rating}/5 from {bike.rate_count} reviews</p>
+                    <p>{bike.rating} / 5 from {bike.rate_count} reviews</p>
                 </div>
                 <Reserve bike={bike} db={db} loggedin={loggedin}/>
             </div>
