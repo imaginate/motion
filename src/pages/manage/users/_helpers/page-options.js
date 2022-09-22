@@ -311,7 +311,7 @@ function cleanID(val) {
  * @return {string}
  */
 function cleanString(key, val) {
-    return VALID_OPTION_INPUTS[key](val)
+    return typeof val === 'string'
         ? val
         : '';
 }
