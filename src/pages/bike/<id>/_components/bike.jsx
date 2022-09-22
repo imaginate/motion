@@ -15,7 +15,7 @@ import authenticateUser from '../../../../helpers/authenticate-user.js';
 /** @const {!function} */
 import downloadBike from '../_helpers/download-bike.js';
 /** @const {!function} */
-import getBikeID from '../_helpers/get-bike-id.js';
+import getIDFromURL from '../../../../helpers/get-id-from-url.js';
 /** @const {!BikesDB} */
 import BikeDB from '../_helpers/bike-db.js';
 /** @const {!function} */
@@ -35,7 +35,7 @@ import Reserve from './reserve.jsx';
 function Bike() {
 
     /** @const {number} */
-    const [ bikeID ] = React.useState(() => getBikeID());
+    const [ bikeID ] = React.useState(() => getIDFromURL());
     /** @const {!BikesDB} */
     const [ db ] = React.useState(() => new BikeDB());
     /** @const {boolean} */
