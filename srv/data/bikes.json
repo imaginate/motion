@@ -10,9 +10,9 @@
         "model": "Continental",
         "color": "Orange",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 133,
-        "rate_total": 377,
-        "rating": "2.83"
+        "rate_count": 134,
+        "rate_total": 382,
+        "rating": "2.85"
     },
     {
         "id": 2,
@@ -64,8 +64,8 @@
         "model": "Aurora",
         "color": "Indigo",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 428,
-        "rate_total": 1266,
+        "rate_count": 429,
+        "rate_total": 1270,
         "rating": "2.96"
     },
     {
@@ -109,9 +109,9 @@
         "model": "Corvette",
         "color": "Red",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 320,
-        "rate_total": 957,
-        "rating": "2.99"
+        "rate_count": 321,
+        "rate_total": 962,
+        "rating": "3.00"
     },
     {
         "id": 9,
@@ -128,9 +128,9 @@
         "model": "RAV4",
         "color": "Green",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 477,
-        "rate_total": 1385,
-        "rating": "2.90"
+        "rate_count": 479,
+        "rate_total": 1392,
+        "rating": "2.91"
     },
     {
         "id": 10,
@@ -143,9 +143,9 @@
         "model": "Grand Cherokee",
         "color": "Purple",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 75,
-        "rate_total": 221,
-        "rating": "2.95"
+        "rate_count": 76,
+        "rate_total": 225,
+        "rating": "2.96"
     },
     {
         "id": 11,
@@ -172,9 +172,9 @@
         "model": "R8",
         "color": "Green",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 69,
-        "rate_total": 198,
-        "rating": "2.87"
+        "rate_count": 70,
+        "rate_total": 200,
+        "rating": "2.86"
     },
     {
         "id": 13,
@@ -195,9 +195,9 @@
         "model": "Galant",
         "color": "Orange",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 294,
-        "rate_total": 880,
-        "rating": "2.99"
+        "rate_count": 295,
+        "rate_total": 885,
+        "rating": "3.00"
     },
     {
         "id": 14,
@@ -210,8 +210,8 @@
         "model": "Oasis",
         "color": "Khaki",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 240,
-        "rate_total": 696,
+        "rate_count": 241,
+        "rate_total": 700,
         "rating": "2.90"
     },
     {
@@ -225,9 +225,9 @@
         "model": "MX-5",
         "color": "Indigo",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 297,
-        "rate_total": 902,
-        "rating": "3.04"
+        "rate_count": 298,
+        "rate_total": 904,
+        "rating": "3.03"
     },
     {
         "id": 16,
@@ -240,8 +240,8 @@
         "model": "3500",
         "color": "Khaki",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 99,
-        "rate_total": 308,
+        "rate_count": 100,
+        "rate_total": 311,
         "rating": "3.11"
     },
     {
@@ -255,9 +255,9 @@
         "model": "Grand Am",
         "color": "Puce",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 107,
-        "rate_total": 323,
-        "rating": "3.02"
+        "rate_count": 108,
+        "rate_total": 325,
+        "rating": "3.01"
     },
     {
         "id": 18,
@@ -270,9 +270,9 @@
         "model": "Yukon XL 2500",
         "color": "Blue",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 107,
-        "rate_total": 329,
-        "rating": "3.07"
+        "rate_count": 108,
+        "rate_total": 333,
+        "rating": "3.08"
     },
     {
         "id": 19,
@@ -315,8 +315,8 @@
         "model": "Continental",
         "color": "Teal",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 350,
-        "rate_total": 1056,
+        "rate_count": 351,
+        "rate_total": 1061,
         "rating": "3.02"
     },
     {
@@ -345,9 +345,9 @@
         "model": "Dakota",
         "color": "Aquamarine",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 68,
-        "rate_total": 196,
-        "rating": "2.88"
+        "rate_count": 69,
+        "rate_total": 200,
+        "rating": "2.90"
     },
     {
         "id": 25,
@@ -364,8 +364,8 @@
         "model": "Grand Cherokee",
         "color": "Khaki",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 313,
-        "rate_total": 955,
+        "rate_count": 314,
+        "rate_total": 959,
         "rating": "3.05"
     },
     {
@@ -379,9 +379,9 @@
         "model": "Oasis",
         "color": "Goldenrod",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 21,
-        "rate_total": 64,
-        "rating": "3.05"
+        "rate_count": 22,
+        "rate_total": 68,
+        "rating": "3.09"
     },
     {
         "id": 27,
@@ -394,8 +394,8 @@
         "model": "Aurora",
         "color": "Mauv",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 422,
-        "rate_total": 1232,
+        "rate_count": 423,
+        "rate_total": 1236,
         "rating": "2.92"
     },
     {
@@ -413,9 +413,9 @@
         "model": "F-Series",
         "color": "Red",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 136,
-        "rate_total": 426,
-        "rating": "3.13"
+        "rate_count": 138,
+        "rate_total": 434,
+        "rating": "3.14"
     },
     {
         "id": 29,
@@ -436,9 +436,9 @@
         "model": "Sidekick",
         "color": "Aquamarine",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 349,
-        "rate_total": 1064,
-        "rating": "3.05"
+        "rate_count": 352,
+        "rate_total": 1076,
+        "rating": "3.06"
     },
     {
         "id": 30,
@@ -461,9 +461,9 @@
         "model": "3500",
         "color": "Indigo",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 15,
-        "rate_total": 42,
-        "rating": "2.80"
+        "rate_count": 16,
+        "rate_total": 46,
+        "rating": "2.88"
     },
     {
         "id": 32,
@@ -476,9 +476,9 @@
         "model": "F-Series",
         "color": "Fuscia",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 30,
-        "rate_total": 105,
-        "rating": "3.50"
+        "rate_count": 31,
+        "rate_total": 109,
+        "rating": "3.52"
     },
     {
         "id": 33,
@@ -501,9 +501,9 @@
         "model": "F-Series",
         "color": "Yellow",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 263,
-        "rate_total": 818,
-        "rating": "3.11"
+        "rate_count": 264,
+        "rate_total": 819,
+        "rating": "3.10"
     },
     {
         "id": 35,
@@ -545,8 +545,8 @@
         "model": "X-Type",
         "color": "Goldenrod",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 229,
-        "rate_total": 679,
+        "rate_count": 231,
+        "rate_total": 685,
         "rating": "2.97"
     },
     {
@@ -564,9 +564,9 @@
         "model": "3500",
         "color": "Puce",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 108,
-        "rate_total": 337,
-        "rating": "3.12"
+        "rate_count": 110,
+        "rate_total": 346,
+        "rating": "3.15"
     },
     {
         "id": 39,
@@ -583,9 +583,9 @@
         "model": "Continental",
         "color": "Orange",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 367,
-        "rate_total": 1126,
-        "rating": "3.07"
+        "rate_count": 369,
+        "rate_total": 1129,
+        "rating": "3.06"
     },
     {
         "id": 40,
@@ -618,8 +618,8 @@
         "model": "R8",
         "color": "Aquamarine",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 45,
-        "rate_total": 134,
+        "rate_count": 46,
+        "rate_total": 137,
         "rating": "2.98"
     },
     {
@@ -637,9 +637,9 @@
         "model": "Yukon XL 2500",
         "color": "Mauv",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 6,
-        "rate_total": 23,
-        "rating": "3.83"
+        "rate_count": 7,
+        "rate_total": 27,
+        "rating": "3.86"
     },
     {
         "id": 44,
@@ -660,9 +660,9 @@
         "model": "Yukon XL 2500",
         "color": "Indigo",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 180,
-        "rate_total": 548,
-        "rating": "3.04"
+        "rate_count": 183,
+        "rate_total": 554,
+        "rating": "3.03"
     },
     {
         "id": 45,
@@ -685,9 +685,9 @@
         "model": "MX-5",
         "color": "Orange",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 112,
-        "rate_total": 337,
-        "rating": "3.01"
+        "rate_count": 113,
+        "rate_total": 341,
+        "rating": "3.02"
     },
     {
         "id": 47,
@@ -704,9 +704,9 @@
         "model": "Sportage",
         "color": "Fuscia",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 61,
-        "rate_total": 199,
-        "rating": "3.26"
+        "rate_count": 63,
+        "rate_total": 205,
+        "rating": "3.25"
     },
     {
         "id": 48,
@@ -734,9 +734,9 @@
         "model": "SRX",
         "color": "Fuscia",
         "location": "Hegmann-Cremin - Saint Petersburg, FL",
-        "rate_count": 178,
-        "rate_total": 546,
-        "rating": "3.07"
+        "rate_count": 179,
+        "rate_total": 548,
+        "rating": "3.06"
     },
     {
         "id": 50,
@@ -761,8 +761,8 @@
         "model": "3500",
         "color": "Goldenrod",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 190,
-        "rate_total": 582,
+        "rate_count": 194,
+        "rate_total": 594,
         "rating": "3.06"
     },
     {
@@ -784,8 +784,8 @@
         "model": "Dakota",
         "color": "Maroon",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 204,
-        "rate_total": 623,
+        "rate_count": 206,
+        "rate_total": 629,
         "rating": "3.05"
     },
     {
@@ -803,8 +803,8 @@
         "model": "Continental GT",
         "color": "Mauv",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 307,
-        "rate_total": 925,
+        "rate_count": 309,
+        "rate_total": 930,
         "rating": "3.01"
     },
     {
@@ -832,8 +832,8 @@
         "model": "G3",
         "color": "Green",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 164,
-        "rate_total": 511,
+        "rate_count": 165,
+        "rate_total": 515,
         "rating": "3.12"
     },
     {
@@ -881,9 +881,9 @@
         "model": "Galant",
         "color": "Purple",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 161,
-        "rate_total": 493,
-        "rating": "3.06"
+        "rate_count": 162,
+        "rate_total": 494,
+        "rating": "3.05"
     },
     {
         "id": 59,
@@ -896,9 +896,9 @@
         "model": "Grand Cherokee",
         "color": "Red",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 30,
-        "rate_total": 86,
-        "rating": "2.87"
+        "rate_count": 31,
+        "rate_total": 91,
+        "rating": "2.94"
     },
     {
         "id": 60,
@@ -911,8 +911,8 @@
         "model": "Aurora",
         "color": "Red",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 333,
-        "rate_total": 999,
+        "rate_count": 334,
+        "rate_total": 1002,
         "rating": "3.00"
     },
     {
@@ -926,9 +926,9 @@
         "model": "Continental",
         "color": "Violet",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 445,
-        "rate_total": 1398,
-        "rating": "3.14"
+        "rate_count": 446,
+        "rate_total": 1403,
+        "rating": "3.15"
     },
     {
         "id": 62,
@@ -971,9 +971,9 @@
         "model": "Cooper Countryman",
         "color": "Aquamarine",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 110,
-        "rate_total": 315,
-        "rating": "2.86"
+        "rate_count": 111,
+        "rate_total": 316,
+        "rating": "2.85"
     },
     {
         "id": 66,
@@ -996,9 +996,9 @@
         "model": "5000S",
         "color": "Green",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 207,
-        "rate_total": 597,
-        "rating": "2.88"
+        "rate_count": 208,
+        "rate_total": 602,
+        "rating": "2.89"
     },
     {
         "id": 68,
@@ -1041,8 +1041,8 @@
         "model": "R8",
         "color": "Mauv",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 452,
-        "rate_total": 1401,
+        "rate_count": 453,
+        "rate_total": 1405,
         "rating": "3.10"
     },
     {
@@ -1060,8 +1060,8 @@
         "model": "Sportage",
         "color": "Maroon",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 472,
-        "rate_total": 1418,
+        "rate_count": 474,
+        "rate_total": 1422,
         "rating": "3.00"
     },
     {
@@ -1075,9 +1075,9 @@
         "model": "Yukon XL 2500",
         "color": "Mauv",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 55,
-        "rate_total": 165,
-        "rating": "3.00"
+        "rate_count": 56,
+        "rate_total": 166,
+        "rating": "2.96"
     },
     {
         "id": 74,
@@ -1100,9 +1100,9 @@
         "model": "Galant",
         "color": "Violet",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 43,
-        "rate_total": 135,
-        "rating": "3.14"
+        "rate_count": 44,
+        "rate_total": 139,
+        "rating": "3.16"
     },
     {
         "id": 76,
@@ -1123,8 +1123,8 @@
         "model": "Galant",
         "color": "Blue",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 490,
-        "rate_total": 1495,
+        "rate_count": 492,
+        "rate_total": 1502,
         "rating": "3.05"
     },
     {
@@ -1161,9 +1161,9 @@
         "model": "SRX",
         "color": "Aquamarine",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 102,
-        "rate_total": 295,
-        "rating": "2.89"
+        "rate_count": 104,
+        "rate_total": 305,
+        "rating": "2.93"
     },
     {
         "id": 79,
@@ -1201,8 +1201,8 @@
         "model": "5000S",
         "color": "Aquamarine",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 158,
-        "rate_total": 459,
+        "rate_count": 159,
+        "rate_total": 463,
         "rating": "2.91"
     },
     {
@@ -1220,9 +1220,9 @@
         "model": "Veloster",
         "color": "Fuscia",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 272,
-        "rate_total": 862,
-        "rating": "3.17"
+        "rate_count": 274,
+        "rate_total": 870,
+        "rating": "3.18"
     },
     {
         "id": 83,
@@ -1235,9 +1235,9 @@
         "model": "SRX",
         "color": "Mauv",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 190,
-        "rate_total": 562,
-        "rating": "2.96"
+        "rate_count": 191,
+        "rate_total": 564,
+        "rating": "2.95"
     },
     {
         "id": 84,
@@ -1273,9 +1273,9 @@
         "model": "Continental GT",
         "color": "Orange",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 210,
-        "rate_total": 622,
-        "rating": "2.96"
+        "rate_count": 212,
+        "rate_total": 625,
+        "rating": "2.95"
     },
     {
         "id": 86,
@@ -1292,9 +1292,9 @@
         "model": "Mystique",
         "color": "Aquamarine",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 262,
-        "rate_total": 813,
-        "rating": "3.10"
+        "rate_count": 264,
+        "rate_total": 821,
+        "rating": "3.11"
     },
     {
         "id": 87,
@@ -1325,8 +1325,8 @@
         "model": "Yukon XL 2500",
         "color": "Fuscia",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 175,
-        "rate_total": 516,
+        "rate_count": 178,
+        "rate_total": 525,
         "rating": "2.95"
     },
     {
@@ -1365,9 +1365,9 @@
         "model": "Oasis",
         "color": "Orange",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 123,
-        "rate_total": 357,
-        "rating": "2.90"
+        "rate_count": 124,
+        "rate_total": 362,
+        "rating": "2.92"
     },
     {
         "id": 92,
@@ -1394,9 +1394,9 @@
         "model": "3500",
         "color": "Yellow",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 166,
-        "rate_total": 482,
-        "rating": "2.90"
+        "rate_count": 168,
+        "rate_total": 485,
+        "rating": "2.89"
     },
     {
         "id": 94,
@@ -1429,9 +1429,9 @@
         "model": "Corvette",
         "color": "Mauv",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 96,
-        "rate_total": 282,
-        "rating": "2.94"
+        "rate_count": 97,
+        "rate_total": 284,
+        "rating": "2.93"
     },
     {
         "id": 97,
@@ -1444,8 +1444,8 @@
         "model": "Caravan",
         "color": "Maroon",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 455,
-        "rate_total": 1383,
+        "rate_count": 456,
+        "rate_total": 1387,
         "rating": "3.04"
     },
     {
@@ -1467,8 +1467,8 @@
         "model": "Fox",
         "color": "Orange",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 281,
-        "rate_total": 837,
+        "rate_count": 282,
+        "rate_total": 840,
         "rating": "2.98"
     },
     {
@@ -1497,8 +1497,8 @@
         "model": "Civic",
         "color": "Mauv",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 305,
-        "rate_total": 897,
+        "rate_count": 306,
+        "rate_total": 901,
         "rating": "2.94"
     },
     {
@@ -1512,9 +1512,9 @@
         "model": "Mystique",
         "color": "Aquamarine",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 145,
-        "rate_total": 433,
-        "rating": "2.99"
+        "rate_count": 146,
+        "rate_total": 438,
+        "rating": "3.00"
     },
     {
         "id": 102,
@@ -1572,9 +1572,9 @@
         "model": "Continental",
         "color": "Blue",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 288,
-        "rate_total": 842,
-        "rating": "2.92"
+        "rate_count": 289,
+        "rate_total": 847,
+        "rating": "2.93"
     },
     {
         "id": 107,
@@ -1597,9 +1597,9 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 80,
-        "rate_total": 217,
-        "rating": "2.71"
+        "rate_count": 81,
+        "rate_total": 220,
+        "rating": "2.72"
     },
     {
         "id": 109,
@@ -1616,9 +1616,9 @@
         "model": "Oasis",
         "color": "Goldenrod",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 107,
-        "rate_total": 303,
-        "rating": "2.83"
+        "rate_count": 109,
+        "rate_total": 311,
+        "rating": "2.85"
     },
     {
         "id": 110,
@@ -1641,8 +1641,8 @@
         "model": "X-Type",
         "color": "Violet",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 464,
-        "rate_total": 1428,
+        "rate_count": 465,
+        "rate_total": 1432,
         "rating": "3.08"
     },
     {
@@ -1660,8 +1660,8 @@
         "model": "Cooper Countryman",
         "color": "Aquamarine",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 431,
-        "rate_total": 1317,
+        "rate_count": 432,
+        "rate_total": 1321,
         "rating": "3.06"
     },
     {
@@ -1734,9 +1734,9 @@
         "model": "R8",
         "color": "Aquamarine",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 478,
-        "rate_total": 1470,
-        "rating": "3.08"
+        "rate_count": 479,
+        "rate_total": 1472,
+        "rating": "3.07"
     },
     {
         "id": 118,
@@ -1764,8 +1764,8 @@
         "model": "SRX",
         "color": "Puce",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 395,
-        "rate_total": 1177,
+        "rate_count": 396,
+        "rate_total": 1181,
         "rating": "2.98"
     },
     {
@@ -1803,9 +1803,9 @@
         "model": "Fox",
         "color": "Green",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 159,
-        "rate_total": 472,
-        "rating": "2.97"
+        "rate_count": 160,
+        "rate_total": 477,
+        "rating": "2.98"
     },
     {
         "id": 123,
@@ -1818,8 +1818,8 @@
         "model": "Dynasty",
         "color": "Mauv",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 381,
-        "rate_total": 1180,
+        "rate_count": 382,
+        "rate_total": 1185,
         "rating": "3.10"
     },
     {
@@ -1843,9 +1843,9 @@
         "model": "Sportage",
         "color": "Green",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 380,
-        "rate_total": 1120,
-        "rating": "2.95"
+        "rate_count": 381,
+        "rate_total": 1121,
+        "rating": "2.94"
     },
     {
         "id": 126,
@@ -1858,9 +1858,9 @@
         "model": "Yukon XL 2500",
         "color": "Aquamarine",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 295,
-        "rate_total": 874,
-        "rating": "2.96"
+        "rate_count": 296,
+        "rate_total": 879,
+        "rating": "2.97"
     },
     {
         "id": 127,
@@ -1873,8 +1873,8 @@
         "model": "RAV4",
         "color": "Green",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 481,
-        "rate_total": 1418,
+        "rate_count": 482,
+        "rate_total": 1422,
         "rating": "2.95"
     },
     {
@@ -1888,9 +1888,9 @@
         "model": "Mystique",
         "color": "Indigo",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 61,
-        "rate_total": 191,
-        "rating": "3.13"
+        "rate_count": 62,
+        "rate_total": 195,
+        "rating": "3.15"
     },
     {
         "id": 129,
@@ -1903,8 +1903,8 @@
         "model": "Grand Cherokee",
         "color": "Fuscia",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 394,
-        "rate_total": 1162,
+        "rate_count": 395,
+        "rate_total": 1166,
         "rating": "2.95"
     },
     {
@@ -1922,8 +1922,8 @@
         "model": "Aurora",
         "color": "Aquamarine",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 496,
-        "rate_total": 1447,
+        "rate_count": 497,
+        "rate_total": 1451,
         "rating": "2.92"
     },
     {
@@ -1951,9 +1951,9 @@
         "model": "Grand Cherokee",
         "color": "Maroon",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 231,
-        "rate_total": 695,
-        "rating": "3.01"
+        "rate_count": 233,
+        "rate_total": 697,
+        "rating": "2.99"
     },
     {
         "id": 133,
@@ -1966,9 +1966,9 @@
         "model": "X-Type",
         "color": "Aquamarine",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 3,
-        "rate_total": 11,
-        "rating": "3.67"
+        "rate_count": 4,
+        "rate_total": 16,
+        "rating": "4.00"
     },
     {
         "id": 134,
@@ -1985,9 +1985,9 @@
         "model": "Dakota",
         "color": "Mauv",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 322,
-        "rate_total": 967,
-        "rating": "3.00"
+        "rate_count": 324,
+        "rate_total": 974,
+        "rating": "3.01"
     },
     {
         "id": 135,
@@ -2008,9 +2008,9 @@
         "model": "Oasis",
         "color": "Violet",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 48,
-        "rate_total": 136,
-        "rating": "2.83"
+        "rate_count": 51,
+        "rate_total": 145,
+        "rating": "2.84"
     },
     {
         "id": 136,
@@ -2027,8 +2027,8 @@
         "model": "Cooper Countryman",
         "color": "Maroon",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 150,
-        "rate_total": 453,
+        "rate_count": 152,
+        "rate_total": 459,
         "rating": "3.02"
     },
     {
@@ -2042,8 +2042,8 @@
         "model": "Grand Am",
         "color": "Maroon",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 153,
-        "rate_total": 460,
+        "rate_count": 154,
+        "rate_total": 464,
         "rating": "3.01"
     },
     {
@@ -2061,9 +2061,9 @@
         "model": "X-Type",
         "color": "Violet",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 474,
-        "rate_total": 1398,
-        "rating": "2.95"
+        "rate_count": 476,
+        "rate_total": 1408,
+        "rating": "2.96"
     },
     {
         "id": 139,
@@ -2080,9 +2080,9 @@
         "model": "Fox",
         "color": "Fuscia",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 50,
-        "rate_total": 150,
-        "rating": "3.00"
+        "rate_count": 52,
+        "rate_total": 157,
+        "rating": "3.02"
     },
     {
         "id": 140,
@@ -2109,9 +2109,9 @@
         "model": "R8",
         "color": "Purple",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 10,
-        "rate_total": 30,
-        "rating": "3.00"
+        "rate_count": 11,
+        "rate_total": 34,
+        "rating": "3.09"
     },
     {
         "id": 142,
@@ -2124,9 +2124,9 @@
         "model": "Lumina APV",
         "color": "Yellow",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 166,
-        "rate_total": 493,
-        "rating": "2.97"
+        "rate_count": 167,
+        "rate_total": 497,
+        "rating": "2.98"
     },
     {
         "id": 143,
@@ -2147,8 +2147,8 @@
         "model": "Grand Cherokee",
         "color": "Yellow",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 316,
-        "rate_total": 954,
+        "rate_count": 318,
+        "rate_total": 960,
         "rating": "3.02"
     },
     {
@@ -2162,8 +2162,8 @@
         "model": "X-Type",
         "color": "Fuscia",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 483,
-        "rate_total": 1481,
+        "rate_count": 484,
+        "rate_total": 1485,
         "rating": "3.07"
     },
     {
@@ -2177,8 +2177,8 @@
         "model": "MX-5",
         "color": "Orange",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 470,
-        "rate_total": 1413,
+        "rate_count": 471,
+        "rate_total": 1416,
         "rating": "3.01"
     },
     {
@@ -2196,8 +2196,8 @@
         "model": "X-Type",
         "color": "Aquamarine",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 117,
-        "rate_total": 360,
+        "rate_count": 119,
+        "rate_total": 366,
         "rating": "3.08"
     },
     {
@@ -2211,9 +2211,9 @@
         "model": "G3",
         "color": "Orange",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 237,
-        "rate_total": 674,
-        "rating": "2.84"
+        "rate_count": 238,
+        "rate_total": 678,
+        "rating": "2.85"
     },
     {
         "id": 148,
@@ -2240,9 +2240,9 @@
         "model": "Continental GT",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 96,
-        "rate_total": 282,
-        "rating": "2.94"
+        "rate_count": 97,
+        "rate_total": 286,
+        "rating": "2.95"
     },
     {
         "id": 150,
@@ -2259,9 +2259,9 @@
         "model": "Continental GT",
         "color": "Aquamarine",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 47,
-        "rate_total": 143,
-        "rating": "3.04"
+        "rate_count": 48,
+        "rate_total": 145,
+        "rating": "3.02"
     },
     {
         "id": 151,
@@ -2274,8 +2274,8 @@
         "model": "Dynasty",
         "color": "Aquamarine",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 436,
-        "rate_total": 1278,
+        "rate_count": 437,
+        "rate_total": 1281,
         "rating": "2.93"
     },
     {
@@ -2289,9 +2289,9 @@
         "model": "RAV4",
         "color": "Violet",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 8,
-        "rate_total": 19,
-        "rating": "2.38"
+        "rate_count": 9,
+        "rate_total": 21,
+        "rating": "2.33"
     },
     {
         "id": 153,
@@ -2318,8 +2318,8 @@
         "model": "Continental",
         "color": "Goldenrod",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 488,
-        "rate_total": 1460,
+        "rate_count": 489,
+        "rate_total": 1463,
         "rating": "2.99"
     },
     {
@@ -2333,9 +2333,9 @@
         "model": "Civic",
         "color": "Goldenrod",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 360,
-        "rate_total": 1092,
-        "rating": "3.03"
+        "rate_count": 361,
+        "rate_total": 1097,
+        "rating": "3.04"
     },
     {
         "id": 156,
@@ -2370,9 +2370,9 @@
         "model": "R8",
         "color": "Maroon",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 306,
-        "rate_total": 920,
-        "rating": "3.01"
+        "rate_count": 309,
+        "rate_total": 928,
+        "rating": "3.00"
     },
     {
         "id": 158,
@@ -2389,9 +2389,9 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 265,
-        "rate_total": 768,
-        "rating": "2.90"
+        "rate_count": 267,
+        "rate_total": 772,
+        "rating": "2.89"
     },
     {
         "id": 159,
@@ -2487,9 +2487,9 @@
         "model": "F-Series",
         "color": "Blue",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 59,
-        "rate_total": 167,
-        "rating": "2.83"
+        "rate_count": 60,
+        "rate_total": 172,
+        "rating": "2.87"
     },
     {
         "id": 166,
@@ -2565,9 +2565,9 @@
         "model": "Cooper Countryman",
         "color": "Aquamarine",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 248,
-        "rate_total": 771,
-        "rating": "3.11"
+        "rate_count": 251,
+        "rate_total": 777,
+        "rating": "3.10"
     },
     {
         "id": 172,
@@ -2584,9 +2584,9 @@
         "model": "R8",
         "color": "Mauv",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 38,
-        "rate_total": 120,
-        "rating": "3.16"
+        "rate_count": 40,
+        "rate_total": 126,
+        "rating": "3.15"
     },
     {
         "id": 173,
@@ -2619,9 +2619,9 @@
         "model": "RAV4",
         "color": "Maroon",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 474,
-        "rate_total": 1432,
-        "rating": "3.02"
+        "rate_count": 475,
+        "rate_total": 1437,
+        "rating": "3.03"
     },
     {
         "id": 176,
@@ -2659,9 +2659,9 @@
         "model": "Cooper Countryman",
         "color": "Aquamarine",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 78,
-        "rate_total": 237,
-        "rating": "3.04"
+        "rate_count": 79,
+        "rate_total": 238,
+        "rating": "3.01"
     },
     {
         "id": 179,
@@ -2678,9 +2678,9 @@
         "model": "Caravan",
         "color": "Green",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 412,
-        "rate_total": 1198,
-        "rating": "2.91"
+        "rate_count": 414,
+        "rate_total": 1207,
+        "rating": "2.92"
     },
     {
         "id": 180,
@@ -2703,8 +2703,8 @@
         "model": "Cooper Countryman",
         "color": "Green",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 391,
-        "rate_total": 1192,
+        "rate_count": 392,
+        "rate_total": 1196,
         "rating": "3.05"
     },
     {
@@ -2732,9 +2732,9 @@
         "model": "3500",
         "color": "Indigo",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 210,
-        "rate_total": 622,
-        "rating": "2.96"
+        "rate_count": 211,
+        "rate_total": 627,
+        "rating": "2.97"
     },
     {
         "id": 184,
@@ -2751,8 +2751,8 @@
         "model": "Dakota",
         "color": "Indigo",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 486,
-        "rate_total": 1493,
+        "rate_count": 487,
+        "rate_total": 1497,
         "rating": "3.07"
     },
     {
@@ -2781,8 +2781,8 @@
         "model": "5000S",
         "color": "Maroon",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 489,
-        "rate_total": 1449,
+        "rate_count": 490,
+        "rate_total": 1452,
         "rating": "2.96"
     },
     {
@@ -2806,8 +2806,8 @@
         "model": "5000S",
         "color": "Orange",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 311,
-        "rate_total": 919,
+        "rate_count": 312,
+        "rate_total": 921,
         "rating": "2.95"
     },
     {
@@ -2825,8 +2825,8 @@
         "model": "Veloster",
         "color": "Mauv",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 435,
-        "rate_total": 1321,
+        "rate_count": 437,
+        "rate_total": 1327,
         "rating": "3.04"
     },
     {
@@ -2850,8 +2850,8 @@
         "model": "Mystique",
         "color": "Maroon",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 399,
-        "rate_total": 1188,
+        "rate_count": 400,
+        "rate_total": 1190,
         "rating": "2.98"
     },
     {
@@ -2920,8 +2920,8 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 99,
-        "rate_total": 300,
+        "rate_count": 100,
+        "rate_total": 303,
         "rating": "3.03"
     },
     {
@@ -2954,9 +2954,9 @@
         "model": "SRX",
         "color": "Goldenrod",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 333,
-        "rate_total": 1050,
-        "rating": "3.15"
+        "rate_count": 335,
+        "rate_total": 1058,
+        "rating": "3.16"
     },
     {
         "id": 200,
@@ -2969,9 +2969,9 @@
         "model": "Aurora",
         "color": "Red",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 178,
-        "rate_total": 521,
-        "rating": "2.93"
+        "rate_count": 179,
+        "rate_total": 523,
+        "rating": "2.92"
     },
     {
         "id": 201,
@@ -2984,9 +2984,9 @@
         "model": "Fox",
         "color": "Blue",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 204,
-        "rate_total": 599,
-        "rating": "2.94"
+        "rate_count": 205,
+        "rate_total": 604,
+        "rating": "2.95"
     },
     {
         "id": 202,
@@ -3009,8 +3009,8 @@
         "model": "X-Type",
         "color": "Red",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 446,
-        "rate_total": 1339,
+        "rate_count": 447,
+        "rate_total": 1340,
         "rating": "3.00"
     },
     {
@@ -3057,9 +3057,9 @@
         "model": "RAV4",
         "color": "Violet",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 262,
-        "rate_total": 820,
-        "rating": "3.13"
+        "rate_count": 264,
+        "rate_total": 824,
+        "rating": "3.12"
     },
     {
         "id": 207,
@@ -3072,9 +3072,9 @@
         "model": "5000S",
         "color": "Green",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 24,
-        "rate_total": 75,
-        "rating": "3.13"
+        "rate_count": 25,
+        "rate_total": 78,
+        "rating": "3.12"
     },
     {
         "id": 208,
@@ -3112,9 +3112,9 @@
         "model": "Oasis",
         "color": "Maroon",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 39,
-        "rate_total": 113,
-        "rating": "2.90"
+        "rate_count": 40,
+        "rate_total": 117,
+        "rating": "2.92"
     },
     {
         "id": 211,
@@ -3170,9 +3170,9 @@
         "model": "Lumina APV",
         "color": "Maroon",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 59,
-        "rate_total": 173,
-        "rating": "2.93"
+        "rate_count": 60,
+        "rate_total": 177,
+        "rating": "2.95"
     },
     {
         "id": 215,
@@ -3205,8 +3205,8 @@
         "model": "Mystique",
         "color": "Yellow",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 228,
-        "rate_total": 645,
+        "rate_count": 229,
+        "rate_total": 648,
         "rating": "2.83"
     },
     {
@@ -3220,8 +3220,8 @@
         "model": "Corvette",
         "color": "Red",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 480,
-        "rate_total": 1420,
+        "rate_count": 481,
+        "rate_total": 1423,
         "rating": "2.96"
     },
     {
@@ -3239,9 +3239,9 @@
         "model": "Sidekick",
         "color": "Red",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 211,
-        "rate_total": 637,
-        "rating": "3.02"
+        "rate_count": 213,
+        "rate_total": 645,
+        "rating": "3.03"
     },
     {
         "id": 220,
@@ -3254,9 +3254,9 @@
         "model": "F-Series",
         "color": "Indigo",
         "location": "Hegmann-Cremin - Saint Petersburg, FL",
-        "rate_count": 160,
-        "rate_total": 463,
-        "rating": "2.89"
+        "rate_count": 161,
+        "rate_total": 464,
+        "rating": "2.88"
     },
     {
         "id": 221,
@@ -3303,8 +3303,8 @@
         "model": "Sportage",
         "color": "Blue",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 395,
-        "rate_total": 1219,
+        "rate_count": 397,
+        "rate_total": 1227,
         "rating": "3.09"
     },
     {
@@ -3358,9 +3358,9 @@
         "model": "Corvette",
         "color": "Green",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 370,
-        "rate_total": 1063,
-        "rating": "2.87"
+        "rate_count": 371,
+        "rate_total": 1067,
+        "rating": "2.88"
     },
     {
         "id": 230,
@@ -3408,8 +3408,8 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 491,
-        "rate_total": 1487,
+        "rate_count": 492,
+        "rate_total": 1491,
         "rating": "3.03"
     },
     {
@@ -3427,9 +3427,9 @@
         "model": "Continental",
         "color": "Indigo",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 95,
-        "rate_total": 269,
-        "rating": "2.83"
+        "rate_count": 97,
+        "rate_total": 275,
+        "rating": "2.84"
     },
     {
         "id": 235,
@@ -3450,8 +3450,8 @@
         "model": "X-Type",
         "color": "Blue",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 287,
-        "rate_total": 883,
+        "rate_count": 289,
+        "rate_total": 891,
         "rating": "3.08"
     },
     {
@@ -3465,8 +3465,8 @@
         "model": "Caravan",
         "color": "Maroon",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 392,
-        "rate_total": 1148,
+        "rate_count": 393,
+        "rate_total": 1150,
         "rating": "2.93"
     },
     {
@@ -3495,8 +3495,8 @@
         "model": "Oasis",
         "color": "Aquamarine",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 472,
-        "rate_total": 1403,
+        "rate_count": 473,
+        "rate_total": 1404,
         "rating": "2.97"
     },
     {
@@ -3510,8 +3510,8 @@
         "model": "Galant",
         "color": "Green",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 374,
-        "rate_total": 1152,
+        "rate_count": 375,
+        "rate_total": 1156,
         "rating": "3.08"
     },
     {
@@ -3554,8 +3554,8 @@
         "model": "Grand Am",
         "color": "Red",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 498,
-        "rate_total": 1454,
+        "rate_count": 499,
+        "rate_total": 1455,
         "rating": "2.92"
     },
     {
@@ -3577,9 +3577,9 @@
         "model": "Cooper Countryman",
         "color": "Mauv",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 324,
-        "rate_total": 975,
-        "rating": "3.01"
+        "rate_count": 327,
+        "rate_total": 986,
+        "rating": "3.02"
     },
     {
         "id": 244,
@@ -3600,8 +3600,8 @@
         "model": "Galant",
         "color": "Mauv",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 129,
-        "rate_total": 371,
+        "rate_count": 131,
+        "rate_total": 377,
         "rating": "2.88"
     },
     {
@@ -3615,8 +3615,8 @@
         "model": "G3",
         "color": "Maroon",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 402,
-        "rate_total": 1229,
+        "rate_count": 403,
+        "rate_total": 1233,
         "rating": "3.06"
     },
     {
@@ -3644,9 +3644,9 @@
         "model": "Fox",
         "color": "Maroon",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 338,
-        "rate_total": 981,
-        "rating": "2.90"
+        "rate_count": 339,
+        "rate_total": 985,
+        "rating": "2.91"
     },
     {
         "id": 248,
@@ -3659,9 +3659,9 @@
         "model": "Yukon XL 2500",
         "color": "Khaki",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 24,
-        "rate_total": 71,
-        "rating": "2.96"
+        "rate_count": 25,
+        "rate_total": 75,
+        "rating": "3.00"
     },
     {
         "id": 249,
@@ -3674,9 +3674,9 @@
         "model": "Sidekick",
         "color": "Green",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 9,
-        "rate_total": 31,
-        "rating": "3.44"
+        "rate_count": 10,
+        "rate_total": 33,
+        "rating": "3.30"
     },
     {
         "id": 250,
@@ -3693,8 +3693,8 @@
         "model": "Galant",
         "color": "Khaki",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 260,
-        "rate_total": 793,
+        "rate_count": 262,
+        "rate_total": 799,
         "rating": "3.05"
     },
     {
@@ -3739,9 +3739,9 @@
         "model": "Grand Am",
         "color": "Aquamarine",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 117,
-        "rate_total": 342,
-        "rating": "2.92"
+        "rate_count": 119,
+        "rate_total": 350,
+        "rating": "2.94"
     },
     {
         "id": 253,
@@ -3799,9 +3799,9 @@
         "model": "Fox",
         "color": "Yellow",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 29,
-        "rate_total": 60,
-        "rating": "2.07"
+        "rate_count": 30,
+        "rate_total": 63,
+        "rating": "2.10"
     },
     {
         "id": 257,
@@ -3818,9 +3818,9 @@
         "model": "Veloster",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 229,
-        "rate_total": 720,
-        "rating": "3.14"
+        "rate_count": 231,
+        "rate_total": 727,
+        "rating": "3.15"
     },
     {
         "id": 258,
@@ -3833,9 +3833,9 @@
         "model": "Grand Am",
         "color": "Purple",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 268,
-        "rate_total": 846,
-        "rating": "3.16"
+        "rate_count": 269,
+        "rate_total": 848,
+        "rating": "3.15"
     },
     {
         "id": 259,
@@ -3878,8 +3878,8 @@
         "model": "Dynasty",
         "color": "Maroon",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 498,
-        "rate_total": 1467,
+        "rate_count": 499,
+        "rate_total": 1472,
         "rating": "2.95"
     },
     {
@@ -3897,9 +3897,9 @@
         "model": "Oasis",
         "color": "Aquamarine",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 222,
-        "rate_total": 670,
-        "rating": "3.02"
+        "rate_count": 223,
+        "rate_total": 675,
+        "rating": "3.03"
     },
     {
         "id": 264,
@@ -3916,9 +3916,9 @@
         "model": "Dynasty",
         "color": "Aquamarine",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 235,
-        "rate_total": 709,
-        "rating": "3.02"
+        "rate_count": 237,
+        "rate_total": 714,
+        "rating": "3.01"
     },
     {
         "id": 265,
@@ -3935,8 +3935,8 @@
         "model": "R8",
         "color": "Goldenrod",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 340,
-        "rate_total": 1019,
+        "rate_count": 342,
+        "rate_total": 1025,
         "rating": "3.00"
     },
     {
@@ -3950,9 +3950,9 @@
         "model": "Caravan",
         "color": "Aquamarine",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 310,
-        "rate_total": 914,
-        "rating": "2.95"
+        "rate_count": 311,
+        "rate_total": 915,
+        "rating": "2.94"
     },
     {
         "id": 267,
@@ -3965,9 +3965,9 @@
         "model": "SRX",
         "color": "Puce",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 135,
-        "rate_total": 411,
-        "rating": "3.04"
+        "rate_count": 136,
+        "rate_total": 412,
+        "rating": "3.03"
     },
     {
         "id": 268,
@@ -3994,9 +3994,9 @@
         "model": "G3",
         "color": "Indigo",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 157,
-        "rate_total": 468,
-        "rating": "2.98"
+        "rate_count": 159,
+        "rate_total": 473,
+        "rating": "2.97"
     },
     {
         "id": 270,
@@ -4019,8 +4019,8 @@
         "model": "Corvette",
         "color": "Green",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 150,
-        "rate_total": 460,
+        "rate_count": 151,
+        "rate_total": 464,
         "rating": "3.07"
     },
     {
@@ -4034,9 +4034,9 @@
         "model": "MX-5",
         "color": "Mauv",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 38,
-        "rate_total": 133,
-        "rating": "3.50"
+        "rate_count": 39,
+        "rate_total": 136,
+        "rating": "3.49"
     },
     {
         "id": 273,
@@ -4067,9 +4067,9 @@
         "model": "Continental GT",
         "color": "Mauv",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 458,
-        "rate_total": 1380,
-        "rating": "3.01"
+        "rate_count": 460,
+        "rate_total": 1388,
+        "rating": "3.02"
     },
     {
         "id": 275,
@@ -4082,8 +4082,8 @@
         "model": "Dakota",
         "color": "Maroon",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 318,
-        "rate_total": 972,
+        "rate_count": 319,
+        "rate_total": 975,
         "rating": "3.06"
     },
     {
@@ -4107,8 +4107,8 @@
         "model": "Grand Cherokee",
         "color": "Mauv",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 445,
-        "rate_total": 1305,
+        "rate_count": 446,
+        "rate_total": 1308,
         "rating": "2.93"
     },
     {
@@ -4146,9 +4146,9 @@
         "model": "Caravan",
         "color": "Blue",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 500,
-        "rate_total": 1462,
-        "rating": "2.92"
+        "rate_count": 502,
+        "rate_total": 1471,
+        "rating": "2.93"
     },
     {
         "id": 281,
@@ -4161,9 +4161,9 @@
         "model": "Dynasty",
         "color": "Blue",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 324,
-        "rate_total": 967,
-        "rating": "2.98"
+        "rate_count": 325,
+        "rate_total": 971,
+        "rating": "2.99"
     },
     {
         "id": 282,
@@ -4186,9 +4186,9 @@
         "model": "F-Series",
         "color": "Violet",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 190,
-        "rate_total": 591,
-        "rating": "3.11"
+        "rate_count": 191,
+        "rate_total": 593,
+        "rating": "3.10"
     },
     {
         "id": 284,
@@ -4201,8 +4201,8 @@
         "model": "G3",
         "color": "Mauv",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 54,
-        "rate_total": 164,
+        "rate_count": 55,
+        "rate_total": 167,
         "rating": "3.04"
     },
     {
@@ -4220,8 +4220,8 @@
         "model": "5000S",
         "color": "Teal",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 214,
-        "rate_total": 648,
+        "rate_count": 216,
+        "rate_total": 655,
         "rating": "3.03"
     },
     {
@@ -4245,8 +4245,8 @@
         "model": "Galant",
         "color": "Fuscia",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 371,
-        "rate_total": 1105,
+        "rate_count": 372,
+        "rate_total": 1108,
         "rating": "2.98"
     },
     {
@@ -4283,9 +4283,9 @@
         "model": "Continental",
         "color": "Yellow",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 112,
-        "rate_total": 297,
-        "rating": "2.65"
+        "rate_count": 114,
+        "rate_total": 301,
+        "rating": "2.64"
     },
     {
         "id": 290,
@@ -4298,9 +4298,9 @@
         "model": "X-Type",
         "color": "Teal",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 231,
-        "rate_total": 694,
-        "rating": "3.00"
+        "rate_count": 232,
+        "rate_total": 698,
+        "rating": "3.01"
     },
     {
         "id": 291,
@@ -4327,8 +4327,8 @@
         "model": "SRX",
         "color": "Green",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 314,
-        "rate_total": 990,
+        "rate_count": 315,
+        "rate_total": 991,
         "rating": "3.15"
     },
     {
@@ -4342,8 +4342,8 @@
         "model": "Mystique",
         "color": "Aquamarine",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 374,
-        "rate_total": 1107,
+        "rate_count": 375,
+        "rate_total": 1111,
         "rating": "2.96"
     },
     {
@@ -4357,9 +4357,9 @@
         "model": "Caravan",
         "color": "Goldenrod",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 400,
-        "rate_total": 1173,
-        "rating": "2.93"
+        "rate_count": 401,
+        "rate_total": 1177,
+        "rating": "2.94"
     },
     {
         "id": 295,
@@ -4386,9 +4386,9 @@
         "model": "Continental",
         "color": "Teal",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 367,
-        "rate_total": 1137,
-        "rating": "3.10"
+        "rate_count": 369,
+        "rate_total": 1140,
+        "rating": "3.09"
     },
     {
         "id": 297,
@@ -4425,8 +4425,8 @@
         "model": "5000S",
         "color": "Orange",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 385,
-        "rate_total": 1166,
+        "rate_count": 387,
+        "rate_total": 1174,
         "rating": "3.03"
     },
     {
@@ -4440,8 +4440,8 @@
         "model": "Veloster",
         "color": "Yellow",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 249,
-        "rate_total": 726,
+        "rate_count": 250,
+        "rate_total": 731,
         "rating": "2.92"
     },
     {
@@ -4455,8 +4455,8 @@
         "model": "RAV4",
         "color": "Fuscia",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 406,
-        "rate_total": 1258,
+        "rate_count": 407,
+        "rate_total": 1262,
         "rating": "3.10"
     },
     {
@@ -4484,8 +4484,8 @@
         "model": "Fox",
         "color": "Red",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 223,
-        "rate_total": 657,
+        "rate_count": 224,
+        "rate_total": 660,
         "rating": "2.95"
     },
     {
@@ -4513,9 +4513,9 @@
         "model": "3500",
         "color": "Green",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 420,
-        "rate_total": 1279,
-        "rating": "3.05"
+        "rate_count": 422,
+        "rate_total": 1284,
+        "rating": "3.04"
     },
     {
         "id": 306,
@@ -4532,8 +4532,8 @@
         "model": "R8",
         "color": "Aquamarine",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 128,
-        "rate_total": 411,
+        "rate_count": 129,
+        "rate_total": 414,
         "rating": "3.21"
     },
     {
@@ -4557,8 +4557,8 @@
         "model": "R8",
         "color": "Purple",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 219,
-        "rate_total": 656,
+        "rate_count": 220,
+        "rate_total": 660,
         "rating": "3.00"
     },
     {
@@ -4597,8 +4597,8 @@
         "model": "Civic",
         "color": "Blue",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 240,
-        "rate_total": 709,
+        "rate_count": 241,
+        "rate_total": 712,
         "rating": "2.95"
     },
     {
@@ -4612,9 +4612,9 @@
         "model": "G3",
         "color": "Aquamarine",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 3,
-        "rate_total": 7,
-        "rating": "2.33"
+        "rate_count": 4,
+        "rate_total": 12,
+        "rating": "3.00"
     },
     {
         "id": 313,
@@ -4635,9 +4635,9 @@
         "model": "Civic",
         "color": "Yellow",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 24,
-        "rate_total": 81,
-        "rating": "3.38"
+        "rate_count": 26,
+        "rate_total": 87,
+        "rating": "3.35"
     },
     {
         "id": 314,
@@ -4650,9 +4650,9 @@
         "model": "Lumina APV",
         "color": "Green",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 121,
-        "rate_total": 352,
-        "rating": "2.91"
+        "rate_count": 122,
+        "rate_total": 353,
+        "rating": "2.89"
     },
     {
         "id": 315,
@@ -4669,8 +4669,8 @@
         "model": "RAV4",
         "color": "Aquamarine",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 393,
-        "rate_total": 1168,
+        "rate_count": 395,
+        "rate_total": 1174,
         "rating": "2.97"
     },
     {
@@ -4684,9 +4684,9 @@
         "model": "Sidekick",
         "color": "Green",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 77,
-        "rate_total": 246,
-        "rating": "3.19"
+        "rate_count": 78,
+        "rate_total": 248,
+        "rating": "3.18"
     },
     {
         "id": 317,
@@ -4713,8 +4713,8 @@
         "model": "RAV4",
         "color": "Yellow",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 37,
-        "rate_total": 125,
+        "rate_count": 39,
+        "rate_total": 132,
         "rating": "3.38"
     },
     {
@@ -4743,8 +4743,8 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 279,
-        "rate_total": 846,
+        "rate_count": 280,
+        "rate_total": 849,
         "rating": "3.03"
     },
     {
@@ -4758,9 +4758,9 @@
         "model": "Dakota",
         "color": "Mauv",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 81,
-        "rate_total": 252,
-        "rating": "3.11"
+        "rate_count": 82,
+        "rate_total": 253,
+        "rating": "3.09"
     },
     {
         "id": 322,
@@ -4783,8 +4783,8 @@
         "model": "Oasis",
         "color": "Red",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 199,
-        "rate_total": 567,
+        "rate_count": 200,
+        "rate_total": 571,
         "rating": "2.85"
     },
     {
@@ -4818,9 +4818,9 @@
         "model": "Yukon XL 2500",
         "color": "Orange",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 8,
-        "rate_total": 22,
-        "rating": "2.75"
+        "rate_count": 9,
+        "rate_total": 26,
+        "rating": "2.89"
     },
     {
         "id": 327,
@@ -4843,9 +4843,9 @@
         "model": "Mystique",
         "color": "Mauv",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 269,
-        "rate_total": 818,
-        "rating": "3.04"
+        "rate_count": 270,
+        "rate_total": 819,
+        "rating": "3.03"
     },
     {
         "id": 329,
@@ -4868,9 +4868,9 @@
         "model": "Mystique",
         "color": "Maroon",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 48,
-        "rate_total": 144,
-        "rating": "3.00"
+        "rate_count": 49,
+        "rate_total": 146,
+        "rating": "2.98"
     },
     {
         "id": 331,
@@ -4897,8 +4897,8 @@
         "model": "Continental GT",
         "color": "Red",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 302,
-        "rate_total": 926,
+        "rate_count": 304,
+        "rate_total": 934,
         "rating": "3.07"
     },
     {
@@ -4916,9 +4916,9 @@
         "model": "3500",
         "color": "Orange",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 166,
-        "rate_total": 482,
-        "rating": "2.90"
+        "rate_count": 168,
+        "rate_total": 490,
+        "rating": "2.92"
     },
     {
         "id": 334,
@@ -4945,9 +4945,9 @@
         "model": "MX-5",
         "color": "Violet",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 410,
-        "rate_total": 1219,
-        "rating": "2.97"
+        "rate_count": 411,
+        "rate_total": 1223,
+        "rating": "2.98"
     },
     {
         "id": 336,
@@ -4960,8 +4960,8 @@
         "model": "Lumina APV",
         "color": "Puce",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 424,
-        "rate_total": 1286,
+        "rate_count": 425,
+        "rate_total": 1289,
         "rating": "3.03"
     },
     {
@@ -4989,9 +4989,9 @@
         "model": "Mystique",
         "color": "Blue",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 25,
-        "rate_total": 73,
-        "rating": "2.92"
+        "rate_count": 27,
+        "rate_total": 79,
+        "rating": "2.93"
     },
     {
         "id": 339,
@@ -5008,8 +5008,8 @@
         "model": "Mystique",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 485,
-        "rate_total": 1456,
+        "rate_count": 487,
+        "rate_total": 1461,
         "rating": "3.00"
     },
     {
@@ -5033,9 +5033,9 @@
         "model": "G3",
         "color": "Orange",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 401,
-        "rate_total": 1169,
-        "rating": "2.92"
+        "rate_count": 402,
+        "rate_total": 1170,
+        "rating": "2.91"
     },
     {
         "id": 342,
@@ -5052,9 +5052,9 @@
         "model": "Fox",
         "color": "Maroon",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 64,
-        "rate_total": 217,
-        "rating": "3.39"
+        "rate_count": 66,
+        "rate_total": 226,
+        "rating": "3.42"
     },
     {
         "id": 343,
@@ -5077,9 +5077,9 @@
         "model": "MX-5",
         "color": "Green",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 40,
-        "rate_total": 116,
-        "rating": "2.90"
+        "rate_count": 41,
+        "rate_total": 121,
+        "rating": "2.95"
     },
     {
         "id": 345,
@@ -5100,8 +5100,8 @@
         "model": "Grand Cherokee",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 83,
-        "rate_total": 251,
+        "rate_count": 85,
+        "rate_total": 257,
         "rating": "3.02"
     },
     {
@@ -5125,8 +5125,8 @@
         "model": "Aurora",
         "color": "Indigo",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 371,
-        "rate_total": 1153,
+        "rate_count": 372,
+        "rate_total": 1156,
         "rating": "3.11"
     },
     {
@@ -5140,9 +5140,9 @@
         "model": "Dakota",
         "color": "Red",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 204,
-        "rate_total": 596,
-        "rating": "2.92"
+        "rate_count": 205,
+        "rate_total": 600,
+        "rating": "2.93"
     },
     {
         "id": 349,
@@ -5159,8 +5159,8 @@
         "model": "Galant",
         "color": "Blue",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 347,
-        "rate_total": 1029,
+        "rate_count": 348,
+        "rate_total": 1034,
         "rating": "2.97"
     },
     {
@@ -5190,9 +5190,9 @@
         "model": "RAV4",
         "color": "Teal",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 308,
-        "rate_total": 943,
-        "rating": "3.06"
+        "rate_count": 312,
+        "rate_total": 958,
+        "rating": "3.07"
     },
     {
         "id": 351,
@@ -5229,9 +5229,9 @@
         "model": "Sportage",
         "color": "Maroon",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 21,
-        "rate_total": 59,
-        "rating": "2.81"
+        "rate_count": 22,
+        "rate_total": 61,
+        "rating": "2.77"
     },
     {
         "id": 354,
@@ -5278,8 +5278,8 @@
         "model": "Continental GT",
         "color": "Khaki",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 484,
-        "rate_total": 1451,
+        "rate_count": 486,
+        "rate_total": 1457,
         "rating": "3.00"
     },
     {
@@ -5301,9 +5301,9 @@
         "model": "Mystique",
         "color": "Indigo",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 88,
-        "rate_total": 277,
-        "rating": "3.15"
+        "rate_count": 91,
+        "rate_total": 291,
+        "rating": "3.20"
     },
     {
         "id": 359,
@@ -5324,9 +5324,9 @@
         "model": "Veloster",
         "color": "Maroon",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 283,
-        "rate_total": 817,
-        "rating": "2.89"
+        "rate_count": 286,
+        "rate_total": 825,
+        "rating": "2.88"
     },
     {
         "id": 360,
@@ -5343,9 +5343,9 @@
         "model": "Yukon XL 2500",
         "color": "Goldenrod",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 133,
-        "rate_total": 387,
-        "rating": "2.91"
+        "rate_count": 134,
+        "rate_total": 391,
+        "rating": "2.92"
     },
     {
         "id": 361,
@@ -5358,8 +5358,8 @@
         "model": "SRX",
         "color": "Red",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 217,
-        "rate_total": 676,
+        "rate_count": 218,
+        "rate_total": 681,
         "rating": "3.12"
     },
     {
@@ -5383,9 +5383,9 @@
         "model": "Aurora",
         "color": "Mauv",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 96,
-        "rate_total": 292,
-        "rating": "3.04"
+        "rate_count": 97,
+        "rate_total": 297,
+        "rating": "3.06"
     },
     {
         "id": 364,
@@ -5429,9 +5429,9 @@
         "model": "F-Series",
         "color": "Green",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 168,
-        "rate_total": 525,
-        "rating": "3.13"
+        "rate_count": 171,
+        "rate_total": 537,
+        "rating": "3.14"
     },
     {
         "id": 366,
@@ -5454,9 +5454,9 @@
         "model": "SRX",
         "color": "Indigo",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 135,
-        "rate_total": 403,
-        "rating": "2.99"
+        "rate_count": 136,
+        "rate_total": 408,
+        "rating": "3.00"
     },
     {
         "id": 368,
@@ -5469,9 +5469,9 @@
         "model": "Galant",
         "color": "Orange",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 80,
-        "rate_total": 218,
-        "rating": "2.73"
+        "rate_count": 81,
+        "rate_total": 219,
+        "rating": "2.70"
     },
     {
         "id": 369,
@@ -5492,9 +5492,9 @@
         "model": "X-Type",
         "color": "Maroon",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 475,
-        "rate_total": 1431,
-        "rating": "3.01"
+        "rate_count": 478,
+        "rate_total": 1445,
+        "rating": "3.02"
     },
     {
         "id": 370,
@@ -5515,8 +5515,8 @@
         "model": "Grand Cherokee",
         "color": "Maroon",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 301,
-        "rate_total": 887,
+        "rate_count": 304,
+        "rate_total": 896,
         "rating": "2.95"
     },
     {
@@ -5544,9 +5544,9 @@
         "model": "R8",
         "color": "Purple",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 315,
-        "rate_total": 943,
-        "rating": "2.99"
+        "rate_count": 317,
+        "rate_total": 952,
+        "rating": "3.00"
     },
     {
         "id": 373,
@@ -5618,9 +5618,9 @@
         "model": "R8",
         "color": "Mauv",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 366,
-        "rate_total": 1110,
-        "rating": "3.03"
+        "rate_count": 368,
+        "rate_total": 1117,
+        "rating": "3.04"
     },
     {
         "id": 379,
@@ -5651,8 +5651,8 @@
         "model": "5000S",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 328,
-        "rate_total": 965,
+        "rate_count": 331,
+        "rate_total": 974,
         "rating": "2.94"
     },
     {
@@ -5676,8 +5676,8 @@
         "model": "Grand Cherokee",
         "color": "Purple",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 317,
-        "rate_total": 985,
+        "rate_count": 318,
+        "rate_total": 989,
         "rating": "3.11"
     },
     {
@@ -5725,9 +5725,9 @@
         "model": "Sportage",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 48,
-        "rate_total": 152,
-        "rating": "3.17"
+        "rate_count": 50,
+        "rate_total": 158,
+        "rating": "3.16"
     },
     {
         "id": 386,
@@ -5758,8 +5758,8 @@
         "model": "Caravan",
         "color": "Green",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 470,
-        "rate_total": 1488,
+        "rate_count": 472,
+        "rate_total": 1496,
         "rating": "3.17"
     },
     {
@@ -5808,9 +5808,9 @@
         "model": "Civic",
         "color": "Blue",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 133,
-        "rate_total": 369,
-        "rating": "2.77"
+        "rate_count": 134,
+        "rate_total": 372,
+        "rating": "2.78"
     },
     {
         "id": 392,
@@ -5861,8 +5861,8 @@
         "model": "Dakota",
         "color": "Aquamarine",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 448,
-        "rate_total": 1306,
+        "rate_count": 451,
+        "rate_total": 1318,
         "rating": "2.92"
     },
     {
@@ -5876,8 +5876,8 @@
         "model": "Continental GT",
         "color": "Maroon",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 127,
-        "rate_total": 387,
+        "rate_count": 128,
+        "rate_total": 391,
         "rating": "3.05"
     },
     {
@@ -5895,9 +5895,9 @@
         "model": "Lumina APV",
         "color": "Aquamarine",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 197,
-        "rate_total": 598,
-        "rating": "3.04"
+        "rate_count": 199,
+        "rate_total": 608,
+        "rating": "3.06"
     },
     {
         "id": 398,
@@ -5933,9 +5933,9 @@
         "model": "SRX",
         "color": "Mauv",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 235,
-        "rate_total": 716,
-        "rating": "3.05"
+        "rate_count": 238,
+        "rate_total": 724,
+        "rating": "3.04"
     },
     {
         "id": 400,
@@ -5952,9 +5952,9 @@
         "model": "Galant",
         "color": "Goldenrod",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 281,
-        "rate_total": 842,
-        "rating": "3.00"
+        "rate_count": 282,
+        "rate_total": 844,
+        "rating": "2.99"
     },
     {
         "id": 401,
@@ -5991,9 +5991,9 @@
         "model": "Continental",
         "color": "Blue",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 76,
-        "rate_total": 205,
-        "rating": "2.70"
+        "rate_count": 77,
+        "rate_total": 206,
+        "rating": "2.68"
     },
     {
         "id": 404,
@@ -6014,8 +6014,8 @@
         "model": "Continental",
         "color": "Green",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 231,
-        "rate_total": 707,
+        "rate_count": 234,
+        "rate_total": 717,
         "rating": "3.06"
     },
     {
@@ -6062,8 +6062,8 @@
         "model": "Continental",
         "color": "Indigo",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 140,
-        "rate_total": 404,
+        "rate_count": 141,
+        "rate_total": 407,
         "rating": "2.89"
     },
     {
@@ -6091,8 +6091,8 @@
         "model": "Sportage",
         "color": "Yellow",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 223,
-        "rate_total": 672,
+        "rate_count": 225,
+        "rate_total": 678,
         "rating": "3.01"
     },
     {
@@ -6139,8 +6139,8 @@
         "model": "Corvette",
         "color": "Aquamarine",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 270,
-        "rate_total": 806,
+        "rate_count": 273,
+        "rate_total": 816,
         "rating": "2.99"
     },
     {
@@ -6154,9 +6154,9 @@
         "model": "Sportage",
         "color": "Red",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 206,
-        "rate_total": 639,
-        "rating": "3.10"
+        "rate_count": 207,
+        "rate_total": 640,
+        "rating": "3.09"
     },
     {
         "id": 414,
@@ -6173,9 +6173,9 @@
         "model": "Corvette",
         "color": "Aquamarine",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 52,
-        "rate_total": 164,
-        "rating": "3.15"
+        "rate_count": 54,
+        "rate_total": 172,
+        "rating": "3.19"
     },
     {
         "id": 415,
@@ -6196,9 +6196,9 @@
         "model": "Grand Cherokee",
         "color": "Red",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 268,
-        "rate_total": 799,
-        "rating": "2.98"
+        "rate_count": 269,
+        "rate_total": 803,
+        "rating": "2.99"
     },
     {
         "id": 416,
@@ -6219,9 +6219,9 @@
         "model": "Grand Am",
         "color": "Aquamarine",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 260,
-        "rate_total": 794,
-        "rating": "3.05"
+        "rate_count": 263,
+        "rate_total": 805,
+        "rating": "3.06"
     },
     {
         "id": 417,
@@ -6249,8 +6249,8 @@
         "model": "Grand Cherokee",
         "color": "Aquamarine",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 430,
-        "rate_total": 1233,
+        "rate_count": 431,
+        "rate_total": 1238,
         "rating": "2.87"
     },
     {
@@ -6264,9 +6264,9 @@
         "model": "F-Series",
         "color": "Purple",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 20,
-        "rate_total": 57,
-        "rating": "2.85"
+        "rate_count": 21,
+        "rate_total": 62,
+        "rating": "2.95"
     },
     {
         "id": 420,
@@ -6312,9 +6312,9 @@
         "model": "Dakota",
         "color": "Blue",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 206,
-        "rate_total": 622,
-        "rating": "3.02"
+        "rate_count": 208,
+        "rate_total": 627,
+        "rating": "3.01"
     },
     {
         "id": 423,
@@ -6396,9 +6396,9 @@
         "model": "Cooper Countryman",
         "color": "Maroon",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 256,
-        "rate_total": 768,
-        "rating": "3.00"
+        "rate_count": 258,
+        "rate_total": 770,
+        "rating": "2.98"
     },
     {
         "id": 429,
@@ -6415,9 +6415,9 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 87,
-        "rate_total": 276,
-        "rating": "3.17"
+        "rate_count": 89,
+        "rate_total": 284,
+        "rating": "3.19"
     },
     {
         "id": 430,
@@ -6430,8 +6430,8 @@
         "model": "Caravan",
         "color": "Fuscia",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 375,
-        "rate_total": 1131,
+        "rate_count": 376,
+        "rate_total": 1134,
         "rating": "3.02"
     },
     {
@@ -6457,9 +6457,9 @@
         "model": "3500",
         "color": "Purple",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 424,
-        "rate_total": 1285,
-        "rating": "3.03"
+        "rate_count": 427,
+        "rate_total": 1296,
+        "rating": "3.04"
     },
     {
         "id": 432,
@@ -6472,9 +6472,9 @@
         "model": "Corvette",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 195,
-        "rate_total": 569,
-        "rating": "2.92"
+        "rate_count": 196,
+        "rate_total": 570,
+        "rating": "2.91"
     },
     {
         "id": 433,
@@ -6491,8 +6491,8 @@
         "model": "Fox",
         "color": "Aquamarine",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 433,
-        "rate_total": 1310,
+        "rate_count": 435,
+        "rate_total": 1317,
         "rating": "3.03"
     },
     {
@@ -6510,9 +6510,9 @@
         "model": "3500",
         "color": "Mauv",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 69,
-        "rate_total": 195,
-        "rating": "2.83"
+        "rate_count": 71,
+        "rate_total": 202,
+        "rating": "2.85"
     },
     {
         "id": 435,
@@ -6550,8 +6550,8 @@
         "model": "Veloster",
         "color": "Puce",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 381,
-        "rate_total": 1136,
+        "rate_count": 382,
+        "rate_total": 1139,
         "rating": "2.98"
     },
     {
@@ -6580,9 +6580,9 @@
         "model": "Cooper Countryman",
         "color": "Goldenrod",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 210,
-        "rate_total": 660,
-        "rating": "3.14"
+        "rate_count": 211,
+        "rate_total": 665,
+        "rating": "3.15"
     },
     {
         "id": 440,
@@ -6595,8 +6595,8 @@
         "model": "Grand Am",
         "color": "Indigo",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 489,
-        "rate_total": 1475,
+        "rate_count": 490,
+        "rate_total": 1480,
         "rating": "3.02"
     },
     {
@@ -6620,8 +6620,8 @@
         "model": "Fox",
         "color": "Red",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 258,
-        "rate_total": 772,
+        "rate_count": 259,
+        "rate_total": 775,
         "rating": "2.99"
     },
     {
@@ -6635,8 +6635,8 @@
         "model": "Dakota",
         "color": "Green",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 200,
-        "rate_total": 581,
+        "rate_count": 201,
+        "rate_total": 583,
         "rating": "2.90"
     },
     {
@@ -6650,8 +6650,8 @@
         "model": "Fox",
         "color": "Green",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 173,
-        "rate_total": 505,
+        "rate_count": 174,
+        "rate_total": 508,
         "rating": "2.92"
     },
     {
@@ -6669,9 +6669,9 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 37,
-        "rate_total": 99,
-        "rating": "2.68"
+        "rate_count": 38,
+        "rate_total": 103,
+        "rating": "2.71"
     },
     {
         "id": 446,
@@ -6694,9 +6694,9 @@
         "model": "Dakota",
         "color": "Orange",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 33,
-        "rate_total": 101,
-        "rating": "3.06"
+        "rate_count": 34,
+        "rate_total": 105,
+        "rating": "3.09"
     },
     {
         "id": 448,
@@ -6737,8 +6737,8 @@
         "model": "3500",
         "color": "Goldenrod",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 384,
-        "rate_total": 1171,
+        "rate_count": 386,
+        "rate_total": 1176,
         "rating": "3.05"
     },
     {
@@ -6766,9 +6766,9 @@
         "model": "F-Series",
         "color": "Teal",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 301,
-        "rate_total": 874,
-        "rating": "2.90"
+        "rate_count": 303,
+        "rate_total": 882,
+        "rating": "2.91"
     },
     {
         "id": 453,
@@ -6789,8 +6789,8 @@
         "model": "MX-5",
         "color": "Aquamarine",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 105,
-        "rate_total": 313,
+        "rate_count": 107,
+        "rate_total": 319,
         "rating": "2.98"
     },
     {
@@ -6804,9 +6804,9 @@
         "model": "Lumina APV",
         "color": "Mauv",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 117,
-        "rate_total": 363,
-        "rating": "3.10"
+        "rate_count": 118,
+        "rate_total": 367,
+        "rating": "3.11"
     },
     {
         "id": 455,
@@ -6819,8 +6819,8 @@
         "model": "Lumina APV",
         "color": "Yellow",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 458,
-        "rate_total": 1350,
+        "rate_count": 459,
+        "rate_total": 1354,
         "rating": "2.95"
     },
     {
@@ -6844,8 +6844,8 @@
         "model": "SRX",
         "color": "Blue",
         "location": "Hegmann-Cremin - Saint Petersburg, FL",
-        "rate_count": 71,
-        "rate_total": 228,
+        "rate_count": 72,
+        "rate_total": 231,
         "rating": "3.21"
     },
     {
@@ -6867,9 +6867,9 @@
         "model": "Sidekick",
         "color": "Blue",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 231,
-        "rate_total": 686,
-        "rating": "2.97"
+        "rate_count": 232,
+        "rate_total": 691,
+        "rating": "2.98"
     },
     {
         "id": 459,
@@ -6886,9 +6886,9 @@
         "model": "Fox",
         "color": "Goldenrod",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 386,
-        "rate_total": 1135,
-        "rating": "2.94"
+        "rate_count": 388,
+        "rate_total": 1143,
+        "rating": "2.95"
     },
     {
         "id": 460,
@@ -6909,9 +6909,9 @@
         "model": "Caravan",
         "color": "Puce",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 68,
-        "rate_total": 214,
-        "rating": "3.15"
+        "rate_count": 71,
+        "rate_total": 222,
+        "rating": "3.13"
     },
     {
         "id": 461,
@@ -6928,8 +6928,8 @@
         "model": "Lumina APV",
         "color": "Purple",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 277,
-        "rate_total": 807,
+        "rate_count": 278,
+        "rate_total": 808,
         "rating": "2.91"
     },
     {
@@ -6943,9 +6943,9 @@
         "model": "3500",
         "color": "Mauv",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 6,
-        "rate_total": 15,
-        "rating": "2.50"
+        "rate_count": 7,
+        "rate_total": 17,
+        "rating": "2.43"
     },
     {
         "id": 463,
@@ -6978,9 +6978,9 @@
         "model": "G3",
         "color": "Mauv",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 382,
-        "rate_total": 1163,
-        "rating": "3.04"
+        "rate_count": 383,
+        "rate_total": 1167,
+        "rating": "3.05"
     },
     {
         "id": 466,
@@ -7001,8 +7001,8 @@
         "model": "F-Series",
         "color": "Puce",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 175,
-        "rate_total": 472,
+        "rate_count": 178,
+        "rate_total": 481,
         "rating": "2.70"
     },
     {
@@ -7020,8 +7020,8 @@
         "model": "Sportage",
         "color": "Aquamarine",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 334,
-        "rate_total": 973,
+        "rate_count": 335,
+        "rate_total": 976,
         "rating": "2.91"
     },
     {
@@ -7039,8 +7039,8 @@
         "model": "X-Type",
         "color": "Aquamarine",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 445,
-        "rate_total": 1362,
+        "rate_count": 446,
+        "rate_total": 1366,
         "rating": "3.06"
     },
     {
@@ -7062,8 +7062,8 @@
         "model": "Lumina APV",
         "color": "Orange",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 223,
-        "rate_total": 661,
+        "rate_count": 226,
+        "rate_total": 670,
         "rating": "2.96"
     },
     {
@@ -7081,8 +7081,8 @@
         "model": "SRX",
         "color": "Violet",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 314,
-        "rate_total": 917,
+        "rate_count": 316,
+        "rate_total": 923,
         "rating": "2.92"
     },
     {
@@ -7096,9 +7096,9 @@
         "model": "Sidekick",
         "color": "Blue",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 245,
-        "rate_total": 736,
-        "rating": "3.00"
+        "rate_count": 246,
+        "rate_total": 740,
+        "rating": "3.01"
     },
     {
         "id": 472,
@@ -7111,9 +7111,9 @@
         "model": "Sidekick",
         "color": "Khaki",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 231,
-        "rate_total": 687,
-        "rating": "2.97"
+        "rate_count": 232,
+        "rate_total": 691,
+        "rating": "2.98"
     },
     {
         "id": 473,
@@ -7136,9 +7136,9 @@
         "model": "Lumina APV",
         "color": "Fuscia",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 112,
-        "rate_total": 345,
-        "rating": "3.08"
+        "rate_count": 113,
+        "rate_total": 346,
+        "rating": "3.06"
     },
     {
         "id": 475,
@@ -7161,9 +7161,9 @@
         "model": "Civic",
         "color": "Green",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 77,
-        "rate_total": 248,
-        "rating": "3.22"
+        "rate_count": 78,
+        "rate_total": 250,
+        "rating": "3.21"
     },
     {
         "id": 477,
@@ -7219,9 +7219,9 @@
         "model": "Continental GT",
         "color": "Goldenrod",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 438,
-        "rate_total": 1272,
-        "rating": "2.90"
+        "rate_count": 440,
+        "rate_total": 1279,
+        "rating": "2.91"
     },
     {
         "id": 481,
@@ -7234,8 +7234,8 @@
         "model": "Sidekick",
         "color": "Blue",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 408,
-        "rate_total": 1227,
+        "rate_count": 409,
+        "rate_total": 1230,
         "rating": "3.01"
     },
     {
@@ -7249,8 +7249,8 @@
         "model": "Galant",
         "color": "Orange",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 484,
-        "rate_total": 1438,
+        "rate_count": 485,
+        "rate_total": 1439,
         "rating": "2.97"
     },
     {
@@ -7309,8 +7309,8 @@
         "model": "Continental",
         "color": "Maroon",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 297,
-        "rate_total": 899,
+        "rate_count": 298,
+        "rate_total": 904,
         "rating": "3.03"
     },
     {
@@ -7324,8 +7324,8 @@
         "model": "Grand Am",
         "color": "Green",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 459,
-        "rate_total": 1442,
+        "rate_count": 460,
+        "rate_total": 1443,
         "rating": "3.14"
     },
     {
@@ -7343,8 +7343,8 @@
         "model": "Aurora",
         "color": "Orange",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 455,
-        "rate_total": 1357,
+        "rate_count": 456,
+        "rate_total": 1359,
         "rating": "2.98"
     },
     {
@@ -7358,9 +7358,9 @@
         "model": "Civic",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 41,
-        "rate_total": 136,
-        "rating": "3.32"
+        "rate_count": 42,
+        "rate_total": 140,
+        "rating": "3.33"
     },
     {
         "id": 491,
@@ -7373,9 +7373,9 @@
         "model": "RAV4",
         "color": "Green",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 344,
-        "rate_total": 1021,
-        "rating": "2.97"
+        "rate_count": 345,
+        "rate_total": 1022,
+        "rating": "2.96"
     },
     {
         "id": 492,
@@ -7438,8 +7438,8 @@
         "model": "Dynasty",
         "color": "Indigo",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 134,
-        "rate_total": 403,
+        "rate_count": 135,
+        "rate_total": 407,
         "rating": "3.01"
     },
     {
@@ -7453,8 +7453,8 @@
         "model": "Mystique",
         "color": "Blue",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 458,
-        "rate_total": 1388,
+        "rate_count": 459,
+        "rate_total": 1392,
         "rating": "3.03"
     },
     {
@@ -7468,8 +7468,8 @@
         "model": "Grand Cherokee",
         "color": "Teal",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 374,
-        "rate_total": 1077,
+        "rate_count": 375,
+        "rate_total": 1079,
         "rating": "2.88"
     },
     {
@@ -7483,9 +7483,9 @@
         "model": "5000S",
         "color": "Violet",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 86,
-        "rate_total": 261,
-        "rating": "3.03"
+        "rate_count": 87,
+        "rate_total": 262,
+        "rating": "3.01"
     },
     {
         "id": 500,
@@ -7498,8 +7498,8 @@
         "model": "F-Series",
         "color": "Maroon",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 97,
-        "rate_total": 286,
+        "rate_count": 98,
+        "rate_total": 289,
         "rating": "2.95"
     },
     {
@@ -7527,9 +7527,9 @@
         "model": "Oasis",
         "color": "Orange",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 56,
-        "rate_total": 177,
-        "rating": "3.16"
+        "rate_count": 57,
+        "rate_total": 178,
+        "rating": "3.12"
     },
     {
         "id": 503,
@@ -7560,9 +7560,9 @@
         "model": "Continental",
         "color": "Mauv",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 471,
-        "rate_total": 1387,
-        "rating": "2.94"
+        "rate_count": 472,
+        "rate_total": 1392,
+        "rating": "2.95"
     },
     {
         "id": 505,
@@ -7583,8 +7583,8 @@
         "model": "Grand Cherokee",
         "color": "Fuscia",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 377,
-        "rate_total": 1109,
+        "rate_count": 379,
+        "rate_total": 1116,
         "rating": "2.94"
     },
     {
@@ -7602,9 +7602,9 @@
         "model": "Dakota",
         "color": "Green",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 197,
-        "rate_total": 581,
-        "rating": "2.95"
+        "rate_count": 198,
+        "rate_total": 586,
+        "rating": "2.96"
     },
     {
         "id": 507,
@@ -7621,9 +7621,9 @@
         "model": "Civic",
         "color": "Mauv",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 70,
-        "rate_total": 221,
-        "rating": "3.16"
+        "rate_count": 72,
+        "rate_total": 229,
+        "rating": "3.18"
     },
     {
         "id": 508,
@@ -7650,9 +7650,9 @@
         "model": "Dakota",
         "color": "Aquamarine",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 182,
-        "rate_total": 567,
-        "rating": "3.12"
+        "rate_count": 184,
+        "rate_total": 575,
+        "rating": "3.13"
     },
     {
         "id": 510,
@@ -7685,8 +7685,8 @@
         "model": "Grand Cherokee",
         "color": "Violet",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 382,
-        "rate_total": 1151,
+        "rate_count": 383,
+        "rate_total": 1153,
         "rating": "3.01"
     },
     {
@@ -7700,8 +7700,8 @@
         "model": "R8",
         "color": "Green",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 310,
-        "rate_total": 927,
+        "rate_count": 311,
+        "rate_total": 929,
         "rating": "2.99"
     },
     {
@@ -7715,9 +7715,9 @@
         "model": "Lumina APV",
         "color": "Blue",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 18,
-        "rate_total": 57,
-        "rating": "3.17"
+        "rate_count": 19,
+        "rate_total": 58,
+        "rating": "3.05"
     },
     {
         "id": 515,
@@ -7730,9 +7730,9 @@
         "model": "Yukon XL 2500",
         "color": "Puce",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 321,
-        "rate_total": 958,
-        "rating": "2.98"
+        "rate_count": 322,
+        "rate_total": 962,
+        "rating": "2.99"
     },
     {
         "id": 516,
@@ -7794,9 +7794,9 @@
         "model": "Civic",
         "color": "Green",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 479,
-        "rate_total": 1403,
-        "rating": "2.93"
+        "rate_count": 480,
+        "rate_total": 1404,
+        "rating": "2.92"
     },
     {
         "id": 520,
@@ -7838,8 +7838,8 @@
         "model": "Mystique",
         "color": "Violet",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 222,
-        "rate_total": 641,
+        "rate_count": 223,
+        "rate_total": 644,
         "rating": "2.89"
     },
     {
@@ -7853,8 +7853,8 @@
         "model": "Corvette",
         "color": "Orange",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 255,
-        "rate_total": 784,
+        "rate_count": 256,
+        "rate_total": 787,
         "rating": "3.07"
     },
     {
@@ -7872,9 +7872,9 @@
         "model": "Continental",
         "color": "Blue",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 265,
-        "rate_total": 783,
-        "rating": "2.95"
+        "rate_count": 267,
+        "rate_total": 791,
+        "rating": "2.96"
     },
     {
         "id": 525,
@@ -7940,9 +7940,9 @@
         "model": "Galant",
         "color": "Red",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 15,
-        "rate_total": 48,
-        "rating": "3.20"
+        "rate_count": 17,
+        "rate_total": 54,
+        "rating": "3.18"
     },
     {
         "id": 530,
@@ -7973,8 +7973,8 @@
         "model": "Galant",
         "color": "Green",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 405,
-        "rate_total": 1231,
+        "rate_count": 408,
+        "rate_total": 1239,
         "rating": "3.04"
     },
     {
@@ -7988,8 +7988,8 @@
         "model": "Corvette",
         "color": "Goldenrod",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 327,
-        "rate_total": 1011,
+        "rate_count": 328,
+        "rate_total": 1013,
         "rating": "3.09"
     },
     {
@@ -8033,9 +8033,9 @@
         "model": "Grand Cherokee",
         "color": "Indigo",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 257,
-        "rate_total": 754,
-        "rating": "2.93"
+        "rate_count": 258,
+        "rate_total": 758,
+        "rating": "2.94"
     },
     {
         "id": 537,
@@ -8058,8 +8058,8 @@
         "model": "Continental",
         "color": "Orange",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 281,
-        "rate_total": 862,
+        "rate_count": 282,
+        "rate_total": 867,
         "rating": "3.07"
     },
     {
@@ -8073,9 +8073,9 @@
         "model": "G3",
         "color": "Green",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 339,
-        "rate_total": 1054,
-        "rating": "3.11"
+        "rate_count": 340,
+        "rate_total": 1055,
+        "rating": "3.10"
     },
     {
         "id": 540,
@@ -8133,8 +8133,8 @@
         "model": "Aurora",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 165,
-        "rate_total": 501,
+        "rate_count": 166,
+        "rate_total": 505,
         "rating": "3.04"
     },
     {
@@ -8148,9 +8148,9 @@
         "model": "Caravan",
         "color": "Puce",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 102,
-        "rate_total": 329,
-        "rating": "3.23"
+        "rate_count": 103,
+        "rate_total": 334,
+        "rating": "3.24"
     },
     {
         "id": 546,
@@ -8173,8 +8173,8 @@
         "model": "F-Series",
         "color": "Aquamarine",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 169,
-        "rate_total": 533,
+        "rate_count": 170,
+        "rate_total": 535,
         "rating": "3.15"
     },
     {
@@ -8188,8 +8188,8 @@
         "model": "Mystique",
         "color": "Puce",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 206,
-        "rate_total": 614,
+        "rate_count": 207,
+        "rate_total": 617,
         "rating": "2.98"
     },
     {
@@ -8217,8 +8217,8 @@
         "model": "Lumina APV",
         "color": "Yellow",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 312,
-        "rate_total": 931,
+        "rate_count": 313,
+        "rate_total": 933,
         "rating": "2.98"
     },
     {
@@ -8277,8 +8277,8 @@
         "model": "5000S",
         "color": "Orange",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 336,
-        "rate_total": 1005,
+        "rate_count": 337,
+        "rate_total": 1006,
         "rating": "2.99"
     },
     {
@@ -8300,8 +8300,8 @@
         "model": "3500",
         "color": "Yellow",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 244,
-        "rate_total": 711,
+        "rate_count": 247,
+        "rate_total": 719,
         "rating": "2.91"
     },
     {
@@ -8319,9 +8319,9 @@
         "model": "5000S",
         "color": "Teal",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 140,
-        "rate_total": 426,
-        "rating": "3.04"
+        "rate_count": 142,
+        "rate_total": 434,
+        "rating": "3.06"
     },
     {
         "id": 558,
@@ -8349,8 +8349,8 @@
         "model": "Galant",
         "color": "Red",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 306,
-        "rate_total": 902,
+        "rate_count": 307,
+        "rate_total": 906,
         "rating": "2.95"
     },
     {
@@ -8372,8 +8372,8 @@
         "model": "Corvette",
         "color": "Goldenrod",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 151,
-        "rate_total": 462,
+        "rate_count": 154,
+        "rate_total": 472,
         "rating": "3.06"
     },
     {
@@ -8402,9 +8402,9 @@
         "model": "RAV4",
         "color": "Green",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 368,
-        "rate_total": 1139,
-        "rating": "3.10"
+        "rate_count": 369,
+        "rate_total": 1141,
+        "rating": "3.09"
     },
     {
         "id": 563,
@@ -8421,8 +8421,8 @@
         "model": "Galant",
         "color": "Red",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 252,
-        "rate_total": 795,
+        "rate_count": 253,
+        "rate_total": 796,
         "rating": "3.15"
     },
     {
@@ -8436,9 +8436,9 @@
         "model": "5000S",
         "color": "Purple",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 280,
-        "rate_total": 832,
-        "rating": "2.97"
+        "rate_count": 281,
+        "rate_total": 836,
+        "rating": "2.98"
     },
     {
         "id": 565,
@@ -8466,9 +8466,9 @@
         "model": "3500",
         "color": "Blue",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 405,
-        "rate_total": 1212,
-        "rating": "2.99"
+        "rate_count": 406,
+        "rate_total": 1216,
+        "rating": "3.00"
     },
     {
         "id": 567,
@@ -8485,9 +8485,9 @@
         "model": "Sportage",
         "color": "Aquamarine",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 298,
-        "rate_total": 898,
-        "rating": "3.01"
+        "rate_count": 300,
+        "rate_total": 906,
+        "rating": "3.02"
     },
     {
         "id": 568,
@@ -8500,9 +8500,9 @@
         "model": "Caravan",
         "color": "Aquamarine",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 154,
-        "rate_total": 482,
-        "rating": "3.13"
+        "rate_count": 155,
+        "rate_total": 486,
+        "rating": "3.14"
     },
     {
         "id": 569,
@@ -8515,8 +8515,8 @@
         "model": "Galant",
         "color": "Blue",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 207,
-        "rate_total": 663,
+        "rate_count": 208,
+        "rate_total": 665,
         "rating": "3.20"
     },
     {
@@ -8563,8 +8563,8 @@
         "model": "Cooper Countryman",
         "color": "Yellow",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 261,
-        "rate_total": 809,
+        "rate_count": 262,
+        "rate_total": 813,
         "rating": "3.10"
     },
     {
@@ -8582,8 +8582,8 @@
         "model": "Galant",
         "color": "Orange",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 428,
-        "rate_total": 1324,
+        "rate_count": 430,
+        "rate_total": 1328,
         "rating": "3.09"
     },
     {
@@ -8632,8 +8632,8 @@
         "model": "RAV4",
         "color": "Blue",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 396,
-        "rate_total": 1160,
+        "rate_count": 397,
+        "rate_total": 1162,
         "rating": "2.93"
     },
     {
@@ -8647,8 +8647,8 @@
         "model": "5000S",
         "color": "Green",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 161,
-        "rate_total": 455,
+        "rate_count": 162,
+        "rate_total": 459,
         "rating": "2.83"
     },
     {
@@ -8662,8 +8662,8 @@
         "model": "Caravan",
         "color": "Teal",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 368,
-        "rate_total": 1173,
+        "rate_count": 369,
+        "rate_total": 1177,
         "rating": "3.19"
     },
     {
@@ -8702,8 +8702,8 @@
         "model": "Civic",
         "color": "Orange",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 429,
-        "rate_total": 1269,
+        "rate_count": 430,
+        "rate_total": 1273,
         "rating": "2.96"
     },
     {
@@ -8737,8 +8737,8 @@
         "model": "Mystique",
         "color": "Green",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 256,
-        "rate_total": 760,
+        "rate_count": 257,
+        "rate_total": 764,
         "rating": "2.97"
     },
     {
@@ -8766,9 +8766,9 @@
         "model": "Dynasty",
         "color": "Red",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 84,
-        "rate_total": 265,
-        "rating": "3.15"
+        "rate_count": 85,
+        "rate_total": 267,
+        "rating": "3.14"
     },
     {
         "id": 588,
@@ -8806,9 +8806,9 @@
         "model": "Dynasty",
         "color": "Maroon",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 191,
-        "rate_total": 571,
-        "rating": "2.99"
+        "rate_count": 192,
+        "rate_total": 572,
+        "rating": "2.98"
     },
     {
         "id": 591,
@@ -8825,8 +8825,8 @@
         "model": "Mystique",
         "color": "Maroon",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 260,
-        "rate_total": 751,
+        "rate_count": 262,
+        "rate_total": 756,
         "rating": "2.89"
     },
     {
@@ -8844,9 +8844,9 @@
         "model": "Fox",
         "color": "Aquamarine",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 319,
-        "rate_total": 939,
-        "rating": "2.94"
+        "rate_count": 321,
+        "rate_total": 948,
+        "rating": "2.95"
     },
     {
         "id": 593,
@@ -8863,8 +8863,8 @@
         "model": "Galant",
         "color": "Fuscia",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 263,
-        "rate_total": 782,
+        "rate_count": 265,
+        "rate_total": 787,
         "rating": "2.97"
     },
     {
@@ -8882,9 +8882,9 @@
         "model": "Aurora",
         "color": "Indigo",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 29,
-        "rate_total": 79,
-        "rating": "2.72"
+        "rate_count": 31,
+        "rate_total": 85,
+        "rating": "2.74"
     },
     {
         "id": 595,
@@ -8927,8 +8927,8 @@
         "model": "MX-5",
         "color": "Violet",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 446,
-        "rate_total": 1316,
+        "rate_count": 447,
+        "rate_total": 1319,
         "rating": "2.95"
     },
     {
@@ -8946,9 +8946,9 @@
         "model": "Lumina APV",
         "color": "Green",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 256,
-        "rate_total": 785,
-        "rating": "3.07"
+        "rate_count": 257,
+        "rate_total": 786,
+        "rating": "3.06"
     },
     {
         "id": 600,
@@ -8961,8 +8961,8 @@
         "model": "Mystique",
         "color": "Purple",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 139,
-        "rate_total": 419,
+        "rate_count": 140,
+        "rate_total": 421,
         "rating": "3.01"
     },
     {
@@ -8976,9 +8976,9 @@
         "model": "Lumina APV",
         "color": "Maroon",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 295,
-        "rate_total": 861,
-        "rating": "2.92"
+        "rate_count": 296,
+        "rate_total": 862,
+        "rating": "2.91"
     },
     {
         "id": 602,
@@ -8991,8 +8991,8 @@
         "model": "Veloster",
         "color": "Red",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 335,
-        "rate_total": 1016,
+        "rate_count": 336,
+        "rate_total": 1017,
         "rating": "3.03"
     },
     {
@@ -9014,8 +9014,8 @@
         "model": "F-Series",
         "color": "Red",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 399,
-        "rate_total": 1181,
+        "rate_count": 401,
+        "rate_total": 1187,
         "rating": "2.96"
     },
     {
@@ -9059,9 +9059,9 @@
         "model": "Sportage",
         "color": "Puce",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 72,
-        "rate_total": 216,
-        "rating": "3.00"
+        "rate_count": 73,
+        "rate_total": 218,
+        "rating": "2.99"
     },
     {
         "id": 607,
@@ -9074,9 +9074,9 @@
         "model": "Cooper Countryman",
         "color": "Green",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 445,
-        "rate_total": 1298,
-        "rating": "2.92"
+        "rate_count": 446,
+        "rate_total": 1299,
+        "rating": "2.91"
     },
     {
         "id": 608,
@@ -9099,8 +9099,8 @@
         "model": "Lumina APV",
         "color": "Green",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 466,
-        "rate_total": 1411,
+        "rate_count": 467,
+        "rate_total": 1414,
         "rating": "3.03"
     },
     {
@@ -9118,9 +9118,9 @@
         "model": "Continental GT",
         "color": "Khaki",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 26,
-        "rate_total": 87,
-        "rating": "3.35"
+        "rate_count": 28,
+        "rate_total": 89,
+        "rating": "3.18"
     },
     {
         "id": 611,
@@ -9133,9 +9133,9 @@
         "model": "Sidekick",
         "color": "Orange",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 344,
-        "rate_total": 1069,
-        "rating": "3.11"
+        "rate_count": 345,
+        "rate_total": 1070,
+        "rating": "3.10"
     },
     {
         "id": 612,
@@ -9168,9 +9168,9 @@
         "model": "Lumina APV",
         "color": "Red",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 21,
-        "rate_total": 70,
-        "rating": "3.33"
+        "rate_count": 22,
+        "rate_total": 74,
+        "rating": "3.36"
     },
     {
         "id": 615,
@@ -9187,9 +9187,9 @@
         "model": "Caravan",
         "color": "Orange",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 3,
-        "rate_total": 7,
-        "rating": "2.33"
+        "rate_count": 5,
+        "rate_total": 10,
+        "rating": "2.00"
     },
     {
         "id": 616,
@@ -9202,9 +9202,9 @@
         "model": "Oasis",
         "color": "Yellow",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 195,
-        "rate_total": 602,
-        "rating": "3.09"
+        "rate_count": 196,
+        "rate_total": 603,
+        "rating": "3.08"
     },
     {
         "id": 617,
@@ -9221,8 +9221,8 @@
         "model": "Cooper Countryman",
         "color": "Yellow",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 210,
-        "rate_total": 609,
+        "rate_count": 212,
+        "rate_total": 614,
         "rating": "2.90"
     },
     {
@@ -9240,9 +9240,9 @@
         "model": "MX-5",
         "color": "Puce",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 48,
-        "rate_total": 130,
-        "rating": "2.71"
+        "rate_count": 50,
+        "rate_total": 136,
+        "rating": "2.72"
     },
     {
         "id": 619,
@@ -9285,9 +9285,9 @@
         "model": "Grand Cherokee",
         "color": "Green",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 48,
-        "rate_total": 143,
-        "rating": "2.98"
+        "rate_count": 49,
+        "rate_total": 144,
+        "rating": "2.94"
     },
     {
         "id": 622,
@@ -9300,9 +9300,9 @@
         "model": "3500",
         "color": "Mauv",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 232,
-        "rate_total": 702,
-        "rating": "3.03"
+        "rate_count": 233,
+        "rate_total": 703,
+        "rating": "3.02"
     },
     {
         "id": 623,
@@ -9315,8 +9315,8 @@
         "model": "Veloster",
         "color": "Purple",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 78,
-        "rate_total": 239,
+        "rate_count": 79,
+        "rate_total": 242,
         "rating": "3.06"
     },
     {
@@ -9334,8 +9334,8 @@
         "model": "Continental",
         "color": "Goldenrod",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 189,
-        "rate_total": 564,
+        "rate_count": 191,
+        "rate_total": 570,
         "rating": "2.98"
     },
     {
@@ -9349,8 +9349,8 @@
         "model": "SRX",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 207,
-        "rate_total": 616,
+        "rate_count": 208,
+        "rate_total": 620,
         "rating": "2.98"
     },
     {
@@ -9372,9 +9372,9 @@
         "model": "Yukon XL 2500",
         "color": "Mauv",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 381,
-        "rate_total": 1109,
-        "rating": "2.91"
+        "rate_count": 384,
+        "rate_total": 1121,
+        "rating": "2.92"
     },
     {
         "id": 627,
@@ -9387,9 +9387,9 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 488,
-        "rate_total": 1461,
-        "rating": "2.99"
+        "rate_count": 489,
+        "rate_total": 1465,
+        "rating": "3.00"
     },
     {
         "id": 628,
@@ -9426,8 +9426,8 @@
         "model": "Continental",
         "color": "Red",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 364,
-        "rate_total": 1143,
+        "rate_count": 366,
+        "rate_total": 1151,
         "rating": "3.14"
     },
     {
@@ -9455,9 +9455,9 @@
         "model": "X-Type",
         "color": "Red",
         "location": "McClure-Wiegand - Lancaster, PA",
-        "rate_count": 183,
-        "rate_total": 535,
-        "rating": "2.92"
+        "rate_count": 184,
+        "rate_total": 540,
+        "rating": "2.93"
     },
     {
         "id": 633,
@@ -9474,9 +9474,9 @@
         "model": "Dakota",
         "color": "Maroon",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 263,
-        "rate_total": 779,
-        "rating": "2.96"
+        "rate_count": 264,
+        "rate_total": 780,
+        "rating": "2.95"
     },
     {
         "id": 634,
@@ -9489,9 +9489,9 @@
         "model": "Galant",
         "color": "Maroon",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 399,
-        "rate_total": 1223,
-        "rating": "3.07"
+        "rate_count": 400,
+        "rate_total": 1224,
+        "rating": "3.06"
     },
     {
         "id": 635,
@@ -9504,9 +9504,9 @@
         "model": "Caravan",
         "color": "Maroon",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 470,
-        "rate_total": 1361,
-        "rating": "2.90"
+        "rate_count": 471,
+        "rate_total": 1363,
+        "rating": "2.89"
     },
     {
         "id": 636,
@@ -9523,8 +9523,8 @@
         "model": "3500",
         "color": "Purple",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 475,
-        "rate_total": 1408,
+        "rate_count": 477,
+        "rate_total": 1413,
         "rating": "2.96"
     },
     {
@@ -9538,9 +9538,9 @@
         "model": "Galant",
         "color": "Mauv",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 11,
-        "rate_total": 28,
-        "rating": "2.55"
+        "rate_count": 12,
+        "rate_total": 33,
+        "rating": "2.75"
     },
     {
         "id": 638,
@@ -9557,9 +9557,9 @@
         "model": "Yukon XL 2500",
         "color": "Green",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 469,
-        "rate_total": 1365,
-        "rating": "2.91"
+        "rate_count": 471,
+        "rate_total": 1373,
+        "rating": "2.92"
     },
     {
         "id": 639,
@@ -9627,9 +9627,9 @@
         "model": "Aurora",
         "color": "Fuscia",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 400,
-        "rate_total": 1166,
-        "rating": "2.92"
+        "rate_count": 401,
+        "rate_total": 1167,
+        "rating": "2.91"
     },
     {
         "id": 644,
@@ -9682,8 +9682,8 @@
         "model": "Aurora",
         "color": "Green",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 298,
-        "rate_total": 898,
+        "rate_count": 299,
+        "rate_total": 899,
         "rating": "3.01"
     },
     {
@@ -9729,8 +9729,8 @@
         "model": "R8",
         "color": "Orange",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 405,
-        "rate_total": 1223,
+        "rate_count": 409,
+        "rate_total": 1236,
         "rating": "3.02"
     },
     {
@@ -9744,8 +9744,8 @@
         "model": "F-Series",
         "color": "Goldenrod",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 392,
-        "rate_total": 1152,
+        "rate_count": 393,
+        "rate_total": 1156,
         "rating": "2.94"
     },
     {
@@ -9759,9 +9759,9 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 58,
-        "rate_total": 171,
-        "rating": "2.95"
+        "rate_count": 59,
+        "rate_total": 173,
+        "rating": "2.93"
     },
     {
         "id": 654,
@@ -9797,9 +9797,9 @@
         "model": "MX-5",
         "color": "Mauv",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 240,
-        "rate_total": 733,
-        "rating": "3.05"
+        "rate_count": 241,
+        "rate_total": 738,
+        "rating": "3.06"
     },
     {
         "id": 656,
@@ -9826,9 +9826,9 @@
         "model": "Oasis",
         "color": "Blue",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 225,
-        "rate_total": 676,
-        "rating": "3.00"
+        "rate_count": 227,
+        "rate_total": 684,
+        "rating": "3.01"
     },
     {
         "id": 658,
@@ -9841,9 +9841,9 @@
         "model": "Continental",
         "color": "Khaki",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 325,
-        "rate_total": 999,
-        "rating": "3.07"
+        "rate_count": 326,
+        "rate_total": 1004,
+        "rating": "3.08"
     },
     {
         "id": 659,
@@ -9860,8 +9860,8 @@
         "model": "Galant",
         "color": "Fuscia",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 483,
-        "rate_total": 1414,
+        "rate_count": 485,
+        "rate_total": 1422,
         "rating": "2.93"
     },
     {
@@ -9875,8 +9875,8 @@
         "model": "F-Series",
         "color": "Indigo",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 141,
-        "rate_total": 419,
+        "rate_count": 142,
+        "rate_total": 422,
         "rating": "2.97"
     },
     {
@@ -9894,9 +9894,9 @@
         "model": "RAV4",
         "color": "Purple",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 31,
-        "rate_total": 104,
-        "rating": "3.35"
+        "rate_count": 33,
+        "rate_total": 109,
+        "rating": "3.30"
     },
     {
         "id": 662,
@@ -9942,9 +9942,9 @@
         "model": "Cooper Countryman",
         "color": "Aquamarine",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 23,
-        "rate_total": 77,
-        "rating": "3.35"
+        "rate_count": 25,
+        "rate_total": 83,
+        "rating": "3.32"
     },
     {
         "id": 665,
@@ -9971,8 +9971,8 @@
         "model": "Galant",
         "color": "Green",
         "location": "Mayert and Sons - Ventura, CA",
-        "rate_count": 18,
-        "rate_total": 52,
+        "rate_count": 19,
+        "rate_total": 55,
         "rating": "2.89"
     },
     {
@@ -9990,8 +9990,8 @@
         "model": "Galant",
         "color": "Aquamarine",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 105,
-        "rate_total": 304,
+        "rate_count": 106,
+        "rate_total": 307,
         "rating": "2.90"
     },
     {
@@ -10024,8 +10024,8 @@
         "model": "Cooper Countryman",
         "color": "Indigo",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 495,
-        "rate_total": 1502,
+        "rate_count": 497,
+        "rate_total": 1507,
         "rating": "3.03"
     },
     {
@@ -10039,8 +10039,8 @@
         "model": "Oasis",
         "color": "Khaki",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 362,
-        "rate_total": 1076,
+        "rate_count": 363,
+        "rate_total": 1077,
         "rating": "2.97"
     },
     {
@@ -10058,9 +10058,9 @@
         "model": "Civic",
         "color": "Mauv",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 118,
-        "rate_total": 349,
-        "rating": "2.96"
+        "rate_count": 120,
+        "rate_total": 358,
+        "rating": "2.98"
     },
     {
         "id": 672,
@@ -10073,8 +10073,8 @@
         "model": "Grand Am",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 449,
-        "rate_total": 1324,
+        "rate_count": 450,
+        "rate_total": 1328,
         "rating": "2.95"
     },
     {
@@ -10088,8 +10088,8 @@
         "model": "Caravan",
         "color": "Yellow",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 131,
-        "rate_total": 432,
+        "rate_count": 132,
+        "rate_total": 436,
         "rating": "3.30"
     },
     {
@@ -10111,9 +10111,9 @@
         "model": "Sportage",
         "color": "Green",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 254,
-        "rate_total": 773,
-        "rating": "3.04"
+        "rate_count": 256,
+        "rate_total": 776,
+        "rating": "3.03"
     },
     {
         "id": 675,
@@ -10144,8 +10144,8 @@
         "model": "Corvette",
         "color": "Puce",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 116,
-        "rate_total": 365,
+        "rate_count": 119,
+        "rate_total": 375,
         "rating": "3.15"
     },
     {
@@ -10159,8 +10159,8 @@
         "model": "Caravan",
         "color": "Orange",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 450,
-        "rate_total": 1367,
+        "rate_count": 451,
+        "rate_total": 1371,
         "rating": "3.04"
     },
     {
@@ -10178,9 +10178,9 @@
         "model": "Yukon XL 2500",
         "color": "Yellow",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 358,
-        "rate_total": 1062,
-        "rating": "2.97"
+        "rate_count": 359,
+        "rate_total": 1063,
+        "rating": "2.96"
     },
     {
         "id": 679,
@@ -10223,9 +10223,9 @@
         "model": "Yukon XL 2500",
         "color": "Orange",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 220,
-        "rate_total": 653,
-        "rating": "2.97"
+        "rate_count": 221,
+        "rate_total": 658,
+        "rating": "2.98"
     },
     {
         "id": 682,
@@ -10261,9 +10261,9 @@
         "model": "Civic",
         "color": "Purple",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 235,
-        "rate_total": 684,
-        "rating": "2.91"
+        "rate_count": 237,
+        "rate_total": 691,
+        "rating": "2.92"
     },
     {
         "id": 684,
@@ -10280,8 +10280,8 @@
         "model": "Caravan",
         "color": "Purple",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 341,
-        "rate_total": 956,
+        "rate_count": 343,
+        "rate_total": 961,
         "rating": "2.80"
     },
     {
@@ -10295,8 +10295,8 @@
         "model": "Dynasty",
         "color": "Yellow",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 189,
-        "rate_total": 559,
+        "rate_count": 190,
+        "rate_total": 562,
         "rating": "2.96"
     },
     {
@@ -10324,8 +10324,8 @@
         "model": "Grand Cherokee",
         "color": "Aquamarine",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 349,
-        "rate_total": 1032,
+        "rate_count": 350,
+        "rate_total": 1036,
         "rating": "2.96"
     },
     {
@@ -10343,9 +10343,9 @@
         "model": "Lumina APV",
         "color": "Blue",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 23,
-        "rate_total": 74,
-        "rating": "3.22"
+        "rate_count": 24,
+        "rate_total": 78,
+        "rating": "3.25"
     },
     {
         "id": 689,
@@ -10376,9 +10376,9 @@
         "model": "Galant",
         "color": "Goldenrod",
         "location": "Bins, Doyle and Moore - Kansas City, MO",
-        "rate_count": 494,
-        "rate_total": 1513,
-        "rating": "3.06"
+        "rate_count": 496,
+        "rate_total": 1515,
+        "rating": "3.05"
     },
     {
         "id": 691,
@@ -10416,9 +10416,9 @@
         "model": "Grand Am",
         "color": "Goldenrod",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 188,
-        "rate_total": 601,
-        "rating": "3.20"
+        "rate_count": 189,
+        "rate_total": 602,
+        "rating": "3.19"
     },
     {
         "id": 694,
@@ -10431,8 +10431,8 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 427,
-        "rate_total": 1309,
+        "rate_count": 428,
+        "rate_total": 1313,
         "rating": "3.07"
     },
     {
@@ -10461,8 +10461,8 @@
         "model": "Sidekick",
         "color": "Mauv",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 108,
-        "rate_total": 337,
+        "rate_count": 109,
+        "rate_total": 340,
         "rating": "3.12"
     },
     {
@@ -10480,8 +10480,8 @@
         "model": "G3",
         "color": "Maroon",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 468,
-        "rate_total": 1390,
+        "rate_count": 470,
+        "rate_total": 1396,
         "rating": "2.97"
     },
     {
@@ -10495,9 +10495,9 @@
         "model": "Aurora",
         "color": "Fuscia",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 5,
-        "rate_total": 14,
-        "rating": "2.80"
+        "rate_count": 6,
+        "rate_total": 19,
+        "rating": "3.17"
     },
     {
         "id": 699,
@@ -10514,8 +10514,8 @@
         "model": "Sportage",
         "color": "Goldenrod",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 432,
-        "rate_total": 1234,
+        "rate_count": 434,
+        "rate_total": 1240,
         "rating": "2.86"
     },
     {
@@ -10597,9 +10597,9 @@
         "model": "Caravan",
         "color": "Orange",
         "location": "Jenkins-Rutherford - Sacramento, CA",
-        "rate_count": 286,
-        "rate_total": 868,
-        "rating": "3.03"
+        "rate_count": 289,
+        "rate_total": 880,
+        "rating": "3.04"
     },
     {
         "id": 706,
@@ -10616,8 +10616,8 @@
         "model": "SRX",
         "color": "Maroon",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 317,
-        "rate_total": 965,
+        "rate_count": 319,
+        "rate_total": 970,
         "rating": "3.04"
     },
     {
@@ -10649,9 +10649,9 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 131,
-        "rate_total": 418,
-        "rating": "3.19"
+        "rate_count": 134,
+        "rate_total": 432,
+        "rating": "3.22"
     },
     {
         "id": 709,
@@ -10672,8 +10672,8 @@
         "model": "3500",
         "color": "Red",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 323,
-        "rate_total": 979,
+        "rate_count": 325,
+        "rate_total": 984,
         "rating": "3.03"
     },
     {
@@ -10691,8 +10691,8 @@
         "model": "Galant",
         "color": "Maroon",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 60,
-        "rate_total": 177,
+        "rate_count": 62,
+        "rate_total": 183,
         "rating": "2.95"
     },
     {
@@ -10728,8 +10728,8 @@
         "model": "Grand Am",
         "color": "Orange",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 364,
-        "rate_total": 1090,
+        "rate_count": 366,
+        "rate_total": 1094,
         "rating": "2.99"
     },
     {
@@ -10781,9 +10781,9 @@
         "model": "Grand Am",
         "color": "Indigo",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 52,
-        "rate_total": 151,
-        "rating": "2.90"
+        "rate_count": 53,
+        "rate_total": 152,
+        "rating": "2.87"
     },
     {
         "id": 716,
@@ -10811,9 +10811,9 @@
         "model": "Caravan",
         "color": "Orange",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 114,
-        "rate_total": 325,
-        "rating": "2.85"
+        "rate_count": 115,
+        "rate_total": 329,
+        "rating": "2.86"
     },
     {
         "id": 718,
@@ -10836,8 +10836,8 @@
         "model": "Yukon XL 2500",
         "color": "Mauv",
         "location": "Dickinson and Sons - Carson City, NV",
-        "rate_count": 449,
-        "rate_total": 1360,
+        "rate_count": 450,
+        "rate_total": 1364,
         "rating": "3.03"
     },
     {
@@ -10851,8 +10851,8 @@
         "model": "3500",
         "color": "Yellow",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 348,
-        "rate_total": 1050,
+        "rate_count": 349,
+        "rate_total": 1055,
         "rating": "3.02"
     },
     {
@@ -10874,8 +10874,8 @@
         "model": "Caravan",
         "color": "Puce",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 221,
-        "rate_total": 645,
+        "rate_count": 224,
+        "rate_total": 653,
         "rating": "2.92"
     },
     {
@@ -10889,9 +10889,9 @@
         "model": "F-Series",
         "color": "Mauv",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 176,
-        "rate_total": 537,
-        "rating": "3.05"
+        "rate_count": 177,
+        "rate_total": 538,
+        "rating": "3.04"
     },
     {
         "id": 723,
@@ -10908,9 +10908,9 @@
         "model": "X-Type",
         "color": "Aquamarine",
         "location": "Hilpert and Sons - Cincinnati, OH",
-        "rate_count": 141,
-        "rate_total": 413,
-        "rating": "2.93"
+        "rate_count": 142,
+        "rate_total": 415,
+        "rating": "2.92"
     },
     {
         "id": 724,
@@ -10927,8 +10927,8 @@
         "model": "Continental GT",
         "color": "Maroon",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 242,
-        "rate_total": 709,
+        "rate_count": 243,
+        "rate_total": 713,
         "rating": "2.93"
     },
     {
@@ -10985,9 +10985,9 @@
         "model": "Oasis",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 107,
-        "rate_total": 338,
-        "rating": "3.16"
+        "rate_count": 110,
+        "rate_total": 349,
+        "rating": "3.17"
     },
     {
         "id": 729,
@@ -11000,9 +11000,9 @@
         "model": "Corvette",
         "color": "Blue",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 97,
-        "rate_total": 252,
-        "rating": "2.60"
+        "rate_count": 98,
+        "rate_total": 254,
+        "rating": "2.59"
     },
     {
         "id": 730,
@@ -11015,8 +11015,8 @@
         "model": "Caravan",
         "color": "Mauv",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 307,
-        "rate_total": 960,
+        "rate_count": 308,
+        "rate_total": 964,
         "rating": "3.13"
     },
     {
@@ -11030,9 +11030,9 @@
         "model": "Corvette",
         "color": "Aquamarine",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 120,
-        "rate_total": 363,
-        "rating": "3.02"
+        "rate_count": 121,
+        "rate_total": 368,
+        "rating": "3.04"
     },
     {
         "id": 732,
@@ -11049,8 +11049,8 @@
         "model": "Mystique",
         "color": "Blue",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 370,
-        "rate_total": 1149,
+        "rate_count": 371,
+        "rate_total": 1152,
         "rating": "3.11"
     },
     {
@@ -11072,9 +11072,9 @@
         "model": "Yukon XL 2500",
         "color": "Maroon",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 234,
-        "rate_total": 687,
-        "rating": "2.94"
+        "rate_count": 236,
+        "rate_total": 692,
+        "rating": "2.93"
     },
     {
         "id": 734,
@@ -11087,9 +11087,9 @@
         "model": "X-Type",
         "color": "Red",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 159,
-        "rate_total": 484,
-        "rating": "3.04"
+        "rate_count": 160,
+        "rate_total": 488,
+        "rating": "3.05"
     },
     {
         "id": 735,
@@ -11102,9 +11102,9 @@
         "model": "Grand Am",
         "color": "Aquamarine",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 119,
-        "rate_total": 355,
-        "rating": "2.98"
+        "rate_count": 120,
+        "rate_total": 359,
+        "rating": "2.99"
     },
     {
         "id": 736,
@@ -11117,9 +11117,9 @@
         "model": "Galant",
         "color": "Yellow",
         "location": "Krajcik, Dibbert and Yost - Whittier, CA",
-        "rate_count": 249,
-        "rate_total": 752,
-        "rating": "3.02"
+        "rate_count": 250,
+        "rate_total": 753,
+        "rating": "3.01"
     },
     {
         "id": 737,
@@ -11140,9 +11140,9 @@
         "model": "Sportage",
         "color": "Maroon",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 119,
-        "rate_total": 368,
-        "rating": "3.09"
+        "rate_count": 121,
+        "rate_total": 372,
+        "rating": "3.07"
     },
     {
         "id": 738,
@@ -11175,9 +11175,9 @@
         "model": "Caravan",
         "color": "Green",
         "location": "Rutherford, Steuber and Bechtelar - Richmond, VA",
-        "rate_count": 148,
-        "rate_total": 447,
-        "rating": "3.02"
+        "rate_count": 149,
+        "rate_total": 451,
+        "rating": "3.03"
     },
     {
         "id": 741,
@@ -11190,9 +11190,9 @@
         "model": "Continental",
         "color": "Maroon",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 28,
-        "rate_total": 93,
-        "rating": "3.32"
+        "rate_count": 29,
+        "rate_total": 95,
+        "rating": "3.28"
     },
     {
         "id": 742,
@@ -11205,8 +11205,8 @@
         "model": "Aurora",
         "color": "Puce",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 419,
-        "rate_total": 1264,
+        "rate_count": 420,
+        "rate_total": 1267,
         "rating": "3.02"
     },
     {
@@ -11245,8 +11245,8 @@
         "model": "Aurora",
         "color": "Teal",
         "location": "Swift, Smitham and Ondricka - Prescott, AZ",
-        "rate_count": 333,
-        "rate_total": 1010,
+        "rate_count": 334,
+        "rate_total": 1012,
         "rating": "3.03"
     },
     {
@@ -11260,8 +11260,8 @@
         "model": "F-Series",
         "color": "Puce",
         "location": "Altenwerth-Romaguera - Portland, OR",
-        "rate_count": 413,
-        "rate_total": 1209,
+        "rate_count": 414,
+        "rate_total": 1214,
         "rating": "2.93"
     },
     {
@@ -11285,9 +11285,9 @@
         "model": "SRX",
         "color": "Purple",
         "location": "Wisozk LLC - Meridian, MS",
-        "rate_count": 100,
-        "rate_total": 322,
-        "rating": "3.22"
+        "rate_count": 101,
+        "rate_total": 323,
+        "rating": "3.20"
     },
     {
         "id": 749,
@@ -11308,9 +11308,9 @@
         "model": "Mystique",
         "color": "Goldenrod",
         "location": "Beer, Mraz and Ullrich - College Station, TX",
-        "rate_count": 18,
-        "rate_total": 53,
-        "rating": "2.94"
+        "rate_count": 20,
+        "rate_total": 58,
+        "rating": "2.90"
     },
     {
         "id": 750,
@@ -11366,9 +11366,9 @@
         "model": "5000S",
         "color": "Aquamarine",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 300,
-        "rate_total": 903,
-        "rating": "3.01"
+        "rate_count": 302,
+        "rate_total": 912,
+        "rating": "3.02"
     },
     {
         "id": 754,
@@ -11381,8 +11381,8 @@
         "model": "Corvette",
         "color": "Teal",
         "location": "Gibson-Schowalter - Stamford, CT",
-        "rate_count": 472,
-        "rate_total": 1399,
+        "rate_count": 473,
+        "rate_total": 1401,
         "rating": "2.96"
     },
     {
@@ -11396,8 +11396,8 @@
         "model": "Grand Cherokee",
         "color": "Blue",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 169,
-        "rate_total": 503,
+        "rate_count": 170,
+        "rate_total": 507,
         "rating": "2.98"
     },
     {
@@ -11415,9 +11415,9 @@
         "model": "Civic",
         "color": "Yellow",
         "location": "Hegmann-Cremin - Saint Petersburg, FL",
-        "rate_count": 94,
-        "rate_total": 301,
-        "rating": "3.20"
+        "rate_count": 96,
+        "rate_total": 305,
+        "rating": "3.18"
     },
     {
         "id": 757,
@@ -11430,9 +11430,9 @@
         "model": "Sidekick",
         "color": "Indigo",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 120,
-        "rate_total": 374,
-        "rating": "3.12"
+        "rate_count": 121,
+        "rate_total": 375,
+        "rating": "3.10"
     },
     {
         "id": 758,
@@ -11460,9 +11460,9 @@
         "model": "Galant",
         "color": "Red",
         "location": "Morar, Jenkins and Fay - Tucson, AZ",
-        "rate_count": 105,
-        "rate_total": 286,
-        "rating": "2.72"
+        "rate_count": 106,
+        "rate_total": 291,
+        "rating": "2.75"
     },
     {
         "id": 760,
@@ -11475,9 +11475,9 @@
         "model": "Sidekick",
         "color": "Aquamarine",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 32,
-        "rate_total": 91,
-        "rating": "2.84"
+        "rate_count": 33,
+        "rate_total": 92,
+        "rating": "2.79"
     },
     {
         "id": 761,
@@ -11490,8 +11490,8 @@
         "model": "Galant",
         "color": "Purple",
         "location": "Haag-Kuvalis - Boise, ID",
-        "rate_count": 275,
-        "rate_total": 857,
+        "rate_count": 276,
+        "rate_total": 860,
         "rating": "3.12"
     },
     {
@@ -11523,9 +11523,9 @@
         "model": "5000S",
         "color": "Indigo",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 397,
-        "rate_total": 1158,
-        "rating": "2.92"
+        "rate_count": 398,
+        "rate_total": 1160,
+        "rating": "2.91"
     },
     {
         "id": 764,
@@ -11538,8 +11538,8 @@
         "model": "G3",
         "color": "Aquamarine",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 273,
-        "rate_total": 843,
+        "rate_count": 274,
+        "rate_total": 847,
         "rating": "3.09"
     },
     {
@@ -11557,9 +11557,9 @@
         "model": "Aurora",
         "color": "Orange",
         "location": "Osinski, Herman and Marquardt - Bronx, NY",
-        "rate_count": 1,
-        "rate_total": 4,
-        "rating": "4.00"
+        "rate_count": 3,
+        "rate_total": 10,
+        "rating": "3.33"
     },
     {
         "id": 766,
@@ -11594,9 +11594,9 @@
         "model": "Sidekick",
         "color": "Maroon",
         "location": "Shields and Sons - Las Vegas, NV",
-        "rate_count": 130,
-        "rate_total": 363,
-        "rating": "2.79"
+        "rate_count": 134,
+        "rate_total": 378,
+        "rating": "2.82"
     },
     {
         "id": 768,
@@ -11639,9 +11639,9 @@
         "model": "R8",
         "color": "Green",
         "location": "Heidenreich-O'Reilly - Springfield, MA",
-        "rate_count": 326,
-        "rate_total": 965,
-        "rating": "2.96"
+        "rate_count": 327,
+        "rate_total": 966,
+        "rating": "2.95"
     },
     {
         "id": 772,
@@ -11654,9 +11654,9 @@
         "model": "Lumina APV",
         "color": "Green",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 157,
-        "rate_total": 438,
-        "rating": "2.79"
+        "rate_count": 158,
+        "rate_total": 442,
+        "rating": "2.80"
     },
     {
         "id": 773,
@@ -11692,8 +11692,8 @@
         "model": "Mystique",
         "color": "Maroon",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 258,
-        "rate_total": 721,
+        "rate_count": 260,
+        "rate_total": 726,
         "rating": "2.79"
     },
     {
@@ -11707,8 +11707,8 @@
         "model": "Lumina APV",
         "color": "Purple",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 327,
-        "rate_total": 943,
+        "rate_count": 328,
+        "rate_total": 946,
         "rating": "2.88"
     },
     {
@@ -11730,9 +11730,9 @@
         "model": "MX-5",
         "color": "Yellow",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 420,
-        "rate_total": 1251,
-        "rating": "2.98"
+        "rate_count": 422,
+        "rate_total": 1254,
+        "rating": "2.97"
     },
     {
         "id": 777,
@@ -11745,9 +11745,9 @@
         "model": "3500",
         "color": "Red",
         "location": "McClure-Padberg - Las Vegas, NV",
-        "rate_count": 300,
-        "rate_total": 936,
-        "rating": "3.12"
+        "rate_count": 301,
+        "rate_total": 941,
+        "rating": "3.13"
     },
     {
         "id": 778,
@@ -11760,9 +11760,9 @@
         "model": "G3",
         "color": "Blue",
         "location": "Batz Group - Denver, CO",
-        "rate_count": 128,
-        "rate_total": 400,
-        "rating": "3.13"
+        "rate_count": 129,
+        "rate_total": 403,
+        "rating": "3.12"
     },
     {
         "id": 779,
@@ -11783,9 +11783,9 @@
         "model": "Grand Cherokee",
         "color": "Green",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 72,
-        "rate_total": 249,
-        "rating": "3.46"
+        "rate_count": 73,
+        "rate_total": 253,
+        "rating": "3.47"
     },
     {
         "id": 780,
@@ -11802,9 +11802,9 @@
         "model": "Oasis",
         "color": "Aquamarine",
         "location": "Satterfield, Bins and Heller - Tucson, AZ",
-        "rate_count": 195,
-        "rate_total": 583,
-        "rating": "2.99"
+        "rate_count": 197,
+        "rate_total": 586,
+        "rating": "2.97"
     },
     {
         "id": 781,
@@ -11817,9 +11817,9 @@
         "model": "F-Series",
         "color": "Green",
         "location": "Orn Inc - New York City, NY",
-        "rate_count": 149,
-        "rate_total": 455,
-        "rating": "3.05"
+        "rate_count": 150,
+        "rate_total": 459,
+        "rating": "3.06"
     },
     {
         "id": 782,
@@ -11856,9 +11856,9 @@
         "model": "Caravan",
         "color": "Green",
         "location": "Emmerich and Sons - Pittsburgh, PA",
-        "rate_count": 141,
-        "rate_total": 418,
-        "rating": "2.96"
+        "rate_count": 143,
+        "rate_total": 425,
+        "rating": "2.97"
     },
     {
         "id": 785,
@@ -11891,8 +11891,8 @@
         "model": "Caravan",
         "color": "Orange",
         "location": "Kerluke, McKenzie and Grant - Toledo, OH",
-        "rate_count": 180,
-        "rate_total": 525,
+        "rate_count": 181,
+        "rate_total": 529,
         "rating": "2.92"
     },
     {
@@ -11964,9 +11964,9 @@
         "model": "MX-5",
         "color": "Maroon",
         "location": "McCullough-Abernathy - Bradenton, FL",
-        "rate_count": 117,
-        "rate_total": 356,
-        "rating": "3.04"
+        "rate_count": 118,
+        "rate_total": 361,
+        "rating": "3.06"
     },
     {
         "id": 793,
@@ -11983,9 +11983,9 @@
         "model": "Grand Cherokee",
         "color": "Orange",
         "location": "Haley, Schmeler and Jaskolski - Waterbury, CT",
-        "rate_count": 122,
-        "rate_total": 348,
-        "rating": "2.85"
+        "rate_count": 124,
+        "rate_total": 350,
+        "rating": "2.82"
     },
     {
         "id": 794,
@@ -11998,9 +11998,9 @@
         "model": "G3",
         "color": "Teal",
         "location": "Morissette LLC - Chicago, IL",
-        "rate_count": 5,
-        "rate_total": 17,
-        "rating": "3.40"
+        "rate_count": 6,
+        "rate_total": 19,
+        "rating": "3.17"
     },
     {
         "id": 795,
@@ -12013,8 +12013,8 @@
         "model": "Galant",
         "color": "Goldenrod",
         "location": "Wintheiser, Nolan and Jacobson - Dayton, OH",
-        "rate_count": 238,
-        "rate_total": 701,
+        "rate_count": 239,
+        "rate_total": 706,
         "rating": "2.95"
     },
     {
@@ -12036,9 +12036,9 @@
         "model": "X-Type",
         "color": "Blue",
         "location": "Green, Hauck and Bruen - Jacksonville, FL",
-        "rate_count": 351,
-        "rate_total": 1014,
-        "rating": "2.89"
+        "rate_count": 353,
+        "rate_total": 1016,
+        "rating": "2.88"
     },
     {
         "id": 797,
@@ -12085,9 +12085,9 @@
         "model": "G3",
         "color": "Red",
         "location": "Hegmann-Cremin - Saint Petersburg, FL",
-        "rate_count": 272,
-        "rate_total": 781,
-        "rating": "2.87"
+        "rate_count": 274,
+        "rate_total": 785,
+        "rating": "2.86"
     },
     {
         "id": 801,
