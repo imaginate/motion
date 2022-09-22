@@ -151,17 +151,14 @@ function getMatchingUsers(db, opts) {
  */
 function mergeSets(key, set, db, opts) {
 
-    if (!opts.has(key)) {
+    if (!set || !opts.has(key)) {
         return set;
     }
 
     const newset = db[key].get(opts.get(key));
 
-    if (!set) {
-        return newset;
-    }
     if (!newset) {
-        return set;
+        return newset;
     }
 
     const refset = set.size < newset.size
