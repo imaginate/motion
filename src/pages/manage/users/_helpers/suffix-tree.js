@@ -129,4 +129,6 @@ class SuffixTreeNode {
     }
 }
 
+export default SuffixTree;
+
 // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
