@@ -34,12 +34,14 @@ function Login() {
     const [ authenticated, setAuthenticated ] = React.useState(false);
     /** @const {boolean} */
     const [ loggingin, setLoggingin ] = React.useState(false);
+
     /** @const {boolean} */
     const [ badLogin, setBadLogin ] = React.useState(false);
     /** @const {boolean} */
     const [ badEmail, setBadEmail ] = React.useState(false);
     /** @const {boolean} */
-    const [ badPwd, setBadPwd ] = React.useState(false);
+    const [ badPassword, setBadPassword ] = React.useState(false);
+
     /** @const {string} */
     const [ email, setEmail ] = React.useState('');
     /** @const {string} */
@@ -69,7 +71,13 @@ function Login() {
      * @return {void}
      */
     function handleEmailChange(event) {
-        setEmail(event.target.value);
+        const val = event.target.value;
+        setEmail(val);
+        if (isValidEmail(val)) {
+            setBadEmail(false);
+        } else {
+            setBadEmail(true);
+        }
     }
 
     /**
@@ -77,34 +85,24 @@ function Login() {
      * @return {void}
      */
     function handlePasswordChange(event) {
-        setPassword(event.target.value);
+        const val = event.target.value;
+        setPassword(val);
+        if (val.length < 8) {
+            setBadPassword(true);
+        } else {
+            setBadPassword(false);
+        }
     }
 
     /**
      * @return {void}
      */
     function handleLoginClick() {
-        setLoggingin(true);
-        const _email = email;
-        const _pwd = password;
-        if (!isValidEmail(_email)) {
-            setBadEmail(true);
-            if (_pwd.length < 8) {
-                setBadPwd(true);
-            }
-            setTimeout(() => {
-                setBadEmail(false);
-                setBadPwd(false);
-            }, 5000);
-            setLoggingin(false);
-            return;
-        } else if (_pwd.length < 8) {
-            setBadPwd(true);
-            setTimeout(() => setBadPwd(false), 5000);
-            setLoggingin(false);
+        if (badEmail || badPassword) {
             return;
         }
-        makeLoginAttempt(_email, _pwd, (success) => {
+        setLoggingin(true);
+        makeLoginAttempt(email, password, (success) => {
             if (success) {
                 authenticateManager((_, isManager) => {
                     window.location.replace(isManager
@@ -114,7 +112,6 @@ function Login() {
                 });
             } else {
                 setBadLogin(true);
-                setTimeout(() => setBadLogin(false), 5000);
                 setLoggingin(false);
             }
         });
@@ -152,8 +149,8 @@ function Login() {
                         placeholder="Password"
                         onChange={handlePasswordChange}
                     />
-                    {badPwd && (
-                        <p className="failure">Must be 8+ characters long</p>
+                    {badPassword && (
+                        <p className="failure">Must Be 8+ Characters Long</p>
                     )}
                 </div>
                 <div className="logincell loginbtn">
@@ -166,7 +163,7 @@ function Login() {
                         >Login</button>
                     }
                     {badLogin && (
-                        <p className="failure">Invalid email or password</p>
+                        <p className="failure">Invalid Email Or Password</p>
                     )}
                 </div>
             </div>
