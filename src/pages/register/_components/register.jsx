@@ -19,6 +19,8 @@ import makeRegistration from '../_helpers/make-registration.js';
 /** @const {!function} */
 import isValidEmail from '../../../helpers/is-valid-email.js';
 /** @const {!function} */
+import isValidNameInput from '../../../helpers/is-valid-name-input.js';
+/** @const {!function} */
 import UserNavBar from '../../../components/user-nav-bar.jsx';
 /** @const {!function} */
 import LogButtons from '../../../components/log-buttons.jsx';
@@ -35,6 +37,7 @@ function Register() {
 
     /** @const {boolean} */
     const [ registering, setRegistering ] = React.useState(false);
+
     /** @const {boolean} */
     const [ emptyFirstName, setEmptyFirstName ] = React.useState(false);
     /** @const {boolean} */
@@ -43,10 +46,18 @@ function Register() {
     const [ emptyEmail, setEmptyEmail ] = React.useState(false);
     /** @const {boolean} */
     const [ emptyPassword, setEmptyPassword ] = React.useState(false);
+
+    /** @const {boolean} */
+    const [ badFirstName, setBadFirstName ] = React.useState(false);
+    /** @const {boolean} */
+    const [ badLastName, setBadLastName ] = React.useState(false);
     /** @const {boolean} */
     const [ badEmail, setBadEmail ] = React.useState(false);
     /** @const {boolean} */
     const [ badPassword, setBadPassword ] = React.useState(false);
+
+    /** @const {boolean} */
+    const [ invalidField, setInvalidField ] = React.useState(false);
     /** @const {boolean} */
     const [ failRegistration, setFailRegistration ] = React.useState(false);
 
@@ -83,7 +94,15 @@ function Register() {
      * @return {void}
      */
     function handleFirstNameChange(event) {
-        setFirstName(event.target.value);
+        const val = event.target.value;
+        setFirstName(val);
+        setEmptyFirstName(false);
+        setBadFirstName(false);
+        if (!val) {
+            setEmptyFirstName(true);
+        } else if (!isValidNameInput(val)) {
+            setBadFirstName(true);
+        }
     }
 
     /**
@@ -91,7 +110,15 @@ function Register() {
      * @return {void}
      */
     function handleLastNameChange(event) {
-        setLastName(event.target.value);
+        const val = event.target.value;
+        setLastName(val);
+        setEmptyLastName(false);
+        setBadLastName(false);
+        if (!val) {
+            setEmptyLastName(true);
+        } else if (!isValidNameInput(val)) {
+            setBadLastName(true);
+        }
     }
 
     /**
@@ -99,7 +126,15 @@ function Register() {
      * @return {void}
      */
     function handleEmailChange(event) {
-        setEmail(event.target.value);
+        const val = event.target.value;
+        setEmail(val);
+        setEmptyEmail(false);
+        setBadEmail(false);
+        if (!val) {
+            setEmptyEmail(true);
+        } else if (!isValidEmail(val)) {
+            setBadEmail(true);
+        }
     }
 
     /**
@@ -107,53 +142,32 @@ function Register() {
      * @return {void}
      */
     function handlePasswordChange(event) {
-        setPassword(event.target.value);
+        const val = event.target.value;
+        setPassword(val);
+        setEmptyPassword(false);
+        setBadPassword(false);
+        if (!val) {
+            setEmptyPassword(true);
+        } else if (val.length < 8) {
+            setBadPassword(true);
+        }
     }
 
     /**
      * @return {void}
      */
     function handleRegisterClick() {
-        setRegistering(true);
-        
-        let invalid = false;
-        if (!firstName) {
-            setEmptyFirstName(true);
-            invalid = true;
-        }
-        if (!lastName) {
-            setEmptyLastName(true);
-            invalid = true;
-        }
-        if (!email) {
-            setEmptyEmail(true);
-            invalid = true;
-        }
-        if (!password) {
-            setEmptyPassword(true);
-            invalid = true;
-        }
-        if (email && !isValidEmail(email)) {
-            setBadEmail(true);
-            invalid = true;
-        }
-        if (password && password.length < 8) {
-            setBadPassword(true);
-            invalid = true;
-        }
-        if (invalid) {
-            setTimeout(() => {
-                setEmptyFirstName(false);
-                setEmptyLastName(false);
-                setEmptyEmail(false);
-                setEmptyPassword(false);
-                setBadEmail(false);
-                setBadPassword(false);
-            }, 5000);
-            setRegistering(false);
+         setInvalidField(false);
+         setFailRegistration(false);
+
+        if (emptyFirstName || emptyLastName || emptyEmail || emptyPassword
+            || badFirstName || badLastName || badEmail || badPassword
+        ) {
+            setInvalidField(true);
             return;
         }
 
+        setRegistering(true);
         makeRegistration({
             first_name: firstName,
             last_name: lastName,
@@ -164,7 +178,6 @@ function Register() {
                 window.location.replace(SITE_URL + '/bikes');
             } else {
                 setFailRegistration(true);
-                setTimeout(() => setFailRegistration(false), 5000);
                 setRegistering(false);
             }
         });
@@ -193,6 +206,12 @@ function Register() {
                         placeholder="First Name"
                         onChange={handleFirstNameChange}
                     />
+                    {emptyFirstName && (
+                        <p className="failure">First Name Is Required</p>
+                    )}
+                    {badFirstName && (
+                        <p className="failure">Invalid First Name</p>
+                    )}
                 </div>
                 <div className="registercell lastname">
                     <input
@@ -201,6 +220,12 @@ function Register() {
                         placeholder="Last Name"
                         onChange={handleLastNameChange}
                     />
+                    {emptyLastName && (
+                        <p className="failure">Last Name Is Required</p>
+                    )}
+                    {badLastName && (
+                        <p className="failure">Invalid Last Name</p>
+                    )}
                 </div>
                 <div className="registercell email">
                     <input
@@ -209,6 +234,10 @@ function Register() {
                         placeholder="Email"
                         onChange={handleEmailChange}
                     />
+                    {emptyEmail && (
+                        <p className="failure">Email Is Required</p>
+                    )}
+                    {badEmail && <p className="failure">Invalid Email</p>}
                 </div>
                 <div className="registercell password">
                     <input
@@ -217,6 +246,14 @@ function Register() {
                         placeholder="Password"
                         onChange={handlePasswordChange}
                     />
+                    {emptyPassword && (
+                        <p className="failure">Password Is Required</p>
+                    )}
+                    {badPassword && (
+                        <p className="failure">
+                            Password Must Be 8+ Characters Long
+                        </p>
+                    )}
                 </div>
                 <div className="registercell registerbtn">
                     {registering
@@ -227,23 +264,8 @@ function Register() {
                             onClick={handleRegisterClick}
                         >Register</button>
                     }
-                    {emptyFirstName && (
-                        <p className="failure">First Name Is Required</p>
-                    )}
-                    {emptyLastName && (
-                        <p className="failure">Last Name Is Required</p>
-                    )}
-                    {badEmail && <p className="failure">Invalid Email</p>}
-                    {emptyEmail && (
-                        <p className="failure">Email Is Required</p>
-                    )}
-                    {badPassword && (
-                        <p className="failure">
-                            Password Must Be 8+ Characters Long
-                        </p>
-                    )}
-                    {emptyPassword && (
-                        <p className="failure">Password Is Required</p>
+                    {invalidField && (
+                        <p className="failure">Invalid Field</p>
                     )}
                     {failRegistration && (
                         <p className="failure">Registration Failed</p>
