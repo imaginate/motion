@@ -81,7 +81,8 @@ function postReserve(req, res) {
         bike_id: bike.id,
         user_id: userID,
         from,
-        to
+        to,
+        rating: 0
     });
     vto.file(JSON.stringify(reservations, null, 4), RESERVATIONS_FILEPATH);
 
