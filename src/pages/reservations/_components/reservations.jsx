@@ -55,7 +55,7 @@ function Reservations() {
     /** @const {!Array<!Object>} */
     const [ reservations, setReservations ] = React.useState(() => (
         db.reservations()
-    );
+    ));
 
     // This effect sets up the browser history state, appends the handler for
     // history state change (e.g. the user presses the back button), and
