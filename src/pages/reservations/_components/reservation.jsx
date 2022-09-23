@@ -89,7 +89,6 @@ function Reservation({ reservation, handleDelete }) {
                 <div className="reservationcell">
                     <button id="delete" onClick={handleDeleteClick}>X</button>
                 </div>
-                </a>
             </div>
         </div>
     );
