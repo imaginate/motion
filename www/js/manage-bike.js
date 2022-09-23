@@ -177,7 +177,7 @@
    */
 
   /** @const {!RegExp} */
-  const DATE = /^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$/;
+  const DATE = /^([2-9][0-9]{3})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$/;
 
   /**
    * A wrapper for the date options like `"to"` and `"from"`.
@@ -312,6 +312,16 @@
        */
       key() {
           return this.year() + '-' + this.month() + '-' + this.day();
+      }
+
+      /**
+       * Creates a string for the date that requires six to eight digits,
+       * `"MM/DD/YYYY"` or `"M/D/YYYY"`.
+       *
+       * @return {string}
+       */
+      pretty() {
+          return this.month() + '/' + this.day() + '/' + this.year();
       }
 
       /**
@@ -1057,7 +1067,7 @@
       className: "failure"
     }, "Invalid Location")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell rating"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5 from ", bike.rate_count, " reviews")));
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating.toFixed(2) + ' / 5 from ' + bike.rate_count + ' Reviews')));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
@@ -1496,7 +1506,6 @@
     const [bike, setBike] = React__default["default"].useState(() => db.bike());
     React__default["default"].useEffect(() => {
       authenticateManager(handleAuthenticateComplete);
-      downloadBike(bikeID, db, handleDownloadComplete);
     }, []);
     /**
      * @param {boolean} loggedin
@@ -1507,13 +1516,16 @@
     function handleAuthenticateComplete(loggedin, isManager) {
       if (!loggedin) {
         window.location.replace(SITE_URL + '/login');
+        return;
       }
 
       if (!isManager) {
         window.location.replace(SITE_URL + '/bikes');
+        return;
       }
 
       setAuthenticated(true);
+      downloadBike(bikeID, db, handleDownloadComplete);
     }
     /**
      * @return {void}

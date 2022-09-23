@@ -8,6 +8,23 @@
 
   /**
    * ---------------------------------------------------------------------------
+   * ENVIRONMENT SETTINGS
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * The protocol and full domain name for the website.
+   *
+   * @const {string}
+   */
+  const SITE_URL = 'http://localhost:8080';
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
    * LOADING COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
@@ -27,23 +44,6 @@
     }, /*#__PURE__*/React__default["default"].createElement("div", null), /*#__PURE__*/React__default["default"].createElement("div", null), /*#__PURE__*/React__default["default"].createElement("div", null), /*#__PURE__*/React__default["default"].createElement("div", null)));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * ENVIRONMENT SETTINGS
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /**
-   * The protocol and full domain name for the website.
-   *
-   * @const {string}
-   */
-  const SITE_URL = 'http://localhost:8080';
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
   /**
    * ---------------------------------------------------------------------------
@@ -93,25 +93,26 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * DOWNLOAD BIKES HELPER
+   * DOWNLOAD RESERVATIONS HELPER
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
 
   /**
-   * This method handles the AJAX calls that download the bikes. After each
-   * successful fetch it adds its downloaded bikes to the current state and
-   * initiates the next AJAX call until all bikes have been downloaded.
+   * This method handles the AJAX calls that download the reservations. After
+   * each successful fetch it adds its downloaded reservations to the current
+   * state and initiates the next AJAX call until all reservations have been
+   * downloaded.
    *
    * @param {number} page
    * @param {!PageOptions} opts
-   * @param {!BikesDB} db
+   * @param {!ReservationsDB} db
    * @param {!function} done
    * @return {void}
    */
-  function downloadBikes(page, opts, db, done) {
-      const url = SITE_URL + '/api/user/bikes/' + page;
+  function downloadReservations(page, opts, db, done) {
+      const url = SITE_URL + '/api/user/reservations/' + page;
       let isLastPage = false;
       fetch(url)
           .catch(err => {
@@ -120,7 +121,7 @@
               console.error(err.message);
               console.error(err);
               alert('SERVER ERROR: The attempt to connect with our server to'
-                  + ' download the bikes failed.');
+                  + ' download the reservations failed.');
               setTimeout(() => { throw err }, 0);
           })
           .then(res => {
@@ -129,8 +130,8 @@
                       + ' status ' + res.status);
                   console.error(err.message);
                   console.error(err);
-                  alert('SERVER ERROR: The attempt to download the bikes from'
-                      + ' our server failed.');
+                  alert('SERVER ERROR: The attempt to download the reservations'
+                      + ' from our server failed.');
                   setTimeout(() => { throw err }, 0);
               }
               if (res.headers.get('Page-Number')
@@ -140,16 +141,40 @@
               }
               return res.json();
           })
-          .then(bikes => {
+          .then(reservations => {
               if (!isLastPage) {
-                  downloadBikes(page + 1, opts, db, done);
+                  downloadReservations(page + 1, opts, db, done);
               }
-              db.adds(bikes, false);
+              db.adds(reservations, false);
               if (isLastPage) {
                   done();
               }
           })
           .catch(err => setTimeout(() => { throw err }, 0));
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID ID INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const ID_PATT = /^[1-9][0-9]{0,9}$/;
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidIDInput(input) {
+      if (typeof input === 'number') {
+          input = String(input);
+      }
+      return !!input && typeof input === 'string' && ID_PATT.test(input);
   }
 
   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -168,267 +193,6 @@
    */
   function isDateInstance(val) {
       return !!val && typeof val === 'object' && val instanceof Date;
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID DATE STRING HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const DATE_PATT$1 = /^[2-9][0-9]{3}-(?:1[0-2]|0?[1-9])-(?:3[01]|[12][0-9]|0?[1-9])$/;
-  /** @const {!RegExp} */
-  const STRICT_DATE_PATT = /^[2-9][0-9]{3}-(?:1[0-2]|0[1-9])-(?:3[01]|[12][0-9]|0[1-9])$/;
-
-  /**
-   * @param {*} date
-   * @param {boolean=} strict = `false`
-   * @return {boolean}
-   */
-  function isValidDateString(date, strict = false) {
-      return !!date && typeof date === 'string' && (strict
-          ? STRICT_DATE_PATT.test(date)
-          : DATE_PATT$1.test(date)
-      );
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * DATE STRING TO NUMBERS HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const DATE_PATT = /^([2-9][0-9]{3})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$/;
-
-  /**
-   * @param {string} date
-   *     Must be a valid date string.
-   * @return {!Array<number>}
-   *     Returns an array with the year, month, and day of the month in order.
-   *     Note that the month and day are one-based, `1` - `12` and `1` - `31`
-   *     respectively.
-   */
-  function dateStringToNumbers(date) {
-      return [
-          +date.replace(DATE_PATT, '$1'),
-          +date.replace(DATE_PATT, '$2'),
-          +date.replace(DATE_PATT, '$3')
-      ];
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * DATE INSTANCE TO NUMBERS HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /**
-   * @param {!Date} date
-   * @return {!Array<number>}
-   *     Returns an array with the year, month, and day of the month in order.
-   *     Note that the month and day are one-based, `1` - `12` and `1` - `31`
-   *     respectively.
-   */
-  function dateInstanceToNumbers(date) {
-      return [
-          date.getFullYear(),
-          date.getMonth() + 1,
-          date.getDate()
-      ];
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID DATE INPUT HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /**
-   * @param {*} input
-   * @return {boolean}
-   */
-  function isValidDateInput(input) {
-      if (isValidDateString(input)) {
-          input = dateStringToNumbers(input);
-      } else if (isDateInstance(input)) {
-          input = dateInstanceToNumbers(input);
-      } else {
-          return false;
-      }
-      const [ inyear, inmonth, inday ] = input;
-      if (inyear < 2022
-          || inmonth < 1 || inmonth > 12
-          || inday < 1 || inday > 31
-      ) {
-          return false;
-      }
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-      if (inyear === year) {
-          if (inmonth < month || inmonth > month + 3) {
-              return false;
-          }
-      } else if (month < 10 || inyear !== year + 1) {
-          return false;
-      } else if (inmonth > month - 9) {
-          return false;
-      }
-      const indate = new Date(inyear, inmonth - 1, inday);
-      return inday === indate.getDate() && (inmonth !== month || inday > day);
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID MODEL INPUT HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const MODEL_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
-
-  /**
-   * @param {*} val
-   * @return {boolean}
-   */
-  function isValidModelInput(val) {
-      return !!val && typeof val === 'string' && MODEL_PATT.test(val);
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID COLOR INPUT HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const COLOR_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,14}[a-zA-Z0-9'"])?$/;
-
-  /**
-   * @param {*} val
-   * @return {boolean}
-   */
-  function isValidColorInput(val) {
-      return !!val && typeof val === 'string' && COLOR_PATT.test(val);
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID LOCATION INPUT HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const LOCATION_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,62}[a-zA-Z0-9'"])?$/;
-
-  /**
-   * @param {*} val
-   * @return {boolean}
-   */
-  function isValidLocationInput(val) {
-      return !!val && typeof val === 'string' && LOCATION_PATT.test(val);
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * IS VALID RATING INPUT HELPER
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /** @const {!RegExp} */
-  const RATING_PATT = /^[1-5]$/;
-
-  /**
-   * @param {*} input
-   * @return {boolean}
-   */
-  function isValidRatingInput(input) {
-      if (typeof input === 'number' && input >= 1 && input <= 5) {
-          input = String(input);
-      }
-      return !!input && typeof input === 'string' && RATING_PATT.test(input);
-  }
-
-  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
-
-  /**
-   * ---------------------------------------------------------------------------
-   * VALID OPTION INPUTS OBJECT
-   * ---------------------------------------------------------------------------
-   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
-   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
-   */
-
-  /**
-   * @typedef {{
-   *     tab: !function(string): boolean,
-   *     from: !function(string): boolean,
-   *     to: !function(string): boolean,
-   *     model: !function(string): boolean,
-   *     color: !function(string): boolean,
-   *     location: !function(string): boolean,
-   *     rating: !function(string): boolean
-   * }} ValidOptionInputs
-   */
-
-  /** @const {!RegExp} */
-  const TAB = /^[0-9]+$/;
-
-  /**
-   * The valid page option keys and their value validation methods.
-   *
-   * @const {!ValidOptionInputs}
-   */
-  const VALID_OPTION_INPUTS = Object.create(null);
-  VALID_OPTION_INPUTS.tab = validTabInput;
-  VALID_OPTION_INPUTS.from = isValidDateInput;
-  VALID_OPTION_INPUTS.to = isValidDateInput;
-  VALID_OPTION_INPUTS.model = isValidModelInput;
-  VALID_OPTION_INPUTS.color = isValidColorInput;
-  VALID_OPTION_INPUTS.location = isValidLocationInput;
-  VALID_OPTION_INPUTS.rating = isValidRatingInput;
-
-  /**
-   * @param {string} input
-   * @return {boolean}
-   */
-  function validTabInput(input) {
-      return TAB.test(input);
   }
 
   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -730,6 +494,131 @@
 
   /**
    * ---------------------------------------------------------------------------
+   * IS DATE OPTION INSTANCE HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isDateOptionInstance(val) {
+      return !!val && typeof val === 'object' && val instanceof DateOption;
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID DATE STRING HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const DATE_PATT = /^[2-9][0-9]{3}-(?:1[0-2]|0?[1-9])-(?:3[01]|[12][0-9]|0?[1-9])$/;
+  /** @const {!RegExp} */
+  const STRICT_DATE_PATT = /^[2-9][0-9]{3}-(?:1[0-2]|0[1-9])-(?:3[01]|[12][0-9]|0[1-9])$/;
+
+  /**
+   * @param {*} date
+   * @param {boolean=} strict = `false`
+   * @return {boolean}
+   */
+  function isValidDateString(date, strict = false) {
+      return !!date && typeof date === 'string' && (strict
+          ? STRICT_DATE_PATT.test(date)
+          : DATE_PATT.test(date)
+      );
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID RATING INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const RATING_PATT = /^[1-5]$/;
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidRatingInput(input) {
+      if (typeof input === 'number' && input >= 1 && input <= 5) {
+          input = String(input);
+      }
+      return !!input && typeof input === 'string' && RATING_PATT.test(input);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * VALID OPTION INPUTS OBJECT
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @typedef {{
+   *     tab: !function(*): boolean,
+   *     id: !function(*): boolean,
+   *     bike: !function(*): boolean,
+   *     date: !function(*): boolean,
+   *     rating: !function(*): boolean
+   * }} ValidOptionInputs
+   */
+
+  /** @const {!RegExp} */
+  const TAB_PATT = /^[0-9]+$/;
+
+  /**
+   * The valid page option keys and their value validation methods.
+   *
+   * @const {!ValidOptionInputs}
+   */
+  const VALID_OPTION_INPUTS = Object.create(null);
+  VALID_OPTION_INPUTS.tab = isValidTabInput;
+  VALID_OPTION_INPUTS.id = isValidIDInput;
+  VALID_OPTION_INPUTS.bike = isValidIDInput;
+  VALID_OPTION_INPUTS.date = isValidDateInput;
+  VALID_OPTION_INPUTS.rating = isValidRatingInput;
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidTabInput(input) {
+      if (typeof input === 'number') {
+          input = String(input);
+      }
+      return !!input && typeof input === 'string' && TAB_PATT.test(input);
+  }
+
+  /**
+   * @param {*} input
+   * @return {boolean}
+   */
+  function isValidDateInput(input) {
+      return isValidDateString(input)
+          || isDateInstance(input)
+          || isDateOptionInstance(input);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
    * PAGE OPTIONS CLASS
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
@@ -770,11 +659,9 @@
        * @param {string} key
        *     The valid keys are as follows:
        *     - `"tab"`
-       *     - `"from"`
-       *     - `"to"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
+       *     - `"id"`
+       *     - `"bike"`
+       *     - `"date"`
        *     - `"rating"`
        * @return {(string|number|!DateOption|undefined)}
        */
@@ -792,11 +679,9 @@
        * @param {string} key
        *     The valid keys are as follows:
        *     - `"tab"`
-       *     - `"from"`
-       *     - `"to"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
+       *     - `"id"`
+       *     - `"bike"`
+       *     - `"date"`
        *     - `"rating"`
        * @return {(string|number|!DateOption|undefined)}
        */
@@ -810,11 +695,9 @@
        * @param {string} key
        *     The valid keys are as follows:
        *     - `"tab"`
-       *     - `"from"`
-       *     - `"to"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
+       *     - `"id"`
+       *     - `"bike"`
+       *     - `"date"`
        *     - `"rating"`
        * @return {boolean}
        */
@@ -826,11 +709,9 @@
        * @param {string} key
        *     The valid keys are as follows:
        *     - `"tab"`
-       *     - `"from"`
-       *     - `"to"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
+       *     - `"id"`
+       *     - `"bike"`
+       *     - `"date"`
        *     - `"rating"`
        * @return {boolean}
        */
@@ -842,11 +723,9 @@
        * @param {string} key
        *     The valid keys are as follows:
        *     - `"tab"`
-       *     - `"from"`
-       *     - `"to"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
+       *     - `"id"`
+       *     - `"bike"`
+       *     - `"date"`
        *     - `"rating"`
        * @param {(string|number|!Date|!DateOption)} val
        * @return {(string|number|!DateOption|undefined)}
@@ -855,7 +734,7 @@
           if (!this.isValid(key)) {
               return undefined;
           }
-          val = clean(key, val, this);
+          val = clean(key, val);
           if (val) {
               this._vals[key] = val;
               this._params.set(key, val.toString());
@@ -880,11 +759,9 @@
           if (!state) {
               return {
                   tab: this.tab(),
-                  from: this.from() && this.from().key(),
-                  to: this.to() && this.to().key(),
-                  model: this.model(),
-                  color: this.color(),
-                  location: this.location(),
+                  id: this.id(),
+                  bike: this.bike(),
+                  date: this.date() && this.date().key(),
                   rating: this.rating()
               };
           }
@@ -935,53 +812,33 @@
       }
 
       /**
-       * @param {(string|!Date|!DateOption)=} val = `undefined`
-       * @return {(!DateOption|undefined)}
+       * @param {(string|number)=} val = `undefined`
+       * @return {(number|undefined)}
        */
-      from(val) {
+      id(val) {
           return val === undefined
-              ? this.get('from')
-              : this.set('from', val);
+              ? this.get('id')
+              : this.set('id', val);
+      }
+
+      /**
+       * @param {(string|number)=} val = `undefined`
+       * @return {(number|undefined)}
+       */
+      bike(val) {
+          return val === undefined
+              ? this.get('bike')
+              : this.set('bike', val);
       }
 
       /**
        * @param {(string|!Date|!DateOption)=} val = `undefined`
        * @return {(!DateOption|undefined)}
        */
-      to(val) {
+      date(val) {
           return val === undefined
-              ? this.get('to')
-              : this.set('to', val);
-      }
-
-      /**
-       * @param {string=} val = `undefined`
-       * @return {(string|undefined)}
-       */
-      model(val) {
-          return val === undefined
-              ? this.get('model')
-              : this.set('model', val);
-      }
-
-      /**
-       * @param {string=} val = `undefined`
-       * @return {(string|undefined)}
-       */
-      color(val) {
-          return val === undefined
-              ? this.get('color')
-              : this.set('color', val);
-      }
-
-      /**
-       * @param {string=} val = `undefined`
-       * @return {(string|undefined)}
-       */
-      location(val) {
-          return val === undefined
-              ? this.get('location')
-              : this.set('location', val);
+              ? this.get('date')
+              : this.set('date', val);
       }
 
       /**
@@ -999,23 +856,18 @@
    * @private
    * @param {string} key
    * @param {*} val
-   * @param {!PageOptions} opts
    * @return {(number|?DateOption|string|undefined)}
    */
-  function clean(key, val, opts) {
+  function clean(key, val) {
       switch (key) {
           case 'tab':
               return cleanTab(val);
-          case 'from':
-              return cleanFrom(val, opts);
-          case 'to':
-              return cleanTo(val, opts);
-          case 'model':
-              return cleanModel(val);
-          case 'color':
-              return cleanColor(val);
-          case 'location':
-              return cleanLocation(val);
+          case 'id':
+              return cleanID(val);
+          case 'bike':
+              return cleanID(val);
+          case 'date':
+              return cleanDate(val);
           case 'rating':
               return cleanRating(val);
       }
@@ -1043,76 +895,23 @@
   /**
    * @private
    * @param {*} val
-   * @param {!PageOptions} opts
+   * @return {number}
+   */
+  function cleanID(val) {
+      return VALID_OPTION_INPUTS.id(val)
+          ? +val
+          : 0;
+  }
+
+  /**
+   * @private
+   * @param {*} val
    * @return {?DateOption}
    */
-  function cleanFrom(val, opts) {
-      const from = typeof val === 'string'
-          ? VALID_OPTION_INPUTS.from(val)
-              ? new DateOption(val)
-              : null
-          : typeof val === 'object' && (
-              val instanceof Date || val instanceof DateOption
-          )
-              ? new DateOption(val)
-              : null;
-      return !from || (opts.has('to') && from.compare(opts.get('to')) > 0)
-          ? null
-          : from;
-  }
-
-  /**
-   * @private
-   * @param {*} val
-   * @param {!PageOptions} opts
-   * @return {?DateOption}
-   */
-  function cleanTo(val, opts) {
-      const to = typeof val === 'string'
-          ? VALID_OPTION_INPUTS.to(val)
-              ? new DateOption(val)
-              : null
-          : typeof val === 'object' && (
-              val instanceof Date || val instanceof DateOption
-          )
-              ? new DateOption(val)
-              : null;
-      return !to || (opts.has('from') && opts.get('from').compare(to) > 0)
-          ? null
-          : to;
-  }
-
-  /**
-   * @private
-   * @param {*} val
-   * @return {string}
-   */
-  function cleanModel(val) {
-      return val && typeof val === 'string' && VALID_OPTION_INPUTS.model(val)
-          ? val
-          : '';
-  }
-
-  /**
-   * @private
-   * @param {*} val
-   * @return {string}
-   */
-  function cleanColor(val) {
-      return val && typeof val === 'string' && VALID_OPTION_INPUTS.color(val)
-          ? val
-          : '';
-  }
-
-  /**
-   * @private
-   * @param {*} val
-   * @return {string}
-   */
-  function cleanLocation(val) {
-      return val && typeof val === 'string' && VALID_OPTION_INPUTS.location(val)
-          ? val
-          : '';
+  function cleanDate(val) {
+      return VALID_OPTION_INPUTS.date(val)
+          ? new DateOption(val)
+          : null;
   }
 
   /**
@@ -1121,16 +920,8 @@
    * @return {number}
    */
   function cleanRating(val) {
-      if (typeof val === 'string') {
-          if (!VALID_OPTION_INPUTS.rating(val)) {
-              return 0;
-          }
-          val = +val;
-      } else if (typeof val !== 'number') {
-          return 0;
-      }
-      return val > 0 && val < 6
-          ? Math.floor(val)
+      return VALID_OPTION_INPUTS.rating(val)
+          ? +val
           : 0;
   }
 
@@ -1138,69 +929,58 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * BIKES DB CLASS
+   * RESERVATIONS DB CLASS
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
 
   /**
-   * A database with all lists of the available bikes and bike choices.
+   * A database with all lists of the available reservations.
    *
-   * @class BikesDB
+   * @class ReservationsDB
    */
-  class BikesDB {
+  class ReservationsDB {
       /**
-       * @param {!PageOptions} pageOptions
-       * @param {?Array<!Object>=} bikes = `null`
+       * @param {!PageOptions} opts
+       * @param {?Array<!Object>=} reservations = `null`
        * @constructor
        */
-      constructor(pageOptions, bikes = null) {
-          const db = newObject();
-          db.data = [];
-          db.startDate = newStartDate();
-          db.endDate = newEndDate(db.startDate);
-          db.calendar = newCalendar(db.startDate, db.endDate);
-          db.model = newObject();
-          db.color = newObject();
-          db.location = newObject();
-          db.rating = newRating();
-          this._db = db;
-          this._pageOptions = pageOptions;
-          this._available = [];
-          this._matching = [];
-          this._bikes = [];
-          if (bikes) {
-              this.adds(bikes);
+      constructor(opts, reservations = null) {
+          this._db = newDB();
+          this._opts = opts;
+          this._reservations = [];
+          if (reservations) {
+              this.adds(reservations);
           }
       }
 
       /**
-       * @param {!Object} bike
+       * @param {!Object} reservation
        * @param {boolean=} update = `true`
        * @return {void}
        */
-      add(bike, update = true) {
+      add(reservation, update = true) {
           const db = this._db;
-          db.data.push(bike);
-          addToCalendar(db, bike);
-          addToModel(db, bike);
-          addToColor(db, bike);
-          addToLocation(db, bike);
-          addToRating(db, bike);
+          db.all.push(reservation);
+          db.allset.add(reservation);
+          db.id[reservation.id] = reservation;
+          addToBike(db, reservation);
+          addToDate(db, reservation);
+          addToRating(db, reservation);
           if (update) {
               this.update();
           }
       }
 
       /**
-       * @param {!Array<!Object>} bikes
+       * @param {!Array<!Object>} reservations
        * @param {boolean=} update = `true`
        * @return {void}
        */
-      adds(bikes, update = true) {
-          for (const bike of bikes) {
-              this.add(bike, false);
+      adds(reservations, update = true) {
+          for (const reservation of reservations) {
+              this.add(reservation, false);
           }
           if (update) {
               this.update();
@@ -1208,57 +988,30 @@
       }
 
       /**
-       * Gets all bikes that are available for rental and match the selected
-       * filtering options.
+       * Gets all reservations that are assigned to the user and matches the
+       * selected filtering options.
        *
        * @return {!Array<!Object>}
        */
-      bikes() {
-          return this._bikes.slice();
-      }
-
-      /**
-       * Gets all of the available choices for a bike value.
-       *
-       * @param {string} key
-       *     The available keys are as follows:
-       *     - `"datespan"`
-       *     - `"dates"`
-       *     - `"model"`
-       *     - `"color"`
-       *     - `"location"`
-       *     - `"rating"`
-       * @return {!Array<(!DateOption|string|number)>}
-       */
-      choices(key) {
-          switch (key) {
-              case 'datespan':
-                  return [ this._db.startDate, this._db.endDate ];
-              case 'dates':
-                  return Array.from(this._db.calendar.dates.values());
-              case 'model':
-              case 'color':
-              case 'location':
-                  return Object.keys(this._db[key]);
-              case 'rating':
-                  return [ 1, 2, 3, 4, 5 ];
-          }
-          return [];
+      reservations() {
+          return this._reservations.slice();
       }
 
       /**
        * @return {void}
        */
       update() {
-          if (this._pageOptions.has('from') || this._pageOptions.has('to')) {
-              this._available = getAvailableBikes(this._db, this._pageOptions);
-              this._matching = getMatchingBikes(this._db, this._pageOptions);
-              this._bikes = getSelectedBikes(this._available, this._matching);
-          } else {
-              this._available = this._db.data;
-              this._matching = getMatchingBikes(this._db, this._pageOptions);
-              this._bikes = this._matching;
-          }
+          this._reservations = this._opts.has('id')
+              ? getReservation(this._opts.id(), this._db)
+              : getMatchingReservations(this._db, this._opts);
+      }
+
+      /**
+       * @return {void}
+       */
+      wipe() {
+          this._db = newDB();
+          this._reservations = [];
       }
   }
 
@@ -1272,47 +1025,17 @@
 
   /**
    * @private
-   * @return {!DateOption}
-   */
-  function newStartDate() {
-      const date = new DateOption();
-      return new DateOption(date.year(), date.month(), date.day() + 1);
-  }
-
-  /**
-   * @private
-   * @param {!DateOption} startDate
-   * @return {!DateOption}
-   */
-  function newEndDate(startDate) {
-      return new DateOption(startDate.year(), startDate.month() + 4, 0);
-  }
-
-  /**
-   * @private
-   * @param {!DateOption} startDate
-   * @param {!DateOption} endDate
    * @return {!Object}
    */
-  function newCalendar(startDate, endDate) {
-      const calendar = newObject();
-      const dates = new Map();
-      const data = new Map();
-      calendar.dates = dates;
-      calendar.data = data;
-      const startYear = startDate.year();
-      const startMonth = startDate.month();
-      const stopMonth = endDate.month() === 12
-          ? 1
-          : endDate.month() + 1;
-      const startDay = startDate.day();
-      for (let i = 1, date = startDate; date.month() !== stopMonth; ++i) {
-          const key = date.key();
-          dates.set(key, date);
-          data.set(key, new Set());
-          date = new DateOption(startYear, startMonth, startDay + i);
-      }
-      return calendar;
+  function newDB() {
+      const db = newObject();
+      db.all = [];
+      db.allset = new Set();
+      db.id = newObject();
+      db.bike = newObject();
+      db.date = newObject();
+      db.rating = newRating();
+      return db;
   }
 
   /**
@@ -1321,205 +1044,68 @@
    */
   function newRating() {
       const rating = newObject();
-      rating[1] = newObject();
-      rating[1].data = [];
-      rating[2] = newObject();
-      rating[2].data = [];
-      rating[3] = newObject();
-      rating[3].data = [];
-      rating[4] = newObject();
-      rating[4].data = [];
-      rating[5] = newObject();
-      rating[5].data = [];
+      for (let i = 1; i < 6; ++i) {
+          rating[i] = new Set();
+      }
       return rating;
   }
 
   /**
    * @private
-   * @param {!Object} bike
-   * @return {!Set<string>}
-   */
-  function newReserved(bike) {
-      const reserved = new Set();
-      const ranges = bike.reserved;
-      for (const [ fromKey, toKey ] of ranges) {
-          const from = new DateOption(fromKey);
-          const to = new DateOption(toKey);
-          for (let date = from; date.compare(to) < 1;) {
-              reserved.add(date.key());
-              date = new DateOption(date.year(), date.month(), date.day() + 1);
-          }
-      }
-      return reserved;
-  }
-
-  /**
-   * @private
    * @param {!Object} db
-   * @param {!Object} bike
+   * @param {!Object} reservation
    * @return {void}
    */
-  function addToCalendar(db, bike) {
-      const reserved = newReserved(bike);
-      const data = db.calendar.data;
-      for (const key of data.keys()) {
-          if (!reserved.has(key)) {
-              data.get(key).add(bike);
-          }
+  function addToBike(db, reservation) {
+      const id = reservation.bike_id;
+      if (!(id in db.bike)) {
+          db.bike[id] = new Set();
       }
+      db.bike[id].add(reservation);
   }
 
   /**
    * @private
    * @param {!Object} db
-   * @param {!Object} bike
+   * @param {!Object} reservation
    * @return {void}
    */
-  function addToModel(db, bike) {
-      if (!(bike.model in db.model)) {
-          db.model[bike.model] = newObject();
-          db.model[bike.model].data = [];
-          db.model[bike.model].color = newObject();
-          db.model[bike.model].location = newObject();
-          db.model[bike.model].rating = newRating();
+  function addToDate(db, reservation) {
+      const from = new DateOption(reservation.from);
+      const to = new DateOption(reservation.to);
+      for (let date = from; date.compare(to) < 1;) {
+          const key = date.strictkey();
+          if (!(key in db.date)) {
+              db.date[key] = new Set();
+              db.date[date.key()] = db.date[key];
+          }
+          db.date[key].add(reservation);
+          date = new DateOption(date.year(), date.month(), date.day() + 1);
       }
-      db.model[bike.model].data.push(bike);
   }
 
   /**
    * @private
    * @param {!Object} db
-   * @param {!Object} bike
+   * @param {!Object} reservation
    * @return {void}
    */
-  function addToColor(db, bike) {
-      if (!(bike.color in db.color)) {
-          db.color[bike.color] = newObject();
-          db.color[bike.color].data = [];
-          db.color[bike.color].location = newObject();
-          db.color[bike.color].rating = newRating();
+  function addToRating(db, reservation) {
+      if (reservation.rating in db.rating) {
+          db.rating[reservation.rating].add(reservation);
       }
-      if (!(bike.color in db.model[bike.model].color)) {
-          db.model[bike.model].color[bike.color] = newObject();
-          db.model[bike.model].color[bike.color].data = [];
-          db.model[bike.model].color[bike.color].location = newObject();
-          db.model[bike.model].color[bike.color].rating = newRating();
-      }
-      db.color[bike.color].data.push(bike);
-      db.model[bike.model].color[bike.color].data.push(bike);
   }
 
   /**
    * @private
+   * @param {number} id
    * @param {!Object} db
-   * @param {!Object} bike
-   * @return {void}
+   * @return {!Array<!Object>}
    */
-  function addToLocation(db, bike) {
-      if (!(bike.location in db.location)) {
-          db.location[bike.location] = newObject();
-          db.location[bike.location].data = [];
-          db.location[bike.location].rating = newRating();
-      }
-      if (!(bike.location in db.color[bike.color].location)) {
-          db.color[bike.color].location[bike.location] = newObject();
-          db.color[bike.color].location[bike.location].data = [];
-          db.color[bike.color].location[bike.location].rating = newRating();
-      }
-      if (!(bike.location in db.model[bike.model].location)) {
-          db.model[bike.model].location[bike.location] = newObject();
-          db.model[bike.model].location[bike.location].data = [];
-          db.model[bike.model].location[bike.location].rating = newRating();
-      }
-      if (!(bike.location in db.model[bike.model].color[bike.color].location)) {
-          db.model[bike.model].color[bike.color]
-              .location[bike.location] = newObject();
-          db.model[bike.model].color[bike.color]
-              .location[bike.location].data = [];
-          db.model[bike.model].color[bike.color]
-              .location[bike.location].rating = newRating();
-      }
-      db.location[bike.location].data.push(bike);
-      db.color[bike.color].location[bike.location].data.push(bike);
-      db.model[bike.model].location[bike.location].data.push(bike);
-      db.model[bike.model].color[bike.color]
-          .location[bike.location].data.push(bike);
-  }
-
-  /**
-   * @private
-   * @param {!Object} db
-   * @param {!Object} bike
-   * @return {void}
-   */
-  function addToRating(db, bike) {
-      const rating = Math.floor(bike.rating);
-      db.rating[rating].data.push(bike);
-      db.location[bike.location].rating[rating].data.push(bike);
-      db.color[bike.color].rating[rating].data.push(bike);
-      db.color[bike.color].location[bike.location]
-          .rating[rating].data.push(bike);
-      db.model[bike.model].rating[rating].data.push(bike);
-      db.model[bike.model].location[bike.location]
-          .rating[rating].data.push(bike);
-      db.model[bike.model].color[bike.color].rating[rating].data.push(bike);
-      db.model[bike.model].color[bike.color].location[bike.location]
-          .rating[rating].data.push(bike);
-  }
-
-  /**
-   * @private
-   * @param {!Object} db
-   * @param {!PageOptions} opts
-   * @return {!Set<!Object>}
-   */
-  function getAvailableBikes(db, opts) {
-      if (opts.has('from')) {
-          if (opts.from().compare(db.startDate) < 0) {
-              opts.delete('from');
-          } else if (opts.from().compare(db.endDate) > 0) {
-              opts.from(db.endDate);
-          }
-      }
-      if (opts.has('to')) {
-          if (opts.to().compare(db.startDate) < 0) {
-              opts.to(db.startDate);
-          } else if (opts.to().compare(db.endDate) > 0) {
-              opts.delete('to');
-          }
-      }
-      const from = opts.from() || db.startDate;
-      const to = opts.to() || db.endDate;
-      if (from.equals(to)) {
-          return db.calendar.data.get(from.key());
-      }
-      const keys = [];
-      let foundStart = false;
-      for (const [ key, date ] of db.calendar.dates) {
-          if (foundStart) {
-              keys.push(key);
-              if (date.equals(to)) {
-                  break;
-              }
-          } else if (date.equals(from)) {
-              foundStart = true;
-          }
-      }
-      const data = [];
-      for (const key of keys) {
-          data.push(db.calendar.data.get(key));
-      }
-      const available = new Set();
-      outerloop:
-      for (const bike of db.calendar.data.get(from.key())) {
-          for (const set of data) {
-              if (!set.has(bike)) {
-                  continue outerloop;
-              }
-          }
-          available.add(bike);
-      }
-      return available;
+  function getReservation(id, db) {
+      return id in db.id
+          ? [ db.id[id] ]
+          : [];
   }
 
   /**
@@ -1528,48 +1114,51 @@
    * @param {!PageOptions} opts
    * @return {!Array<!Object>}
    */
-  function getMatchingBikes(db, opts) {
-      if (opts.has('model')) {
-          if (!(opts.model() in db.model)) {
-              return [];
-          }
-          db = db.model[opts.model()];
-      }
-      if (opts.has('color')) {
-          if (!(opts.color() in db.color)) {
-              return [];
-          }
-          db = db.color[opts.color()];
-      }
-      if (opts.has('location')) {
-          if (!(opts.location() in db.location)) {
-              return [];
-          }
-          db = db.location[opts.location()];
-      }
-      if (opts.has('rating')) {
-          if (!(opts.rating() in db.rating)) {
-              return [];
-          }
-          db = db.rating[opts.rating()];
-      }
-      return db.data;
+  function getMatchingReservations(db, opts) {
+      let set = opts.has('bike')
+          ? db.bike[opts.bike()]
+          : db.allset;
+      set = mergeSets('date', set, db, opts);
+      set = mergeSets('rating', set, db, opts);
+      return set
+          ? Array.from(set.values())
+          : [];
   }
 
   /**
    * @private
-   * @param {!Set<!Object>} available
-   * @param {!Array<!Object>} matching
-   * @return {!Array<!Object>}
+   * @param {string} key
+   * @param {?Set<!Object>} set
+   * @param {!Object} db
+   * @param {!PageOptions} opts
+   * @return {?Set<!Object>}
    */
-  function getSelectedBikes(available, matching) {
-      const selected = [];
-      for (const bike of matching) {
-          if (available.has(bike)) {
-              selected.push(bike);
+  function mergeSets(key, set, db, opts) {
+
+      if (!set || !opts.has(key)) {
+          return set;
+      }
+
+      const newset = db[key][opts.get(key)];
+
+      if (!newset) {
+          return newset;
+      }
+
+      // Make sure you iterate over the smaller set. It can save a lot of time.
+      const refset = set.size < newset.size
+          ? newset
+          : set;
+      const itset = set.size < newset.size
+          ? set
+          : newset;
+      set = new Set();
+      for (const reservation of itset) {
+          if (refset.has(reservation)) {
+              set.add(reservation);
           }
       }
-      return selected;
+      return set;
   }
 
   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -1743,7 +1332,7 @@
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This component creates and manages the bike list filters.
+   * This component creates and manages the reservation list filters.
    *
    * @param {!Object} props
    * @return {!ReactElement}
@@ -1752,50 +1341,28 @@
   function Filters({
     opts,
     db,
-    bikes,
+    reservations,
     handleOptionsChange
   }) {
-    const datespan = db.choices('datespan');
-    const fromMaxDate = opts.has('to') ? opts.to().strictkey() : datespan[1].strictkey();
-    const toMinDate = opts.has('from') ? opts.from().strictkey() : datespan[0].strictkey();
-    const models = db.choices('model');
-    const colors = db.choices('color');
-    const locations = db.choices('location');
-    const ratings = db.choices('rating');
     /**
      * @param {!Object} event
      * @return {void}
      */
-
-    function handleFromChange(event) {
+    function handleIDChange(event) {
       const input = event.target;
-      const from = input.value;
+      const val = trimWhitespace(input.value);
+      const prev = opts.id();
 
-      if (from && VALID_OPTION_INPUTS.from(from)) {
-        const [start, end] = db.choices('datespan');
-        opts.from(from);
-
-        if (!opts.has('from')) {
-          input.value = '';
-        } else if (opts.from().compare(start) < 0) {
-          opts.delete('from');
-          input.value = '';
-        } else if (opts.from().compare(end) > 0) {
-          opts.from(end);
-
-          if (opts.has('from')) {
-            input.value = opts.from().strictkey();
-          } else {
-            opts.delete('from');
-            input.value = '';
-          }
-        }
+      if (val && VALID_OPTION_INPUTS.id(val)) {
+        opts.id(val);
       } else {
-        opts.delete('from');
+        opts.delete('id');
         input.value = '';
       }
 
-      handleOptionsChange();
+      if (prev !== opts.id()) {
+        handleOptionsChange();
+      }
     }
     /**
      * @param {!Object} event
@@ -1803,35 +1370,21 @@
      */
 
 
-    function handleToChange(event) {
+    function handleBikeChange(event) {
       const input = event.target;
-      const to = input.value;
+      const val = trimWhitespace(input.value);
+      const prev = opts.bike();
 
-      if (to && VALID_OPTION_INPUTS.to(to)) {
-        const [start, end] = db.choices('datespan');
-        opts.to(to);
-
-        if (!opts.has('to')) {
-          input.value = '';
-        } else if (opts.to().compare(start) < 0) {
-          opts.to(start);
-
-          if (opts.has('to')) {
-            input.value = opts.to().strictkey();
-          } else {
-            opts.delete('to');
-            input.value = '';
-          }
-        } else if (opts.to().compare(end) > 0) {
-          opts.delete('to');
-          input.value = '';
-        }
+      if (val && VALID_OPTION_INPUTS.bike(val)) {
+        opts.bike(val);
       } else {
-        opts.delete('to');
+        opts.delete('bike');
         input.value = '';
       }
 
-      handleOptionsChange();
+      if (prev !== opts.bike()) {
+        handleOptionsChange();
+      }
     }
     /**
      * @param {!Object} event
@@ -1839,56 +1392,21 @@
      */
 
 
-    function handleModelChange(event) {
+    function handleDateChange(event) {
       const input = event.target;
-      const model = trimWhitespace(input.value);
+      const val = input.value;
+      const prev = opts.date();
 
-      if (model && VALID_OPTION_INPUTS.model(model)) {
-        opts.model(model);
+      if (val && VALID_OPTION_INPUTS.date(val)) {
+        opts.date(val);
       } else {
-        opts.delete('model');
+        opts.delete('date');
         input.value = '';
       }
 
-      handleOptionsChange();
-    }
-    /**
-     * @param {!Object} event
-     * @return {void}
-     */
-
-
-    function handleColorChange(event) {
-      const input = event.target;
-      const color = trimWhitespace(input.value);
-
-      if (color && VALID_OPTION_INPUTS.color(color)) {
-        opts.color(color);
-      } else {
-        opts.delete('color');
-        input.value = '';
+      if (prev !== opts.date()) {
+        handleOptionsChange();
       }
-
-      handleOptionsChange();
-    }
-    /**
-     * @param {!Object} event
-     * @return {void}
-     */
-
-
-    function handleLocationChange(event) {
-      const input = event.target;
-      const location = trimWhitespace(input.value);
-
-      if (location && VALID_OPTION_INPUTS.location(location)) {
-        opts.location(location);
-      } else {
-        opts.delete('location');
-        input.value = '';
-      }
-
-      handleOptionsChange();
     }
     /**
      * @param {!Object} event
@@ -1898,16 +1416,19 @@
 
     function handleRatingChange(event) {
       const input = event.target;
-      const rating = input.value;
+      const val = input.value;
+      const prev = opts.rating();
 
-      if (rating && VALID_OPTION_INPUTS.rating(rating)) {
-        opts.rating(rating);
+      if (val && VALID_OPTION_INPUTS.rating(val)) {
+        opts.rating(val);
       } else {
         opts.delete('rating');
         input.value = '';
       }
 
-      handleOptionsChange();
+      if (prev !== opts.rating()) {
+        handleOptionsChange();
+      }
     }
 
     return /*#__PURE__*/React__default["default"].createElement("div", {
@@ -1915,167 +1436,298 @@
     }, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
-      htmlFor: "from"
-    }, "Available From:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "date",
-      id: "from",
-      className: "date",
-      min: datespan[0].strictkey(),
-      max: fromMaxDate,
-      value: opts.has('from') ? opts.from().strictkey() : '',
-      onChange: handleFromChange
+      htmlFor: "id"
+    }, "Reservation ID:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "text",
+      id: "id",
+      className: "text",
+      placeholder: "Reservation ID",
+      value: opts.has('id') ? opts.id() : '',
+      onChange: handleIDChange
     })), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
-      htmlFor: "to"
-    }, "Available To:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "date",
-      id: "to",
-      className: "date",
-      min: toMinDate,
-      max: datespan[1].strictkey(),
-      value: opts.has('to') ? opts.to().strictkey() : '',
-      onChange: handleToChange
+      htmlFor: "bike"
+    }, "Bike ID:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "text",
+      id: "bike",
+      className: "text",
+      placeholder: "Bike ID",
+      value: opts.has('bike') ? opts.bike() : '',
+      onChange: handleBikeChange
     })), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
-      htmlFor: "model"
-    }, "Model:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "text",
-      id: "model",
-      className: "text",
-      list: "modeldatalist",
-      placeholder: "Model",
-      value: opts.has('model') ? opts.model() : '',
-      onChange: handleModelChange
-    }), /*#__PURE__*/React__default["default"].createElement("datalist", {
-      id: "modeldatalist"
-    }, models.map((model, i) => /*#__PURE__*/React__default["default"].createElement("option", {
-      key: makeUniqueID(i),
-      value: model
-    })))), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "filter"
-    }, /*#__PURE__*/React__default["default"].createElement("label", {
-      htmlFor: "color"
-    }, "Color:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "text",
-      id: "color",
-      className: "text",
-      list: "colordatalist",
-      placeholder: "Color",
-      value: opts.has('color') ? opts.color() : '',
-      onChange: handleColorChange
-    }), /*#__PURE__*/React__default["default"].createElement("datalist", {
-      id: "colordatalist"
-    }, colors.map((color, i) => /*#__PURE__*/React__default["default"].createElement("option", {
-      key: makeUniqueID(i),
-      value: color
-    })))), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "filter"
-    }, /*#__PURE__*/React__default["default"].createElement("label", {
-      htmlFor: "location"
-    }, "Location:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "text",
-      id: "location",
-      className: "text",
-      list: "locationdatalist",
-      placeholder: "Location",
-      value: opts.has('location') ? opts.location() : '',
-      onChange: handleLocationChange
-    }), /*#__PURE__*/React__default["default"].createElement("datalist", {
-      id: "locationdatalist"
-    }, locations.map((location, i) => /*#__PURE__*/React__default["default"].createElement("option", {
-      key: makeUniqueID(i),
-      value: location
-    })))), /*#__PURE__*/React__default["default"].createElement("div", {
+      htmlFor: "date"
+    }, "Reserved On:"), /*#__PURE__*/React__default["default"].createElement("input", {
+      type: "date",
+      id: "date",
+      className: "date",
+      value: opts.has('date') ? opts.date().strictkey() : '',
+      onChange: handleDateChange
+    })), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "filter"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
       htmlFor: "rating"
-    }, "Rating:"), /*#__PURE__*/React__default["default"].createElement("input", {
-      type: "text",
+    }, "Rating:"), /*#__PURE__*/React__default["default"].createElement("select", {
       id: "rating",
-      className: "text",
-      list: "ratingdatalist",
-      placeholder: "Rating",
       value: opts.has('rating') ? opts.rating() : '',
       onChange: handleRatingChange
-    }), /*#__PURE__*/React__default["default"].createElement("datalist", {
-      id: "ratingdatalist"
-    }, ratings.map((rating, i) => /*#__PURE__*/React__default["default"].createElement("option", {
-      key: makeUniqueID(i),
-      value: rating
-    })))));
+    }, /*#__PURE__*/React__default["default"].createElement("option", {
+      value: ""
+    }, "All"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "1"
+    }, "1"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "2"
+    }, "2"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "3"
+    }, "3"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "4"
+    }, "4"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "5"
+    }, "5"))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
   /**
    * ---------------------------------------------------------------------------
-   * BIKE COMPONENT
+   * PRETTIFY DATE HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * @param {(string|!Date|!DateOption)} date
+   * @return {string}
+   *     Returns a string with the month, day of the month, and year in order.
+   *     Note that the month and day are one-based, `1` - `12` and `1` - `31`
+   *     respectively. The string looks like `"MM/DD/YYYY"`. There are no
+   *     preceding zeros.
+   */
+  function prettifyDate(date) {
+      date = new DateOption(date);
+      return date.pretty();
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * UPLOAD RATING HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * This method handles the AJAX POST that updates a reservation's rating.
+   *
+   * @param {!Object} reservation
+   * @return {void}
+   */
+  function uploadRating(reservation) {
+      const url = SITE_URL + '/api/user/rating';
+      fetch(url, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              reservation_id: reservation.id,
+              bike_id: reservation.bike_id,
+              rating: reservation.rating
+          })
+      })
+          .catch(err => {
+              err.message += '\nfetch("' + url + '") failed to connect with the'
+                  + ' server';
+              console.error(err.message);
+              console.error(err);
+              alert('SERVER ERROR: The attempt to connect with our server to'
+                  + ' update the rating failed.');
+              setTimeout(() => { throw err }, 0);
+          })
+          .then(res => {
+              if (!res.ok) {
+                  const err = new Error('fetch("' + url + '") responded with'
+                      + ' status ' + res.status);
+                  console.error(err.message);
+                  console.error(err);
+                  alert('SERVER ERROR: The attempt to update the rating with'
+                      + ' our server failed.');
+                  setTimeout(() => { throw err }, 0);
+              }
+          })
+          .catch(err => setTimeout(() => { throw err }, 0));
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * DELETE RESERVATION HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /**
+   * This method handles the AJAX POST that deletes a reservation.
+   *
+   * @param {!Object} reservation
+   * @param {!function(?Error)} done
+   * @return {void}
+   */
+  function deleteReservation(reservation, done) {
+      const url = SITE_URL + '/api/user/reservation/' + reservation.id;
+      fetch(url, {
+          method: 'DELETE'
+      })
+          .catch(err => {
+              err.message += '\nfetch("' + url + '") failed to connect with the'
+                  + ' server';
+              console.error(err.message);
+              console.error(err);
+              done(err);
+              alert('SERVER ERROR: The attempt to connect with our server to'
+                  + ' delete the reservation failed.');
+              setTimeout(() => { throw err }, 0);
+          })
+          .then(res => {
+              if (res.ok) {
+                  done(null);
+              } else {
+                  const err = new Error('fetch("' + url + '") responded with'
+                      + ' status ' + res.status);
+                  console.error(err.message);
+                  console.error(err);
+                  done(err);
+                  alert('SERVER ERROR: The attempt to delete the reservation'
+                      + ' with our server failed.');
+                  setTimeout(() => { throw err }, 0);
+              }
+          })
+          .catch(err => setTimeout(() => { throw err }, 0));
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * RESERVATION COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This component renders a single bike.
+   * This component renders a single reservation.
    *
    * @param {!Object} props
    * @return {!ReactElement}
    */
 
-  function Bike({
-    bike
+  function Reservation({
+    reservation,
+    handleDelete
   }) {
-    const href = SITE_URL + '/bike/' + bike.id;
+    /** @const {(string|number)} */
+    const [rating, setRating] = React__default["default"].useState(() => isValidRatingInput(reservation.rating) ? reservation.rating : '');
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+    function handleRatingChange(event) {
+      const val = event.target.value;
+      setRating(val);
+      reservation.rating = isValidRatingInput(val) ? +val : 0;
+      uploadRating(reservation);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handleDeleteClick() {
+      deleteReservation(reservation, handleDelete);
+    }
+
     return /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikerow"
+      className: "reservationrow"
     }, /*#__PURE__*/React__default["default"].createElement("div", {
-      id: 'bike:' + bike.id,
-      className: "bike"
+      id: 'reservation:' + reservation.id,
+      className: "reservation"
+    }, /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservationcell"
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, reservation.id)), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("a", {
-      href: href,
-      className: "bikelink"
-    }, /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.model)), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.color)), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.location)), /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating.toFixed(2), " / 5")))));
+      href: SITE_URL + '/bike/' + reservation.bike_id,
+      className: "reservationlink"
+    }, "Bike ", reservation.bike_id)), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservationcell"
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, prettifyDate(reservation.from) + ' - ' + prettifyDate(reservation.to))), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservationcell"
+    }, /*#__PURE__*/React__default["default"].createElement("label", {
+      htmlFor: "rating"
+    }, "Rating:"), /*#__PURE__*/React__default["default"].createElement("select", {
+      id: "rating",
+      value: rating,
+      onChange: handleRatingChange
+    }, /*#__PURE__*/React__default["default"].createElement("option", {
+      value: ""
+    }, "None"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "1"
+    }, "1"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "2"
+    }, "2"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "3"
+    }, "3"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "4"
+    }, "4"), /*#__PURE__*/React__default["default"].createElement("option", {
+      value: "5"
+    }, "5"))), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "reservationcell"
+    }, /*#__PURE__*/React__default["default"].createElement("button", {
+      id: "delete",
+      onClick: handleDeleteClick
+    }, "X"))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
   /**
    * ---------------------------------------------------------------------------
-   * BIKE-LIST COMPONENT
+   * RESERVATION LIST COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This component renders the list of bikes.
+   * This component renders the list of reservations.
    *
    * @param {!Object} props
    * @return {!ReactElement}
    */
 
-  function BikeList({
+  function ReservationList({
     opts,
     db,
-    bikes,
-    tab
+    reservations,
+    tab,
+    handleDelete
   }) {
     const start = (tab - 1) * 20;
-    const end = Math.min(bikes.length, tab * 20);
-    const list = bikes.slice(start, end);
+    const end = Math.min(reservations.length, tab * 20);
+    const list = reservations.slice(start, end);
     return /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikelist"
+      className: "reservationlist"
     }, list.length === 0 && /*#__PURE__*/React__default["default"].createElement("p", {
-      className: "nobikes"
-    }, "No Matching Bikes"), list.map((bike, i) => /*#__PURE__*/React__default["default"].createElement(Bike, {
+      className: "noreservations"
+    }, "No Matching Reservations"), list.map((reservation, i) => /*#__PURE__*/React__default["default"].createElement(Reservation, {
       key: makeUniqueID(i),
-      bike: bike
+      reservation: reservation,
+      handleDelete: handleDelete
     })));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -2128,18 +1780,19 @@
    */
   /**
    * This component handles the page tabs located at the bottom of the screen.
-   * The page tabs enable you to view a new selection of 20 matching bikes.
+   * The page tabs enable you to view a new selection of 20 matching
+   * reservations.
    *
    * @param {!Object} props
    * @return {!ReactElement}
    */
 
   function Tabs({
-    bikes,
+    reservations,
     tab,
     handleTabChange
   }) {
-    const lastTab = Math.ceil(bikes.length / 20); // We are going to pick 9 sequential page tabs (including the current tab)
+    const lastTab = Math.ceil(reservations.length / 20); // We are going to pick 9 sequential page tabs (including the current tab)
     // to display. If possible we want the current tab to be the middle value.
 
     const startTab = tab < 5 ? 1 : tab + 4 > lastTab ? lastTab - 8 > 1 ? lastTab - 8 : 1 : tab - 4;
@@ -2166,43 +1819,40 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * BIKES COMPONENT
+   * RESERVATIONS COMPONENT
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
    */
   /**
-   * This method is the root component for the main bikes list page. It sets up
-   * the environment, verifies the user, loads the bikes, and hands over the
-   * rendering to other components.
+   * This method is the root component for the user reservations page. It sets
+   * up the environment, verifies the user, loads the reservations, and hands
+   * over the rendering to other components.
    *
    * @return {!ReactElement}
    */
 
-  function Bikes() {
-    /** @const {!PageOptions} */
-    const [opts] = React__default["default"].useState(() => new PageOptions());
-    /** @const {!BikesDB} */
-
-    const [db] = React__default["default"].useState(() => new BikesDB(opts));
+  function Reservations() {
     /** @const {boolean} */
-
     const [authenticated, setAuthenticated] = React__default["default"].useState(false);
     /** @const {boolean} */
 
-    const [loggedin, setLoggedin] = React__default["default"].useState(false);
-    /** @const {boolean} */
-
     const [loaded, setLoaded] = React__default["default"].useState(false);
+    /** @const {!PageOptions} */
+
+    const [opts] = React__default["default"].useState(() => new PageOptions());
+    /** @const {!ReservationsDB} */
+
+    const [db] = React__default["default"].useState(() => new ReservationsDB(opts));
     /** @const {number} */
 
     const [tab, setTab] = React__default["default"].useState(() => opts.tab());
     /** @const {!Array<!Object>} */
 
-    const [bikes, setBikes] = React__default["default"].useState(() => db.bikes()); // This effect sets up the browser history state, appends the handler for
+    const [reservations, setReservations] = React__default["default"].useState(() => db.reservations()); // This effect sets up the browser history state, appends the handler for
     // history state change (e.g. the user presses the back button), and
-    // starts the bike list download. On unmount this effect removes the
-    // history state management listener.
+    // starts the reservation list download. On unmount this effect removes
+    // the history state management listener.
 
     React__default["default"].useEffect(() => {
       if (!opts.has('tab')) {
@@ -2211,11 +1861,10 @@
 
       window.history.replaceState({
         opts: opts.state(),
-        bikes
+        reservations
       }, '', opts.urlpath());
       window.addEventListener('popstate', handleHistoryChange);
       authenticateUser(handleAuthenticateComplete);
-      downloadBikes(1, opts, db, handleDownloadComplete);
       return () => {
         window.removeEventListener('popstate', handleHistoryChange);
       };
@@ -2226,8 +1875,13 @@
      */
 
     function handleAuthenticateComplete(loggedin) {
-      setLoggedin(loggedin);
+      if (!loggedin) {
+        window.location.replace(SITE_URL + '/login');
+        return;
+      }
+
       setAuthenticated(true);
+      downloadReservations(1, opts, db, handleDownloadComplete);
     }
     /**
      * @return {void}
@@ -2236,16 +1890,16 @@
 
     function handleDownloadComplete() {
       db.update();
-      const bikes = db.bikes(); // If the tab value is greater than the total tab count set the tab
+      const reservations = db.reservations(); // If the tab value is greater than the total tab count set the tab
       // to the last tab.
 
-      opts.tab(bikes.length <= (opts.tab() - 1) * 20 ? Math.ceil(bikes.length / 20) : opts.tab());
+      opts.tab(reservations.length <= (opts.tab() - 1) * 20 ? Math.ceil(reservations.length / 20) : opts.tab());
       window.history.replaceState({
         opts: opts.state(),
-        bikes
+        reservations
       }, '', opts.urlpath());
       setTab(opts.tab());
-      setBikes(bikes);
+      setReservations(reservations);
       setLoaded(true);
     }
     /**
@@ -2255,13 +1909,13 @@
 
     function handleOptionsChange() {
       db.update();
-      const bikes = db.bikes();
+      const reservations = db.reservations();
       window.history.pushState({
         opts: opts.state(),
-        bikes
+        reservations
       }, '', opts.urlpath());
       setTab(opts.tab() || 1);
-      setBikes(bikes);
+      setReservations(reservations);
     }
     /**
      * @param {number} tab
@@ -2273,7 +1927,7 @@
       opts.tab(tab);
       window.history.pushState({
         opts: opts.state(),
-        bikes
+        reservations
       }, '', opts.urlpath());
       setTab(opts.tab());
     }
@@ -2289,14 +1943,27 @@
     function handleHistoryChange(event) {
       opts.state(event.state.opts);
       setTab(opts.tab() || 1);
-      setBikes(event.state.bikes);
+      setReservations(event.state.reservations);
 
       if (!authenticated) {
         authenticateUser(handleAuthenticateComplete);
       }
 
       if (!loaded) {
-        downloadBikes(1, opts, db, handleDownloadComplete);
+        downloadReservations(1, opts, db, handleDownloadComplete);
+      }
+    }
+    /**
+     * @param {?Error} err
+     * @return {void}
+     */
+
+
+    function handleDelete(err) {
+      if (!err) {
+        setLoaded(false);
+        db.wipe();
+        downloadReservations(1, opts, db, handleDownloadComplete);
       }
     }
     /**
@@ -2305,32 +1972,33 @@
 
 
     function handleLogout() {
-      setLoggedin(false);
+      window.location.href = SITE_URL + '/bikes';
     }
 
     if (!authenticated || !loaded) {
       return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(UserNavBar, null), /*#__PURE__*/React__default["default"].createElement("h1", {
         className: "intro"
-      }, "Bike Rental"), /*#__PURE__*/React__default["default"].createElement(Loading, null));
+      }, "Your Reservations"), /*#__PURE__*/React__default["default"].createElement(Loading, null));
     }
 
     return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(UserNavBar, null), /*#__PURE__*/React__default["default"].createElement(LogButtons, {
-      loggedin: loggedin,
+      loggedin: true,
       handleLogout: handleLogout
     }), /*#__PURE__*/React__default["default"].createElement("h1", {
       className: "intro"
-    }, "Bike Rental"), /*#__PURE__*/React__default["default"].createElement(Filters, {
+    }, "Your Reservations"), /*#__PURE__*/React__default["default"].createElement(Filters, {
       opts: opts,
       db: db,
-      bikes: bikes,
+      reservations: reservations,
       handleOptionsChange: handleOptionsChange
-    }), /*#__PURE__*/React__default["default"].createElement(BikeList, {
+    }), /*#__PURE__*/React__default["default"].createElement(ReservationList, {
       opts: opts,
       db: db,
-      bikes: bikes,
-      tab: tab
+      reservations: reservations,
+      tab: tab,
+      handleDelete: handleDelete
     }), /*#__PURE__*/React__default["default"].createElement(Tabs, {
-      bikes: bikes,
+      reservations: reservations,
       tab: tab,
       handleTabChange: handleTabChange
     }));
@@ -2339,7 +2007,7 @@
 
   /**
    * ---------------------------------------------------------------------------
-   * MAIN APP
+   * RESERVATIONS APP
    * ---------------------------------------------------------------------------
    * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
    * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
@@ -2350,6 +2018,6 @@
   /** @const {!Object} */
 
   const root = ReactDOM__default["default"].createRoot(main);
-  root.render( /*#__PURE__*/React__default["default"].createElement(Bikes, null));
+  root.render( /*#__PURE__*/React__default["default"].createElement(Reservations, null));
 
 })(React, ReactDOM);

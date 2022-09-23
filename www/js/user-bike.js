@@ -175,7 +175,7 @@
    */
 
   /** @const {!RegExp} */
-  const DATE = /^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$/;
+  const DATE = /^([2-9][0-9]{3})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$/;
 
   /**
    * A wrapper for the date options like `"to"` and `"from"`.
@@ -310,6 +310,16 @@
        */
       key() {
           return this.year() + '-' + this.month() + '-' + this.day();
+      }
+
+      /**
+       * Creates a string for the date that requires six to eight digits,
+       * `"MM/DD/YYYY"` or `"M/D/YYYY"`.
+       *
+       * @return {string}
+       */
+      pretty() {
+          return this.month() + '/' + this.day() + '/' + this.year();
       }
 
       /**
@@ -1242,7 +1252,7 @@
       className: "label"
     }, "Location:"), /*#__PURE__*/React__default["default"].createElement("span", null, " ", bike.location))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell rating"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating, " / 5 from ", bike.rate_count, " reviews")), /*#__PURE__*/React__default["default"].createElement(Reserve, {
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating.toFixed(2) + ' / 5 from ' + bike.rate_count + ' Reviews')), /*#__PURE__*/React__default["default"].createElement(Reserve, {
       bike: bike,
       db: db,
       loggedin: loggedin
