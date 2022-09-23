@@ -151,6 +151,7 @@ function addToDate(db, reservation) {
         const key = date.strictkey();
         if (!(key in db.date)) {
             db.date[key] = new Set();
+            db.date[date.key()] = db.date[key];
         }
         db.date[key].add(reservation);
         date = new DateOption(date.year(), date.month(), date.day() + 1);
