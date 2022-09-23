@@ -191,7 +191,8 @@ function BikeData({ bike, db }) {
                 {badLocation && <p className="failure">Invalid Location</p>}
             </div>
             <div className="bikecell rating">
-                <p>{bike.rating} / 5 from {bike.rate_count} reviews</p>
+                <p>{bike.rating.toFixed(2) + ' / 5 from ' + bike.rate_count
+                    + ' Reviews'}</p>
             </div>
         </div>
     );

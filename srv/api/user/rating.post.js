@@ -52,7 +52,7 @@ function postRating(req, res) {
     } else {
         bike.rate_total += req.body.rating - reservation.rating;
     }
-    bike.rating = (bike.rate_total / bike.rate_count).toPrecision(3);
+    bike.rating = bike.rate_total / bike.rate_count;
     to.file(JSON.stringify(bikes, null, 4), BIKES_FILEPATH);
 
     reservation.rating = req.body.rating;
