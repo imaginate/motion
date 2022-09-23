@@ -161,6 +161,7 @@ function mergeSets(key, set, db, opts) {
         return newset;
     }
 
+    // Make sure you iterate over the smaller set. It can save a lot of time.
     const refset = set.size < newset.size
         ? newset
         : set;
