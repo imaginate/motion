@@ -71,7 +71,6 @@ function Reservations() {
         }, '', opts.urlpath());
         window.addEventListener('popstate', handleHistoryChange);
         authenticateUser(handleAuthenticateComplete);
-        downloadReservations(1, opts, db, handleDownloadComplete);
         return () => {
             window.removeEventListener('popstate', handleHistoryChange);
         };
@@ -84,8 +83,10 @@ function Reservations() {
     function handleAuthenticateComplete(loggedin) {
         if (!loggedin) {
             window.location.replace(SITE_URL + '/login');
+            return;
         }
         setAuthenticated(true);
+        downloadReservations(1, opts, db, handleDownloadComplete);
     }
 
     /**
