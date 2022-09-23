@@ -9,11 +9,11 @@
 /** @const {!function} */
 import isValidIDInput from '../../../helpers/is-valid-id-input.js';
 /** @const {!function} */
-import isDateInstance from '../../../is-date-instance.js';
+import isDateInstance from '../../../helpers/is-date-instance.js';
 /** @const {!function} */
-import isDateOptionInstance from '../../../is-date-option-instance.js';
+import isDateOptionInstance from '../../../helpers/is-date-option-instance.js';
 /** @const {!function} */
-import isValidDateString from '../../../is-valid-date-string.js';
+import isValidDateString from '../../../helpers/is-valid-date-string.js';
 /** @const {!function} */
 import isValidRatingInput from '../../../helpers/is-valid-rating-input.js';
 
