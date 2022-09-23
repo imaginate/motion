@@ -155,12 +155,15 @@ function Reservations() {
     }
 
     /**
+     * @param {?Error} err
      * @return {void}
      */
-    function handleDelete() {
-        setLoaded(false);
-        db.wipe();
-        downloadReservations(1, opts, db, handleDownloadComplete);
+    function handleDelete(err) {
+        if (!err) {
+            setLoaded(false);
+            db.wipe();
+            downloadReservations(1, opts, db, handleDownloadComplete);
+        }
     }
 
     /**

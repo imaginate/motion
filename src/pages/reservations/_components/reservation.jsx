@@ -51,7 +51,7 @@ function Reservation({ reservation, handleDelete }) {
      * @return {void}
      */
     function handleDeleteClick() {
-        deleteReservation(handleDelete);
+        deleteReservation(reservation, handleDelete);
     }
 
     return (
