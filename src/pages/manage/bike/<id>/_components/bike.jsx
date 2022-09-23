@@ -53,7 +53,6 @@ function Bike() {
 
     React.useEffect(() => {
         authenticateManager(handleAuthenticateComplete);
-        downloadBike(bikeID, db, handleDownloadComplete);
     }, []);
 
     /**
@@ -64,11 +63,14 @@ function Bike() {
     function handleAuthenticateComplete(loggedin, isManager) {
         if (!loggedin) {
             window.location.replace(SITE_URL + '/login');
+            return;
         }
         if (!isManager) {
             window.location.replace(SITE_URL + '/bikes');
+            return;
         }
         setAuthenticated(true);
+        downloadBike(bikeID, db, handleDownloadComplete);
     }
 
     /**

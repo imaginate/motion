@@ -69,7 +69,6 @@ function Users() {
         }, '', opts.urlpath());
         window.addEventListener('popstate', handleHistoryChange);
         authenticateManager(handleAuthenticateComplete);
-        downloadUsers(1, opts, db, handleDownloadComplete);
         return () => {
             window.removeEventListener('popstate', handleHistoryChange);
         };
@@ -83,11 +82,14 @@ function Users() {
     function handleAuthenticateComplete(loggedin, isManager) {
         if (!loggedin) {
             window.location.replace(SITE_URL + '/login');
+            return;
         }
         if (!isManager) {
             window.location.replace(SITE_URL + '/bikes');
+            return;
         }
         setAuthenticated(true);
+        downloadUsers(1, opts, db, handleDownloadComplete);
     }
 
     /**
