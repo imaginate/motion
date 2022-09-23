@@ -140,12 +140,12 @@ function Filters({ opts, db, reservations, handleOptionsChange }) {
                     value={opts.has('rating') ? opts.rating() : ''}
                     onChange={handleRatingChange}
                 >
-                    <options value="">All</option>
-                    <options value="1">1</option>
-                    <options value="2">2</option>
-                    <options value="3">3</option>
-                    <options value="4">4</option>
-                    <options value="5">5</option>
+                    <option value="">All</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </div>
         </div>
