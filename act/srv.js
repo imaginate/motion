@@ -17,8 +17,18 @@
 // EXPORTS
 //////////////////////////////////////////////////////////////////////////////
 
-exports['desc'] = 'runs the local website server';
-exports['method'] = runServer;
+exports.desc = 'runs the local web server';
+exports.default = '-exit';
+exports.methods = {
+  exit: {
+    desc: 'runs the local web server and terminates it on browser exit',
+    method: runServerExit
+  },
+  persist: {
+    desc: 'runs the local web server and requires kill signal to terminate',
+    method: runServerPersist
+  }
+};
 
 //////////////////////////////////////////////////////////////////////////////
 // HELPERS
@@ -48,11 +58,21 @@ const URL = require('./helpers/env.js').loadEnv().url;
  * @public
  * @return {void}
  */
-async function runServer() {
+async function runServerExit() {
     act('css js html db');
     const server = require(SERVER);
     await open(URL, { wait: true });
     server.close();
+}
+
+/**
+ * @public
+ * @return {void}
+ */
+async function runServerPersist() {
+    act('css js html db');
+    const server = require(SERVER);
+    await open(URL);
 }
 
 // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
