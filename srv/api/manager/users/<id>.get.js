@@ -46,10 +46,12 @@ function getUsers(req, res) {
         return;
     }
 
+    const users = require(USERS_FILEPATH);
     res.set('Content-Type', 'application/json');
+    res.set('Cache-Control', 'no-cache, no-store');
     res.set('Page-Number', '1');
     res.set('Last-Page', '1');
-    res.sendFile(USERS_FILEPATH);
+    res.send(JSON.stringify(users));
 }
 
 module.exports = getUsers;
