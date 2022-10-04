@@ -32,6 +32,8 @@ const SESSIONS_FILEPATH = resolve('.data/sessions.json');
  */
 function postLogin(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     if (!isValidEmail(req.body.email)) {
         res.status(401);
         res.send();

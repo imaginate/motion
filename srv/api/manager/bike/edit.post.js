@@ -25,6 +25,8 @@ const BIKES_FILEPATH = resolve('.data/bikes.json');
  */
 function postBikeEdit(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const userID = authenticateManager(req);
     if (!userID) {
         res.status(401);

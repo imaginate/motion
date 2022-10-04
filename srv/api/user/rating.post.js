@@ -27,6 +27,8 @@ const RESERVATIONS_FILEPATH = resolve('.data/reservations.json');
  */
 function postRating(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const userID = authenticateUser(req);
     if (!userID) {
         res.status(401);

@@ -30,6 +30,8 @@ const ID_PATT = /^.*\/([1-9][0-9]{0,9})\/?$/;
  */
 function deleteReservation(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const userID = authenticateUser(req);
     if (!userID) {
         res.status(401);

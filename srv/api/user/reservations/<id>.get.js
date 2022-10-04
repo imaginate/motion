@@ -26,6 +26,8 @@ const ID_PATT = /^.*\/([1-9][0-9]{0,9})\/?$/;
  */
 function getReservations(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const userID = authenticateUser(req);
     if (!userID) {
         res.status(401);
@@ -51,7 +53,6 @@ function getReservations(req, res) {
     }
 
     res.set('Content-Type', 'application/json');
-    res.set('Cache-Control', 'no-cache, no-store');
     res.set('Page-Number', '1');
     res.set('Last-Page', '1');
     res.send(JSON.stringify(matched));

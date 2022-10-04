@@ -34,6 +34,8 @@ const SESSIONS_FILEPATH = resolve('.data/sessions.json');
  */
 function postRegister(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     if (!isValidString(req.body.first_name)
         || !isValidString(req.body.last_name)
         || !isValidEmail(req.body.email)

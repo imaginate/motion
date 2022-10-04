@@ -23,6 +23,8 @@ const SESSIONS_FILEPATH = resolve('.data/sessions.json');
  */
 function headLogout(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     if (!('session' in req.cookies)) {
         res.send();
         return;

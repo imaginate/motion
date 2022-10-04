@@ -23,6 +23,8 @@ const ID_PATT = /^.*\/([1-9][0-9]{0,9})\/?$/;
  */
 function getBike(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const bikes = require(BIKES_FILEPATH);
     const id = ID_PATT.test(req.path)
         ? +req.path.replace(ID_PATT, '$1')
@@ -34,7 +36,6 @@ function getBike(req, res) {
     }
 
     res.set('Content-Type', 'application/json');
-    res.set('Cache-Control', 'no-cache, no-store');
     res.send(JSON.stringify(bikes[id - 1]));
 }
 

@@ -20,6 +20,9 @@ const SESSIONS_FILEPATH = resolve('.data/sessions.json');
  * @return {void}
  */
 function headAuthenticate(req, res) {
+
+    res.set('Cache-Control', 'no-cache, no-store');
+
     if ('session' in req.cookies) {
         const sessions = require(SESSIONS_FILEPATH);
         const sessionID = req.cookies.session;
@@ -43,6 +46,7 @@ function headAuthenticate(req, res) {
     } else {
         res.status(401);
     }
+
     res.send();
 }
 

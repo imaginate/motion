@@ -25,6 +25,8 @@ const ID_PATT = /^.*\/([1-9][0-9]{0,9})\/?$/;
  */
 function getUsers(req, res) {
 
+    res.set('Cache-Control', 'no-cache, no-store');
+
     const userID = authenticateManager(req);
     if (!userID) {
         res.status(401);
@@ -48,7 +50,6 @@ function getUsers(req, res) {
 
     const users = require(USERS_FILEPATH);
     res.set('Content-Type', 'application/json');
-    res.set('Cache-Control', 'no-cache, no-store');
     res.set('Page-Number', '1');
     res.set('Last-Page', '1');
     res.send(JSON.stringify(users));
