@@ -18,7 +18,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 exports.desc = 'runs the local web server';
-exports.default = '-exit';
+exports.default = '-persist';
 exports.methods = {
   exit: {
     desc: 'runs the local web server and terminates it on browser exit',
