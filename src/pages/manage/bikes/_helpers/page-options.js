@@ -206,6 +206,28 @@ class PageOptions {
     }
 
     /**
+     * If the current tab value is greater than the total tab count, this
+     * method sets the tab value to the last available tab.
+     *
+     * @param {number} len
+     *     The total length of rows to display.
+     * @return {number}
+     *     The new tab value is returned.
+     */
+    prunetab(len) {
+
+        let tab = this.get('tab');
+        const tablen = (tab - 1) * 20;
+
+        if (len <= tablen) {
+            tab = Math.ceil(len / 20);
+            this.set('tab', tab);
+        }
+
+        return tab;
+    }
+
+    /**
      * @param {(string|number)=} val = `undefined`
      * @return {(number|undefined)}
      */
