@@ -217,10 +217,16 @@ class PageOptions {
     prunetab(len) {
 
         let tab = this.get('tab');
+
+        if (!tab) {
+            tab = 1;
+            this.set('tab', tab);
+        }
+
         const tablen = (tab - 1) * 20;
 
         if (len <= tablen) {
-            tab = Math.ceil(len / 20);
+            tab = Math.ceil(len / 20) || 1;
             this.set('tab', tab);
         }
 
