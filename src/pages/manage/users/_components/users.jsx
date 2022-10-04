@@ -98,11 +98,7 @@ function Users() {
     function handleDownloadComplete() {
         db.update();
         const users = db.users();
-        // If the tab value is greater than the total tab count set the tab
-        // to the last tab.
-        opts.tab(users.length <= (opts.tab() - 1) * 20
-            ? Math.ceil(users.length / 20)
-            : opts.tab());
+        opts.prunetab(users.length);
         window.history.replaceState({
             opts: opts.state(),
             users
@@ -118,11 +114,12 @@ function Users() {
     function handleOptionsChange() {
         db.update();
         const users = db.users();
+        opts.prunetab(users.length);
         window.history.pushState({
             opts: opts.state(),
             users
         }, '', opts.urlpath());
-        setTab(opts.tab() || 1);
+        setTab(opts.tab());
         setUsers(users);
     }
 
@@ -148,7 +145,8 @@ function Users() {
      */
     function handleHistoryChange(event) {
         opts.state(event.state.opts);
-        setTab(opts.tab() || 1);
+        opts.prunetab(event.state.users.length);
+        setTab(opts.tab());
         setUsers(event.state.users);
         if (!authenticated) {
             authenticateManager(handleAuthenticateComplete);

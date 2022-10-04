@@ -95,11 +95,7 @@ function Reservations() {
     function handleDownloadComplete() {
         db.update();
         const reservations = db.reservations();
-        // If the tab value is greater than the total tab count set the tab
-        // to the last tab.
-        opts.tab(reservations.length <= (opts.tab() - 1) * 20
-            ? Math.ceil(reservations.length / 20)
-            : opts.tab());
+        opts.prunetab(reservations.length);
         window.history.replaceState({
             opts: opts.state(),
             reservations
@@ -115,11 +111,12 @@ function Reservations() {
     function handleOptionsChange() {
         db.update();
         const reservations = db.reservations();
+        opts.prunetab(reservations.length);
         window.history.pushState({
             opts: opts.state(),
             reservations
         }, '', opts.urlpath());
-        setTab(opts.tab() || 1);
+        setTab(opts.tab());
         setReservations(reservations);
     }
 
@@ -145,7 +142,8 @@ function Reservations() {
      */
     function handleHistoryChange(event) {
         opts.state(event.state.opts);
-        setTab(opts.tab() || 1);
+        opts.prunetab(event.state.reservations.length);
+        setTab(opts.tab());
         setReservations(event.state.reservations);
         if (!authenticated) {
             authenticateUser(handleAuthenticateComplete);

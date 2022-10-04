@@ -98,11 +98,7 @@ function Bikes() {
     function handleDownloadComplete() {
         db.update();
         const bikes = db.bikes();
-        // If the tab value is greater than the total tab count set the tab
-        // to the last tab.
-        opts.tab(bikes.length <= (opts.tab() - 1) * 20
-            ? Math.ceil(bikes.length / 20)
-            : opts.tab());
+        opts.prunetab(bikes.length);
         window.history.replaceState({
             opts: opts.state(),
             bikes
@@ -118,11 +114,12 @@ function Bikes() {
     function handleOptionsChange() {
         db.update();
         const bikes = db.bikes();
+        opts.prunetab(bikes.length);
         window.history.pushState({
             opts: opts.state(),
             bikes
         }, '', opts.urlpath());
-        setTab(opts.tab() || 1);
+        setTab(opts.tab());
         setBikes(bikes);
     }
 
@@ -148,7 +145,8 @@ function Bikes() {
      */
     function handleHistoryChange(event) {
         opts.state(event.state.opts);
-        setTab(opts.tab() || 1);
+        opts.prunetab(event.state.bikes.length);
+        setTab(opts.tab());
         setBikes(event.state.bikes);
         if (!authenticated) {
             authenticateManager(handleAuthenticateComplete);
