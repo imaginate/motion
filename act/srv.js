@@ -18,17 +18,27 @@
 //////////////////////////////////////////////////////////////////////////////
 
 exports.desc = 'runs the local web server';
-exports.default = '-persist';
+exports.default = '-solo';
 exports.methods = {
+  solo: {
+    desc: 'runs the local web server without opening a browser (requires a'
+        + ' kill signal to terminate the server)',
+    method: runServerSolo
+  },
   exit: {
-    desc: 'runs the local web server and terminates it on browser exit',
+    desc: 'runs the local web server, opens a browser, and terminates the'
+        + ' server on browser exit',
     method: runServerExit
   },
   persist: {
-    desc: 'runs the local web server and requires kill signal to terminate',
+    desc: 'runs the local web server and opens a browser (requires a kill'
+        + ' signal to terminate the server)',
     method: runServerPersist
   }
 };
+exports.methods.s = exports.methods.solo;
+exports.methods.e = exports.methods.exit;
+exports.methods.p = exports.methods.persist;
 
 //////////////////////////////////////////////////////////////////////////////
 // HELPERS
@@ -58,6 +68,15 @@ const URL = require('./helpers/env.js').loadEnv().url;
  * @public
  * @return {void}
  */
+async function runServerSolo() {
+    act('css js html db');
+    require(SERVER);
+}
+
+/**
+ * @public
+ * @return {void}
+ */
 async function runServerExit() {
     act('css js html db');
     const server = require(SERVER);
@@ -71,7 +90,7 @@ async function runServerExit() {
  */
 async function runServerPersist() {
     act('css js html db');
-    const server = require(SERVER);
+    require(SERVER);
     await open(URL);
 }
 
