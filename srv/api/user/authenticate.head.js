@@ -36,6 +36,7 @@ function headAuthenticate(req, res) {
         if (!found) {
             res.status(401);
             res.cookie('session', '', {
+                httpOnly: true,
                 token: 'deleted',
                 path: '/',
                 expires: new Date()

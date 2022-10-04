@@ -49,6 +49,7 @@ function headLogout(req, res) {
     }
 
     res.cookie('session', '', {
+        httpOnly: true,
         token: 'deleted',
         path: '/',
         expires: new Date()
