@@ -19,7 +19,7 @@
         "onlydata": "1.x",
         "node-act": "1.x",
         "node-vitals": "4.x",
-        "node-sass": "4.x",
+        "node-sass": "6.x",
         "handlebars": "4.x",
         "@babel/core": "7.x",
         "@babel/plugin-transform-react-jsx": "7.x",
