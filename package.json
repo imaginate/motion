@@ -7,6 +7,9 @@
         "build": "node ./node_modules/node-act/bin/act css js html",
         "open": "node ./node_modules/node-act/bin/act srv"
     },
+    "engines": {
+        "node": ">=14 <=18"
+    },
     "dependencies": {
         "react": "18.x",
         "react-dom": "18.x"
