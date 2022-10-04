@@ -314,6 +314,9 @@
     const [loggingin, setLoggingin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
+    const [attemptLogin, setAttemptLogin] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
     const [badLogin, setBadLogin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
@@ -351,6 +354,8 @@
 
     function handleEmailChange(event) {
       const val = event.target.value;
+      setAttemptLogin(false);
+      setBadLogin(false);
       setEmail(val);
 
       if (isValidEmail(val)) {
@@ -367,6 +372,8 @@
 
     function handlePasswordChange(event) {
       const val = event.target.value;
+      setAttemptLogin(false);
+      setBadLogin(false);
       setPassword(val);
 
       if (val.length < 8) {
@@ -376,12 +383,41 @@
       }
     }
     /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+
+    function handleEnterKeyUp(event) {
+      if (event.key !== 'Enter') {
+        return;
+      }
+
+      if (isValidEmail(email)) {
+        setBadEmail(false);
+      } else {
+        setBadEmail(true);
+      }
+
+      if (password.length < 8) {
+        setBadPassword(true);
+      } else {
+        setBadPassword(false);
+      }
+
+      handleLoginClick();
+    }
+    /**
      * @return {void}
      */
 
 
     function handleLoginClick() {
+      setAttemptLogin(false);
+      setBadLogin(false);
+
       if (badEmail || badPassword) {
+        setAttemptLogin(true);
         return;
       }
 
@@ -417,7 +453,8 @@
       type: "email",
       id: "email",
       placeholder: "Email",
-      onChange: handleEmailChange
+      onChange: handleEmailChange,
+      onKeyUp: handleEnterKeyUp
     }), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Invalid Email")), /*#__PURE__*/React__default["default"].createElement("div", {
@@ -426,7 +463,8 @@
       type: "password",
       id: "password",
       placeholder: "Password",
-      onChange: handlePasswordChange
+      onChange: handlePasswordChange,
+      onKeyUp: handleEnterKeyUp
     }), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Must Be 8+ Characters Long")), /*#__PURE__*/React__default["default"].createElement("div", {
@@ -437,9 +475,13 @@
       id: "login",
       className: "login",
       onClick: handleLoginClick
-    }, "Login"), badLogin && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Login"), attemptLogin && badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid Email Or Password"))));
+    }, "Invalid Email"), attemptLogin && badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Password"), badLogin && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Incorrect Email Or Password"))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 

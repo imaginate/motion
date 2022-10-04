@@ -36,6 +36,8 @@ function Login() {
     const [ loggingin, setLoggingin ] = React.useState(false);
 
     /** @const {boolean} */
+    const [ attemptLogin, setAttemptLogin ] = React.useState(false);
+    /** @const {boolean} */
     const [ badLogin, setBadLogin ] = React.useState(false);
     /** @const {boolean} */
     const [ badEmail, setBadEmail ] = React.useState(false);
@@ -71,8 +73,13 @@ function Login() {
      * @return {void}
      */
     function handleEmailChange(event) {
+
         const val = event.target.value;
+
+        setAttemptLogin(false);
+        setBadLogin(false);
         setEmail(val);
+
         if (isValidEmail(val)) {
             setBadEmail(false);
         } else {
@@ -85,8 +92,13 @@ function Login() {
      * @return {void}
      */
     function handlePasswordChange(event) {
+
         const val = event.target.value;
+
+        setAttemptLogin(false);
+        setBadLogin(false);
         setPassword(val);
+
         if (val.length < 8) {
             setBadPassword(true);
         } else {
@@ -95,12 +107,43 @@ function Login() {
     }
 
     /**
+     * @param {!Event} event
+     * @return {void}
+     */
+    function handleEnterKeyUp(event) {
+
+        if (event.key !== 'Enter') {
+            return;
+        }
+
+        if (isValidEmail(email)) {
+            setBadEmail(false);
+        } else {
+            setBadEmail(true);
+        }
+
+        if (password.length < 8) {
+            setBadPassword(true);
+        } else {
+            setBadPassword(false);
+        }
+
+        handleLoginClick();
+    }
+
+    /**
      * @return {void}
      */
     function handleLoginClick() {
+
+        setAttemptLogin(false);
+        setBadLogin(false);
+
         if (badEmail || badPassword) {
+            setAttemptLogin(true);
             return;
         }
+
         setLoggingin(true);
         makeLoginAttempt(email, password, (success) => {
             if (success) {
@@ -139,6 +182,7 @@ function Login() {
                         id="email"
                         placeholder="Email"
                         onChange={handleEmailChange}
+                        onKeyUp={handleEnterKeyUp}
                     />
                     {badEmail && <p className="failure">Invalid Email</p>}
                 </div>
@@ -148,6 +192,7 @@ function Login() {
                         id="password"
                         placeholder="Password"
                         onChange={handlePasswordChange}
+                        onKeyUp={handleEnterKeyUp}
                     />
                     {badPassword && (
                         <p className="failure">Must Be 8+ Characters Long</p>
@@ -162,8 +207,14 @@ function Login() {
                             onClick={handleLoginClick}
                         >Login</button>
                     }
+                    {attemptLogin && badEmail && (
+                        <p className="failure">Invalid Email</p>
+                    )}
+                    {attemptLogin && badPassword && (
+                        <p className="failure">Invalid Password</p>
+                    )}
                     {badLogin && (
-                        <p className="failure">Invalid Email Or Password</p>
+                        <p className="failure">Incorrect Email Or Password</p>
                     )}
                 </div>
             </div>
