@@ -317,13 +317,16 @@
     const [attemptLogin, setAttemptLogin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
+    const [emptyEmail, setEmptyEmail] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [emptyPassword, setEmptyPassword] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
     const [badLogin, setBadLogin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
     const [badEmail, setBadEmail] = React__default["default"].useState(false);
-    /** @const {boolean} */
-
-    const [badPassword, setBadPassword] = React__default["default"].useState(false);
     /** @const {string} */
 
     const [email, setEmail] = React__default["default"].useState('');
@@ -363,6 +366,28 @@
       }
     }
     /**
+     * @param {string} email
+     * @return {boolean}
+     */
+
+
+    function checkEmail(email) {
+      const res = isValidEmail(email);
+      setEmptyEmail(!email);
+      setBadEmail(!!email && !res);
+      return res;
+    }
+    /**
+     * @param {string} password
+     * @return {boolean}
+     */
+
+
+    function checkPassword(password) {
+      setEmptyPassword(!password);
+      return !!password;
+    }
+    /**
      * @param {!Event} event
      * @return {void}
      */
@@ -373,12 +398,7 @@
       setAttemptLogin(false);
       setBadLogin(false);
       setEmail(val);
-
-      if (isValidEmail(val)) {
-        setBadEmail(false);
-      } else {
-        setBadEmail(true);
-      }
+      checkEmail(val);
     }
     /**
      * @param {!Event} event
@@ -391,12 +411,7 @@
       setAttemptLogin(false);
       setBadLogin(false);
       setPassword(val);
-
-      if (val.length < 8) {
-        setBadPassword(true);
-      } else {
-        setBadPassword(false);
-      }
+      checkPassword(val);
     }
     /**
      * @param {!Event} event
@@ -405,23 +420,9 @@
 
 
     function handleEnterKeyUp(event) {
-      if (event.key !== 'Enter') {
-        return;
+      if (event.key === 'Enter') {
+        handleLoginClick();
       }
-
-      if (isValidEmail(email)) {
-        setBadEmail(false);
-      } else {
-        setBadEmail(true);
-      }
-
-      if (password.length < 8) {
-        setBadPassword(true);
-      } else {
-        setBadPassword(false);
-      }
-
-      handleLoginClick();
     }
     /**
      * @return {void}
@@ -432,7 +433,11 @@
       setAttemptLogin(false);
       setBadLogin(false);
 
-      if (badEmail || badPassword) {
+      if (!checkEmail(email)) {
+        checkPassword(password);
+        setAttemptLogin(true);
+        return;
+      } else if (!checkPassword(password)) {
         setAttemptLogin(true);
         return;
       }
@@ -472,7 +477,9 @@
       placeholder: "Email",
       onChange: handleEmailChange,
       onKeyUp: handleEnterKeyUp
-    }), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+    }), emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Email Is Required"), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Invalid Email")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "logincell password"
@@ -482,9 +489,9 @@
       placeholder: "Password",
       onChange: handlePasswordChange,
       onKeyUp: handleEnterKeyUp
-    }), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+    }), emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Must Be 8+ Characters Long")), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Password Is Required")), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "logincell loginbtn"
     }, loggingin ? /*#__PURE__*/React__default["default"].createElement("p", {
       className: "loggingin"
@@ -492,11 +499,13 @@
       id: "login",
       className: "login",
       onClick: handleLoginClick
-    }, "Login"), attemptLogin && badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Login"), attemptLogin && emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid Email"), attemptLogin && badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Email Is Required"), attemptLogin && badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid Password"), badLogin && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Invalid Email"), attemptLogin && emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Password Is Required"), badLogin && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Incorrect Email Or Password"))));
   }

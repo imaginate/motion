@@ -38,11 +38,13 @@ function Login() {
     /** @const {boolean} */
     const [ attemptLogin, setAttemptLogin ] = React.useState(false);
     /** @const {boolean} */
+    const [ emptyEmail, setEmptyEmail ] = React.useState(false);
+    /** @const {boolean} */
+    const [ emptyPassword, setEmptyPassword ] = React.useState(false);
+    /** @const {boolean} */
     const [ badLogin, setBadLogin ] = React.useState(false);
     /** @const {boolean} */
     const [ badEmail, setBadEmail ] = React.useState(false);
-    /** @const {boolean} */
-    const [ badPassword, setBadPassword ] = React.useState(false);
 
     /** @const {string} */
     const [ email, setEmail ] = React.useState('');
@@ -84,22 +86,35 @@ function Login() {
     }
 
     /**
+     * @param {string} email
+     * @return {boolean}
+     */
+    function checkEmail(email) {
+        const res = isValidEmail(email);
+        setEmptyEmail(!email);
+        setBadEmail(!!email && !res);
+        return res;
+    }
+
+    /**
+     * @param {string} password
+     * @return {boolean}
+     */
+    function checkPassword(password) {
+        setEmptyPassword(!password);
+        return !!password;
+    }
+
+    /**
      * @param {!Event} event
      * @return {void}
      */
     function handleEmailChange(event) {
-
         const val = event.target.value;
-
         setAttemptLogin(false);
         setBadLogin(false);
         setEmail(val);
-
-        if (isValidEmail(val)) {
-            setBadEmail(false);
-        } else {
-            setBadEmail(true);
-        }
+        checkEmail(val);
     }
 
     /**
@@ -107,18 +122,11 @@ function Login() {
      * @return {void}
      */
     function handlePasswordChange(event) {
-
         const val = event.target.value;
-
         setAttemptLogin(false);
         setBadLogin(false);
         setPassword(val);
-
-        if (val.length < 8) {
-            setBadPassword(true);
-        } else {
-            setBadPassword(false);
-        }
+        checkPassword(val);
     }
 
     /**
@@ -126,24 +134,9 @@ function Login() {
      * @return {void}
      */
     function handleEnterKeyUp(event) {
-
-        if (event.key !== 'Enter') {
-            return;
+        if (event.key === 'Enter') {
+            handleLoginClick();
         }
-
-        if (isValidEmail(email)) {
-            setBadEmail(false);
-        } else {
-            setBadEmail(true);
-        }
-
-        if (password.length < 8) {
-            setBadPassword(true);
-        } else {
-            setBadPassword(false);
-        }
-
-        handleLoginClick();
     }
 
     /**
@@ -154,7 +147,11 @@ function Login() {
         setAttemptLogin(false);
         setBadLogin(false);
 
-        if (badEmail || badPassword) {
+        if (!checkEmail(email)) {
+            checkPassword(password);
+            setAttemptLogin(true);
+            return;
+        } else if (!checkPassword(password)) {
             setAttemptLogin(true);
             return;
         }
@@ -200,6 +197,9 @@ function Login() {
                         onChange={handleEmailChange}
                         onKeyUp={handleEnterKeyUp}
                     />
+                    {emptyEmail && (
+                        <p className="failure">Email Is Required</p>
+                    )}
                     {badEmail && <p className="failure">Invalid Email</p>}
                 </div>
                 <div className="logincell password">
@@ -210,8 +210,8 @@ function Login() {
                         onChange={handlePasswordChange}
                         onKeyUp={handleEnterKeyUp}
                     />
-                    {badPassword && (
-                        <p className="failure">Must Be 8+ Characters Long</p>
+                    {emptyPassword && (
+                        <p className="failure">Password Is Required</p>
                     )}
                 </div>
                 <div className="logincell loginbtn">
@@ -223,11 +223,14 @@ function Login() {
                             onClick={handleLoginClick}
                         >Login</button>
                     }
+                    {attemptLogin && emptyEmail && (
+                        <p className="failure">Email Is Required</p>
+                    )}
                     {attemptLogin && badEmail && (
                         <p className="failure">Invalid Email</p>
                     )}
-                    {attemptLogin && badPassword && (
-                        <p className="failure">Invalid Password</p>
+                    {attemptLogin && emptyPassword && (
+                        <p className="failure">Password Is Required</p>
                     )}
                     {badLogin && (
                         <p className="failure">Incorrect Email Or Password</p>
