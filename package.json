@@ -1,11 +1,12 @@
 {
     "private": true,
-    "name": "toptal-bike-rental",
-    "description": "A React.js app for the Toptal bike rental challenge.",
+    "name": "motion",
+    "description": "A React.js bike rental web application for Adam Smith's portfolio.",
     "author": "Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)",
     "scripts": {
         "build": "node ./node_modules/node-act/bin/act css js html",
-        "open": "node ./node_modules/node-act/bin/act srv"
+        "open": "node ./node_modules/node-act/bin/act srv -e",
+        "srv": "node ./node_modules/node-act/bin/act srv"
     },
     "engines": {
         "node": ">=14"
@@ -15,7 +16,6 @@
         "react-dom": "18.x"
     },
     "devDependencies": {
-        "google-closure-compiler": "^20220301.0.0",
         "express": "4.x",
         "cookie-parser": "1.x",
         "open": "8.x",
