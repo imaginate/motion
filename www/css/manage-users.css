@@ -43,7 +43,6 @@ div.loading {
   padding: 0;
   margin: 0;
 }
-
 div.loading div {
   display: block;
   position: absolute;
@@ -57,7 +56,6 @@ div.loading div {
   -o-animation-timing-function: cubic-bezier(0, 1, 1, 0);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
-
 div.loading div:nth-child(1) {
   left: 0px;
   -webkit-animation: loading1 0.6s infinite;
@@ -66,7 +64,6 @@ div.loading div:nth-child(1) {
   -o-animation: loading1 0.6s infinite;
   animation: loading1 0.6s infinite;
 }
-
 div.loading div:nth-child(2) {
   left: 0px;
   -webkit-animation: loading2 0.6s infinite;
@@ -75,7 +72,6 @@ div.loading div:nth-child(2) {
   -o-animation: loading2 0.6s infinite;
   animation: loading2 0.6s infinite;
 }
-
 div.loading div:nth-child(3) {
   left: 41px;
   -webkit-animation: loading2 0.6s infinite;
@@ -84,7 +80,6 @@ div.loading div:nth-child(3) {
   -o-animation: loading2 0.6s infinite;
   animation: loading2 0.6s infinite;
 }
-
 div.loading div:nth-child(4) {
   left: 82px;
   -webkit-animation: loading3 0.6s infinite;
@@ -102,7 +97,6 @@ div.loading div:nth-child(4) {
     -webkit-transform: scale(1);
   }
 }
-
 @-moz-keyframes loading1 {
   0% {
     -moz-transform: scale(0);
@@ -111,7 +105,6 @@ div.loading div:nth-child(4) {
     -moz-transform: scale(1);
   }
 }
-
 @-ms-keyframes loading1 {
   0% {
     -ms-transform: scale(0);
@@ -120,7 +113,6 @@ div.loading div:nth-child(4) {
     -ms-transform: scale(1);
   }
 }
-
 @-o-keyframes loading1 {
   0% {
     -o-transform: scale(0);
@@ -129,7 +121,6 @@ div.loading div:nth-child(4) {
     -o-transform: scale(1);
   }
 }
-
 @keyframes loading1 {
   0% {
     transform: scale(0);
@@ -138,7 +129,6 @@ div.loading div:nth-child(4) {
     transform: scale(1);
   }
 }
-
 @-webkit-keyframes loading2 {
   0% {
     -webkit-transform: translate(0, 0);
@@ -147,7 +137,6 @@ div.loading div:nth-child(4) {
     -webkit-transform: translate(41px, 0);
   }
 }
-
 @-moz-keyframes loading2 {
   0% {
     -moz-transform: translate(0, 0);
@@ -156,7 +145,6 @@ div.loading div:nth-child(4) {
     -moz-transform: translate(41px, 0);
   }
 }
-
 @-ms-keyframes loading2 {
   0% {
     -ms-transform: translate(0, 0);
@@ -165,7 +153,6 @@ div.loading div:nth-child(4) {
     -ms-transform: translate(41px, 0);
   }
 }
-
 @-o-keyframes loading2 {
   0% {
     -o-transform: translate(0, 0);
@@ -174,7 +161,6 @@ div.loading div:nth-child(4) {
     -o-transform: translate(41px, 0);
   }
 }
-
 @keyframes loading2 {
   0% {
     transform: translate(0, 0);
@@ -183,7 +169,6 @@ div.loading div:nth-child(4) {
     transform: translate(41px, 0);
   }
 }
-
 @-webkit-keyframes loading3 {
   0% {
     -webkit-transform: scale(1);
@@ -192,7 +177,6 @@ div.loading div:nth-child(4) {
     -webkit-transform: scale(0);
   }
 }
-
 @-moz-keyframes loading3 {
   0% {
     -moz-transform: scale(1);
@@ -201,7 +185,6 @@ div.loading div:nth-child(4) {
     -moz-transform: scale(0);
   }
 }
-
 @-ms-keyframes loading3 {
   0% {
     -ms-transform: scale(1);
@@ -210,7 +193,6 @@ div.loading div:nth-child(4) {
     -ms-transform: scale(0);
   }
 }
-
 @-o-keyframes loading3 {
   0% {
     -o-transform: scale(1);
@@ -219,7 +201,6 @@ div.loading div:nth-child(4) {
     -o-transform: scale(0);
   }
 }
-
 @keyframes loading3 {
   0% {
     transform: scale(1);
@@ -228,7 +209,6 @@ div.loading div:nth-child(4) {
     transform: scale(0);
   }
 }
-
 nav.topnav {
   display: table;
   width: 300px;
@@ -261,7 +241,6 @@ a.topnav {
     background: #82d318;
   }
 }
-
 div.logbtns {
   display: block;
   padding: 10px 0;
@@ -302,7 +281,6 @@ div.filter {
   margin: 0 auto;
   text-align: center;
 }
-
 div.filter label, div.filter input {
   display: block;
   margin: 0 auto;
@@ -324,14 +302,12 @@ div.filter label, div.filter input {
     margin: 0;
   }
 }
-
 div.userlist {
   display: block;
   width: 96%;
   padding: 20px 2%;
   margin: 0;
 }
-
 div.userlist div.userrow {
   display: block;
   width: 100%;
@@ -355,7 +331,6 @@ div.user {
   margin: 0 auto;
   text-align: center;
 }
-
 div.user a.userlink {
   display: block;
   width: 100%;
@@ -372,28 +347,23 @@ div.user a.userlink {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-
 div.user a.userlink:hover, div.user a.userlink:focus, div.user a.userlink:active {
   text-decoration: none;
   color: #00030e;
 }
-
 div.user a.userlink:active {
   box-shadow: 0 0 5px 1px #82d318;
 }
-
 div.user div.usercell {
   display: block;
   padding: 5px 0 0 0;
 }
-
 div.user div.usercell p {
   display: inline-block;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-
 div.user div.usercell:nth-child(1) {
   padding: 0;
 }
@@ -449,7 +419,6 @@ div.user div.usercell:nth-child(1) {
     text-align: right;
   }
 }
-
 div.tabbox {
   display: block;
   width: 100%;
@@ -472,7 +441,6 @@ div.tab {
   padding: 0 1px;
   margin: 0;
 }
-
 div.tab button {
   display: block;
   width: 100%;
@@ -491,7 +459,6 @@ div.tab button {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-
 div.tab button.active {
   color: #ffffff;
   background: #82d318;

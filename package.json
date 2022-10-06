@@ -8,7 +8,7 @@
         "open": "node ./node_modules/node-act/bin/act srv"
     },
     "engines": {
-        "node": ">=14 <=18"
+        "node": ">=14"
     },
     "dependencies": {
         "react": "18.x",
@@ -22,7 +22,7 @@
         "onlydata": "1.x",
         "node-act": "1.x",
         "node-vitals": "4.x",
-        "node-sass": "6.x",
+        "sass": "1.x",
         "handlebars": "4.x",
         "@babel/core": "7.x",
         "@babel/plugin-transform-react-jsx": "7.x",

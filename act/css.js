@@ -37,7 +37,7 @@ let DEST = 'www/css';
 const { fuse, get, is, to } = require('node-vitals')('base', 'fs');
 
 /** @const {!Object} */
-const sass = require('node-sass');
+const sass = require('sass');
 
 /** @const {function} */
 const { makeDirpath } = require('./helpers/fs.js');
