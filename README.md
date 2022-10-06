@@ -1,9 +1,9 @@
-# Toptal Bike Rental
-Welcome to the online offering of free bike rental coupled with a management
-system for managers. You can rent anytime within 3 - 4 months from today's
-date. Any updates such as ratings or administrative adjusts are automatially
-saved to the cloud. You can filter with ease. To use the management system
-you must be logged in as a manager.
+# Motion
+Motion is a fake bicycle rental application and management system built for
+Adam Smith's portfolio. You can rent bikes anytime within 3 - 4 months from
+today's date. Any updates such as ratings or administrative adjustments are
+automatically saved to the cloud. You can filter results with ease. To use the
+management system you must be logged in as a manager.
 
 ## Table Of Contents
 - Install Application
