@@ -330,6 +330,9 @@
     /** @const {string} */
 
     const [password, setPassword] = React__default["default"].useState('');
+    /** @const {!ReactRef} */
+
+    const emailRef = React__default["default"].useRef(null);
     React__default["default"].useEffect(() => {
       authenticateManager(handleAuthenticateComplete);
     }, []);
@@ -345,6 +348,19 @@
       }
 
       setAuthenticated(true);
+      focusEmailInput();
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function focusEmailInput() {
+      if (emailRef.current) {
+        emailRef.current.focus();
+      } else {
+        setTimeout(focusEmailInput, 100);
+      }
     }
     /**
      * @param {!Event} event
@@ -452,6 +468,7 @@
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "email",
       id: "email",
+      ref: emailRef,
       placeholder: "Email",
       onChange: handleEmailChange,
       onKeyUp: handleEnterKeyUp

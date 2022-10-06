@@ -49,6 +49,9 @@ function Login() {
     /** @const {string} */
     const [ password, setPassword ] = React.useState('');
 
+    /** @const {!ReactRef} */
+    const emailRef = React.useRef(null);
+
     React.useEffect(() => {
         authenticateManager(handleAuthenticateComplete);
     }, []);
@@ -66,6 +69,18 @@ function Login() {
             );
         }
         setAuthenticated(true);
+        focusEmailInput();
+    }
+
+    /**
+     * @return {void}
+     */
+    function focusEmailInput() {
+        if (emailRef.current) {
+            emailRef.current.focus();
+        } else {
+            setTimeout(focusEmailInput, 100);
+        }
     }
 
     /**
@@ -180,6 +195,7 @@ function Login() {
                     <input
                         type="email"
                         id="email"
+                        ref={emailRef}
                         placeholder="Email"
                         onChange={handleEmailChange}
                         onKeyUp={handleEnterKeyUp}
