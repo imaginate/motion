@@ -53,6 +53,8 @@ function Login() {
 
     /** @const {!ReactRef} */
     const emailRef = React.useRef(null);
+    /** @const {!ReactRef} */
+    const passwordRef = React.useRef(null);
 
     React.useEffect(() => {
         authenticateManager(handleAuthenticateComplete);
@@ -82,6 +84,17 @@ function Login() {
             emailRef.current.focus();
         } else {
             setTimeout(focusEmailInput, 100);
+        }
+    }
+
+    /**
+     * @return {void}
+     */
+    function focusPasswordInput() {
+        if (passwordRef.current) {
+            passwordRef.current.focus();
+        } else {
+            setTimeout(focusPasswordInput, 100);
         }
     }
 
@@ -150,9 +163,11 @@ function Login() {
         if (!checkEmail(email)) {
             checkPassword(password);
             setAttemptLogin(true);
+            focusEmailInput();
             return;
         } else if (!checkPassword(password)) {
             setAttemptLogin(true);
+            focusPasswordInput();
             return;
         }
 
@@ -168,6 +183,7 @@ function Login() {
             } else {
                 setBadLogin(true);
                 setLoggingin(false);
+                focusEmailInput();
             }
         });
     }
@@ -206,6 +222,7 @@ function Login() {
                     <input
                         type="password"
                         id="password"
+                        ref={passwordRef}
                         placeholder="Password"
                         onChange={handlePasswordChange}
                         onKeyUp={handleEnterKeyUp}

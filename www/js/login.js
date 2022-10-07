@@ -336,6 +336,9 @@
     /** @const {!ReactRef} */
 
     const emailRef = React__default["default"].useRef(null);
+    /** @const {!ReactRef} */
+
+    const passwordRef = React__default["default"].useRef(null);
     React__default["default"].useEffect(() => {
       authenticateManager(handleAuthenticateComplete);
     }, []);
@@ -363,6 +366,18 @@
         emailRef.current.focus();
       } else {
         setTimeout(focusEmailInput, 100);
+      }
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function focusPasswordInput() {
+      if (passwordRef.current) {
+        passwordRef.current.focus();
+      } else {
+        setTimeout(focusPasswordInput, 100);
       }
     }
     /**
@@ -436,9 +451,11 @@
       if (!checkEmail(email)) {
         checkPassword(password);
         setAttemptLogin(true);
+        focusEmailInput();
         return;
       } else if (!checkPassword(password)) {
         setAttemptLogin(true);
+        focusPasswordInput();
         return;
       }
 
@@ -451,6 +468,7 @@
         } else {
           setBadLogin(true);
           setLoggingin(false);
+          focusEmailInput();
         }
       });
     }
@@ -486,6 +504,7 @@
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "password",
       id: "password",
+      ref: passwordRef,
       placeholder: "Password",
       onChange: handlePasswordChange,
       onKeyUp: handleEnterKeyUp
