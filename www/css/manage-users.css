@@ -222,6 +222,7 @@ a.topnav {
   width: 98px;
   padding: 5px 0;
   margin: 0;
+  font-size: 1em;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -236,6 +237,7 @@ a.topnav {
   }
   a.topnav {
     width: 150px;
+    font-size: 1.12em;
   }
   a.topnav:hover, a.topnav:focus, a.topnav:active {
     background: #82d318;
@@ -258,8 +260,20 @@ button.logbtn {
   display: inline-block;
   padding: 2px 10px;
   margin: 0;
+  font-size: 0.9em;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
+@media only screen and (min-width: 1200px) {
+  button.logbtn {
+    font-size: 1em;
+  }
+}
 h1.intro {
   display: block;
   padding: 10px 0;
