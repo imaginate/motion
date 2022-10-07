@@ -270,22 +270,53 @@ h1.intro {
 div.login {
   display: block;
   width: 96%;
-  padding: 20px 2%;
+  padding: 0 2% 20px;
   margin: 0;
 }
 
 div.logincell {
   display: block;
   width: 280px;
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 0 auto;
   text-align: center;
 }
+div.logincell input {
+  display: block;
+  width: 200px;
+  padding: 1px 2px;
+  line-height: 100%;
+  margin: 0 auto;
+  font-size: 1em;
+  background: #ffffff;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.logincell button {
+  padding: 5px 10px;
+  font-size: 1em;
+  color: #ffffff;
+  background: #0ba012;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.logincell button:active {
+  background: #82d318;
+}
 div.logincell p {
   display: block;
+  width: 200px;
   padding: 0;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 div.logincell p span.label {
   font-weight: bold;
@@ -298,6 +329,9 @@ div.logincell p.failure {
   padding: 10px 0 0;
   color: #d31882;
 }
+div.logincell.loginbtn p {
+  text-align: center;
+}
 div.logincell label {
   padding: 0 5px;
 }
@@ -307,12 +341,10 @@ div.logincell label {
     width: 100%;
     padding: 0;
   }
-  div.logincell {
-    display: block;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  div.logincell p {
+  div.logincell input, div.logincell button, div.logincell p {
     font-size: 1.12em;
+  }
+  div.logincell button:hover, div.logincell button:focus, div.logincell button:active {
+    background: #82d318;
   }
 }

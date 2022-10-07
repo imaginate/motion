@@ -31,22 +31,48 @@ h1.intro {
 div.login {
     display: block;
     width: 96%;
-    padding: 20px 2%;
+    padding: 0 2% 20px;
     margin: 0;
 }
 
 div.logincell {
     display: block;
     width: 280px;
-    padding: 5px 0;
+    padding: 10px 0;
     margin: 0 auto;
     text-align: center;
 
+    input {
+        display: block;
+        width: 200px;
+        padding: 1px 2px;
+        line-height: 100%;
+        margin: 0 auto;
+        font-size: 1em;
+        background: $white;
+        border: 1px solid $black;
+        @include border-radius(3px);
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 1em;
+        color: $white;
+        background: $dark-green;
+        border: 1px solid $black;
+        @include border-radius(3px);
+    }
+
+    button:active {
+        background: $green;
+    }
+
     p {
         display: block;
+        width: 200px;
         padding: 0;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
 
         span.label {
             font-weight: bold;
@@ -63,6 +89,10 @@ div.logincell {
         color: $pink;
     }
 
+    &.loginbtn p {
+        text-align: center;
+    }
+
     label {
         padding: 0 5px;
     }
@@ -75,12 +105,12 @@ div.logincell {
     }
 
     div.logincell {
-        display: block;
-        padding: 10px 0;
-        margin: 0 auto;
-
-        p {
+        input, button, p {
             font-size: 1.12em;
+        }
+        
+        button:hover, button:focus, button:active {
+            background: $green;
         }
     }
 }
