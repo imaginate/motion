@@ -36,6 +36,9 @@ function Login() {
     const [ loggingin, setLoggingin ] = React.useState(false);
 
     /** @const {boolean} */
+    const [ emailBlurred, setEmailBlurred ] = React.useState(false);
+
+    /** @const {boolean} */
     const [ attemptLogin, setAttemptLogin ] = React.useState(false);
     /** @const {boolean} */
     const [ emptyEmail, setEmptyEmail ] = React.useState(false);
@@ -127,7 +130,9 @@ function Login() {
         setAttemptLogin(false);
         setBadLogin(false);
         setEmail(val);
-        checkEmail(val);
+        if (emailBlurred) {
+            checkEmail(val);
+        }
     }
 
     /**
@@ -140,6 +145,21 @@ function Login() {
         setBadLogin(false);
         setPassword(val);
         checkPassword(val);
+    }
+
+    /**
+     * @return {void}
+     */
+    function handleEmailBlur() {
+        setEmailBlurred(true);
+        checkEmail(email);
+    }
+
+    /**
+     * @return {void}
+     */
+    function handlePasswordBlur() {
+        checkPassword(password);
     }
 
     /**
@@ -159,6 +179,7 @@ function Login() {
 
         setAttemptLogin(false);
         setBadLogin(false);
+        setEmailBlurred(true);
 
         if (!checkEmail(email)) {
             checkPassword(password);
@@ -212,6 +233,7 @@ function Login() {
                         placeholder="Email"
                         onChange={handleEmailChange}
                         onKeyUp={handleEnterKeyUp}
+                        onBlur={handleEmailBlur}
                     />
                     {emptyEmail && (
                         <p className="failure">Email Is Required</p>
@@ -226,6 +248,7 @@ function Login() {
                         placeholder="Password"
                         onChange={handlePasswordChange}
                         onKeyUp={handleEnterKeyUp}
+                        onBlur={handlePasswordBlur}
                     />
                     {emptyPassword && (
                         <p className="failure">Password Is Required</p>

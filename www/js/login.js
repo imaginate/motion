@@ -314,6 +314,9 @@
     const [loggingin, setLoggingin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
+    const [emailBlurred, setEmailBlurred] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
     const [attemptLogin, setAttemptLogin] = React__default["default"].useState(false);
     /** @const {boolean} */
 
@@ -413,7 +416,10 @@
       setAttemptLogin(false);
       setBadLogin(false);
       setEmail(val);
-      checkEmail(val);
+
+      if (emailBlurred) {
+        checkEmail(val);
+      }
     }
     /**
      * @param {!Event} event
@@ -427,6 +433,23 @@
       setBadLogin(false);
       setPassword(val);
       checkPassword(val);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handleEmailBlur() {
+      setEmailBlurred(true);
+      checkEmail(email);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handlePasswordBlur() {
+      checkPassword(password);
     }
     /**
      * @param {!Event} event
@@ -447,6 +470,7 @@
     function handleLoginClick() {
       setAttemptLogin(false);
       setBadLogin(false);
+      setEmailBlurred(true);
 
       if (!checkEmail(email)) {
         checkPassword(password);
@@ -494,7 +518,8 @@
       ref: emailRef,
       placeholder: "Email",
       onChange: handleEmailChange,
-      onKeyUp: handleEnterKeyUp
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handleEmailBlur
     }), emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Email Is Required"), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
@@ -507,7 +532,8 @@
       ref: passwordRef,
       placeholder: "Password",
       onChange: handlePasswordChange,
-      onKeyUp: handleEnterKeyUp
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handlePasswordBlur
     }), emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Password Is Required")), /*#__PURE__*/React__default["default"].createElement("div", {
