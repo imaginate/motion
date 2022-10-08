@@ -1,48 +1,91 @@
 # Motion
-Motion is a fake bicycle rental application and management system built for
+
+Motion is a bicycle rental web application and management system built for
 Adam Smith's portfolio. You can rent bikes anytime within 3 - 4 months from
 today's date. Any updates such as ratings or administrative adjustments are
-automatically saved to the cloud. You can filter results with ease. To use the
-management system you must be logged in as a manager.
+automatically saved to the cloud. You can filter results with ease. To use
+the management system you must be logged in as a manager.
 
 ## Table Of Contents
 - Install Application
+- Browser Compatibility
 - View Live Web App
+- Demo Credentials
 - Project Overview
 - Project Structure
 - Contact Information
 
 ## Install Application
-To install this application you must first have Node.js and NPM installed on
-your computer. Next run the following command.
+
+To install this application you must have Node.js version 14, 15, 16, 17, or
+18 and NPM version 8 installed on your computer. To install use the following
+command.
 
 ```sh
 cd <repo-root>
 npm install
 ```
 
+## Browser Compatibility
+
+The Motion application has only been tested using Chrome v105 at this moment.
+Further browser testing is on the to-do list. Internet Explorer will not be
+supported at any time for this application. Also at present Firefox is known
+to not offer enough memory capacity for the history state object.
+
 ## View Live Web App
-To start a local web server instance and launch your primary browser for
-viewing and interacting with the app, use the following command. The web
-server will automatically shut down when you close the browser. Please note
-that this app has been built and tested using Chrome v105 and is not
-guaranteed for any other browser. Firefox is known to not support enough
-memory capacity for the history state object.
 
-```sh
-cd <repo-root>
-npm run open
+To view the live Motion web application locally use one of the following
+commands.
+
+1. To start the web server, launch a browser, visit the home page, and
+  automatically close the server when you close the browser use the following
+  command. Note that the dependency used to launch the browser has exhibited
+  bugs. Use command 2 or 3 if that is your experience.
+
+  ```sh
+  cd <repo-root>
+  npm run open
+  ```
+
+2. To start the web server, launch a browser, visit the home page, and keep
+  the server running even after you close the browser (i.e. an interrupt
+  signal will be required to close the server) use the following command. Note
+  that the dependency used to launch the browser has occasionally failed. Use
+  command 3 if that is your experience.
+
+  ```sh
+  cd <repo-root>
+  npm run open-p
+  ```
+
+3. To just start the web server (an interrupt signal will be required to close
+  the server) use the following command. You will need to manually open a web
+  browser and navigate to `http://localhost:8080` to view the application.
+
+  ```sh
+  cd <repo-root>
+  npm run srv
+  ```
+
+## Demo Credentials
+
+You can use the following login credentials to login as a manager.
+
 ```
-
-Please use the following login credentials to login as a manager. Please note
-that I ran out of time to complete all of the manager functionality. I covered
-the breadth of all types of functionalty requested such as view, filter, edit,
-delete, login, register, etc.
-
 Email: foo@bar.com
 Password: 00000000
+```
+
+You can use the following login credentials to login as a user.
+
+```
+Email: foo2@bar.com
+Password: 00000000
+```
 
 ## Project Overview
+
 I built the totality of this framework and its supporting infrastructure this
 week specifically for this project. I often build custom architectural pieces
 to support the specific needs that my project entails. I have a short list of
@@ -64,6 +107,7 @@ applications. I am careful to use as many optimizations as I can. I hope you
 appreciate my work. Thanks for reading.
 
 ## Project Structure
+
 This project employs various structures per each resource. The main
 directories represent the base. They are:
 - `act`
@@ -93,5 +137,6 @@ directories represent the base. They are:
   projects.
 
 ## Contact Information
+
 Please message me, Adam Smith, at imagineadamsmith@gmail.com or call me at
 469-613-8188 with any questions you may have about this project or otherwise.
