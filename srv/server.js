@@ -83,6 +83,9 @@ const server = app.listen(8080);
 process.on('exit', () => {
     server.close();
 });
+process.on('SIGINT', () => {
+    server.close();
+});
 process.on('SIGTERM', () => {
     server.close();
 });
