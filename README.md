@@ -80,7 +80,7 @@ Password: 00000000
 You can use the following login credentials to login as a user.
 
 ```
-Email: foo2@bar.com
+Email: hello@world.com
 Password: 00000000
 ```
 

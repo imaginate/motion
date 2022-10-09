@@ -27,7 +27,7 @@
         "id": 4,
         "first_name": "Barbey",
         "last_name": "Bengoechea",
-        "email": "foo2@bar.com",
+        "email": "hello@world.com",
         "manager": false,
         "password": "00000000"
     },
