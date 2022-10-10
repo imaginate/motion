@@ -150,12 +150,9 @@ directories represent the base. They are:
   This directory contains the compiled CSS and JavaScript assets. Any images
   or other public resources would go here.
 - `test`
-  This directory is a required one for all of my projects, but unfortunately I
-  did not have the time to use it. I reach for 100% test coverage for all of
-  my projects. I use Mocha, Chai, Istanbul, and Cypress for most of my
-  projects.
+  This directory is where all testing goes.
 
 ## Contact Information
 
-Please message me, Adam Smith, at imagineadamsmith@gmail.com or call me at
-469-613-8188 with any questions you may have about this project or otherwise.
+Please message me, Adam Smith, at imagineadamsmith@gmail.com with any
+questions you may have about this project or otherwise.
