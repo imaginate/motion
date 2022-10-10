@@ -7,7 +7,7 @@
  */
 
 /** @const {!RegExp} */
-const COLOR_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,14}[a-zA-Z0-9'"])?$/;
+const COLOR_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,16}$/u;
 
 /**
  * @param {*} val

@@ -7,7 +7,7 @@
  */
 
 /** @const {!RegExp} */
-const LOCATION_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,62}[a-zA-Z0-9'"])?$/;
+const LOCATION_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,64}$/u;
 
 /**
  * @param {*} val

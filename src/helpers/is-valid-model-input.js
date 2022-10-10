@@ -7,7 +7,7 @@
  */
 
 /** @const {!RegExp} */
-const MODEL_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+const MODEL_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,32}$/u;
 
 /**
  * @param {*} val
