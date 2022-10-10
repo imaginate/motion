@@ -34,7 +34,8 @@ To install this application you must have Node.js version 14, 15, 16, 17, or
 command.
 
 ```sh
-cd <repo-root>
+git clone https://github.com/imaginate/motion.git
+cd motion
 npm install
 ```
 
