@@ -54,31 +54,26 @@ commands.
   automatically close the server when you close the browser use the following
   command. Note that the dependency used to launch the browser has exhibited
   bugs. Use command 2 or 3 if that is your experience.
-
-  ```sh
-  cd <repo-root>
-  npm run open
-  ```
-
+    ```sh
+    cd <repo-root>
+    npm run open
+    ```
 2. To start the web server, launch a browser, visit the home page, and keep
   the server running even after you close the browser (i.e. an interrupt
   signal will be required to close the server) use the following command. Note
   that the dependency used to launch the browser has occasionally failed. Use
   command 3 if that is your experience.
-
-  ```sh
-  cd <repo-root>
-  npm run open-p
-  ```
-
+    ```sh
+    cd <repo-root>
+    npm run open-p
+    ```
 3. To just start the web server (an interrupt signal will be required to close
   the server) use the following command. You will need to manually open a web
   browser and navigate to `http://localhost:8080` to view the application.
-
-  ```sh
-  cd <repo-root>
-  npm run srv
-  ```
+    ```sh
+    cd <repo-root>
+    npm run srv
+    ```
 
 ## Demo Credentials
 
