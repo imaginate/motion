@@ -6,6 +6,18 @@ today's date. Any updates such as ratings or administrative adjustments are
 automatically saved to the cloud. You can filter results with ease. To use
 the management system you must be logged in as a manager.
 
+### Please Note
+
+This **project is not completed** at this time. I do have much completed
+functionality to review, but I have not optimized the the front-end or
+back-end, completed the front-end styling and images, completed all of the
+pages and API calls, added numerous fundamental security features, thoroughly
+tested the application and API, and cleaned up the source code (e.g.
+eliminated duplicate code, improved namespace choices, improved
+documentation). I also am using plain JSON files for my database to keep the
+required programs limited to only Node.js and NPM as well as to avoid the
+complications that arise when configuring a database across different OSs.
+
 ## Table Of Contents
 - Install Application
 - Browser Compatibility
@@ -86,25 +98,32 @@ Password: 00000000
 
 ## Project Overview
 
-I built the totality of this framework and its supporting infrastructure this
-week specifically for this project. I often build custom architectural pieces
-to support the specific needs that my project entails. I have a short list of
-preferred libraries and tools that I use on all of my projects. I have
-actually authored many of them myself.
+I designed a simple framework for this project. I used, as is standard for my
+projects, a limited number of highly reliable dependencies which reduces bugs,
+improves security, and increases performance for the application, the server,
+and the devops pipelines. All needs of HTML generation are passed to the
+front-end (i.e. all server resources are static files). The decision to use
+static web resources enables public caching, CDN utilization, and static file
+servers which drastically reduce the latency of responses for user requests.
+Beyond simple static file delivery the server is also responsible for a user
+and manager API whose sole job is to get data from and update data within the
+database.
 
-For all of my many recent projects I do not use any dynamic asset creation. It
-causes an enormous hit on server performance and user experience. The hard
-work of pushing the load to the front-end is well worth the cost.
+When reviewing the React applications you will discover thorough use of many
+complex data structures which offer a significant performance advantage for
+filtering the bikes, users, and reservations. For example I used a custom
+structure based on the suffix tree to instantly return any matching partials
+of all user names or emails as you type. You will also notice added usability
+features such as a url that is constantly updated with the application's
+current state which gives you a chance to share and save searches as well as
+to add each search result to your web's navigable history.
 
-When reviewing my code you will discover thorough use of many data structures
-to gain a significant performance advantage. For example I used a custom
-structure based of the suffix tree to instantly return any matching partials
-of all user names or emails as you type. You will also notice that the url is
-constantly modified to give you the chance to share and save results.
-
-I believe in granting users an instantaneous experience when interacting with
-applications. I am careful to use as many optimizations as I can. I hope you
-appreciate my work. Thanks for reading.
+I believe in giving users an instantaneous experience when interacting with
+applications as often as possible. As a result I lean towards availability and
+eventual consistency for front-end and back-end architecture. I am careful to
+use as many front-end and back-end optimizations as I can. I also am careful
+to consider the security implications of every decision. I hope you appreciate
+my work. Thanks for reading.
 
 ## Project Structure
 
