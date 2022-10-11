@@ -42,6 +42,8 @@ function makeLoginAttempt(email, pwd, done) {
         .then(res => {
             if (res.ok) {
                 done(true);
+            } else if (/400/.test(res.status)) {
+                done(false);
             } else if (/401/.test(res.status)) {
                 done(false);
             } else {

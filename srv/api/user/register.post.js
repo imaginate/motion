@@ -15,9 +15,11 @@ const { to } = require('node-vitals')('fs');
 /** @const {!function} */
 const { randomBytes } = require('crypto');
 /** @const {!function(*): boolean} */
+const isValidName = require('../../helpers/is-valid-name.js');
+/** @const {!function(*): boolean} */
 const isValidEmail = require('../../helpers/is-valid-email.js');
 /** @const {!function(*): boolean} */
-const isValidString = require('../../helpers/is-valid-string.js');
+const isValidPassword = require('../../helpers/is-valid-password.js');
 
 /** @const {number} */
 const MAX_AGE = 2 ** 30;
@@ -36,10 +38,10 @@ function postRegister(req, res) {
 
     res.set('Cache-Control', 'no-cache, no-store');
 
-    if (!isValidString(req.body.first_name)
-        || !isValidString(req.body.last_name)
+    if (!isValidName(req.body.first_name)
+        || !isValidName(req.body.last_name)
         || !isValidEmail(req.body.email)
-        || !isValidString(req.body.password)
+        || !isValidPassword(req.body.password)
     ) {
         res.status(400);
         res.send();

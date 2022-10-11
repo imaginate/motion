@@ -16,7 +16,11 @@ const { to } = require('node-vitals')('fs');
 const { randomBytes } = require('crypto');
 /** @const {!function(*): boolean} */
 const isValidEmail = require('../../helpers/is-valid-email.js');
+/** @const {!function(*): boolean} */
+const isValidString = require('../../helpers/is-valid-string.js');
 
+/** @const {!RegExp} */
+const PWD_PATT = /^(?:\p{L}|\p{N}|\p{M}|\p{S}|\p{P}){8,64}$/u;
 /** @const {number} */
 const MAX_AGE = 2 ** 30;
 
@@ -34,8 +38,11 @@ function postLogin(req, res) {
 
     res.set('Cache-Control', 'no-cache, no-store');
 
-    if (!isValidEmail(req.body.email)) {
-        res.status(401);
+    if (!isValidEmail(req.body.email)
+        || !isValidString(req.body.password)
+        || !PWD_PATT.test(req.body.password)
+    ) {
+        res.status(400);
         res.send();
         return;
     }
