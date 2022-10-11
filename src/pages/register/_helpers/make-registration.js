@@ -38,6 +38,8 @@ function makeRegistration(user, done) {
         .then(res => {
             if (res.ok) {
                 done(true);
+            } else if (/409/.test(res.status)) {
+                done(false);
             } else {
                 const err = new Error('fetch("' + url + '") responded with'
                     + ' status ' + res.status);

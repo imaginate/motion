@@ -308,7 +308,7 @@
    */
 
   /** @const {!RegExp} */
-  const MODEL_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+  const MODEL_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,32}$/u;
 
   /**
    * @param {*} val
@@ -329,7 +329,7 @@
    */
 
   /** @const {!RegExp} */
-  const COLOR_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,14}[a-zA-Z0-9'"])?$/;
+  const COLOR_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,16}$/u;
 
   /**
    * @param {*} val
@@ -350,7 +350,7 @@
    */
 
   /** @const {!RegExp} */
-  const LOCATION_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,62}[a-zA-Z0-9'"])?$/;
+  const LOCATION_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,64}$/u;
 
   /**
    * @param {*} val

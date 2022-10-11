@@ -130,6 +130,8 @@
           .then(res => {
               if (res.ok) {
                   done(true);
+              } else if (/409/.test(res.status)) {
+                  done(false);
               } else {
                   const err = new Error('fetch("' + url + '") responded with'
                       + ' status ' + res.status);
@@ -176,7 +178,7 @@
    */
 
   /** @const {!RegExp} */
-  const NAME_PATT = /^[a-zA-Z0-9"](?:[a-zA-Z0-9-~ ,'"&/]{0,30}[a-zA-Z0-9'"])?$/;
+  const NAME_PATT = /^(?:\p{L}|\p{N}|[-~ ,'"&/]){1,32}$/u;
 
   /**
    * @param {*} val
@@ -184,6 +186,41 @@
    */
   function isValidNameInput(val) {
       return !!val && typeof val === 'string' && NAME_PATT.test(val);
+  }
+
+  // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
+
+  /**
+   * ---------------------------------------------------------------------------
+   * IS VALID PASSWORD INPUT HELPER
+   * ---------------------------------------------------------------------------
+   * @author Adam Smith <imagineadamsmith@gmail.com> (https://github.com/imaginate)
+   * @copyright 2022 Adam A Smith <imagineadamsmith@gmail.com>
+   */
+
+  /** @const {!RegExp} */
+  const PWD_PATT = /^(?:\p{L}|\p{N}|\p{M}|\p{S}|\p{P}){8,64}$/u;
+  /** @const {!RegExp} */
+  const UPPER_PATT = /(?:\p{Lu}|\p{Lt})/u;
+  /** @const {!RegExp} */
+  const LOWER_PATT = /\p{Ll}/u;
+  /** @const {!RegExp} */
+  const NUM_PATT = /\p{N}/u;
+  /** @const {!RegExp} */
+  const SPEC_PATT = /(?:\p{M}|\p{S}|\p{P})/u;
+
+  /**
+   * @param {*} val
+   * @return {boolean}
+   */
+  function isValidPasswordInput(val) {
+      return !!val
+          && typeof val === 'string'
+          && PWD_PATT.test(val)
+          && UPPER_PATT.test(val)
+          && LOWER_PATT.test(val)
+          && NUM_PATT.test(val)
+          && SPEC_PATT.test(val);
   }
 
   // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -329,6 +366,18 @@
     const [registering, setRegistering] = React__default["default"].useState(false);
     /** @const {boolean} */
 
+    const [firstNameBlurred, setFirstNameBlurred] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [lastNameBlurred, setLastNameBlurred] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [emailBlurred, setEmailBlurred] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [passwordBlurred, setPasswordBlurred] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
     const [emptyFirstName, setEmptyFirstName] = React__default["default"].useState(false);
     /** @const {boolean} */
 
@@ -353,10 +402,10 @@
     const [badPassword, setBadPassword] = React__default["default"].useState(false);
     /** @const {boolean} */
 
-    const [invalidField, setInvalidField] = React__default["default"].useState(false);
+    const [attemptRegister, setAttemptRegister] = React__default["default"].useState(false);
     /** @const {boolean} */
 
-    const [failRegistration, setFailRegistration] = React__default["default"].useState(false);
+    const [failRegister, setFailRegister] = React__default["default"].useState(false);
     /** @const {string} */
 
     const [firstName, setFirstName] = React__default["default"].useState('');
@@ -369,6 +418,18 @@
     /** @const {string} */
 
     const [password, setPassword] = React__default["default"].useState('');
+    /** @const {!ReactRef} */
+
+    const firstNameRef = React__default["default"].useRef(null);
+    /** @const {!ReactRef} */
+
+    const lastNameRef = React__default["default"].useRef(null);
+    /** @const {!ReactRef} */
+
+    const emailRef = React__default["default"].useRef(null);
+    /** @const {!ReactRef} */
+
+    const passwordRef = React__default["default"].useRef(null);
     React__default["default"].useEffect(() => {
       authenticateManager(handleAuthenticateComplete);
     }, []);
@@ -384,6 +445,68 @@
       }
 
       setAuthenticated(true);
+      focusInput(firstNameRef);
+    }
+    /**
+     * @param {!ReactRef} ref
+     * @return {void}
+     */
+
+
+    function focusInput(ref) {
+      if (ref.current) {
+        ref.current.focus();
+      } else {
+        setTimeout(() => focusInput(ref), 100);
+      }
+    }
+    /**
+     * @param {string} firstName
+     * @return {boolean}
+     */
+
+
+    function checkFirstName(firstName) {
+      const res = isValidNameInput(firstName);
+      setEmptyFirstName(!firstName);
+      setBadFirstName(!!firstName && !res);
+      return res;
+    }
+    /**
+     * @param {string} lastName
+     * @return {boolean}
+     */
+
+
+    function checkLastName(lastName) {
+      const res = isValidNameInput(lastName);
+      setEmptyLastName(!lastName);
+      setBadLastName(!!lastName && !res);
+      return res;
+    }
+    /**
+     * @param {string} email
+     * @return {boolean}
+     */
+
+
+    function checkEmail(email) {
+      const res = isValidEmail(email);
+      setEmptyEmail(!email);
+      setBadEmail(!!email && !res);
+      return res;
+    }
+    /**
+     * @param {string} password
+     * @return {boolean}
+     */
+
+
+    function checkPassword(password) {
+      const res = isValidPasswordInput(password);
+      setEmptyPassword(!password);
+      setBadPassword(!!password && !res);
+      return res;
     }
     /**
      * @param {!Event} event
@@ -393,14 +516,12 @@
 
     function handleFirstNameChange(event) {
       const val = event.target.value;
+      setAttemptRegister(false);
+      setFailRegister(false);
       setFirstName(val);
-      setEmptyFirstName(false);
-      setBadFirstName(false);
 
-      if (!val) {
-        setEmptyFirstName(true);
-      } else if (!isValidNameInput(val)) {
-        setBadFirstName(true);
+      if (firstNameBlurred) {
+        checkFirstName(val);
       }
     }
     /**
@@ -411,14 +532,12 @@
 
     function handleLastNameChange(event) {
       const val = event.target.value;
+      setAttemptRegister(false);
+      setFailRegister(false);
       setLastName(val);
-      setEmptyLastName(false);
-      setBadLastName(false);
 
-      if (!val) {
-        setEmptyLastName(true);
-      } else if (!isValidNameInput(val)) {
-        setBadLastName(true);
+      if (lastNameBlurred) {
+        checkLastName(val);
       }
     }
     /**
@@ -429,14 +548,12 @@
 
     function handleEmailChange(event) {
       const val = event.target.value;
+      setAttemptRegister(false);
+      setFailRegister(false);
       setEmail(val);
-      setEmptyEmail(false);
-      setBadEmail(false);
 
-      if (!val) {
-        setEmptyEmail(true);
-      } else if (!isValidEmail(val)) {
-        setBadEmail(true);
+      if (emailBlurred) {
+        checkEmail(val);
       }
     }
     /**
@@ -447,14 +564,59 @@
 
     function handlePasswordChange(event) {
       const val = event.target.value;
+      setAttemptRegister(false);
+      setFailRegister(false);
       setPassword(val);
-      setEmptyPassword(false);
-      setBadPassword(false);
 
-      if (!val) {
-        setEmptyPassword(true);
-      } else if (val.length < 8) {
-        setBadPassword(true);
+      if (passwordBlurred) {
+        checkPassword(val);
+      }
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handleFirstNameBlur() {
+      setFirstNameBlurred(true);
+      checkFirstName(firstName);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handleLastNameBlur() {
+      setLastNameBlurred(true);
+      checkLastName(lastName);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handleEmailBlur() {
+      setEmailBlurred(true);
+      checkEmail(email);
+    }
+    /**
+     * @return {void}
+     */
+
+
+    function handlePasswordBlur() {
+      setPasswordBlurred(true);
+      checkPassword(password);
+    }
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+
+
+    function handleEnterKeyUp(event) {
+      if (event.key === 'Enter') {
+        handleRegisterClick();
       }
     }
     /**
@@ -463,11 +625,33 @@
 
 
     function handleRegisterClick() {
-      setInvalidField(false);
-      setFailRegistration(false);
+      setAttemptRegister(false);
+      setFailRegister(false);
+      setFirstNameBlurred(true);
+      setLastNameBlurred(true);
+      setEmailBlurred(true);
+      setPasswordBlurred(true);
+      let failedRef = null;
 
-      if (emptyFirstName || emptyLastName || emptyEmail || emptyPassword || badFirstName || badLastName || badEmail || badPassword) {
-        setInvalidField(true);
+      if (!checkPassword(password)) {
+        failedRef = passwordRef;
+      }
+
+      if (!checkEmail(email)) {
+        failedRef = emailRef;
+      }
+
+      if (!checkLastName(lastName)) {
+        failedRef = lastNameRef;
+      }
+
+      if (!checkFirstName(firstName)) {
+        failedRef = firstNameRef;
+      }
+
+      if (failedRef) {
+        setAttemptRegister(true);
+        focusInput(failedRef);
         return;
       }
 
@@ -481,8 +665,9 @@
         if (success) {
           window.location.replace(SITE_URL + '/bikes');
         } else {
-          setFailRegistration(true);
+          setFailRegister(true);
           setRegistering(false);
+          focusInput(emailRef);
         }
       });
     }
@@ -505,30 +690,59 @@
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "text",
       id: "firstname",
+      ref: firstNameRef,
       placeholder: "First Name",
-      onChange: handleFirstNameChange
+      onChange: handleFirstNameChange,
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handleFirstNameBlur
     }), emptyFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "First Name Is Required"), badFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "First Name Is Required"), badFirstName && /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid First Name")), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Invalid First Name"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "32 Character Limit"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "Letters, Numbers,"), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "& Limited Special"), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "Characters Accepted")))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell lastname"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "text",
       id: "lastname",
+      ref: lastNameRef,
       placeholder: "Last Name",
-      onChange: handleLastNameChange
+      onChange: handleLastNameChange,
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handleLastNameBlur
     }), emptyLastName && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Last Name Is Required"), badLastName && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Last Name Is Required"), badLastName && /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid Last Name")), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Invalid Last Name"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "32 Character Limit"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "Letters, Numbers,"), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "& Limited Special"), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "break"
+    }, "Characters Accepted")))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell email"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "email",
       id: "email",
+      ref: emailRef,
       placeholder: "Email",
-      onChange: handleEmailChange
+      onChange: handleEmailChange,
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handleEmailBlur
     }), emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Email Is Required"), badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
@@ -538,13 +752,30 @@
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "password",
       id: "password",
+      ref: passwordRef,
       placeholder: "Password",
-      onChange: handlePasswordChange
+      onChange: handlePasswordChange,
+      onKeyUp: handleEnterKeyUp,
+      onBlur: handlePasswordBlur
     }), emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Password Is Required"), badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Password Is Required"), badPassword && /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Password Must Be 8+ Characters Long")), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Invalid Password"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "8 Character Minimum"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "64 Character Limit"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Uppercase Letter Required"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Lowercase Letter Required"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Number Required"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Special Character Required"), /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "No Space Characters Allowed"))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell registerbtn"
     }, registering ? /*#__PURE__*/React__default["default"].createElement("p", {
       className: "registering"
@@ -552,9 +783,23 @@
       id: "register",
       className: "register",
       onClick: handleRegisterClick
-    }, "Register"), invalidField && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "Register"), attemptRegister && emptyFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, "Invalid Field"), failRegistration && /*#__PURE__*/React__default["default"].createElement("p", {
+    }, "First Name Is Required"), attemptRegister && badFirstName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid First Name"), attemptRegister && emptyLastName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Last Name Is Required"), attemptRegister && badLastName && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Last Name"), attemptRegister && emptyEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Email Is Required"), attemptRegister && badEmail && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Email"), attemptRegister && emptyPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Password Is Required"), attemptRegister && badPassword && /*#__PURE__*/React__default["default"].createElement("p", {
+      className: "failure"
+    }, "Invalid Password"), failRegister && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
     }, "Registration Failed"))));
   }

@@ -21,6 +21,8 @@ import isValidEmail from '../../../helpers/is-valid-email.js';
 /** @const {!function} */
 import isValidNameInput from '../../../helpers/is-valid-name-input.js';
 /** @const {!function} */
+import isValidPasswordInput from '../../../helpers/is-valid-password-input.js';
+/** @const {!function} */
 import UserNavBar from '../../../components/user-nav-bar.jsx';
 /** @const {!function} */
 import LogButtons from '../../../components/log-buttons.jsx';
@@ -37,6 +39,15 @@ function Register() {
 
     /** @const {boolean} */
     const [ registering, setRegistering ] = React.useState(false);
+
+    /** @const {boolean} */
+    const [ firstNameBlurred, setFirstNameBlurred ] = React.useState(false);
+    /** @const {boolean} */
+    const [ lastNameBlurred, setLastNameBlurred ] = React.useState(false);
+    /** @const {boolean} */
+    const [ emailBlurred, setEmailBlurred ] = React.useState(false);
+    /** @const {boolean} */
+    const [ passwordBlurred, setPasswordBlurred ] = React.useState(false);
 
     /** @const {boolean} */
     const [ emptyFirstName, setEmptyFirstName ] = React.useState(false);
@@ -57,9 +68,9 @@ function Register() {
     const [ badPassword, setBadPassword ] = React.useState(false);
 
     /** @const {boolean} */
-    const [ invalidField, setInvalidField ] = React.useState(false);
+    const [ attemptRegister, setAttemptRegister ] = React.useState(false);
     /** @const {boolean} */
-    const [ failRegistration, setFailRegistration ] = React.useState(false);
+    const [ failRegister, setFailRegister ] = React.useState(false);
 
     /** @const {string} */
     const [ firstName, setFirstName ] = React.useState('');
@@ -69,6 +80,15 @@ function Register() {
     const [ email, setEmail ] = React.useState('');
     /** @const {string} */
     const [ password, setPassword ] = React.useState('');
+
+    /** @const {!ReactRef} */
+    const firstNameRef = React.useRef(null);
+    /** @const {!ReactRef} */
+    const lastNameRef = React.useRef(null);
+    /** @const {!ReactRef} */
+    const emailRef = React.useRef(null);
+    /** @const {!ReactRef} */
+    const passwordRef = React.useRef(null);
 
     React.useEffect(() => {
         authenticateManager(handleAuthenticateComplete);
@@ -87,6 +107,63 @@ function Register() {
             );
         }
         setAuthenticated(true);
+        focusInput(firstNameRef);
+    }
+
+    /**
+     * @param {!ReactRef} ref
+     * @return {void}
+     */
+    function focusInput(ref) {
+        if (ref.current) {
+            ref.current.focus();
+        } else {
+            setTimeout(() => focusInput(ref), 100);
+        }
+    }
+
+    /**
+     * @param {string} firstName
+     * @return {boolean}
+     */
+    function checkFirstName(firstName) {
+        const res = isValidNameInput(firstName);
+        setEmptyFirstName(!firstName);
+        setBadFirstName(!!firstName && !res);
+        return res;
+    }
+
+    /**
+     * @param {string} lastName
+     * @return {boolean}
+     */
+    function checkLastName(lastName) {
+        const res = isValidNameInput(lastName);
+        setEmptyLastName(!lastName);
+        setBadLastName(!!lastName && !res);
+        return res;
+    }
+
+    /**
+     * @param {string} email
+     * @return {boolean}
+     */
+    function checkEmail(email) {
+        const res = isValidEmail(email);
+        setEmptyEmail(!email);
+        setBadEmail(!!email && !res);
+        return res;
+    }
+
+    /**
+     * @param {string} password
+     * @return {boolean}
+     */
+    function checkPassword(password) {
+        const res = isValidPasswordInput(password);
+        setEmptyPassword(!password);
+        setBadPassword(!!password && !res);
+        return res;
     }
 
     /**
@@ -95,13 +172,11 @@ function Register() {
      */
     function handleFirstNameChange(event) {
         const val = event.target.value;
+        setAttemptRegister(false);
+        setFailRegister(false);
         setFirstName(val);
-        setEmptyFirstName(false);
-        setBadFirstName(false);
-        if (!val) {
-            setEmptyFirstName(true);
-        } else if (!isValidNameInput(val)) {
-            setBadFirstName(true);
+        if (firstNameBlurred) {
+            checkFirstName(val);
         }
     }
 
@@ -111,13 +186,11 @@ function Register() {
      */
     function handleLastNameChange(event) {
         const val = event.target.value;
+        setAttemptRegister(false);
+        setFailRegister(false);
         setLastName(val);
-        setEmptyLastName(false);
-        setBadLastName(false);
-        if (!val) {
-            setEmptyLastName(true);
-        } else if (!isValidNameInput(val)) {
-            setBadLastName(true);
+        if (lastNameBlurred) {
+            checkLastName(val);
         }
     }
 
@@ -127,13 +200,11 @@ function Register() {
      */
     function handleEmailChange(event) {
         const val = event.target.value;
+        setAttemptRegister(false);
+        setFailRegister(false);
         setEmail(val);
-        setEmptyEmail(false);
-        setBadEmail(false);
-        if (!val) {
-            setEmptyEmail(true);
-        } else if (!isValidEmail(val)) {
-            setBadEmail(true);
+        if (emailBlurred) {
+            checkEmail(val);
         }
     }
 
@@ -143,13 +214,53 @@ function Register() {
      */
     function handlePasswordChange(event) {
         const val = event.target.value;
+        setAttemptRegister(false);
+        setFailRegister(false);
         setPassword(val);
-        setEmptyPassword(false);
-        setBadPassword(false);
-        if (!val) {
-            setEmptyPassword(true);
-        } else if (val.length < 8) {
-            setBadPassword(true);
+        if (passwordBlurred) {
+            checkPassword(val);
+        }
+    }
+
+    /**
+     * @return {void}
+     */
+    function handleFirstNameBlur() {
+        setFirstNameBlurred(true);
+        checkFirstName(firstName);
+    }
+
+    /**
+     * @return {void}
+     */
+    function handleLastNameBlur() {
+        setLastNameBlurred(true);
+        checkLastName(lastName);
+    }
+
+    /**
+     * @return {void}
+     */
+    function handleEmailBlur() {
+        setEmailBlurred(true);
+        checkEmail(email);
+    }
+
+    /**
+     * @return {void}
+     */
+    function handlePasswordBlur() {
+        setPasswordBlurred(true);
+        checkPassword(password);
+    }
+
+    /**
+     * @param {!Event} event
+     * @return {void}
+     */
+    function handleEnterKeyUp(event) {
+        if (event.key === 'Enter') {
+            handleRegisterClick();
         }
     }
 
@@ -157,13 +268,31 @@ function Register() {
      * @return {void}
      */
     function handleRegisterClick() {
-         setInvalidField(false);
-         setFailRegistration(false);
 
-        if (emptyFirstName || emptyLastName || emptyEmail || emptyPassword
-            || badFirstName || badLastName || badEmail || badPassword
-        ) {
-            setInvalidField(true);
+        setAttemptRegister(false);
+        setFailRegister(false);
+        setFirstNameBlurred(true);
+        setLastNameBlurred(true);
+        setEmailBlurred(true);
+        setPasswordBlurred(true);
+
+        let failedRef = null;
+        if (!checkPassword(password)) {
+            failedRef = passwordRef;
+        }
+        if (!checkEmail(email)) {
+            failedRef = emailRef;
+        }
+        if (!checkLastName(lastName)) {
+            failedRef = lastNameRef;
+        }
+        if (!checkFirstName(firstName)) {
+            failedRef = firstNameRef;
+        }
+
+        if (failedRef) {
+            setAttemptRegister(true);
+            focusInput(failedRef);
             return;
         }
 
@@ -177,8 +306,9 @@ function Register() {
             if (success) {
                 window.location.replace(SITE_URL + '/bikes');
             } else {
-                setFailRegistration(true);
+                setFailRegister(true);
                 setRegistering(false);
+                focusInput(emailRef);
             }
         });
     }
@@ -203,36 +333,57 @@ function Register() {
                     <input
                         type="text"
                         id="firstname"
+                        ref={firstNameRef}
                         placeholder="First Name"
                         onChange={handleFirstNameChange}
+                        onKeyUp={handleEnterKeyUp}
+                        onBlur={handleFirstNameBlur}
                     />
                     {emptyFirstName && (
                         <p className="failure">First Name Is Required</p>
                     )}
-                    {badFirstName && (
+                    {badFirstName && (<>
                         <p className="failure">Invalid First Name</p>
-                    )}
+                        <p className="failure">32 Character Limit</p>
+                        <p className="failure">
+                            <span className="break">Letters, Numbers,</span>
+                            <span className="break">& Limited Special</span>
+                            <span className="break">Characters Accepted</span>
+                        </p>
+                    </>)}
                 </div>
                 <div className="registercell lastname">
                     <input
                         type="text"
                         id="lastname"
+                        ref={lastNameRef}
                         placeholder="Last Name"
                         onChange={handleLastNameChange}
+                        onKeyUp={handleEnterKeyUp}
+                        onBlur={handleLastNameBlur}
                     />
                     {emptyLastName && (
                         <p className="failure">Last Name Is Required</p>
                     )}
-                    {badLastName && (
+                    {badLastName && (<>
                         <p className="failure">Invalid Last Name</p>
-                    )}
+                        <p className="failure">32 Character Limit</p>
+                        <p className="failure">
+                            <span className="break">Letters, Numbers,</span>
+                            <span className="break">& Limited Special</span>
+                            <span className="break">Characters Accepted</span>
+                        </p>
+                    </>)}
                 </div>
                 <div className="registercell email">
                     <input
                         type="email"
                         id="email"
+                        ref={emailRef}
                         placeholder="Email"
                         onChange={handleEmailChange}
+                        onKeyUp={handleEnterKeyUp}
+                        onBlur={handleEmailBlur}
                     />
                     {emptyEmail && (
                         <p className="failure">Email Is Required</p>
@@ -243,17 +394,25 @@ function Register() {
                     <input
                         type="password"
                         id="password"
+                        ref={passwordRef}
                         placeholder="Password"
                         onChange={handlePasswordChange}
+                        onKeyUp={handleEnterKeyUp}
+                        onBlur={handlePasswordBlur}
                     />
                     {emptyPassword && (
                         <p className="failure">Password Is Required</p>
                     )}
-                    {badPassword && (
-                        <p className="failure">
-                            Password Must Be 8+ Characters Long
-                        </p>
-                    )}
+                    {badPassword && (<>
+                        <p className="failure">Invalid Password</p>
+                        <p className="failure">8 Character Minimum</p>
+                        <p className="failure">64 Character Limit</p>
+                        <p className="failure">Uppercase Letter Required</p>
+                        <p className="failure">Lowercase Letter Required</p>
+                        <p className="failure">Number Required</p>
+                        <p className="failure">Special Character Required</p>
+                        <p className="failure">No Space Characters Allowed</p>
+                    </>)}
                 </div>
                 <div className="registercell registerbtn">
                     {registering
@@ -264,10 +423,31 @@ function Register() {
                             onClick={handleRegisterClick}
                         >Register</button>
                     }
-                    {invalidField && (
-                        <p className="failure">Invalid Field</p>
+                    {attemptRegister && emptyFirstName && (
+                        <p className="failure">First Name Is Required</p>
                     )}
-                    {failRegistration && (
+                    {attemptRegister && badFirstName && (
+                        <p className="failure">Invalid First Name</p>
+                    )}
+                    {attemptRegister && emptyLastName && (
+                        <p className="failure">Last Name Is Required</p>
+                    )}
+                    {attemptRegister && badLastName && (
+                        <p className="failure">Invalid Last Name</p>
+                    )}
+                    {attemptRegister && emptyEmail && (
+                        <p className="failure">Email Is Required</p>
+                    )}
+                    {attemptRegister && badEmail && (
+                        <p className="failure">Invalid Email</p>
+                    )}
+                    {attemptRegister && emptyPassword && (
+                        <p className="failure">Password Is Required</p>
+                    )}
+                    {attemptRegister && badPassword && (
+                        <p className="failure">Invalid Password</p>
+                    )}
+                    {failRegister && (
                         <p className="failure">Registration Failed</p>
                     )}
                 </div>
