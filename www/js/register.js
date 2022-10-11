@@ -727,13 +727,7 @@
       className: "failure"
     }, "32 Character Limit"), /*#__PURE__*/React__default["default"].createElement("p", {
       className: "failure"
-    }, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "break"
-    }, "Letters, Numbers,"), /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "break"
-    }, "& Limited Special"), /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "break"
-    }, "Characters Accepted")))), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, /*#__PURE__*/React__default["default"].createElement("span", null, "Letters, Numbers, & Limited Special"), /*#__PURE__*/React__default["default"].createElement("span", null, " Characters Accepted")))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "registercell email"
     }, /*#__PURE__*/React__default["default"].createElement("input", {
       type: "email",

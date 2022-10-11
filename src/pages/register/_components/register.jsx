@@ -369,9 +369,8 @@ function Register() {
                         <p className="failure">Invalid Last Name</p>
                         <p className="failure">32 Character Limit</p>
                         <p className="failure">
-                            <span className="break">Letters, Numbers,</span>
-                            <span className="break">& Limited Special</span>
-                            <span className="break">Characters Accepted</span>
+                            <span>Letters, Numbers, & Limited Special</span>
+                            <span> Characters Accepted</span>
                         </p>
                     </>)}
                 </div>

@@ -284,22 +284,53 @@ h1.intro {
 div.register {
   display: block;
   width: 96%;
-  padding: 20px 2%;
+  padding: 0 2% 20px;
   margin: 0;
 }
 
 div.registercell {
   display: block;
   width: 280px;
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 0 auto;
   text-align: center;
 }
+div.registercell input {
+  display: block;
+  width: 200px;
+  padding: 1px 2px;
+  line-height: 100%;
+  margin: 0 auto;
+  font-size: 1em;
+  background: #ffffff;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.registercell button {
+  padding: 5px 10px;
+  font-size: 1em;
+  color: #ffffff;
+  background: #0ba012;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.registercell button:active {
+  background: #82d318;
+}
 div.registercell p {
   display: block;
+  width: 200px;
   padding: 0;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 div.registercell p span.label {
   font-weight: bold;
@@ -312,6 +343,14 @@ div.registercell p.failure {
   padding: 10px 0 0;
   color: #d31882;
 }
+div.registercell p.failure span.break {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+div.registercell.registerbtn p {
+  text-align: center;
+}
 div.registercell label {
   padding: 0 5px;
 }
@@ -321,13 +360,10 @@ div.registercell label {
     width: 100%;
     padding: 0;
   }
-  div.registercell {
-    display: block;
-    width: 500px;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  div.registercell p {
+  div.registercell input, div.registercell button, div.registercell p {
     font-size: 1.12em;
+  }
+  div.registercell button:hover, div.registercell button:focus, div.registercell button:active {
+    background: #82d318;
   }
 }
