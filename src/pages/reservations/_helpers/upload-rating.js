@@ -13,9 +13,10 @@ import { SITE_URL } from '../../../env.js';
  * This method handles the AJAX POST that updates a reservation's rating.
  *
  * @param {!Object} reservation
+ * @param {!function(?Error): void} done
  * @return {void}
  */
-function uploadRating(reservation) {
+function uploadRating(reservation, done) {
     const url = SITE_URL + '/api/user/rating';
     fetch(url, {
         method: 'POST',
@@ -33,16 +34,20 @@ function uploadRating(reservation) {
                 + ' server';
             console.error(err.message);
             console.error(err);
+            done(err);
             alert('SERVER ERROR: The attempt to connect with our server to'
                 + ' update the rating failed.');
             setTimeout(() => { throw err }, 0);
         })
         .then(res => {
-            if (!res.ok) {
+            if (res.ok) {
+                done(null);
+            } else {
                 const err = new Error('fetch("' + url + '") responded with'
                     + ' status ' + res.status);
                 console.error(err.message);
                 console.error(err);
+                done(err);
                 alert('SERVER ERROR: The attempt to update the rating with'
                     + ' our server failed.');
                 setTimeout(() => { throw err }, 0);

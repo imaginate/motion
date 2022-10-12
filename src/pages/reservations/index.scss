@@ -112,6 +112,11 @@ div.reservationcell {
     display: block;
     padding: 10px 0 0 0;
 
+    p, a, label, select {
+        font-size: 1em;
+        color: $black;
+    }
+
     p {
         display: inline-block;
         padding: 0;
@@ -119,8 +124,58 @@ div.reservationcell {
         text-align: center;
     }
 
-    a {
-        color: $black;
+    p.success, p.failure {
+        display: block;
+        padding: 10px 0 0;
+    }
+
+    p.success {
+        color: $dark-green;
+    }
+
+    p.failure {
+        color: $dark-red;
+    }
+
+    span.icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding: 0 0 0 5px;
+        margin: 0;
+
+        img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    label.rating {
+        display: inline-block;
+        padding: 0 5px 0 0;
+        margin: 0;
+    }
+
+    select {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        border: 1px solid $black;
+        @include border-radius(3px);
+    }
+
+    button#delete {
+        display: inline-block;
+        padding: 1px 6px;
+        margin: 0;
+        font-weight: bold;
+        color: $white;
+        background: $red;
+        border: 1px solid $black;
+        @include border-radius(3px);
     }
 }
 
@@ -152,7 +207,7 @@ div.reservationcell:nth-child(5) {
     }
 
     div.reservation {
-        width: 670px;
+        width: 710px;
         padding: 25px 35px;
     }
 
@@ -162,7 +217,7 @@ div.reservationcell:nth-child(5) {
         text-align: left;
         vertical-align: middle;
 
-        p {
+        p, a, label, select {
             font-size: 1.12em;
         }
     }
@@ -180,7 +235,7 @@ div.reservationcell:nth-child(5) {
     }
 
     div.reservationcell:nth-child(4) {
-        width: 120px;
+        width: 160px;
     }
 
     div.reservationcell:nth-child(5) {

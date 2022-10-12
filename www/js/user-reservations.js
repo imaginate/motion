@@ -1016,6 +1016,20 @@
       }
 
       /**
+       * @param {!Object} reservation
+       * @param {(string|number)} rating
+       * @return {void}
+       */
+      changeRating(reservation, rating) {
+          const db = this._db;
+          removeFromRating(db, reservation);
+          reservation.rating = isValidRatingInput(rating)
+              ? +rating
+              : 0;
+          addToRating(db, reservation);
+      }
+
+      /**
        * Gets all reservations that are assigned to the user and matches the
        * selected filtering options.
        *
@@ -1121,6 +1135,18 @@
   function addToRating(db, reservation) {
       if (reservation.rating in db.rating) {
           db.rating[reservation.rating].add(reservation);
+      }
+  }
+
+  /**
+   * @private
+   * @param {!Object} db
+   * @param {!Object} reservation
+   * @return {void}
+   */
+  function removeFromRating(db, reservation) {
+      if (reservation.rating in db.rating) {
+          db.rating[reservation.rating].delete(reservation);
       }
   }
 
@@ -1552,9 +1578,10 @@
    * This method handles the AJAX POST that updates a reservation's rating.
    *
    * @param {!Object} reservation
+   * @param {!function(?Error): void} done
    * @return {void}
    */
-  function uploadRating(reservation) {
+  function uploadRating(reservation, done) {
       const url = SITE_URL + '/api/user/rating';
       fetch(url, {
           method: 'POST',
@@ -1572,16 +1599,20 @@
                   + ' server';
               console.error(err.message);
               console.error(err);
+              done(err);
               alert('SERVER ERROR: The attempt to connect with our server to'
                   + ' update the rating failed.');
               setTimeout(() => { throw err }, 0);
           })
           .then(res => {
-              if (!res.ok) {
+              if (res.ok) {
+                  done(null);
+              } else {
                   const err = new Error('fetch("' + url + '") responded with'
                       + ' status ' + res.status);
                   console.error(err.message);
                   console.error(err);
+                  done(err);
                   alert('SERVER ERROR: The attempt to update the rating with'
                       + ' our server failed.');
                   setTimeout(() => { throw err }, 0);
@@ -1656,11 +1687,22 @@
    */
 
   function Reservation({
+    db,
     reservation,
+    handleRatingChange: parentHandleRatingChange,
     handleDelete
   }) {
     /** @const {(string|number)} */
     const [rating, setRating] = React__default["default"].useState(() => isValidRatingInput(reservation.rating) ? reservation.rating : '');
+    /** @const {boolean} */
+
+    const [updating, setUpdating] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [failure, setFailure] = React__default["default"].useState(false);
+    /** @const {boolean} */
+
+    const [success, setSuccess] = React__default["default"].useState(false);
     /**
      * @param {!Event} event
      * @return {void}
@@ -1668,9 +1710,25 @@
 
     function handleRatingChange(event) {
       const val = event.target.value;
-      setRating(val);
-      reservation.rating = isValidRatingInput(val) ? +val : 0;
-      uploadRating(reservation);
+      setFailure(false);
+      setSuccess(false);
+      setUpdating(true);
+      const prev = reservation.rating;
+      db.changeRating(reservation, val);
+      uploadRating(reservation, err => {
+        setUpdating(false);
+
+        if (err) {
+          db.changeRating(reservation, prev);
+          setFailure(true);
+          setTimeout(() => setFailure(false), 5000);
+        } else {
+          setRating(val);
+          setSuccess(true);
+          parentHandleRatingChange();
+          setTimeout(() => setSuccess(false), 5000);
+        }
+      });
     }
     /**
      * @return {void}
@@ -1698,6 +1756,7 @@
     }, /*#__PURE__*/React__default["default"].createElement("p", null, prettifyDate(reservation.from) + ' - ' + prettifyDate(reservation.to))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("label", {
+      className: "rating",
       htmlFor: "rating"
     }, "Rating:"), /*#__PURE__*/React__default["default"].createElement("select", {
       id: "rating",
@@ -1715,7 +1774,21 @@
       value: "4"
     }, "4"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "5"
-    }, "5"))), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "5")), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "icon"
+    }, updating && /*#__PURE__*/React__default["default"].createElement("img", {
+      className: "icon",
+      src: SITE_URL + '/img/loading-green-24x24.svg',
+      alt: "Updating Rating"
+    }), failure && /*#__PURE__*/React__default["default"].createElement("img", {
+      className: "icon",
+      src: SITE_URL + '/img/x-red-24x24.svg',
+      alt: "Rating Update Failed"
+    }), success && /*#__PURE__*/React__default["default"].createElement("img", {
+      className: "icon",
+      src: SITE_URL + '/img/checkmark-green-24x24.svg',
+      alt: "Rating Updated"
+    }))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("button", {
       id: "delete",
@@ -1743,6 +1816,7 @@
     db,
     reservations,
     tab,
+    handleRatingChange,
     handleDelete
   }) {
     const start = (tab - 1) * 20;
@@ -1754,8 +1828,10 @@
       className: "noreservations"
     }, "No Matching Reservations"), list.map((reservation, i) => /*#__PURE__*/React__default["default"].createElement(Reservation, {
       key: makeUniqueID(i),
+      db: db,
       reservation: reservation,
-      handleDelete: handleDelete
+      handleDelete: handleDelete,
+      handleRatingChange: handleRatingChange
     })));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -2024,7 +2100,8 @@
       db: db,
       reservations: reservations,
       tab: tab,
-      handleDelete: handleDelete
+      handleDelete: handleDelete,
+      handleRatingChange: handleOptionsChange
     }), /*#__PURE__*/React__default["default"].createElement(Tabs, {
       reservations: reservations,
       tab: tab,

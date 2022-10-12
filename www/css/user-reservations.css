@@ -359,14 +359,69 @@ div.reservationcell {
   display: block;
   padding: 10px 0 0 0;
 }
+div.reservationcell p, div.reservationcell a, div.reservationcell label, div.reservationcell select {
+  font-size: 1em;
+  color: #00030e;
+}
 div.reservationcell p {
   display: inline-block;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-div.reservationcell a {
-  color: #00030e;
+div.reservationcell p.success, div.reservationcell p.failure {
+  display: block;
+  padding: 10px 0 0;
+}
+div.reservationcell p.success {
+  color: #0ba012;
+}
+div.reservationcell p.failure {
+  color: #a0120b;
+}
+div.reservationcell span.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+div.reservationcell span.icon img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+div.reservationcell label.rating {
+  display: inline-block;
+  padding: 0 5px 0 0;
+  margin: 0;
+}
+div.reservationcell select {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+div.reservationcell button#delete {
+  display: inline-block;
+  padding: 1px 6px;
+  margin: 0;
+  font-weight: bold;
+  color: #ffffff;
+  background: #f03228;
+  border: 1px solid #00030e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
 div.reservationcell:nth-child(1) {
@@ -394,7 +449,7 @@ div.reservationcell:nth-child(5) {
     margin: 0 auto;
   }
   div.reservation {
-    width: 670px;
+    width: 710px;
     padding: 25px 35px;
   }
   div.reservationcell {
@@ -403,7 +458,7 @@ div.reservationcell:nth-child(5) {
     text-align: left;
     vertical-align: middle;
   }
-  div.reservationcell p {
+  div.reservationcell p, div.reservationcell a, div.reservationcell label, div.reservationcell select {
     font-size: 1.12em;
   }
   div.reservationcell:nth-child(1) {
@@ -416,7 +471,7 @@ div.reservationcell:nth-child(5) {
     width: 250px;
   }
   div.reservationcell:nth-child(4) {
-    width: 120px;
+    width: 160px;
   }
   div.reservationcell:nth-child(5) {
     width: 70px;

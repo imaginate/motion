@@ -8,6 +8,8 @@
 
 /** @const {!DateOption} */
 import DateOption from '../../../helpers/date-option.js';
+/** @const {!function} */
+import isValidRatingInput from '../../../helpers/is-valid-rating-input.js';
 
 /**
  * A database with all lists of the available reservations.
@@ -59,6 +61,20 @@ class ReservationsDB {
         if (update) {
             this.update();
         }
+    }
+
+    /**
+     * @param {!Object} reservation
+     * @param {(string|number)} rating
+     * @return {void}
+     */
+    changeRating(reservation, rating) {
+        const db = this._db;
+        removeFromRating(db, reservation);
+        reservation.rating = isValidRatingInput(rating)
+            ? +rating
+            : 0;
+        addToRating(db, reservation);
     }
 
     /**
@@ -167,6 +183,18 @@ function addToDate(db, reservation) {
 function addToRating(db, reservation) {
     if (reservation.rating in db.rating) {
         db.rating[reservation.rating].add(reservation);
+    }
+}
+
+/**
+ * @private
+ * @param {!Object} db
+ * @param {!Object} reservation
+ * @return {void}
+ */
+function removeFromRating(db, reservation) {
+    if (reservation.rating in db.rating) {
+        db.rating[reservation.rating].delete(reservation);
     }
 }
 

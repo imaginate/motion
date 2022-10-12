@@ -19,7 +19,14 @@ import Reservation from './reservation.jsx';
  * @param {!Object} props
  * @return {!ReactElement}
  */
-function ReservationList({ opts, db, reservations, tab, handleDelete }) {
+function ReservationList({
+    opts,
+    db,
+    reservations,
+    tab,
+    handleRatingChange,
+    handleDelete
+}) {
     const start = (tab - 1) * 20;
     const end = Math.min(reservations.length, tab * 20);
     const list = reservations.slice(start, end);
@@ -31,8 +38,10 @@ function ReservationList({ opts, db, reservations, tab, handleDelete }) {
             {list.map((reservation, i) => (
                 <Reservation
                     key={makeUniqueID(i)}
+                    db={db}
                     reservation={reservation}
                     handleDelete={handleDelete}
+                    handleRatingChange={handleRatingChange}
                 />
             ))}
         </div>

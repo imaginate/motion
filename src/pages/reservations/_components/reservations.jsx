@@ -199,6 +199,7 @@ function Reservations() {
                 reservations={reservations}
                 tab={tab}
                 handleDelete={handleDelete}
+                handleRatingChange={handleOptionsChange}
             />
             <Tabs
                 reservations={reservations}

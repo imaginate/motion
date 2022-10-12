@@ -25,7 +25,12 @@ import deleteReservation from '../_helpers/delete-reservation.js';
  * @param {!Object} props
  * @return {!ReactElement}
  */
-function Reservation({ reservation, handleDelete }) {
+function Reservation({
+    db,
+    reservation,
+    handleRatingChange: parentHandleRatingChange,
+    handleDelete
+}) {
 
     /** @const {(string|number)} */
     const [ rating, setRating ] = React.useState(() => (
@@ -34,17 +39,37 @@ function Reservation({ reservation, handleDelete }) {
             : ''
     ));
 
+    /** @const {boolean} */
+    const [ updating, setUpdating ] = React.useState(false);
+    /** @const {boolean} */
+    const [ failure, setFailure ] = React.useState(false);
+    /** @const {boolean} */
+    const [ success, setSuccess ] = React.useState(false);
+
     /**
      * @param {!Event} event
      * @return {void}
      */
     function handleRatingChange(event) {
         const val = event.target.value;
-        setRating(val);
-        reservation.rating = isValidRatingInput(val)
-            ? +val
-            : 0;
-        uploadRating(reservation);
+        setFailure(false);
+        setSuccess(false);
+        setUpdating(true);
+        const prev = reservation.rating;
+        db.changeRating(reservation, val);
+        uploadRating(reservation, err => {
+            setUpdating(false);
+            if (err) {
+                db.changeRating(reservation, prev);
+                setFailure(true);
+                setTimeout(() => setFailure(false), 5000);
+            } else {
+                setRating(val);
+                setSuccess(true);
+                parentHandleRatingChange();
+                setTimeout(() => setSuccess(false), 5000);
+            }
+        });
     }
 
     /**
@@ -72,7 +97,7 @@ function Reservation({ reservation, handleDelete }) {
                     }</p>
                 </div>
                 <div className="reservationcell">
-                    <label htmlFor="rating">Rating:</label>
+                    <label className="rating" htmlFor="rating">Rating:</label>
                     <select
                         id="rating"
                         value={rating}
@@ -85,6 +110,29 @@ function Reservation({ reservation, handleDelete }) {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    <span className="icon">
+                    {updating && (
+                        <img
+                            className="icon"
+                            src={SITE_URL + '/img/loading-green-24x24.svg'}
+                            alt="Updating Rating"
+                        />
+                    )}
+                    {failure && (
+                        <img
+                            className="icon"
+                            src={SITE_URL + '/img/x-red-24x24.svg'}
+                            alt="Rating Update Failed"
+                        />
+                    )}
+                    {success && (
+                        <img
+                            className="icon"
+                            src={SITE_URL + '/img/checkmark-green-24x24.svg'}
+                            alt="Rating Updated"
+                        />
+                    )}
+                    </span>
                 </div>
                 <div className="reservationcell">
                     <button id="delete" onClick={handleDeleteClick}>X</button>
