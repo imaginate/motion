@@ -27,8 +27,9 @@ import deleteReservation from '../_helpers/delete-reservation.js';
  */
 function Reservation({
     db,
+    opts,
     reservation,
-    handleRatingChange: parentHandleRatingChange,
+    handleOptionsChange,
     handleDelete
 }) {
 
@@ -58,17 +59,20 @@ function Reservation({
         const prev = reservation.rating;
         db.changeRating(reservation, val);
         uploadRating(reservation, err => {
-            setUpdating(false);
             if (err) {
                 db.changeRating(reservation, prev);
                 setFailure(true);
                 setTimeout(() => setFailure(false), 5000);
             } else {
                 setRating(val);
-                setSuccess(true);
-                parentHandleRatingChange();
-                setTimeout(() => setSuccess(false), 5000);
+                if (opts.rating()) {
+                    handleOptionsChange();
+                } else {
+                    setSuccess(true);
+                    setTimeout(() => setSuccess(false), 5000);
+                }
             }
+            setUpdating(false);
         });
     }
 

@@ -24,7 +24,7 @@ function ReservationList({
     db,
     reservations,
     tab,
-    handleRatingChange,
+    handleOptionsChange,
     handleDelete
 }) {
     const start = (tab - 1) * 20;
@@ -39,9 +39,10 @@ function ReservationList({
                 <Reservation
                     key={makeUniqueID(i)}
                     db={db}
+                    opts={opts}
                     reservation={reservation}
                     handleDelete={handleDelete}
-                    handleRatingChange={handleRatingChange}
+                    handleOptionsChange={handleOptionsChange}
                 />
             ))}
         </div>

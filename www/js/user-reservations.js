@@ -1688,8 +1688,9 @@
 
   function Reservation({
     db,
+    opts,
     reservation,
-    handleRatingChange: parentHandleRatingChange,
+    handleOptionsChange,
     handleDelete
   }) {
     /** @const {(string|number)} */
@@ -1716,18 +1717,22 @@
       const prev = reservation.rating;
       db.changeRating(reservation, val);
       uploadRating(reservation, err => {
-        setUpdating(false);
-
         if (err) {
           db.changeRating(reservation, prev);
           setFailure(true);
           setTimeout(() => setFailure(false), 5000);
         } else {
           setRating(val);
-          setSuccess(true);
-          parentHandleRatingChange();
-          setTimeout(() => setSuccess(false), 5000);
+
+          if (opts.rating()) {
+            handleOptionsChange();
+          } else {
+            setSuccess(true);
+            setTimeout(() => setSuccess(false), 5000);
+          }
         }
+
+        setUpdating(false);
       });
     }
     /**
@@ -1816,7 +1821,7 @@
     db,
     reservations,
     tab,
-    handleRatingChange,
+    handleOptionsChange,
     handleDelete
   }) {
     const start = (tab - 1) * 20;
@@ -1829,9 +1834,10 @@
     }, "No Matching Reservations"), list.map((reservation, i) => /*#__PURE__*/React__default["default"].createElement(Reservation, {
       key: makeUniqueID(i),
       db: db,
+      opts: opts,
       reservation: reservation,
       handleDelete: handleDelete,
-      handleRatingChange: handleRatingChange
+      handleOptionsChange: handleOptionsChange
     })));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
@@ -2101,7 +2107,7 @@
       reservations: reservations,
       tab: tab,
       handleDelete: handleDelete,
-      handleRatingChange: handleOptionsChange
+      handleOptionsChange: handleOptionsChange
     }), /*#__PURE__*/React__default["default"].createElement(Tabs, {
       reservations: reservations,
       tab: tab,
