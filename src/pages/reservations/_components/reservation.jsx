@@ -80,20 +80,24 @@ function Reservation({
      * @return {void}
      */
     function handleDeleteClick() {
-        deleteReservation(reservation, handleDelete);
+        const msg = 'Are you sure you want to delete reservation #'
+            + reservation.id + '?';
+        if (confirm(msg)) {
+            deleteReservation(reservation, handleDelete);
+        }
     }
 
     return (
         <div className="reservationrow">
             <div id={'reservation:' + reservation.id} className="reservation">
                 <div className="reservationcell">
-                    <p>{reservation.id}</p>
+                    <p>#{reservation.id}</p>
                 </div>
                 <div className="reservationcell">
                     <a
                         href={SITE_URL + '/bike/' + reservation.bike_id}
                         className="reservationlink"
-                    >Bike {reservation.bike_id}</a>
+                    >Bike #{reservation.bike_id}</a>
                 </div>
                 <div className="reservationcell">
                     <p>{prettifyDate(reservation.from) + ' - '
@@ -101,45 +105,55 @@ function Reservation({
                     }</p>
                 </div>
                 <div className="reservationcell">
-                    <label className="rating" htmlFor="rating">Rating:</label>
-                    <select
-                        id="rating"
-                        value={rating}
-                        onChange={handleRatingChange}
-                    >
-                        <option value="">None</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <span className="icon">
+                    {updating || (
+                        <select
+                            id="rating"
+                            value={rating}
+                            title="Change Rating"
+                            onChange={handleRatingChange}
+                        >
+                            <option value="">No Rating</option>
+                            <option value="1">1 / 5</option>
+                            <option value="2">2 / 5</option>
+                            <option value="3">3 / 5</option>
+                            <option value="4">4 / 5</option>
+                            <option value="5">5 / 5</option>
+                        </select>
+                    )}
                     {updating && (
-                        <img
-                            className="icon"
-                            src={SITE_URL + '/img/loading-green-24x24.svg'}
-                            alt="Updating Rating"
-                        />
+                        <div className="updating-rating">
+                            <img
+                                className="icon"
+                                src={SITE_URL +'/img/loading-green-24x24.svg'}
+                                alt="Updating Rating"
+                            />
+                        </div>
                     )}
-                    {failure && (
-                        <img
-                            className="icon"
-                            src={SITE_URL + '/img/x-red-24x24.svg'}
-                            alt="Rating Update Failed"
-                        />
-                    )}
-                    {success && (
-                        <img
-                            className="icon"
-                            src={SITE_URL + '/img/checkmark-green-24x24.svg'}
-                            alt="Rating Updated"
-                        />
-                    )}
-                    </span>
+                    <div className="rating-update-result-placeholder"></div>
+                    <div className="rating-update-result">
+                        {failure && (
+                            <img
+                                className="icon"
+                                src={SITE_URL + '/img/x-red-24x24.svg'}
+                                alt="Rating Update Failed"
+                            />
+                        )}
+                        {success && (
+                            <img
+                                className="icon"
+                                src={SITE_URL
+                                    + '/img/checkmark-green-24x24.svg'}
+                                alt="Rating Updated"
+                            />
+                        )}
+                    </div>
                 </div>
                 <div className="reservationcell">
-                    <button id="delete" onClick={handleDeleteClick}>X</button>
+                    <button
+                        id="delete"
+                        title="Delete Reservation"
+                        onClick={handleDeleteClick}
+                    >X</button>
                 </div>
             </div>
         </div>

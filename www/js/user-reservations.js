@@ -1741,7 +1741,11 @@
 
 
     function handleDeleteClick() {
-      deleteReservation(reservation, handleDelete);
+      const msg = 'Are you sure you want to delete reservation #' + reservation.id + '?';
+
+      if (confirm(msg)) {
+        deleteReservation(reservation, handleDelete);
+      }
     }
 
     return /*#__PURE__*/React__default["default"].createElement("div", {
@@ -1751,41 +1755,43 @@
       className: "reservation"
     }, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, reservation.id)), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, "#", reservation.id)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("a", {
       href: SITE_URL + '/bike/' + reservation.bike_id,
       className: "reservationlink"
-    }, "Bike ", reservation.bike_id)), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "Bike #", reservation.bike_id)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, prettifyDate(reservation.from) + ' - ' + prettifyDate(reservation.to))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
-    }, /*#__PURE__*/React__default["default"].createElement("label", {
-      className: "rating",
-      htmlFor: "rating"
-    }, "Rating:"), /*#__PURE__*/React__default["default"].createElement("select", {
+    }, updating || /*#__PURE__*/React__default["default"].createElement("select", {
       id: "rating",
       value: rating,
+      title: "Change Rating",
       onChange: handleRatingChange
     }, /*#__PURE__*/React__default["default"].createElement("option", {
       value: ""
-    }, "None"), /*#__PURE__*/React__default["default"].createElement("option", {
+    }, "No Rating"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "1"
-    }, "1"), /*#__PURE__*/React__default["default"].createElement("option", {
+    }, "1 / 5"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "2"
-    }, "2"), /*#__PURE__*/React__default["default"].createElement("option", {
+    }, "2 / 5"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "3"
-    }, "3"), /*#__PURE__*/React__default["default"].createElement("option", {
+    }, "3 / 5"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "4"
-    }, "4"), /*#__PURE__*/React__default["default"].createElement("option", {
+    }, "4 / 5"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "5"
-    }, "5")), /*#__PURE__*/React__default["default"].createElement("span", {
-      className: "icon"
-    }, updating && /*#__PURE__*/React__default["default"].createElement("img", {
+    }, "5 / 5")), updating && /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "updating-rating"
+    }, /*#__PURE__*/React__default["default"].createElement("img", {
       className: "icon",
       src: SITE_URL + '/img/loading-green-24x24.svg',
       alt: "Updating Rating"
-    }), failure && /*#__PURE__*/React__default["default"].createElement("img", {
+    })), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "rating-update-result-placeholder"
+    }), /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "rating-update-result"
+    }, failure && /*#__PURE__*/React__default["default"].createElement("img", {
       className: "icon",
       src: SITE_URL + '/img/x-red-24x24.svg',
       alt: "Rating Update Failed"
@@ -1797,6 +1803,7 @@
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("button", {
       id: "delete",
+      title: "Delete Reservation",
       onClick: handleDeleteClick
     }, "X"))));
   }
