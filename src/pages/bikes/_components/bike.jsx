@@ -20,24 +20,20 @@ import React from 'react';
 function Bike({ bike }) {
     const href = SITE_URL + '/bike/' + bike.id;
     return (
-        <div className="bikerow">
-            <div id={'bike:' + bike.id} className="bike">
-                <a href={href} className="bikelink">
-                    <div className="bikecell">
-                        <p>{bike.model}</p>
-                    </div>
-                    <div className="bikecell">
-                        <p>{bike.color}</p>
-                    </div>
-                    <div className="bikecell">
-                        <p>{bike.location}</p>
-                    </div>
-                    <div className="bikecell">
-                        <p>{bike.rating.toFixed(2)} / 5</p>
-                    </div>
-                </a>
+        <a href={href} className="bikerow" title={'See Bike #' + bike.id}>
+            <div className="bikecell">
+                <p>{bike.model}</p>
             </div>
-        </div>
+            <div className="bikecell">
+                <p>{bike.color}</p>
+            </div>
+            <div className="bikecell">
+                <p>{bike.location}</p>
+            </div>
+            <div className="bikecell">
+                <p>{bike.rating.toFixed(2)} / 5</p>
+            </div>
+        </a>
     );
 }
 

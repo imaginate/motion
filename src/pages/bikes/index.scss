@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-/// MAIN PAGE STYLES
+/// BIKES PAGE STYLES
 ///   - GENERAL
 ///   - FILTERS
 ///   - BIKE LIST
@@ -75,129 +75,154 @@ div.filter {
 
 div.bikelist {
     display: block;
-    width: 96%;
-    padding: 20px 2%;
-    margin: 0;
-
-    div.bikerow {
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
+    width: 90%;
+    padding: 20px 5%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 p.nobikes {
-    display: block;
-    width: 280px;
-    padding: 20px 0;
+    display: inline-block;
+    padding: 10px 15px;
     margin: 0 auto;
     text-align: center;
+    font-size: 1em;
+    color: $black;
+    @include box-shadow(0 0 5px 1px $light-grey);
+    @include border-radius(5px);
 }
 
-div.bike {
+a.bikerow {
     display: block;
-    width: 280px;
-    padding: 20px 0;
+    padding: 20px 40px;
     margin: 0 auto;
+    font-size: 1em;
+    text-decoration: none;
+    color: $black;
+    @include box-shadow(0 0 5px 1px $light-grey);
+    @include border-radius(5px);
+}
+
+a.bikerow:active {
+    @include box-shadow(0 0 5px 1px $green);
+}
+
+div.bikecell {
+    display: block;
+    padding: 10px 0 0 0;
+    margin: 0;
     text-align: center;
+    overflow: hidden;
 
-    a.bikelink {
-        display: block;
-        width: 100%;
-        padding: 20px 0;
-        margin: 0;
-        text-decoration: none;
-        text-align: center;
-        color: $black;
-        cursor: pointer;
-        box-shadow: 0 0 5px 1px $light-grey;
-        @include border-radius(5px);
-    }
-
-    a.bikelink:hover, a.bikelink:focus, a.bikelink:active {
-        text-decoration: none;
-        color: $black;
-    }
-
-    a.bikelink:active {
-        box-shadow: 0 0 5px 1px $green;
-    }
-
-    div.bikecell {
-        display: block;
-        padding: 5px 0 0 0;
-
-        p {
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-    }
-
-    div.bikecell:nth-child(1) {
+    p {
+        display: inline-block;
         padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 1em;
+        color: $black;
     }
+}
 
+div.bikecell:nth-child(1) {
+    padding: 0;
+}
+
+div.spacerow {
+    display: block;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+
+div.spacecell {
+    display: block;
+    width: 50px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+@include min-screen-width(500px) {
+    div.bikelist {
+        width: 80%;
+        padding: 20px 10%;
+    }
+}
+
+@include min-screen-width(650px) {
+    div.bikelist {
+        width: 70%;
+        padding: 20px 15%;
+    }
+}
+
+@include min-screen-width(800px) {
+    div.bikelist {
+        width: 60%;
+        padding: 20px 20%;
+    }
+}
+
+@include min-screen-width(950px) {
+    div.bikelist {
+        width: 50%;
+        padding: 20px 25%;
+    }
 }
 
 @include min-screen-width(1200px) {
     div.bikelist {
-        width: 100%;
-        padding: 30px 0;
-        text-align: center;
+        display: table;
+        width: initial;
+        padding: 20px;
     }
 
     p.nobikes {
-        padding: 10px 0;
+        display: table-cell;
+        padding: 15px 25px;
         font-size: 1.12em;
     }
 
-    div.bike {
-        display: table;
-        width: 970px;
-        padding: 10px 0;
-        margin: 0 auto;
+    a.bikerow {
+        display: table-row;
+        padding: 0;
+        margin: 0;
+        font-size: 1.12em;
+        cursor: pointer;
+    }
 
-        a.bikelink {
-            width: 900px;
-            padding: 25px 35px;
-        }
+    a.bikerow:hover, a.bikerow:focus, a.bikerow:active {
+        @include box-shadow(0 0 5px 1px $green);
+    }
 
-        a.bikelink:hover, a.bikelink:focus, a.bikelink:active {
-            box-shadow: 0 0 5px 1px $green;
-        }
+    div.bikecell {
+        display: table-cell;
+        padding: 25px 40px 25px 0;
+        text-align: left;
+        vertical-align: middle;
 
-        div.bikecell {
-            display: table-cell;
-            padding: 0;
+        p {
+            font-size: 1.12em;
             text-align: left;
-            vertical-align: middle;
-
-            p {
-                font-size: 1.12em;
-            }
         }
+    }
 
-        div.bikecell:nth-child(1) {
-            width: 200px;
-        }
+    div.bikecell:nth-child(1) {
+        padding: 25px 40px;
+    }
 
-        div.bikecell:nth-child(2) {
-            width: 150px;
-        }
+    div.bikecell:nth-child(3) {
+        max-width: 400px;
+    }
 
-        div.bikecell:nth-child(3) {
-            width: 450px;
-        }
+    div.spacerow {
+        display: table-row;
+    }
 
-        div.bikecell:nth-child(4) {
-            width: 90px;
-            padding-right: 10px;
-            text-align: right;
-        }
+    div.spacecell {
+        display: table-cell;
+        height: 25px;
     }
 }
 
@@ -207,22 +232,20 @@ div.bike {
 
 div.tabbox {
     display: block;
-    width: 100%;
     padding: 0 0 40px 0;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
 }
 
 div.tabs {
     display: inline-block;
-    width: 315px;
     height: 40px;
     text-align: center;
 }
 
 div.tab {
     display: inline-block;
-    width: 31px;
+    width: 32px;
     height: 38px;
     padding: 0 1px;
     margin: 0;
