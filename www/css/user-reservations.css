@@ -324,12 +324,22 @@ div.reservationlist {
 }
 
 p.noreservations {
-  display: block;
-  padding: 0;
+  display: inline-block;
+  padding: 10px 15px;
   margin: 0 auto;
   text-align: center;
   font-size: 1em;
   color: #00030e;
+  -webkit-box-shadow: 0 0 5px 1px #d4d6dd;
+  -moz-box-shadow: 0 0 5px 1px #d4d6dd;
+  -ms-box-shadow: 0 0 5px 1px #d4d6dd;
+  -o-box-shadow: 0 0 5px 1px #d4d6dd;
+  box-shadow: 0 0 5px 1px #d4d6dd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
 }
 
 div.reservationrow {
@@ -459,6 +469,8 @@ div.spacecell {
     margin: 0 auto;
   }
   p.noreservations {
+    display: table-cell;
+    padding: 15px 25px;
     font-size: 1.12em;
   }
   div.reservationrow {
