@@ -318,36 +318,29 @@ div.filter label, div.filter input {
 }
 div.reservationlist {
   display: block;
-  width: 96%;
-  padding: 20px 2%;
+  padding: 20px;
   margin: 0;
-}
-
-div.reservationrow {
-  display: block;
-  width: 280px;
-  padding: 20px 0;
-  margin: 0 auto;
   text-align: center;
 }
 
 p.noreservations {
   display: block;
-  width: 280px;
-  padding: 20px 0;
+  padding: 0;
   margin: 0 auto;
   text-align: center;
+  font-size: 1em;
+  color: #00030e;
 }
 
-div.reservation {
-  display: block;
-  width: 100%;
-  padding: 20px 0;
-  margin: 0;
-  text-decoration: none;
-  text-align: center;
-  color: #00030e;
-  box-shadow: 0 0 5px 1px #cccccc;
+div.reservationrow {
+  display: inline-block;
+  padding: 20px 40px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 5px 1px #d4d6dd;
+  -moz-box-shadow: 0 0 5px 1px #d4d6dd;
+  -ms-box-shadow: 0 0 5px 1px #d4d6dd;
+  -o-box-shadow: 0 0 5px 1px #d4d6dd;
+  box-shadow: 0 0 5px 1px #d4d6dd;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -359,6 +352,9 @@ div.reservationcell {
   display: block;
   position: relative;
   padding: 10px 0 0 0;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
 }
 div.reservationcell p, div.reservationcell a, div.reservationcell label, div.reservationcell select {
   font-size: 1em;
@@ -373,8 +369,10 @@ div.reservationcell p {
 div.reservationcell div.rating-update-result-placeholder {
   display: inline-block;
   width: 30px;
+  height: 5px;
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 div.reservationcell div.rating-update-result {
   display: block;
@@ -385,14 +383,15 @@ div.reservationcell div.rating-update-result {
   height: 24px;
   padding: 0;
   margin: 0;
+  z-index: 5;
 }
 div.reservationcell select#rating {
   display: inline-block;
-  min-width: 116px;
   padding: 1px 6px;
   margin: 0;
   text-align: right;
   border: 1px solid #00030e;
+  background: #d4d6dd;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -401,7 +400,7 @@ div.reservationcell select#rating {
 }
 div.reservationcell div.updating-rating {
   display: inline-block;
-  min-width: 130px;
+  width: 80px;
   height: 24px;
   padding: 0;
   margin: 0;
@@ -439,31 +438,42 @@ div.reservationcell:nth-child(5) {
   padding: 15px 0 0;
 }
 
+div.spacerow {
+  display: block;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+div.spacecell {
+  display: block;
+  width: 50px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
 @media only screen and (min-width: 1200px) {
   div.reservationlist {
-    width: 100%;
-    padding: 30px 0;
-    text-align: center;
+    display: table;
+    margin: 0 auto;
   }
   p.noreservations {
-    padding: 10px 0;
     font-size: 1.12em;
   }
   div.reservationrow {
-    display: table;
-    min-width: 766px;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  div.reservation {
-    width: 90%;
-    padding: 25px 5%;
+    display: table-row;
+    padding: 0;
+    margin: 0;
   }
   div.reservationcell {
     display: table-cell;
-    padding: 0;
+    padding: 25px 40px 25px 0;
     text-align: left;
     vertical-align: middle;
+  }
+  div.reservationcell div.rating-update-result {
+    top: 25px;
   }
   div.reservationcell p, div.reservationcell a, div.reservationcell label, div.reservationcell select {
     font-size: 1.12em;
@@ -474,24 +484,27 @@ div.reservationcell:nth-child(5) {
   div.reservationcell a:hover, div.reservationcell a:focus, div.reservationcell a:active {
     text-decoration: none;
   }
+  div.reservationcell select#rating:hover, div.reservationcell select#rating:focus, div.reservationcell select#rating:active {
+    background: #f1f1f4;
+  }
   div.reservationcell button#delete:hover, div.reservationcell button#delete:focus, div.reservationcell button#delete:active {
     background: #a0120b;
   }
   div.reservationcell:nth-child(1) {
-    min-width: 100px;
-  }
-  div.reservationcell:nth-child(2) {
-    min-width: 120px;
-  }
-  div.reservationcell:nth-child(3) {
-    min-width: 250px;
+    padding: 25px 40px;
   }
   div.reservationcell:nth-child(4) {
-    min-width: 160px;
+    padding-right: 0;
   }
   div.reservationcell:nth-child(5) {
-    min-width: 30px;
-    padding: 0 0 0 30px;
+    padding: 25px 40px 25px 20px;
+  }
+  div.spacerow {
+    display: table-row;
+  }
+  div.spacecell {
+    display: table-cell;
+    height: 25px;
   }
 }
 div.tabbox {

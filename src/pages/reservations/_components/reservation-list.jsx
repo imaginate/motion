@@ -30,20 +30,28 @@ function ReservationList({
     const start = (tab - 1) * 20;
     const end = Math.min(reservations.length, tab * 20);
     const list = reservations.slice(start, end);
+    const last = list.length - 1;
     return (
         <div className="reservationlist">
             {list.length === 0 && (
                 <p className="noreservations">No Matching Reservations</p>
             )}
             {list.map((reservation, i) => (
-                <Reservation
-                    key={makeUniqueID(i)}
-                    db={db}
-                    opts={opts}
-                    reservation={reservation}
-                    handleDelete={handleDelete}
-                    handleOptionsChange={handleOptionsChange}
-                />
+                <>
+                    <Reservation
+                        key={makeUniqueID(i)}
+                        db={db}
+                        opts={opts}
+                        reservation={reservation}
+                        handleDelete={handleDelete}
+                        handleOptionsChange={handleOptionsChange}
+                    />
+                    {i !== last && (
+                        <div className="spacerow">
+                            <div className="spacecell"></div>
+                        </div>
+                    )}
+                </>
             ))}
         </div>
     );

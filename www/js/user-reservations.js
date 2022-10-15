@@ -1751,9 +1751,6 @@
     return /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationrow"
     }, /*#__PURE__*/React__default["default"].createElement("div", {
-      id: 'reservation:' + reservation.id,
-      className: "reservation"
-    }, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, "#", reservation.id)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
@@ -1805,7 +1802,7 @@
       id: "delete",
       title: "Delete Reservation",
       onClick: handleDeleteClick
-    }, "X"))));
+    }, "X")));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
@@ -1834,18 +1831,23 @@
     const start = (tab - 1) * 20;
     const end = Math.min(reservations.length, tab * 20);
     const list = reservations.slice(start, end);
+    const last = list.length - 1;
     return /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationlist"
     }, list.length === 0 && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "noreservations"
-    }, "No Matching Reservations"), list.map((reservation, i) => /*#__PURE__*/React__default["default"].createElement(Reservation, {
+    }, "No Matching Reservations"), list.map((reservation, i) => /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(Reservation, {
       key: makeUniqueID(i),
       db: db,
       opts: opts,
       reservation: reservation,
       handleDelete: handleDelete,
       handleOptionsChange: handleOptionsChange
-    })));
+    }), i !== last && /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "spacerow"
+    }, /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "spacecell"
+    })))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
