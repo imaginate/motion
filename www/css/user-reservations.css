@@ -475,6 +475,11 @@ div.spacecell {
   div.reservationcell div.rating-update-result {
     top: 25px;
   }
+  div.reservationcell span.space {
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+  }
   div.reservationcell p, div.reservationcell a, div.reservationcell label, div.reservationcell select {
     font-size: 1.12em;
   }

@@ -229,6 +229,12 @@ div.spacecell {
             top: 25px;
         }
 
+        span.space {
+            display: inline-block;
+            width: 20px;
+            height: 5px;
+        }
+
         p, a, label, select {
             font-size: 1.12em;
         }

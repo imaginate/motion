@@ -10,6 +10,8 @@
 import { SITE_URL } from '../../../env.js';
 /** @const {!React} */
 import React from 'react';
+/** @const {!DateOption} */
+import DateOption from '../../../helpers/date-option.js';
 /** @const {!function} */
 import prettifyDate from '../../../helpers/prettify-date.js';
 /** @const {!function} */
@@ -40,6 +42,10 @@ function Reservation({
             : ''
     ));
 
+    /** @const {boolean} */
+    const [ allowed ] = React.useState(() => (
+        (new DateOption()).compare(new DateOption(reservation.to)) >= 0
+    ));
     /** @const {boolean} */
     const [ updating, setUpdating ] = React.useState(false);
     /** @const {boolean} */
@@ -104,7 +110,11 @@ function Reservation({
                 }</p>
             </div>
             <div className="reservationcell">
-                {updating || (
+                {allowed || (<>
+                    <p>No Rating</p>
+                    <span className="space"></span>
+                </>)}
+                {allowed && (updating || (
                     <select
                         id="rating"
                         value={rating}
@@ -118,7 +128,7 @@ function Reservation({
                         <option value="4">4 / 5</option>
                         <option value="5">5 / 5</option>
                     </select>
-                )}
+                ))}
                 {updating && (
                     <div className="updating-rating">
                         <img
@@ -128,23 +138,26 @@ function Reservation({
                         />
                     </div>
                 )}
-                <div className="rating-update-result-placeholder"></div>
-                <div className="rating-update-result">
-                    {failure && (
-                        <img
-                            className="icon"
-                            src={SITE_URL + '/img/x-red-24x24.svg'}
-                            alt="Rating Update Failed"
-                        />
-                    )}
-                    {success && (
-                        <img
-                            className="icon"
-                            src={SITE_URL + '/img/checkmark-green-24x24.svg'}
-                            alt="Rating Updated"
-                        />
-                    )}
-                </div>
+                {allowed && (<>
+                    <div className="rating-update-result-placeholder"></div>
+                    <div className="rating-update-result">
+                        {failure && (
+                            <img
+                                className="icon"
+                                src={SITE_URL + '/img/x-red-24x24.svg'}
+                                alt="Rating Update Failed"
+                            />
+                        )}
+                        {success && (
+                            <img
+                                className="icon"
+                                src={SITE_URL
+                                    + '/img/checkmark-green-24x24.svg'}
+                                alt="Rating Updated"
+                            />
+                        )}
+                    </div>
+                </>)}
             </div>
             <div className="reservationcell">
                 <button

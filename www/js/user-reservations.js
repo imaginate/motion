@@ -1697,6 +1697,9 @@
     const [rating, setRating] = React__default["default"].useState(() => isValidRatingInput(reservation.rating) ? reservation.rating : '');
     /** @const {boolean} */
 
+    const [allowed] = React__default["default"].useState(() => new DateOption().compare(new DateOption(reservation.to)) >= 0);
+    /** @const {boolean} */
+
     const [updating, setUpdating] = React__default["default"].useState(false);
     /** @const {boolean} */
 
@@ -1761,7 +1764,9 @@
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, prettifyDate(reservation.from) + ' - ' + prettifyDate(reservation.to))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
-    }, updating || /*#__PURE__*/React__default["default"].createElement("select", {
+    }, allowed || /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("p", null, "No Rating"), /*#__PURE__*/React__default["default"].createElement("span", {
+      className: "space"
+    })), allowed && (updating || /*#__PURE__*/React__default["default"].createElement("select", {
       id: "rating",
       value: rating,
       title: "Change Rating",
@@ -1778,13 +1783,13 @@
       value: "4"
     }, "4 / 5"), /*#__PURE__*/React__default["default"].createElement("option", {
       value: "5"
-    }, "5 / 5")), updating && /*#__PURE__*/React__default["default"].createElement("div", {
+    }, "5 / 5"))), updating && /*#__PURE__*/React__default["default"].createElement("div", {
       className: "updating-rating"
     }, /*#__PURE__*/React__default["default"].createElement("img", {
       className: "icon",
       src: SITE_URL + '/img/loading-green-24x24.svg',
       alt: "Updating Rating"
-    })), /*#__PURE__*/React__default["default"].createElement("div", {
+    })), allowed && /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "rating-update-result-placeholder"
     }), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "rating-update-result"
@@ -1796,7 +1801,7 @@
       className: "icon",
       src: SITE_URL + '/img/checkmark-green-24x24.svg',
       alt: "Rating Updated"
-    }))), /*#__PURE__*/React__default["default"].createElement("div", {
+    })))), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "reservationcell"
     }, /*#__PURE__*/React__default["default"].createElement("button", {
       id: "delete",
