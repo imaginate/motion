@@ -23,13 +23,21 @@ function BikeList({ opts, db, bikes, tab }) {
     const start = (tab - 1) * 20;
     const end = Math.min(bikes.length, tab * 20);
     const list = bikes.slice(start, end);
+    const last = list.length - 1;
     return (
         <div className="bikelist">
             {list.length === 0 && (
                 <p className="nobikes">No Matching Bikes</p>
             )}
             {list.map((bike, i) => (
-                <Bike key={makeUniqueID(i)} bike={bike}/>
+                <>
+                    <Bike key={makeUniqueID(i)} bike={bike}/>
+                    {i !== last && (
+                        <div className="spacerow">
+                            <div className="spacecell"></div>
+                        </div>
+                    )}
+                </>
             ))}
         </div>
     );

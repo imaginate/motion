@@ -2167,17 +2167,13 @@
     bike
   }) {
     const href = SITE_URL + '/manage/bike/' + bike.id;
-    return /*#__PURE__*/React__default["default"].createElement("div", {
-      className: "bikerow"
-    }, /*#__PURE__*/React__default["default"].createElement("div", {
-      id: 'bike:' + bike.id,
-      className: "bike"
-    }, /*#__PURE__*/React__default["default"].createElement("a", {
+    return /*#__PURE__*/React__default["default"].createElement("a", {
       href: href,
-      className: "bikelink"
+      className: "bikerow",
+      title: 'Edit Bike #' + bike.id
     }, /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.id)), /*#__PURE__*/React__default["default"].createElement("div", {
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, "#", bike.id)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.model)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
@@ -2185,7 +2181,7 @@
       className: "bikecell"
     }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.location)), /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikecell"
-    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating.toFixed(2), " / 5")))));
+    }, /*#__PURE__*/React__default["default"].createElement("p", null, bike.rating.toFixed(2), " / 5")));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
@@ -2212,14 +2208,19 @@
     const start = (tab - 1) * 20;
     const end = Math.min(bikes.length, tab * 20);
     const list = bikes.slice(start, end);
+    const last = list.length - 1;
     return /*#__PURE__*/React__default["default"].createElement("div", {
       className: "bikelist"
     }, list.length === 0 && /*#__PURE__*/React__default["default"].createElement("p", {
       className: "nobikes"
-    }, "No Matching Bikes"), list.map((bike, i) => /*#__PURE__*/React__default["default"].createElement(Bike, {
+    }, "No Matching Bikes"), list.map((bike, i) => /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, /*#__PURE__*/React__default["default"].createElement(Bike, {
       key: makeUniqueID(i),
       bike: bike
-    })));
+    }), i !== last && /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "spacerow"
+    }, /*#__PURE__*/React__default["default"].createElement("div", {
+      className: "spacecell"
+    })))));
   }
    // vim:ts=4:et:ai:cc=79:fen:fdm=marker:eol
 
