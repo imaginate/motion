@@ -22,3 +22,93 @@
     -o-border-radius: $radius;
     border-radius: $radius;
 }
+
+/// BORDER TOP LEFT RADIUS
+/// @param {Number|Size} $radius
+/// @output
+///   ```scss
+///   -webkit-border-top-left-radius: $radius;
+///   -moz-border-top-left-radius: $radius;
+///   -ms-border-top-left-radius: $radius;
+///   -o-border-top-left-radius: $radius;
+///   border-top-left-radius: $radius;
+///   ```
+@mixin border-top-left-radius($radius...) {
+    -webkit-border-top-left-radius: $radius;
+    -moz-border-top-left-radius: $radius;
+    -ms-border-top-left-radius: $radius;
+    -o-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+/// BORDER TOP RIGHT RADIUS
+/// @param {Number|Size} $radius
+/// @output
+///   ```scss
+///   -webkit-border-top-right-radius: $radius;
+///   -moz-border-top-right-radius: $radius;
+///   -ms-border-top-right-radius: $radius;
+///   -o-border-top-right-radius: $radius;
+///   border-top-right-radius: $radius;
+///   ```
+@mixin border-top-right-radius($radius...) {
+    -webkit-border-top-right-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    -ms-border-top-right-radius: $radius;
+    -o-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+/// BORDER BOTTOM LEFT RADIUS
+/// @param {Number|Size} $radius
+/// @output
+///   ```scss
+///   -webkit-border-bottom-left-radius: $radius;
+///   -moz-border-bottom-left-radius: $radius;
+///   -ms-border-bottom-left-radius: $radius;
+///   -o-border-bottom-left-radius: $radius;
+///   border-bottom-left-radius: $radius;
+///   ```
+@mixin border-bottom-left-radius($radius...) {
+    -webkit-border-bottom-left-radius: $radius;
+    -moz-border-bottom-left-radius: $radius;
+    -ms-border-bottom-left-radius: $radius;
+    -o-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+/// BORDER BOTTOM RIGHT RADIUS
+/// @param {Number|Size} $radius
+/// @output
+///   ```scss
+///   -webkit-border-bottom-right-radius: $radius;
+///   -moz-border-bottom-right-radius: $radius;
+///   -ms-border-bottom-right-radius: $radius;
+///   -o-border-bottom-right-radius: $radius;
+///   border-bottom-right-radius: $radius;
+///   ```
+@mixin border-bottom-right-radius($radius...) {
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -ms-border-bottom-right-radius: $radius;
+    -o-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+/// BOX SHADOW
+/// @param {...(String|Number|Size|Color)} $val
+/// @output
+///   ```scss
+///   -webkit-box-shadow: $state $hoffset $voffset $blur $spread $color $inset;
+///   -moz-box-shadow: $state $hoffset $voffset $blur $spread $color $inset;
+///   -ms-box-shadow: $state $hoffset $voffset $blur $spread $color $inset;
+///   -o-box-shadow: $state $hoffset $voffset $blur $spread $color $inset;
+///   box-shadow: $state $hoffset $voffset $blur $spread $color $inset;
+///   ```
+@mixin box-shadow($val...) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    -ms-box-shadow: $val;
+    -o-box-shadow: $val;
+    box-shadow: $val;
+}
