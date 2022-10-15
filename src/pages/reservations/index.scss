@@ -75,8 +75,9 @@ div.filter {
 
 div.reservationlist {
     display: block;
-    padding: 20px;
-    margin: 0;
+    width: 90%;
+    padding: 20px 5%;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -92,7 +93,7 @@ p.noreservations {
 }
 
 div.reservationrow {
-    display: inline-block;
+    display: block;
     padding: 20px 40px;
     margin: 0 auto;
     @include box-shadow(0 0 5px 1px $light-grey);
@@ -205,10 +206,46 @@ div.spacecell {
     margin: 0;
 }
 
+@include min-screen-width(400px) {
+    div.reservationlist {
+        width: 80%;
+        padding: 20px 10%;
+    }
+}
+
+@include min-screen-width(550px) {
+    div.reservationlist {
+        width: 70%;
+        padding: 20px 15%;
+    }
+}
+
+@include min-screen-width(700px) {
+    div.reservationlist {
+        width: 60%;
+        padding: 20px 20%;
+    }
+}
+
+@include min-screen-width(850px) {
+    div.reservationlist {
+        width: 50%;
+        padding: 20px 25%;
+    }
+}
+
+@include min-screen-width(1000px) {
+    div.reservationlist {
+        width: 40%;
+        padding: 20px 30%;
+    }
+}
+
 @include min-screen-width(1200px) {
     div.reservationlist {
         display: table;
-        margin: 0 auto;
+        width: initial;
+        padding: 20px;
     }
 
     p.noreservations {
@@ -237,6 +274,10 @@ div.spacecell {
             display: inline-block;
             width: 20px;
             height: 5px;
+        }
+
+        p {
+            text-align: left;
         }
 
         p, a, label, select {
@@ -288,22 +329,20 @@ div.spacecell {
 
 div.tabbox {
     display: block;
-    width: 100%;
     padding: 0 0 40px 0;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
 }
 
 div.tabs {
     display: inline-block;
-    width: 315px;
     height: 40px;
     text-align: center;
 }
 
 div.tab {
     display: inline-block;
-    width: 31px;
+    width: 32px;
     height: 38px;
     padding: 0 1px;
     margin: 0;
